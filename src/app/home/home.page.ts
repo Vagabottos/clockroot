@@ -20,7 +20,7 @@ export class HomePage {
     private popoverCtrl: PopoverController,
     private alertCtrl: AlertController,
 
-    private botService: BotService
+    public botService: BotService
   ) {}
 
   public async addBot(ev) {
