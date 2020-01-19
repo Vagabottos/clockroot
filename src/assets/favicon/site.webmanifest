@@ -1,0 +1,21 @@
+{
+    "name": "Root: The Clockwork Helper",
+    "short_name": "Root: The Clockwork Helper",
+    "display": "standalone",
+    "theme_color": "#bc4424",
+    "background_color": "#bc4424",
+    "scope": "/",
+    "start_url": "/",
+    "icons": [
+        {
+            "src": "android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}

@@ -1,0 +1,108 @@
+<ion-toolbar color="primary">
+  <ion-title>
+    <span id="Marquise">
+      Mechanical Marquise
+    </span>
+  </ion-title>
+
+  <ion-buttons slot="end">
+    <ion-button *ngIf="!bot.setupHidden" (click)="botService.toggleSetup(bot)">
+      <ion-icon slot="icon-only" name="checkmark-circle"></ion-icon>
+    </ion-button>
+    <ion-button *ngIf="bot.setupHidden" (click)="botService.toggleSetup(bot)">
+      <ion-icon slot="icon-only" name="radio-button-off"></ion-icon>
+    </ion-button>
+    <ion-button (click)="botService.removeBot(bot)">
+      <ion-icon slot="icon-only" name="trash"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+</ion-toolbar>
+
+<ion-list lines="none">
+  <ion-item *ngIf="!bot.setupHidden">
+    <ion-card>
+      <ion-card-header>
+        <h2>Setup ({{ bot.setupPosition }})</h2>
+      </ion-card-header>
+      <ion-card-content>
+        <ol>
+          <li *ngFor="let rule of bot.setupRules" [innerHTML]="rendererService.formatString(rule)">
+            {{ rule }}
+          </li>
+        </ol>
+      </ion-card-content>
+    </ion-card>
+  </ion-item>
+
+  <ion-item *ngIf="!bot.setupHidden">
+    <ion-card>
+      <ion-card-header>
+        <h2>Choose Difficulty</h2>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-list>
+          <ion-radio-group>
+            <ion-item *ngFor="let diff of ['Easy', 'Normal', 'Challenging', 'Nightmare']">
+              <ion-radio slot="start" 
+                         [value]="diff" 
+                         (click)="botService.changeDifficulty(bot, diff)" 
+                         [checked]="bot.difficulty === diff"></ion-radio>
+
+              <ion-label class="ion-text-wrap">
+                <h2>{{ diff }}</h2>
+                <p [innerHTML]="rendererService.formatString(bot.difficultyDescriptions[diff])"></p>
+              </ion-label>
+            </ion-item>
+          </ion-radio-group>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+  </ion-item>
+
+  <ion-item *ngIf="!bot.setupHidden">
+    <ion-card>
+      <ion-card-header>
+        <h2>Choose Traits</h2>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-list>
+          <ion-item *ngFor="let rule of bot.rules">
+            <ion-checkbox slot="start" 
+                          [disabled]="!rule.canToggle"
+                          (click)="botService.toggleRule(rule)" 
+                          [checked]="!rule.canToggle || rule.isActive"></ion-checkbox>
+
+            <ion-label class="ion-text-wrap">
+              <h2>{{ rule.name }}</h2>
+              <p [innerHTML]="rendererService.formatString(rule.text)"></p>
+            </ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+  </ion-item>
+
+  <ion-item *ngIf="bot.setupHidden">
+    <ion-card>
+      <ion-card-header>
+        <h2>Difficulty & Traits</h2>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-list>
+          <ion-item *ngIf="bot.difficulty !== 'Normal'">
+            <ion-label class="ion-text-wrap">
+              <h2>Difficulty: {{ bot.difficulty }}</h2>
+              <p [innerHTML]="rendererService.formatString(bot.difficultyDescriptions[bot.difficulty])"></p>
+            </ion-label>
+          </ion-item>
+          <ion-item *ngFor="let rule of bot.rules" [class.ion-hide]="rule.canToggle && !rule.isActive">
+            <ion-label class="ion-text-wrap">
+              <h2>{{ rule.name }}</h2>
+              <p [innerHTML]="rendererService.formatString(rule.text)"></p>
+            </ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+  </ion-item>
+</ion-list>
