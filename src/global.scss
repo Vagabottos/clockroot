@@ -24,3 +24,86 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+// plain
+@font-face {
+  font-family: "Libre Baskerville";
+  src: url("/assets/fonts/LibreBaskerville-Regular.eot");
+  src: url("/assets/fonts/LibreBaskerville-Regular.eot?#iefix") format('embedded-opentype'),
+       url("/assets/fonts/LibreBaskerville-Regular.woff2") format('woff2'),
+       url("/assets/fonts/LibreBaskerville-Regular.woff") format('woff'),
+       url("/assets/fonts/LibreBaskerville-Regular.ttf") format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* italic */
+@font-face {
+  font-family: "Libre Baskerville";
+  src: url("/assets/fonts/LibreBaskerville-Italic.eot");
+  src: url("/assets/fonts/LibreBaskerville-Italic.eot?#iefix") format('embedded-opentype'),
+       url("/assets/fonts/LibreBaskerville-Italic.woff2") format('woff2'),
+       url("/assets/fonts/LibreBaskerville-Italic.woff") format('woff'),
+       url("/assets/fonts/LibreBaskerville-Italic.ttf") format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+/* bold */
+@font-face {
+  font-family: "Libre Baskerville";
+  src: url("/assets/fonts/LibreBaskerville-Bold.eot");
+  src: url("/assets/fonts/LibreBaskerville-Bold.eot?#iefix") format('embedded-opentype'),
+       url("/assets/fonts/LibreBaskerville-Bold.woff2") format('woff2'),
+       url("/assets/fonts/LibreBaskerville-Bold.woff") format('woff'),
+       url("/assets/fonts/LibreBaskerville-Bold.ttf") format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+* {
+  font-family: "Libre Baskerville", serif;
+}
+
+ion-toolbar, ion-content, ion-router-outlet, .popover-content, .alert-wrapper {
+  --background: url("/assets/background.png") repeat;
+}
+
+ion-router-outlet {
+  background: url("/assets/background.png") repeat;
+}
+
+ion-list {
+  --ion-item-background: url("/assets/background.png") repeat;
+}
+
+ion-item, ion-radio {
+  cursor: pointer;
+}
+
+ion-card-header h2 {
+  margin: 0;
+}
+
+ion-card {
+  width: 100%;
+}
+
+.inline-icon {
+  max-height: 16px;
+  max-width: 16px;
+  display: inline !important;
+}
+
+.blank-slate {
+  width: 100%;
+  height: 100%;
+  font-size: 2rem;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+  opacity: 0.6;
+}

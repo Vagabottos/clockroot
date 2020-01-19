@@ -1,3 +1,28 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-split-pane contentId="main" [disabled]="botService.bots.length === 0">
+    <ion-menu contentId="main">
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>
+            Bots
+          </ion-title>
+        </ion-toolbar>
+      </ion-header>
+
+      <ion-content>
+        <ion-list lines="none">
+          <ion-menu-toggle *ngFor="let bot of botService.bots" autoHide="false">
+            <ion-item color="transparent"
+                      (click)="botService.goToBot(bot.name)">
+                      <img class="inline-icon ion-margin-end" [src]="'assets/inicon/faction-' + botService.botMeta[bot.name].icon + '.png'" />
+                      {{ botService.botMeta[bot.name].fullName }}
+                      <em class="ion-margin-start" *ngIf="!bot.setupHidden">(Needs Setup)</em>
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+
+    <ion-router-outlet id="main"></ion-router-outlet>
+  </ion-split-pane>
 </ion-app>
