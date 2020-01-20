@@ -10,7 +10,7 @@
       </ion-header>
 
       <ion-content>
-        <ion-list lines="none">
+        <ion-list lines="none" class="preserve-padding">
           <ion-menu-toggle *ngFor="let bot of botService.bots" autoHide="false">
             <ion-item color="transparent"
                       (click)="botService.goToBot(bot.name)">

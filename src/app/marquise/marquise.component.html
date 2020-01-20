@@ -125,7 +125,7 @@
               <div class="flip-icon">
                 <img [src]="'assets/inicon/building-' + building.building + '.png'"
                       class="flip-back"
-                      *ngIf="!bot.customData.buildings[building.suit][num - 1]"
+                      [class.hidden]="bot.customData.buildings[building.suit][num - 1]"
                       (click)="toggleBuilding(building.suit, num - 1)" />
 
                 <div class="flip-front" 

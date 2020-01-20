@@ -27,17 +27,33 @@
     margin-left: 10px;
     cursor: pointer;
 
-    .flip-front {
-      max-width: 64px;
-      max-height: 64px;
+    max-width: 64px;
+    max-height: 64px;
 
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    .flip-icon {
+      position: relative;
 
-      font-size: 2rem;
+      .flip-front {
+  
+        display: flex;
+        justify-content: center;
+        align-items: center;
+  
+        width: 100%;
+        height: 100%;
 
-      border: 3px solid #CC6E31;
+        position: absolute;
+        top: 0;
+        left: 0;
+  
+        font-size: 2rem;
+  
+        border: 3px solid #CC6E31;
+      }
+  
+      .flip-back.hidden {
+        visibility: hidden;
+      }
     }
   }
 }

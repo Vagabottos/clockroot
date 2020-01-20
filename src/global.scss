@@ -91,7 +91,7 @@ ion-card {
   margin-right: 0;
 }
 
-ion-list ion-item {
+ion-list:not(.preserve-padding) ion-item {
   --padding-start: 0;
   --padding-end: 0;
   --inner-padding-end: 0;
