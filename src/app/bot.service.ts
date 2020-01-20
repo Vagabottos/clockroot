@@ -70,12 +70,12 @@ export class BotService {
     window.location.href = `#${botName}`;
   }
 
+  public saveBots() {
+    localStorage.setItem('bots', JSON.stringify(this.bots));
+  }
+
   private loadBots() {
     const loadedBots = localStorage.getItem('bots') || '[]';
     this.bots = JSON.parse(loadedBots);
-  }
-
-  private saveBots() {
-    localStorage.setItem('bots', JSON.stringify(this.bots));
   }
 }

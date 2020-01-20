@@ -112,4 +112,10 @@ Assigning a single Hit to a building has no effect.
       canToggle: true
     }
   ];
+
+  public buildings = {
+    fox: [],
+    bunny: [],
+    mouse: []
+  };
 }
