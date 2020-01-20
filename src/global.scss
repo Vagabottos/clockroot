@@ -89,10 +89,31 @@ ion-card {
   width: 100%;
 }
 
+ion-label {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
 .inline-icon {
   max-height: 16px;
   max-width: 16px;
   display: inline !important;
+}
+
+.flip-front, .flip-back {
+  cursor: pointer;
+}
+
+.flip-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.flip-icon {
+  max-height: 64px;
+  max-width: 64px;
 }
 
 .blank-slate {

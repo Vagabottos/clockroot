@@ -1,6 +1,7 @@
 
 
-export type Item = 'Boot' | 'Coin' | 'Crossbow' | 'Hammer' | 'Sack' | 'Sword' | 'Tea' | 'Torch';
+export type Item = 'Boot' | 'Coin' | 'Crossbow' | 'Hammer' | 'Sack' | 'Sword' | 'Tea' | 'Torch'
+                 | 'Boot2' | 'Coin2'                       | 'Sack2' | 'Sword2' | 'Tea2';
 export type Difficulty = 'Easy' | 'Normal' | 'Challenging' | 'Nightmare';
 
 export interface Rule {
@@ -20,8 +21,9 @@ export abstract class Bot {
   public setupRules: string[] = [];
   public difficulty: Difficulty = 'Normal';
   public difficultyDescriptions: { [key in Difficulty]: string } = { Easy: '', Normal: '', Challenging: '', Nightmare: '' };
-  public items: { [key in Item]?: number } = {};
+  public items: { [key in Item]?: boolean } = {};
   public rules: Rule[] = [];
+  public vp = 0;
 
   constructor() {}
 }
@@ -67,15 +69,18 @@ Each round score **vp:1** per player.
       name: 'Poor Manual Dexterity',
       text: `The Mechanical Marquise has no hand of cards. It cannot discard cards.
       If a player is prompted to take a card from the Mechanical Marquise, they draw a card instead.
-      If prompted to give it a card, discard the card, and it scores **vp:1**.`
+      If prompted to give it a card, discard the card, and it scores **vp:1**.`,
+      isActive: true
     },
     {
       name: 'Hates Surprises',
-      text: 'Ambush cards cannot be played against bots.'
+      text: 'Ambush cards cannot be played against bots.',
+      isActive: true
     },
     {
       name: 'The Keep',
-      text: 'Only you can place pieces in the clearing with the keep token.'
+      text: 'Only you can place pieces in the clearing with the keep token.',
+      isActive: true
     },
     {
       name: 'Blitz',

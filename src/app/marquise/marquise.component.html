@@ -70,7 +70,7 @@
             <ion-checkbox slot="start" 
                           [disabled]="!rule.canToggle"
                           (click)="botService.toggleRule(rule)" 
-                          [checked]="!rule.canToggle || rule.isActive"></ion-checkbox>
+                          [checked]="rule.isActive"></ion-checkbox>
 
             <ion-label class="ion-text-wrap">
               <h2>{{ rule.name }}</h2>
@@ -104,5 +104,9 @@
         </ion-list>
       </ion-card-content>
     </ion-card>
+  </ion-item>
+
+  <ion-item *ngIf="bot.setupHidden">
+    <app-bot-resources [bot]="bot"></app-bot-resources>
   </ion-item>
 </ion-list>

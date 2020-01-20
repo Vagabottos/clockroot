@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 
 import { HomePage } from './home.page';
 
+import { BotResourcesComponent } from '../bot-resources/bot-resources.component';
 import { MarquiseComponent } from '../marquise/marquise.component';
 
 @NgModule({
@@ -20,6 +21,6 @@ import { MarquiseComponent } from '../marquise/marquise.component';
       }
     ])
   ],
-  declarations: [HomePage, MarquiseComponent]
+  declarations: [HomePage, BotResourcesComponent, MarquiseComponent]
 })
 export class HomePageModule {}

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { Bot, Difficulty, Rule } from './models/bot';
+import { Bot, Difficulty, Rule, Item } from './models/bot';
 
 @Injectable({
   providedIn: 'root'
@@ -46,10 +46,24 @@ export class BotService {
     this.saveBots();
   }
 
+  public setVP(bot: Bot, vp: number) {
+    bot.vp = vp;
+    this.saveBots();
+  }
+
+  public toggleItem(bot: Bot, item: Item) {
+    bot.items[item] = !bot.items[item];
+    this.saveBots();
+  }
+
   public toggleRule(rule: Rule) {
     if (!rule.canToggle) { return; }
 
-    rule.isActive = !rule.isActive;
+    // update the view immediately
+    setTimeout(() => {
+      rule.isActive = !rule.isActive;
+      this.saveBots();
+    }, 0);
   }
 
   public goToBot(botName: string) {

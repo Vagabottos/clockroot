@@ -1,0 +1,24 @@
+
+<ion-card>
+  <ion-card-header><h2>Victory Points & Items</h2></ion-card-header>
+  <ion-card-content>
+    <ion-list>
+      <ion-item>
+        <ion-range min="0" max="30" pin="true" ticks="true" snaps="true" (ionChange)="setVP($event)">
+          <ion-label slot="start">0</ion-label>
+          <ion-label slot="end">30 (@{{ bot.vp || 0 }})</ion-label>
+        </ion-range>
+      </ion-item>
+
+      <ion-item>
+        <div class="flip-container">
+          <div class="flip-icon" *ngFor="let item of itemOrder">
+            <img [src]="'assets/inicon/token-item-' + itemImages[item] + '.png'"
+                 [ngClass]="{ 'flip-front': bot.items[item], 'flip-back': !bot.items[item] }"
+                 (click)="toggleItem(item)" />
+          </div>
+        </div>
+      </ion-item>
+    </ion-list>
+  </ion-card-content>
+</ion-card>
