@@ -28,8 +28,8 @@
     cursor: pointer;
 
     .flip-front {
-      width: 64px;
-      height: 64px;
+      max-width: 64px;
+      max-height: 64px;
 
       display: flex;
       justify-content: center;

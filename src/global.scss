@@ -87,6 +87,14 @@ ion-card-header h2 {
 
 ion-card {
   width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+ion-list ion-item {
+  --padding-start: 0;
+  --padding-end: 0;
+  --inner-padding-end: 0;
 }
 
 ion-label {

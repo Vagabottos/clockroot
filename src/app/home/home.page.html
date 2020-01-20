@@ -5,7 +5,8 @@
     </ion-buttons>
 
     <ion-title>
-      Root: The Clockwork Companion
+      <span class="ion-hide-sm-down">Root: The Clockwork Companion</span>
+      <span class="ion-hide-sm-up">Clockroot</span>
     </ion-title>
 
     <ion-buttons slot="primary">
@@ -24,7 +25,7 @@
     Add a bot by clicking the <ion-icon slot="icon-only" name="add"></ion-icon>
   </div>
 
-  <ion-list lines="none">
+  <ion-list lines="none" class="ion-no-padding">
     <ion-item *ngFor="let bot of botService.bots">
       <app-marquise *ngIf="bot.name === 'Marquise'" [bot]="bot"></app-marquise>
     </ion-item>
