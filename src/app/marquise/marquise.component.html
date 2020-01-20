@@ -18,7 +18,7 @@
   </ion-buttons>
 </ion-toolbar>
 
-<ion-list lines="none">
+<ion-list lines="none" class="no-pointer">
   <ion-item *ngIf="!bot.setupHidden">
     <ion-card>
       <ion-card-header>
@@ -26,9 +26,7 @@
       </ion-card-header>
       <ion-card-content>
         <ol>
-          <li *ngFor="let rule of bot.setupRules" [innerHTML]="rendererService.formatString(rule)">
-            {{ rule }}
-          </li>
+          <li *ngFor="let rule of bot.setupRules" [innerHTML]="rendererService.formatString(rule)"></li>
         </ol>
       </ion-card-content>
     </ion-card>
@@ -111,6 +109,84 @@
   </ion-item>
 
   <ion-item *ngIf="bot.setupHidden">
-    
+    <ion-card>
+      <ion-card-header>
+        <h2>Buildings</h2>
+      </ion-card-header>
+      <ion-card-content>
+        <div *ngFor="let building of buildings">
+          <div class="building-row">
+            <div class="row-icon">
+              <img [src]="'assets/inicon/card-' + building.suit + '.png'" />
+            </div>
+
+            <div class="flip-container" *ngFor="let num of [1, 2, 3, 4, 5, 6]">
+              <div class="flip-icon">
+                <img [src]="'assets/inicon/building-' + building.building + '.png'"
+                      class="flip-back"
+                      *ngIf="!bot.customData.buildings[building.suit][num - 1]"
+                      (click)="toggleBuilding(building.suit, num - 1)" />
+
+                <div class="flip-front" 
+                      *ngIf="bot.customData.buildings[building.suit][num - 1]"
+                      (click)="toggleBuilding(building.suit, num - 1)">+{{ num }}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </ion-item>
+
+  <ion-item *ngIf="bot.setupHidden">
+    <ion-card>
+      <ion-card-header>
+        <h2>
+          Birdsong
+          <span class="ion-margin-start">
+            <img *ngFor="let suit of ['bird', 'fox', 'bunny', 'mouse']" class="click-icon"
+                 (click)="changeSuit(suit)"
+                 [src]="'assets/inicon/card-' + suit + '.png'" />
+          </span>
+        </h2>
+      </ion-card-header>
+      <ion-card-content>
+        <ol>
+          <li class="rule-message" *ngFor="let message of bot.birdsong()">
+            <span [innerHTML]="rendererService.formatString(message)"></span>
+          </li>
+        </ol>
+      </ion-card-content>
+    </ion-card>
+  </ion-item>
+
+  <ion-item *ngIf="bot.setupHidden">
+    <ion-card>
+      <ion-card-header>
+        <h2>Daylight</h2>
+      </ion-card-header>
+      <ion-card-content>
+        <ol>
+          <li class="rule-message" *ngFor="let message of bot.daylight()">
+            <span [innerHTML]="rendererService.formatString(message)"></span>
+          </li>
+        </ol>
+      </ion-card-content>
+    </ion-card>
+  </ion-item>
+
+  <ion-item *ngIf="bot.setupHidden">
+    <ion-card>
+      <ion-card-header>
+        <h2>Evening</h2>
+      </ion-card-header>
+      <ion-card-content>
+        <ol>
+          <li class="rule-message" *ngFor="let message of bot.evening()">
+            <span [innerHTML]="rendererService.formatString(message)"></span>
+          </li>
+        </ol>
+      </ion-card-content>
+    </ion-card>
   </ion-item>
 </ion-list>

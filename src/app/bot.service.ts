@@ -1,11 +1,17 @@
 import { Injectable } from '@angular/core';
 
-import { Bot, Difficulty, Rule, Item } from './models/bot';
+import { Bot, Difficulty, Rule, Item, BotName } from './models/bot';
+import { MarquiseBot } from './models';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BotService {
+
+  public botHash: { [key in BotName]: any } = {
+    Marquise: MarquiseBot
+  };
+
   public bots: Bot[] = [];
 
   public botMeta = {
@@ -77,5 +83,20 @@ export class BotService {
   private loadBots() {
     const loadedBots = localStorage.getItem('bots') || '[]';
     this.bots = JSON.parse(loadedBots);
+    this.bots = this.bots.map(bot => {
+      const botRef = new this.botHash[bot.name]();
+
+      botRef.difficulty = bot.difficulty;
+      botRef.setupHidden = bot.setupHidden;
+      botRef.vp = bot.vp;
+      botRef.items = bot.items;
+      botRef.customData = bot.customData || botRef.customData;
+
+      for (let i = 0; i < botRef.rules.length; i++) {
+        botRef.rules[i].isActive = bot.rules[i].isActive;
+      }
+
+      return botRef;
+    });
   }
 }

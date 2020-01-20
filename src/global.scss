@@ -77,7 +77,7 @@ ion-list {
   --ion-item-background: url("/assets/background.png") repeat;
 }
 
-ion-item, ion-radio {
+ion-list:not(.no-pointer) ion-item, ion-button, ion-radio, .flip-icon {
   cursor: pointer;
 }
 
@@ -127,4 +127,8 @@ ion-label {
   text-align: center;
   padding: 1rem;
   opacity: 0.6;
+}
+
+.rule-message {
+  margin-bottom: 5px;
 }

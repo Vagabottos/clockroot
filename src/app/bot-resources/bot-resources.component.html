@@ -2,9 +2,9 @@
 <ion-card>
   <ion-card-header><h2>Victory Points & Items</h2></ion-card-header>
   <ion-card-content>
-    <ion-list>
+    <ion-list class="no-pointer">
       <ion-item>
-        <ion-range min="0" max="30" pin="true" ticks="true" snaps="true" (ionChange)="setVP($event)">
+        <ion-range min="0" max="30" pin="true" ticks="true" snaps="true" (ionChange)="setVP($event)" [value]="bot.vp">
           <ion-label slot="start">0</ion-label>
           <ion-label slot="end">30 (@{{ bot.vp || 0 }})</ion-label>
         </ion-range>

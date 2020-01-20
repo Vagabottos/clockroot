@@ -27,6 +27,8 @@ export class RendererService {
       return text;
     };
 
+    // renderer.paragraph = (t) => t;
+
     return renderer;
   }
 

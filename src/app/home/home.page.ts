@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 
-import { MarquiseBot } from '../models/bot';
 import { AlertController, PopoverController } from '@ionic/angular';
 import { FactionMenuComponent } from '../faction-menu/faction-menu.component';
 import { BotService } from '../bot.service';
@@ -11,10 +10,6 @@ import { BotService } from '../bot.service';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-
-  private botHash = {
-    Marquise: MarquiseBot
-  };
 
   constructor(
     private popoverCtrl: PopoverController,
@@ -33,7 +28,7 @@ export class HomePage {
     popover.onDidDismiss().then((res) => {
       if (!res || !res.data) { return; }
 
-      this.botService.addBot(new this.botHash[res.data]());
+      this.botService.addBot(new this.botService.botHash[res.data]());
     });
 
     return await popover.present();

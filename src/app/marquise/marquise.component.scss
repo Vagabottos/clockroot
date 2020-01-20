@@ -1,0 +1,43 @@
+.click-icon {
+  height: 24px;
+  width: 24px;
+
+  margin-left: 5px;
+  display: inline;
+
+  cursor: pointer;
+}
+
+.building-row {
+  display: flex;
+  margin-top: 5px;
+
+  justify-content: center;
+
+  .row-icon {
+    display: flex;
+    justify-content: center;
+    align-items: middle;
+    max-width: 64px;
+    max-height: 64px;
+  }
+
+  .flip-container {
+    width: auto;
+    margin-left: 10px;
+    cursor: pointer;
+
+    .flip-front {
+      width: 64px;
+      height: 64px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      font-size: 2rem;
+
+      border: 3px solid #CC6E31;
+    }
+  }
+}
