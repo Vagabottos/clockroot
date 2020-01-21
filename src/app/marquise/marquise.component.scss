@@ -1,11 +1,21 @@
 .click-icon {
-  height: 24px;
-  width: 24px;
+  min-height: 24px;
+  min-width: 24px;
 
-  margin-left: 5px;
   display: inline;
 
   cursor: pointer;
+}
+
+.birdsong-has-buttons {
+  display: flex;
+
+  ion-button {
+    margin-top: 0;
+
+    --padding-start: 0;
+    --padding-end: 0;
+  }
 }
 
 .building-row {
