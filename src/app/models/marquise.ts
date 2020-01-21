@@ -23,14 +23,14 @@ Recruit one less warrior during the Recruit action.
     `,
     Normal: 'Nothing is changed.',
     Challenging: `
-Recruit one less warrior during the Recruit action.
+Recruit one more warrior during the Recruit action.
 
 **card:bird** Recruit one more warrior in the clearing with the lowest priority.
     `,
     Nightmare: `
-Recruit one less warrior during the Recruit action.
+Recruit one more warrior during the Recruit action.
 
-**card:bird** Recruit one less warrior in the clearing with the lowest priority.
+**card:bird** Recruit one more warrior in the clearing with the lowest priority.
 
 Each round score **vp:1** per player.
     `
