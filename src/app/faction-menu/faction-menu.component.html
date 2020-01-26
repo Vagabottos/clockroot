@@ -1,8 +1,8 @@
 <ion-list class="preserve-padding">
 
-  <ion-item (click)="close('Marquise')">
-    <ion-img class="inline-icon" [src]="'assets/inicon/faction-marquise.png'" slot="start"></ion-img>
-    <ion-label>Mechanical Marquise</ion-label>
+  <ion-item (click)="close(faction.id)" *ngFor="let faction of factions" [disabled]="faction.disabled">
+    <ion-img class="inline-icon" [src]="'assets/inicon/faction-' + faction.icon + '.png'" slot="start"></ion-img>
+    <ion-label>{{ faction.name }}</ion-label>
   </ion-item>
   
 </ion-list>
