@@ -14,7 +14,9 @@ export class MarquiseBot extends Bot {
     Place an extra warrior in the clearing with the keep token. _(Place 12 warriors in total.)_`,
 
     `Place 1 sawmill, 1 workshop and 1 recruiter randomly among the clearing with the keep token and
-    those clearings adjacent with up to one building per clearing.`
+    those clearings adjacent with up to one building per clearing.`,
+
+    `Collect your remaining 15 buildings and place them near you.`
   ];
 
   public difficultyDescriptions = {

@@ -12,6 +12,8 @@ export class EyrieBot extends Bot {
     If the Marquise is not playing, place those pieces in a random corner clearing.`,
 
     `Tuck your 2 Loyal Vizier cards, showing their suit, into the rightmost Decree column.`,
+
+    `Collect your 7 roost buildings and place them near you.`
   ];
 
   public difficultyDescriptions = {

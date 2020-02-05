@@ -10,6 +10,11 @@ export class FactionMenuComponent implements OnInit {
 
   public factions = [
     {
+      name: 'Automated Alliance',
+      id: 'Woodland',
+      icon: 'woodland'
+    },
+    {
       name: 'Electric Eyrie',
       id: 'Eyrie',
       icon: 'eyrie'
@@ -18,12 +23,6 @@ export class FactionMenuComponent implements OnInit {
       name: 'Mechanical Marquise',
       id: 'Marquise',
       icon: 'marquise'
-    },
-    {
-      name: 'Automated Alliance',
-      id: 'Alliance',
-      icon: 'woodland',
-      disabled: true
     },
     /*
     {

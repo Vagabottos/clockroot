@@ -29,6 +29,8 @@
     <ion-item *ngFor="let bot of botService.bots">
       <app-marquise *ngIf="bot.name === 'Marquise'" [bot]="bot"></app-marquise>
       <app-eyrie *ngIf="bot.name === 'Eyrie'" [bot]="bot"></app-eyrie>
+      <app-woodland *ngIf="bot.name === 'Woodland'" [bot]="bot"></app-woodland>
+      <app-vagabond *ngIf="bot.name === 'Vagabond'" [bot]="bot"></app-vagabond>
     </ion-item>
   </ion-list>
 </ion-content>

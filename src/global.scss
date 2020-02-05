@@ -204,11 +204,23 @@ ion-label {
         font-size: 2rem;
   
         border: 3px solid #CC6E31;
+
+        &.token {
+          border-radius: 50%;
+        }
       }
   
       .flip-back.hidden {
         visibility: hidden;
       }
+
+      .flip-back.transparent {
+        opacity: 0.2;
+      }
     }
   }
+}
+
+ion-button.transparent {
+  opacity: 0.35;
 }

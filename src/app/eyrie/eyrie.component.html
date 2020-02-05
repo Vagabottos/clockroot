@@ -112,7 +112,7 @@
   <ion-item *ngIf="bot.setupHidden">
     <ion-card>
       <ion-card-header>
-        <h2>Buildings & Decree</h2>
+        <h2>Decree & Roosts</h2>
       </ion-card-header>
       <ion-card-content>
         <div class="decree-row" *ngFor="let suit of ['fox', 'mouse', 'bunny', 'bird']">
@@ -136,7 +136,7 @@
             <div class="flip-icon">
               <img [src]="'assets/inicon/building-roost.png'"
                     class="flip-back"
-                    [class.hidden]="bot.customData.buildings[num]"
+                    [class.transparent]="bot.customData.buildings[num]"
                     (click)="toggleBuilding(num)" />
 
               <div class="flip-front" 
