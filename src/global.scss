@@ -163,19 +163,19 @@ ion-label {
   }
 }
 
+.row-icon {
+  display: flex;
+  justify-content: center;
+  align-items: middle;
+  max-width: 64px;
+  max-height: 64px;
+}
+
 .building-row {
   display: flex;
   margin-top: 5px;
 
   justify-content: center;
-
-  .row-icon {
-    display: flex;
-    justify-content: center;
-    align-items: middle;
-    max-width: 64px;
-    max-height: 64px;
-  }
 
   .flip-container {
     width: auto;

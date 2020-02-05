@@ -115,6 +115,22 @@
         <h2>Buildings & Decree</h2>
       </ion-card-header>
       <ion-card-content>
+        <div class="decree-row" *ngFor="let suit of ['fox', 'mouse', 'bunny', 'bird']">
+          <div class="row-icon">
+            <img [src]="'assets/inicon/card-' + suit + '.png'" />
+          </div>
+
+          <div class="row-additions">
+            <ion-button [disabled]="bot.customData.decree[suit] <= 0" (click)="modifySuitCard(suit, -1)">
+              <ion-icon name="remove"></ion-icon>
+            </ion-button>
+            <span class="decree-count">{{ bot.customData.decree[suit] }}</span>
+            <ion-button (click)="modifySuitCard(suit, 1)">
+              <ion-icon name="add"></ion-icon>
+            </ion-button>
+          </div>
+        </div>
+
         <div class="building-row">
           <div class="flip-container" *ngFor="let num of [0, 1, 2, 3, 4, 5, 6]">
             <div class="flip-icon">
@@ -136,13 +152,8 @@
   <ion-item *ngIf="bot.setupHidden">
     <ion-card>
       <ion-card-header>
-        <h2 class="birdsong-has-buttons">
+        <h2>
           Birdsong
-          <ion-button class="ion-margin-start" (click)="changeSuit(suit)"
-                      *ngFor="let suit of ['bird', 'fox', 'bunny', 'mouse']">
-            <img class="click-icon" slot="icon-only"
-                 [src]="'assets/inicon/card-' + suit + '.png'" />
-          </ion-button>
         </h2>
       </ion-card-header>
       <ion-card-content>

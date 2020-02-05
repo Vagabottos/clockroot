@@ -21,8 +21,9 @@ export class EyrieComponent implements OnInit {
     this.bot.customData.buildings = this.bot.customData.buildings || [];
   }
 
-  changeSuit(suit) {
-    this.bot.customData.currentSuit = suit;
+  modifySuitCard(suit, diff = 1) {
+    this.bot.customData.decree[suit] = Math.max(this.bot.customData.decree[suit] + diff, 0);
+
     this.botService.saveBots();
   }
 

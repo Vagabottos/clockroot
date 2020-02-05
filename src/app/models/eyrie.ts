@@ -81,8 +81,6 @@ Whenever you remove an enemy building or token, its owner loses one victory poin
   ];
 
   public customData = {
-    currentSuit: 'bird',
-
     decree: {
       fox: 0,
       mouse: 0,
@@ -102,53 +100,56 @@ Whenever you remove an enemy building or token, its owner loses one victory poin
   }
 
   public daylight() {
-    if (this.customData.currentSuit === 'bird') {
-      return [
-        `Battle in all clearings. _(Defender is the player with most pieces, then victory points.)_`,
+    const actions = [];
 
-        `Recruit two warriors in each of the two clearings you rule with lowest priority.
-        If you only rule one clearing, place all four warriors there.`,
+    let mostVal = 0;
+    let mostSuit = '';
+    ['fox', 'mouse', 'bunny', 'bird'].forEach(suit => {
+      if (this.customData.decree[suit] <= mostVal) { return; }
 
-        `Build a building of the type with the most pieces on the map in a clearing you rule with the most Marquise Warriors.
-        _(On a tie between sawmills and any other building types, place a sawmill.
-          On a tie between workshops and recruiters but not sawmills, place a recruiter.)_`,
+      mostVal = this.customData.decree[suit];
+      mostSuit = suit;
+    });
 
-        `Move all but three of your warriors from each clearing to the adjacent clearing with the most enemy pieces.
-        Then battle in each clearing you moved into.`
-      ];
-    }
+    ['fox', 'mouse', 'bunny', 'bird'].forEach(suit => {
+      const totalForSuit = this.customData.decree[suit];
+      if (totalForSuit === 0) { return; }
 
-    let building = '';
-    if (this.customData.currentSuit === 'fox')   { building = 'sawmill'; }
-    if (this.customData.currentSuit === 'bunny') { building = 'workshop'; }
-    if (this.customData.currentSuit === 'mouse') { building = 'recruiter'; }
+      const suitText = suit === 'bird' ? 'any' : `**card:${suit}**`;
 
-    return [
-      `Battle in each ${this.customData.currentSuit} clearing. _(Defender is the player with most pieces, then victory points.)_`,
+      actions.push(`
+Recruit ${totalForSuit} warrior(s) in a ${suitText} clearing with a roost.
 
-      `Recruit four warriors evenly spread across ${this.customData.currentSuit} clearings you rule.
-      If you rule three ${this.customData.currentSuit} clearings, place the fourth warrior in the ${this.customData.currentSuit}
-      clearing with the highest priority`,
+_(**Ties**: Recruit in such a clearing with the most enemy pieces, then fewest Eyrie warriors, then lowest priority.)_
+      `);
 
-      `Build a ${building} in a clearing you rule with the most Marquise warriors.`,
+      actions.push(`
+Move from the ${suitText} clearing you rule of highest priority.
+Move to the adjacent clearing with the fewest enemy pieces.
+Leave warriors to exactly rule the origin or ${totalForSuit}, whichever is higher.
 
-      `Move all but three of your warriors from each ${this.customData.currentSuit} clearing to the adjacent
-      clearing with the most enemy pieces.`,
+_(**Destination Ties**: Move to such a clearing with no roost, then fewest enemy warriors, then lowest priority.)_
+      `);
 
-      `If you did not place a building this turn and have five or fewer buildings on the map, discard the order card,
-      draw a new one, and repeat Daylight.`
-    ];
+      actions.push(`
+Battle in a ${suitText} clearing against the player with the most buildings there.
+${suit === mostSuit ? '**Deal an extra hit.**' : '' }
+
+_(**Clearing Ties**: Battle in such a clearing with no roost, then most defenseless buildings and tokens of the same player.)_
+
+_(**Defender Ties**: Battle such a player with the most pieces here.)_
+      `);
+    });
+
+    return actions;
   }
 
   public evening() {
-    if (this.customData.currentSuit === 'bird') {
-      return [
-        `Score **vp:1** for each single most building on the board. Then discard order card(s).`
-      ];
-    }
+
+    const score = Math.max(0, this.customData.buildings.reduce((prev, cur) => prev + (cur ? 1 : 0), 0) - 1);
 
     return [
-      `Score **vp:1** for each building on the board matching ${this.customData.currentSuit} clearings. Then discard order card(s).`
+      `Score ${score} VP.`
     ];
   }
 }

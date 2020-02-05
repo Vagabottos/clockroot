@@ -1,5 +1,11 @@
 import { Bot, BotName } from './bot';
 
+/*
+  Thief - Take a random card from the enemy in your clearing with most points there, then most pieces there.
+  Tinker - Search the discard pile for the top card with an available item and craft it, scoring +1 VP. 
+    _Start the game with one fewer item._
+  Ranger - If you have three or more damaged items, slip into a random adjacent forest.
+*/
 export class VagaBot extends Bot {
 
   public name: BotName = 'Vagabond';

@@ -10,3 +10,30 @@ ion-toolbar {
 .flip-front {
   border-color: var(--theme-color) !important;
 }
+
+.row-icon {
+  max-width: 32px;
+  max-height: 32px;
+
+  margin-right: 15px;
+}
+
+.decree-row {
+  display: flex;
+  margin-top: 5px;
+
+  justify-content: center;
+  align-items: center;
+
+  .decree-count {
+    font-size: 1.5rem;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 30px;
+    text-align: center;
+  }
+
+  .row-additions {
+    display: flex;
+  }
+}
