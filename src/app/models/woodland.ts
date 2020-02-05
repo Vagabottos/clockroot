@@ -1,10 +1,10 @@
 import { Bot, BotName } from './bot';
 
-export class MarquiseBot extends Bot {
+export class WoodlandBot extends Bot {
 
-  public name: BotName = 'Marquise';
+  public name: BotName = 'Woodland';
 
-  public setupPosition = 'A';
+  public setupPosition = 'C';
   public setupRules = [
     `Place the keep token in a random corner clearing.`,
 
@@ -17,16 +17,16 @@ export class MarquiseBot extends Bot {
 
   public difficultyDescriptions = {
     Easy: `
-Whenever you **Recruit**, instead place only two warriors.
+You only **Organize** if a clearing has four or more Alliance warriors.
     `,
     Normal: 'Nothing is changed.',
     Challenging: `
-Whenever you **Recruit**, also place two warriors in the ordered clearing you rule of highest priority.
+You **Organize** if a clearing has two or more Alliance warriors.
     `,
     Nightmare: `
-Whenever you **Recruit**, also place two warriors in the ordered clearing you rule of highest priority.
+You **Organize** if a clearing has two or more Alliance warriors.
 
-At the end of evening, score **vp:1**.
+At the end of Evening, score one victory point.
     `
   };
 
@@ -44,55 +44,59 @@ At the end of evening, score **vp:1**.
       isActive: true
     },
     {
-      name: 'The Keep',
-      text: 'Only you can place pieces in the clearing with the keep token.',
+      name: 'Lords of the Forest',
+      text: 'You rule any clearings where you are tied in presence.',
       isActive: true
     },
     {
-      name: 'Blitz',
+      name: 'Informants',
       text: `
-After you move, find the clearing you rule of the highest priority without any enemy pieces.
-
-Move all but one warrior from the clearing. Then, battle in the destination clearing.
+Defenseless sympathy tokens benefit from Automated Ambush.
       `,
       canToggle: true
     },
     {
-      name: 'Fortified',
+      name: 'Popularity',
       text: `
-Your buildings each take two hits to remove.
-
-Taking a single hit with a building has no effect.
+Enemies do not score victory points for removing sympathy tokens.
       `,
       canToggle: true
     },
     {
-      name: 'Hospitals',
-      text: `At the end of battle as defender, if two or more Marquise warriors were removed
-      in the battle, place two warriors in the clearing with the keep token.`,
+      name: 'Veterans',
+      text: `
+Gain the Guerilla Warfare ability of the Woodland Alliance. _(In battle as defender, you use the higher roll
+  and the attacker uses the lower roll.)_
+      `,
       canToggle: true
     },
     {
-      name: 'Iron Will',
-      text: 'Whenever you **Recruit** in Escalated Daylight, place double the warriors.',
+      name: 'Wildfire',
+      text: `
+At the end of evening, **Spread Sympathy**. Do not score points for placing this sympathy token.
+      `,
       canToggle: true
-    }
+    },
   ];
 
   public customData = {
     currentSuit: 'bird',
 
-    buildings: {
-      fox: [],
-      bunny: [],
-      mouse: []
-    }
+    decree: {
+      fox: 0,
+      mouse: 0,
+      bunny: 0,
+      bird: 0
+    },
+
+    buildings: []
   };
 
   public birdsong() {
     return [
       `Reveal an order card.`,
-      `Craft order card for **vp:1** if it shows an available item.`
+      `Craft order card for **vp:1** if it shows an available item.`,
+      `Add the order card to the matching Decree column.`
     ];
   }
 
@@ -119,16 +123,15 @@ Taking a single hit with a building has no effect.
     if (this.customData.currentSuit === 'mouse') { building = 'recruiter'; }
 
     return [
-      `Battle in each **card:${this.customData.currentSuit}** clearing. _(Defender is the player with most pieces, then victory points.)_`,
+      `Battle in each ${this.customData.currentSuit} clearing. _(Defender is the player with most pieces, then victory points.)_`,
 
-      `Recruit four warriors evenly spread across **card:${this.customData.currentSuit}** clearings you rule.
-      If you rule three **card:${this.customData.currentSuit}** clearings, place the fourth warrior in the
-      **card:${this.customData.currentSuit}**
+      `Recruit four warriors evenly spread across ${this.customData.currentSuit} clearings you rule.
+      If you rule three ${this.customData.currentSuit} clearings, place the fourth warrior in the ${this.customData.currentSuit}
       clearing with the highest priority`,
 
-      `Build a **building:${building}** in a clearing you rule with the most Marquise warriors.`,
+      `Build a ${building} in a clearing you rule with the most Marquise warriors.`,
 
-      `Move all but three of your warriors from each **card:${this.customData.currentSuit}** clearing to the adjacent
+      `Move all but three of your warriors from each ${this.customData.currentSuit} clearing to the adjacent
       clearing with the most enemy pieces.`,
 
       `If you did not place a building this turn and have five or fewer buildings on the map, discard the order card,
@@ -137,29 +140,14 @@ Taking a single hit with a building has no effect.
   }
 
   public evening() {
-    const buildings = this.customData.buildings;
-
     if (this.customData.currentSuit === 'bird') {
-
-      const scores = ['fox', 'mouse', 'bunny'].map(suit => {
-        return buildings[suit].reduce((prev, cur) => prev + (cur ? 1 : 0), 0) - 1;
-      });
-
-      const maxScore = Math.max(...scores, 0);
-
       return [
-        `Score ${maxScore} VP.`,
-        `Discard the order card.`
+        `Score **vp:1** for each single most building on the board. Then discard order card(s).`
       ];
     }
 
-    const buildingsOfSuit = buildings[this.customData.currentSuit];
-
-    const score = Math.max(0, buildingsOfSuit.reduce((prev, cur) => prev + (cur ? 1 : 0), 0) - 1);
-
     return [
-      `Score ${score} VP.`,
-      `Discard the order card.`
+      `Score **vp:1** for each building on the board matching ${this.customData.currentSuit} clearings. Then discard order card(s).`
     ];
   }
 }

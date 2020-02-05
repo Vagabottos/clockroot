@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 
 import { Bot, Difficulty, Rule, Item, BotName } from './models/bot';
 import { MarquiseBot, EyrieBot } from './models';
+import { WoodlandBot } from './models/woodland';
+import { VagaBot } from './models/vagabond';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +12,9 @@ export class BotService {
 
   public botHash: { [key in BotName]: any } = {
     Marquise: MarquiseBot,
-    Eyrie: EyrieBot
+    Eyrie: EyrieBot,
+    Woodland: WoodlandBot,
+    Vagabond: VagaBot
   };
 
   public bots: Bot[] = [];
@@ -23,6 +27,14 @@ export class BotService {
     Eyrie: {
       icon: 'eyrie',
       fullName: 'Electric Eyrie'
+    },
+    Woodland: {
+      icon: 'woodland',
+      fullName: 'Automated Alliance'
+    },
+    Vagabond: {
+      icon: 'vagabond',
+      fullName: 'Vagabot'
     }
   };
 
@@ -98,6 +110,8 @@ export class BotService {
       botRef.customData = bot.customData || botRef.customData;
 
       for (let i = 0; i < botRef.rules.length; i++) {
+        if (!bot.rules[i]) { continue; }
+
         botRef.rules[i].isActive = bot.rules[i].isActive;
       }
 

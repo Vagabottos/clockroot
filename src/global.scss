@@ -140,3 +140,75 @@ ion-label {
 .rule-message {
   margin-bottom: 5px;
 }
+.click-icon {
+  min-height: 24px;
+  min-width: 24px;
+
+  max-width: 24px;
+  max-height: 24px;
+
+  display: inline;
+
+  cursor: pointer;
+}
+
+.birdsong-has-buttons {
+  display: flex;
+
+  ion-button {
+    margin-top: 0;
+
+    --padding-start: 0;
+    --padding-end: 0;
+  }
+}
+
+.building-row {
+  display: flex;
+  margin-top: 5px;
+
+  justify-content: center;
+
+  .row-icon {
+    display: flex;
+    justify-content: center;
+    align-items: middle;
+    max-width: 64px;
+    max-height: 64px;
+  }
+
+  .flip-container {
+    width: auto;
+    margin-left: 10px;
+    cursor: pointer;
+
+    max-width: 64px;
+    max-height: 64px;
+
+    .flip-icon {
+      position: relative;
+
+      .flip-front {
+  
+        display: flex;
+        justify-content: center;
+        align-items: center;
+  
+        width: 100%;
+        height: 100%;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+  
+        font-size: 2rem;
+  
+        border: 3px solid #CC6E31;
+      }
+  
+      .flip-back.hidden {
+        visibility: hidden;
+      }
+    }
+  }
+}

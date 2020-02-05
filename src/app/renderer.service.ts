@@ -24,7 +24,7 @@ export class RendererService {
         return `<img src="assets/inicon/${type}-${subtype}.png" class="inline-icon" />`;
       }
 
-      return text;
+      return `<strong>${text}</strong>`;
     };
 
     // renderer.paragraph = (t) => t;

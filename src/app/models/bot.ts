@@ -1,5 +1,5 @@
 
-export type BotName = 'Eyrie' | 'Marquise';
+export type BotName = 'Eyrie' | 'Marquise' | 'Woodland' | 'Vagabond';
 
 export type Item = 'Boot' | 'Coin' | 'Crossbow' | 'Hammer' | 'Sack' | 'Sword' | 'Tea' | 'Torch'
                  | 'Boot2' | 'Coin2'                       | 'Sack2' | 'Sword2' | 'Tea2';
