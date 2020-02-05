@@ -121,16 +121,16 @@
               <img [src]="'assets/inicon/card-' + building.suit + '.png'" />
             </div>
 
-            <div class="flip-container" *ngFor="let num of [1, 2, 3, 4, 5, 6]">
+            <div class="flip-container" *ngFor="let num of [0, 1, 2, 3, 4, 5]">
               <div class="flip-icon">
                 <img [src]="'assets/inicon/building-' + building.building + '.png'"
                       class="flip-back"
-                      [class.hidden]="bot.customData.buildings[building.suit][num - 1]"
-                      (click)="toggleBuilding(building.suit, num - 1)" />
+                      [class.hidden]="bot.customData.buildings[building.suit][num]"
+                      (click)="toggleBuilding(building.suit, num)" />
 
                 <div class="flip-front" 
-                      *ngIf="bot.customData.buildings[building.suit][num - 1]"
-                      (click)="toggleBuilding(building.suit, num - 1)">+{{ num }}</div>
+                      *ngIf="bot.customData.buildings[building.suit][num]"
+                      (click)="toggleBuilding(building.suit, num)">+{{ num }}</div>
               </div>
             </div>
           </div>

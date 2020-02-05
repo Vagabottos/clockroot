@@ -8,6 +8,7 @@ import { HomePage } from './home.page';
 
 import { BotResourcesComponent } from '../bot-resources/bot-resources.component';
 import { MarquiseComponent } from '../marquise/marquise.component';
+import { EyrieComponent } from '../eyrie/eyrie.component';
 
 @NgModule({
   imports: [
@@ -21,6 +22,6 @@ import { MarquiseComponent } from '../marquise/marquise.component';
       }
     ])
   ],
-  declarations: [HomePage, BotResourcesComponent, MarquiseComponent]
+  declarations: [HomePage, BotResourcesComponent, MarquiseComponent, EyrieComponent]
 })
 export class HomePageModule {}

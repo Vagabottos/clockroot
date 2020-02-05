@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import { Bot, Difficulty, Rule, Item, BotName } from './models/bot';
-import { MarquiseBot } from './models';
+import { MarquiseBot, EyrieBot } from './models';
 
 @Injectable({
   providedIn: 'root'
@@ -9,15 +9,20 @@ import { MarquiseBot } from './models';
 export class BotService {
 
   public botHash: { [key in BotName]: any } = {
-    Marquise: MarquiseBot
+    Marquise: MarquiseBot,
+    Eyrie: EyrieBot
   };
 
   public bots: Bot[] = [];
 
-  public botMeta = {
+  public botMeta: { [key in BotName]: { icon: string, fullName: string } } = {
     Marquise: {
       icon: 'marquise',
       fullName: 'Mechanical Marquise'
+    },
+    Eyrie: {
+      icon: 'eyrie',
+      fullName: 'Electric Eyrie'
     }
   };
 

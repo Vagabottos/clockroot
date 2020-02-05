@@ -10,6 +10,11 @@ export class FactionMenuComponent implements OnInit {
 
   public factions = [
     {
+      name: 'Electric Eyrie',
+      id: 'Eyrie',
+      icon: 'eyrie'
+    },
+    {
       name: 'Mechanical Marquise',
       id: 'Marquise',
       icon: 'marquise'
@@ -20,24 +25,22 @@ export class FactionMenuComponent implements OnInit {
       icon: 'woodland',
       disabled: true
     },
+    /*
     {
       name: 'Clockwork Cult',
       id: 'Cult',
       icon: 'cult',
       disabled: true
     },
-    {
-      name: 'Electric Eyrie',
-      id: 'Eyrie',
-      icon: 'eyrie',
-      disabled: true
-    },
+    */
+    /*
     {
       name: 'Otter Overlords',
       id: 'Riverfolk',
       icon: 'riverfolk',
       disabled: true
     },
+    */
     {
       name: 'Robot Raccoon',
       id: 'Vagabond',

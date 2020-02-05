@@ -38,7 +38,6 @@ export class MarquiseComponent implements OnInit {
     this.bot.customData.buildings[suit] = this.bot.customData.buildings[suit] || [];
     this.bot.customData.buildings[suit][index] = !this.bot.customData.buildings[suit][index];
 
-    console.log(this.bot.customData.buildings[suit]);
     this.botService.saveBots();
   }
 

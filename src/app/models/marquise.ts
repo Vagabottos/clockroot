@@ -105,21 +105,17 @@ Assigning a single Hit to a building has no effect.
   public daylight() {
     if (this.customData.currentSuit === 'bird') {
       return [
-        `Battle in all clearings.`,
+        `Battle in all clearings. _(Defender is the player with most pieces, then victory points.)_`,
 
-        `Recruit 2 warriors in each of the 2 clearings you rule with lowest priority.
-        Gain **vp:1** for every 2 warriors that could not be recruited.
-        _(Defender is the player with most pieces, then victory points, then highest priority setup.)_`,
+        `Recruit two warriors in each of the two clearings you rule with lowest priority.
+        If you only rule one clearing, place all four warriors there.`,
 
-        `Build 1 building type with most pieces already on the board in a clearing you rule.
-        _(If tied, prioritize in this order: Fox, Bunny, Mouse. Clearing with most of your warriors first, then clearing priority.)_`,
+        `Build a building of the type with the most pieces on the map in a clearing you rule with the most Marquise Warriors.
+        _(On a tie between sawmills and any other building types, place a sawmill.
+          On a tie between workshops and recruiters but not sawmills, place a recruiter.)_`,
 
-        `Move all but 3 of your warriors from all clearings. After completing all moves, battle in all destination clearings.
-        _(Destination is adjacent clearing with most enemies pieces first, then highest clearing priority.)_`,
-
-        `Escalate if no building was placed due to no available slot on the board and there are less than
-        4 buildings of that type on the board.
-        Reveal a new order card and repeat Daylight (once per turn).`
+        `Move all but three of your warriors from each clearing to the adjacent clearing with the most enemy pieces.
+        Then battle in each clearing you moved into.`
       ];
     }
 
@@ -129,32 +125,46 @@ Assigning a single Hit to a building has no effect.
     if (this.customData.currentSuit === 'mouse') { building = 'recruiter'; }
 
     return [
-      `Battle in ${this.customData.currentSuit} clearings.`,
+      `Battle in each ${this.customData.currentSuit} clearing. _(Defender is the player with most pieces, then victory points.)_`,
 
-      `Recruit 4 warriors evenly spread across ${this.customData.currentSuit} clearings you rule.
-      _(Defender is the player with most pieces, then victory points, then highest priority setup.)_`,
+      `Recruit four warriors evenly spread across ${this.customData.currentSuit} clearings you rule.
+      If you rule three ${this.customData.currentSuit} clearings, place the fourth warrior in the ${this.customData.currentSuit}
+      clearing with the highest priority`,
 
-      `Build 1 ${building} in a clearing you rule.
-      _(If tied, prioritize in this order: Fox, Bunny, Mouse. Clearing with most of your warriors first, then clearing priority.)_`,
+      `Build a ${building} in a clearing you rule with the most Marquise warriors.`,
 
-      `Move all but 3 of your warriors from ${this.customData.currentSuit} clearings.
-      _(Destination is adjacent clearing with most enemies pieces first, then highest clearing priority.)_`,
+      `Move all but three of your warriors from each ${this.customData.currentSuit} clearing to the adjacent
+      clearing with the most enemy pieces.`,
 
-      `Escalate if no building was placed due to no available slot on the board and there are less than
-      4 buildings of that type on the board.
-      Reveal a new order card and repeat Daylight (once per turn).`
+      `If you did not place a building this turn and have five or fewer buildings on the map, discard the order card,
+      draw a new one, and repeat Daylight.`
     ];
   }
 
   public evening() {
+    const buildings = this.customData.buildings;
+
     if (this.customData.currentSuit === 'bird') {
+
+      const scores = ['fox', 'mouse', 'bunny'].map(suit => {
+        return buildings[suit].reduce((prev, cur) => prev + (cur ? 1 : 0), 0) - 1;
+      });
+
+      const maxScore = Math.max(...scores, 0);
+
       return [
-        `Score **vp:1** for each single most building on the board. Then discard order card(s).`
+        `Score ${maxScore} VP.`,
+        `Discard the order card.`
       ];
     }
 
+    const buildingsOfSuit = buildings[this.customData.currentSuit];
+
+    const score = Math.max(0, buildingsOfSuit.reduce((prev, cur) => prev + (cur ? 1 : 0), 0) - 1);
+
     return [
-      `Score **vp:1** for each building on the board matching ${this.customData.currentSuit} clearings. Then discard order card(s).`
+      `Score ${score} VP.`,
+      `Discard the order card.`
     ];
   }
 }
