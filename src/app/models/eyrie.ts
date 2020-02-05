@@ -6,13 +6,12 @@ export class EyrieBot extends Bot {
 
   public setupPosition = 'B';
   public setupRules = [
-    `Place the keep token in a random corner clearing.`,
+    `Form a supply of 20 warriors near you.`,
 
-    `Place 1 warrior in each clearing, except the corner clearing diagonally opposite from the keep.
-    Add an additional warrior to the clearing with the keep token. _(Place 12 warriors in total.)_`,
+    `Place 1 roost and 6 warriors in the corner clearing diagonally opposite from the clearing with the keep token.
+    If the Marquise is not playing, place those pieces in a random corner clearing.`,
 
-    `Place 1 sawmill, workshop and recruiter randomly among the clearings adjacent to the keep token.
-    _(Place 3 in total. One per clearing.)_`
+    `Tuck your 2 Loyal Vizier cards, showing their suit, into the rightmost Decree column.`,
   ];
 
   public difficultyDescriptions = {

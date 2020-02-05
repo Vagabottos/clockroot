@@ -6,13 +6,15 @@ export class MarquiseBot extends Bot {
 
   public setupPosition = 'A';
   public setupRules = [
+    `Form a supply of 25 warriors near you.`,
+
     `Place the keep token in a random corner clearing.`,
 
-    `Place 1 warrior in each clearing, except the corner clearing diagonally opposite from the keep.
-    Add an additional warrior to the clearing with the keep token. _(Place 12 warriors in total.)_`,
+    `Place a warrior in each clearing, except the corner clearing diagonally opposite from the keep.
+    Place an extra warrior in the clearing with the keep token. _(Place 12 warriors in total.)_`,
 
-    `Place 1 sawmill, workshop and recruiter randomly among the clearings adjacent to the keep token.
-    _(Place 3 in total. One per clearing.)_`
+    `Place 1 sawmill, 1 workshop and 1 recruiter randomly among the clearing with the keep token and
+    those clearings adjacent with up to one building per clearing.`
   ];
 
   public difficultyDescriptions = {
