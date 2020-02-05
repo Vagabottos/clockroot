@@ -9,6 +9,8 @@ import { HomePage } from './home.page';
 import { BotResourcesComponent } from '../bot-resources/bot-resources.component';
 import { MarquiseComponent } from '../marquise/marquise.component';
 import { EyrieComponent } from '../eyrie/eyrie.component';
+import { WoodlandComponent } from '../woodland/woodland.component';
+import { VagabondComponent } from '../vagabond/vagabond.component';
 
 @NgModule({
   imports: [
@@ -22,6 +24,6 @@ import { EyrieComponent } from '../eyrie/eyrie.component';
       }
     ])
   ],
-  declarations: [HomePage, BotResourcesComponent, MarquiseComponent, EyrieComponent]
+  declarations: [HomePage, BotResourcesComponent, MarquiseComponent, EyrieComponent, WoodlandComponent, VagabondComponent]
 })
 export class HomePageModule {}
