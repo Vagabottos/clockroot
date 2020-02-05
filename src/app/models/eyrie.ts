@@ -140,6 +140,12 @@ _(**Defender Ties**: Battle such a player with the most pieces here.)_
       `);
     });
 
+    if (actions.length === 0) {
+      return [
+      `You should have added at least 2 bird cards to the decree.`
+      ];
+    }
+
     return actions;
   }
 
