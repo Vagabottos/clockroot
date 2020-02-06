@@ -1,5 +1,16 @@
 import { Bot, BotName } from './bot';
 
+const numToText = {
+  1: 'one',
+  2: 'two',
+  3: 'three',
+  4: 'four',
+  6: 'six',
+  8: 'eight'
+};
+
+const getNumText = (num: number) => numToText[num] || 'UNKNOWN NUMBER';
+
 export class MarquiseBot extends Bot {
 
   public name: BotName = 'Marquise';
@@ -101,12 +112,22 @@ Taking a single hit with a building has no effect.
   }
 
   public daylight() {
+    let totalWarriors = 4;
+    if (this.difficulty === 'Easy') { totalWarriors = 2; }
+    if (this.hasTrait('Iron Will')) { totalWarriors *= 2; }
+
+    const blitzText = this.hasTrait('Blitz')
+    ? `Find the clearing you rule of the highest priority without any enemy pieces.
+      Move all but one warrior from the clearing. Then, battle in the destination clearing.`
+    : '';
+
     if (this.customData.currentSuit === 'bird') {
+
       return [
         `Battle in all clearings. _(Defender is the player with most pieces, then victory points.)_`,
 
-        `Recruit two warriors in each of the two clearings you rule with lowest priority.
-        If you only rule one clearing, place all four warriors there.`,
+        `Recruit ${getNumText(totalWarriors / 2)} warrior(s) in each of the two clearings you rule with lowest priority.
+        If you only rule one clearing, place all ${getNumText(totalWarriors)} warriors there.`,
 
         `Build a building of the type with the most pieces on the map in a clearing you rule with the most Marquise Warriors.
         _(On a tie between sawmills and any other building types, place a sawmill.
@@ -122,22 +143,27 @@ Taking a single hit with a building has no effect.
     if (this.customData.currentSuit === 'bunny') { building = 'workshop'; }
     if (this.customData.currentSuit === 'mouse') { building = 'recruiter'; }
 
-    return [
+    const base = [
       `Battle in each **card:${this.customData.currentSuit}** clearing. _(Defender is the player with most pieces, then victory points.)_`,
 
-      `Recruit four warriors evenly spread across **card:${this.customData.currentSuit}** clearings you rule.
-      If you rule three **card:${this.customData.currentSuit}** clearings, place the fourth warrior in the
-      **card:${this.customData.currentSuit}**
-      clearing with the highest priority`,
+      `Recruit ${getNumText(totalWarriors)} warriors evenly spread across **card:${this.customData.currentSuit}** clearings you rule.
+      If there are extra warriors that cannot be placed evenly in **card:${this.customData.currentSuit}** clearings,
+      place the last warrior in the **card:${this.customData.currentSuit}** clearing with the highest priority.`,
 
       `Build a **building:${building}** in a clearing you rule with the most Marquise warriors.`,
 
       `Move all but three of your warriors from each **card:${this.customData.currentSuit}** clearing to the adjacent
-      clearing with the most enemy pieces.`,
+      clearing with the most enemy pieces.`
+    ];
 
+    if (blitzText) { base.push(blitzText); }
+
+    base.push(
       `If you did not place a building this turn and have five or fewer buildings on the map, discard the order card,
       draw a new one, and repeat Daylight.`
-    ];
+    );
+
+    return base;
   }
 
   public evening() {
