@@ -1,8 +1,15 @@
 
 export type BotName = 'Eyrie' | 'Marquise' | 'Woodland' | 'Vagabond';
 
-export type Item = 'Boot' | 'Coin' | 'Crossbow' | 'Hammer' | 'Sack' | 'Sword' | 'Tea' | 'Torch'
-                 | 'Boot2' | 'Coin2'                       | 'Sack2' | 'Sword2' | 'Tea2';
+export type Item = 'Boot'  | 'Coin'  | 'Crossbow'  | 'Hammer'  | 'Sack'  | 'Sword'  | 'Tea'  | 'Torch'
+                 | 'Boot2' | 'Coin2'                           | 'Sack2' | 'Sword2' | 'Tea2'
+
+                 // fucking vagabonds
+                 | 'Boot3' | 'Coin3' | 'Crossbow2' | 'Hammer2' | 'Sack3' | 'Sword3' | 'Tea3' | 'Torch2'
+                 | 'Boot4'           | 'Crossbow3' | 'Hammer3' | 'Sack4' | 'Sword4'          | 'Torch3'
+                 | 'Boot5'                         | 'Hammer4'           | 'Sword5'
+                 | 'Boot6'                                               | 'Sword6'
+                 | 'Boot7'                                               | 'Sword7';
 export type Difficulty = 'Easy' | 'Normal' | 'Challenging' | 'Nightmare';
 
 export interface Rule {

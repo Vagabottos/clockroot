@@ -24,27 +24,10 @@ export class FactionMenuComponent implements OnInit {
       id: 'Marquise',
       icon: 'marquise'
     },
-    /*
     {
-      name: 'Clockwork Cult',
-      id: 'Cult',
-      icon: 'cult',
-      disabled: true
-    },
-    */
-    /*
-    {
-      name: 'Otter Overlords',
-      id: 'Riverfolk',
-      icon: 'riverfolk',
-      disabled: true
-    },
-    */
-    {
-      name: 'Robot Raccoon',
+      name: 'Vagabot',
       id: 'Vagabond',
-      icon: 'vagabond',
-      disabled: true
+      icon: 'vagabond'
     }
   ];
 
