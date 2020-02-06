@@ -143,9 +143,39 @@
   <ion-item *ngIf="bot.setupHidden">
     <ion-card>
       <ion-card-header>
-        <h2>???</h2>
+        <h2>Satchel & Battle Track</h2>
       </ion-card-header>
       <ion-card-content>
+
+        <div class="building-row">
+          <div class="flip-container" *ngFor="let item of bot.customData.satchelItems | keyvalue">
+
+            <div class="flip-icon">
+              <img [src]="'assets/inicon/token-item-' + botService.itemImages[item.key] + '.png'"
+                    class="flip-back"
+                    [class.exhausted]="bot.customData.satchelItems[item.key] === 1"
+                    [class.transparent]="bot.customData.satchelItems[item.key] === 3"
+                    (click)="toggleSatchelItem(item.key)" />
+
+              <div class="flip-front" 
+                    *ngIf="bot.customData.satchelItems[item.key] === 0"
+                    (click)="toggleSatchelItem(item.key)"></div>
+
+              <div class="flip-front damaged" 
+                    *ngIf="bot.customData.satchelItems[item.key] === 2"
+                    (click)="toggleSatchelItem(item.key)"></div>
+
+              <div class="flip-front" 
+                    *ngIf="bot.customData.satchelItems[item.key] === 3"
+                    (click)="toggleSatchelItem(item.key)">B</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="building-row">
+          Battle Track Bonus - {{ battleTrackBonus }}
+        </div>
+
       </ion-card-content>
     </ion-card>
   </ion-item>

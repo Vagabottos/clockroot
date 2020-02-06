@@ -87,10 +87,20 @@ At the start of battle as attacker, deal an immediate hit _(scoring a point if y
     },
   ];
 
+  public descriptions = {
+    Tinker: `Search the discard pile for the top card with an available item and craft it, scoring +1 VP.
+    _Start the game with one fewer item._`,
+    Thief: 'Take a random card from the enemy in your clearing with most points there, then most pieces there.',
+    Ranger: 'If you have three or more damaged items, slip into a random adjacent forest.'
+  };
+
   public customData = {
+
     chosenVaga: '',
 
     currentSuit: 'bird',
+
+    satchelItems: {},
 
     decree: {
       fox: 0,
@@ -102,6 +112,49 @@ At the start of battle as attacker, deal an immediate hit _(scoring a point if y
     buildings: []
   };
 
+  private actions(vaga: VagaBot) {
+    return {
+      explore() {
+        return `Move to the nearest ruin, exhausting one item per move, then exhaust one item to take an item from that ruin.`;
+      },
+
+      quest() {
+        return `
+Move to the nearest clearing matching the quest, then exhaust any two items to discard the quest and
+score **vp:1**. _(Ignore card text.)_ Then, replace the quest.`;
+      },
+
+      aid() {
+        return `
+Target the player in your clearing with any items and the least VP among those players.
+Exhaust as many items as possible up to the number of items they have, take that many items from them, and
+score that many VP. Then, they draw that many cards.`;
+      },
+
+      battle() {
+        return `
+Move to the nearest clearing with any pieces of the enemy with the most VP, then exhaust one item to battle
+that player. Score **vp:1** per enemy warrior removed. Repeat this action, exhausting two items per extra battle,
+as many times as possible.
+
+_(If target defender is in multiple clearings at equal distance, move to clearing where they have most buildings and
+tokens, then fewest warriors.)_`;
+      },
+
+      repair() {
+        return `If you have any damaged items, exhaust one item to repair one damaged item, unexhausted before exhausted.`;
+      },
+
+      special() {
+        return `
+Exhaust one item to do the following (skip if it would have no effect):
+
+${vaga.descriptions[vaga.customData.chosenVaga] || 'no class chosen'}
+        `;
+      }
+    };
+  }
+
   public birdsong() {
     return [
       `Reveal an order card.`,
@@ -111,7 +164,14 @@ At the start of battle as attacker, deal an immediate hit _(scoring a point if y
   }
 
   public daylight() {
-    return [];
+    const actions = this.actions(this);
+
+    switch (this.customData.currentSuit) {
+      case 'fox':   return [actions.explore(),  actions.battle(), actions.special()];
+      case 'bunny': return [actions.battle(),   actions.repair(), actions.special()];
+      case 'mouse': return [actions.quest(),    actions.aid(),    actions.battle(), actions.repair()];
+      default:      return [actions.explore(),  actions.quest(),  actions.aid(),    actions.battle()];
+    }
   }
 
   public evening() {

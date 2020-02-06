@@ -166,7 +166,9 @@ ion-label {
 .row-icon {
   display: flex;
   justify-content: center;
-  align-items: middle;
+  align-items: center;
+  min-height: 64px;
+  max-height: 64px;
   max-width: 64px;
   max-height: 64px;
 }
@@ -174,6 +176,8 @@ ion-label {
 .building-row {
   display: flex;
   margin-top: 5px;
+
+  flex-wrap: wrap;
 
   justify-content: center;
 
@@ -216,6 +220,10 @@ ion-label {
 
       .flip-back.transparent {
         opacity: 0.2;
+      }
+
+      .flip-back.exhausted {
+        filter: grayscale(100%);
       }
     }
   }

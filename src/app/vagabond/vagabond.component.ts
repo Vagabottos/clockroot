@@ -12,12 +12,23 @@ export class VagabondComponent implements OnInit {
 
   @Input() public bot: VagaBot;
 
-  public descriptions = {
-    Tinker: `Search the discard pile for the top card with an available item and craft it, scoring +1 VP.
-    _Start the game with one fewer item._`,
-    Thief: 'Take a random card from the enemy in your clearing with most points there, then most pieces there.',
-    Ranger: 'If you have three or more damaged items, slip into a random adjacent forest.'
-  };
+  public get descriptions() {
+    return this.bot.descriptions;
+  }
+
+  public get battleTrackBonus(): string {
+    const total = Object.values(this.bot.customData.satchelItems)
+      .filter(x => x === 3)
+      .length;
+
+    switch (total) {
+      case 0: return 'Maximum rolled hits: 1';
+      case 1: return 'Maximum rolled hits: 2';
+      case 2: return 'Maximum rolled hits: 3';
+      case 3: return 'Maximum rolled hits: 3; as attacker, deal 1 extra hit.';
+      default: return 'You have too many, or not enough battle track items.';
+    }
+  }
 
   constructor(
     public botService: BotService,
@@ -29,6 +40,16 @@ export class VagabondComponent implements OnInit {
 
   changeVaga(newVaga) {
     this.bot.customData.chosenVaga = newVaga;
+    this.botService.saveBots();
+  }
+
+  toggleSatchelItem(item) {
+    this.bot.customData.satchelItems[item]++;
+    if (this.bot.customData.satchelItems[item] >= 4) {
+      this.bot.customData.satchelItems[item] = 0;
+    }
+
+    this.botService.saveBots();
   }
 
   changeSuit(suit) {

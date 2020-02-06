@@ -12,42 +12,9 @@ export class BotResourcesComponent implements OnInit {
   @Input() public bot: Bot;
   @Input() public isVaga: boolean;
 
-  public itemImages: { [key in Item]: string } = {
-    Sack: 'sack',
-    Sack2: 'sack',
-    Sack3: 'sack',
-    Sack4: 'sack',
-    Boot: 'boot',
-    Boot2: 'boot',
-    Boot3: 'boot',
-    Boot4: 'boot',
-    Boot5: 'boot',
-    Boot6: 'boot',
-    Boot7: 'boot',
-    Sword: 'sword',
-    Sword2: 'sword',
-    Sword3: 'sword',
-    Sword4: 'sword',
-    Sword5: 'sword',
-    Sword6: 'sword',
-    Sword7: 'sword',
-    Tea: 'tea',
-    Tea2: 'tea',
-    Tea3: 'tea',
-    Coin: 'coin',
-    Coin2: 'coin',
-    Coin3: 'coin',
-    Crossbow: 'crossbow',
-    Crossbow2: 'crossbow',
-    Crossbow3: 'crossbow',
-    Hammer: 'hammer',
-    Hammer2: 'hammer',
-    Hammer3: 'hammer',
-    Hammer4: 'hammer',
-    Torch: 'torch',
-    Torch2: 'torch',
-    Torch3: 'torch'
-  };
+  public get itemImages() {
+    return this.botService.itemImages;
+  }
 
   public get itemOrder(): Item[] {
     return this.isVaga ? this.vagaItemOrder : this.defaultItemOrder;
