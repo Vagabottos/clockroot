@@ -123,7 +123,7 @@ Taking a single hit with a building has no effect.
 
     if (this.customData.currentSuit === 'bird') {
 
-      return [
+      const base2 = [
         `Battle in all clearings. _(Defender is the player with most pieces, then victory points.)_`,
 
         `Recruit ${getNumText(totalWarriors / 2)} warrior(s) in each of the two clearings you rule with lowest priority.
@@ -136,6 +136,10 @@ Taking a single hit with a building has no effect.
         `Move all but three of your warriors from each clearing to the adjacent clearing with the most enemy pieces.
         Then battle in each clearing you moved into.`
       ];
+
+      if (blitzText) { base2.push(blitzText); }
+
+      return base2;
     }
 
     let building = '';

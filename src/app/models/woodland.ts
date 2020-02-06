@@ -101,8 +101,10 @@ Gain the Guerilla Warfare ability of the Woodland Alliance. _(In battle as defen
       `Craft order card for **vp:1** if it shows an available item.`
     ];
 
+    /*
     if (this.customData.currentSuit === 'bird'
     && !Object.keys(this.customData.buildings).every(x => this.customData.buildings[x])) { return base; }
+    */
 
     if (this.customData.currentSuit !== 'bird' && !this.customData.buildings[this.customData.currentSuit]) {
       base.push(`
