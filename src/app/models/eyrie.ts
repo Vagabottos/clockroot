@@ -148,6 +148,17 @@ _(**Defender Ties**: Battle such a player with the most pieces here.)_
       ];
     }
 
+    if (this.hasTrait('Relentless')) {
+      actions.push(`Remove all defenseless tokens and buildings in any clearing with Eyrie warriors.`);
+    }
+
+    actions.push(`Place a roost in the clearing you rule of highest priority with no roost.
+    If you cannot place a roost, you fall into turmoil.`);
+
+    if (this.hasTrait('Swoop')) {
+      actions.push(`Place two warriors in the clearing of highest priority with no Eyrie pieces.`);
+    }
+
     return actions;
   }
 
