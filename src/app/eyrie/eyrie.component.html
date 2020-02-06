@@ -195,4 +195,20 @@
       </ion-card-content>
     </ion-card>
   </ion-item>
+
+  <ion-item *ngIf="bot.setupHidden">
+    <ion-card>
+      <ion-card-header>
+        <h2>Turmoil</h2>
+      </ion-card-header>
+      <ion-card-content>
+        <em>You fall into Turmoil if you cannot place a roost{{ bot.hasTrait('Nobility') ? ' or warrior' : '' }}.</em>
+        <ol>
+          <li class="rule-message" *ngFor="let message of bot.turmoil()">
+            <span [innerHTML]="rendererService.formatString(message)"></span>
+          </li>
+        </ol>
+      </ion-card-content>
+    </ion-card>
+  </ion-item>
 </ion-list>

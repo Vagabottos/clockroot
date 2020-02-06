@@ -176,4 +176,19 @@ _(**Defender Ties**: Battle such a player with the most pieces here.)_
 
     return base;
   }
+
+  public turmoil() {
+    const base = [
+      'Purge Decree, except Viziers.',
+      'Go to Evening.'
+    ];
+
+    if (this.hasTrait('Nobility')) {
+      base.unshift('Score one victory point per bird card in the Decree.');
+    } else {
+      base.unshift('Lose one victory point per bird card in the Decree.');
+    }
+
+    return base;
+  }
 }
