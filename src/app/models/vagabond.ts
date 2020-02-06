@@ -118,24 +118,31 @@ At the start of battle as attacker, deal an immediate hit _(scoring a point if y
         return `Move to the nearest ruin, exhausting one item per move, then exhaust one item to take an item from that ruin.`;
       },
 
-      quest() {
+      quest(canBeModified = false) {
         return `
 Move to the nearest clearing matching the quest, then exhaust any two items to discard the quest and
-score **vp:1**. _(Ignore card text.)_ Then, replace the quest.`;
+score **vp:1**. _(Ignore card text.)_ Then, replace the quest.
+
+${canBeModified && vaga.hasTrait('Adventurer') ? 'Repeat this as many times as possible.' : ''}`;
       },
 
       aid() {
+        const aidHelpText = vaga.hasTrait('Helper') ? 'twice ' : '';
         return `
 Target the player in your clearing with any items and the least VP among those players.
 Exhaust as many items as possible up to the number of items they have, take that many items from them, and
-score that many VP. Then, they draw that many cards.`;
+score ${aidHelpText}that many VP. Then, they draw ${aidHelpText}that many cards.`;
       },
 
       battle() {
+        const target = vaga.hasTrait('Berserker') ? 'pieces' : 'VP';
+
         return `
-Move to the nearest clearing with any pieces of the enemy with the most VP, then exhaust one item to battle
-that player. Score **vp:1** per enemy warrior removed. Repeat this action, exhausting two items per extra battle,
-as many times as possible.
+Move to the nearest clearing with any pieces of the enemy with the most ${target}, then exhaust one item to battle
+that player. Score **vp:1** per enemy warrior removed.
+${!vaga.hasTrait('Adventurer') ? 'Repeat this action, exhausting two items per extra battle, as many times as possible.' : ''}
+
+${vaga.hasTrait('Marksman') ? 'Deal an immediate hit in each battle.' : ''}
 
 _(If target defender is in multiple clearings at equal distance, move to clearing where they have most buildings and
 tokens, then fewest warriors.)_`;
@@ -166,25 +173,48 @@ ${vaga.descriptions[vaga.customData.chosenVaga] || 'no class chosen'}
   public daylight() {
     const actions = this.actions(this);
 
+    let base = [];
+
     switch (this.customData.currentSuit) {
-      case 'fox':   return [actions.explore(),  actions.battle(), actions.special()];
-      case 'bunny': return [actions.battle(),   actions.repair(), actions.special()];
-      case 'mouse': return [actions.quest(),    actions.aid(),    actions.battle(), actions.repair()];
-      default:      return [actions.explore(),  actions.quest(),  actions.aid(),    actions.battle()];
+      case 'fox':   { base = [actions.explore(),  actions.battle(), actions.special()];                  break; }
+      case 'bunny': { base = [actions.battle(),   actions.repair(), actions.special()];                  break; }
+      case 'mouse': { base = [actions.quest(),    actions.aid(),    actions.battle(), actions.repair()]; break; }
+      default:      { base = [actions.explore(),  actions.quest(),  actions.aid(),    actions.battle()]; break; }
     }
+
+    if (this.hasTrait('Adventurer')) {
+      base.push(actions.quest(true));
+    }
+
+    return base;
   }
 
   public evening() {
-    const base = [
-      `If you have any damaged items, refresh four undamaged items. If you have none, refresh six instead.`,
+    const itemRepairs = this.hasTrait('Berserker') ? 'two items' : 'one item';
 
-      `If you are in a forest, repair all items. If not, repair one item. Repair unexhausted items before exhausted items.`,
+    let itemRefreshMin = 'four';
+    let itemRefreshMax = 'six';
+
+    if (this.difficulty === 'Easy') {
+      itemRefreshMin = 'three';
+      itemRefreshMax = 'five';
+    }
+
+    if (this.difficulty === 'Challenging' || this.difficulty === 'Nightmare') {
+      itemRefreshMin = 'five';
+      itemRefreshMax = 'seven';
+    }
+
+    const base = [
+      `If you have any damaged items, refresh ${itemRefreshMin} undamaged items. If you have none, refresh ${itemRefreshMax} instead.`,
+
+      `If you are in a forest, repair all items. If not, repair ${itemRepairs}. Repair unexhausted items before exhausted items.`,
 
       `Discard the order card.`
     ];
 
     if (this.difficulty === 'Nightmare') {
-      base.push(`Score **vp:1**. _(Difficulty: Nightmare)_`);
+      base.push(`Score **vp:1**.`);
     }
 
     return base;

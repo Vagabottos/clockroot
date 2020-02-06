@@ -159,11 +159,11 @@ and place the corresponding base there.
     ];
 
     if (this.hasTrait('Wildfire')) {
-      base.push(`**Spread Sympathy**, but do not score victory points. _(Trait: Wildfire)_`);
+      base.push(`**Spread Sympathy**, but do not score victory points.`);
     }
 
     if (this.difficulty === 'Nightmare') {
-      base.push(`Score **vp:1**. _(Difficulty: Nightmare)_`);
+      base.push(`Score **vp:1**.`);
     }
 
     return base;

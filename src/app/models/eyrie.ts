@@ -160,7 +160,7 @@ _(**Defender Ties**: Battle such a player with the most pieces here.)_
     ];
 
     if (this.difficulty === 'Nightmare') {
-      base.push(`Score **vp:1**. _(Difficulty: Nightmare)_`);
+      base.push(`Score **vp:1**.`);
     }
 
     return base;

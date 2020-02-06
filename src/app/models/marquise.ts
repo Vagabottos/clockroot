@@ -151,17 +151,17 @@ Taking a single hit with a building has no effect.
 
       const maxScore = Math.max(...scores, 0);
 
-      const base = [
+      const base2 = [
         `Score ${maxScore} VP.`,
         `Discard the order card.`
       ];
 
 
       if (this.difficulty === 'Nightmare') {
-        base.push(`Score **vp:1**. _(Difficulty: Nightmare)_`);
+        base2.push(`Score **vp:1**.`);
       }
 
-      return base;
+      return base2;
     }
 
     const buildingsOfSuit = buildings[this.customData.currentSuit];
@@ -174,7 +174,7 @@ Taking a single hit with a building has no effect.
     ];
 
     if (this.difficulty === 'Nightmare') {
-      base.push(`Score **vp:1**. _(Difficulty: Nightmare)_`);
+      base.push(`Score **vp:1**.`);
     }
 
     return base;
