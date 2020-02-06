@@ -177,14 +177,20 @@ ion-label {
   display: flex;
   margin-top: 5px;
 
-  flex-wrap: wrap;
-
   justify-content: center;
+
+  &.wrap {
+    flex-wrap: wrap;  
+  }
 
   .flip-container {
     width: auto;
     margin-left: 10px;
     cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     max-width: 64px;
     max-height: 64px;

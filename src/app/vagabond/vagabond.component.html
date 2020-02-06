@@ -147,7 +147,7 @@
       </ion-card-header>
       <ion-card-content>
 
-        <div class="building-row">
+        <div class="building-row wrap">
           <div class="flip-container" *ngFor="let item of bot.customData.satchelItems | keyvalue">
 
             <div class="flip-icon">
@@ -172,8 +172,8 @@
           </div>
         </div>
 
-        <div class="building-row">
-          Battle Track Bonus - {{ battleTrackBonus }}
+        <div class="building-row battle-track">
+          Battle Track Bonus<br>{{ battleTrackBonus }}
         </div>
 
       </ion-card-content>
