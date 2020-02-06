@@ -60,16 +60,12 @@ At the end of Evening, score one victory point.
     },
     {
       name: 'Informants',
-      text: `
-Defenseless sympathy tokens benefit from Automated Ambush.
-      `,
+      text: `Defenseless sympathy tokens benefit from Automated Ambush.`,
       canToggle: true
     },
     {
       name: 'Popularity',
-      text: `
-Enemies do not score victory points for removing sympathy tokens.
-      `,
+      text: `Enemies do not score victory points for removing sympathy tokens.`,
       canToggle: true
     },
     {
@@ -82,9 +78,7 @@ Gain the Guerilla Warfare ability of the Woodland Alliance. _(In battle as defen
     },
     {
       name: 'Wildfire',
-      text: `
-At the end of evening, **Spread Sympathy**. Do not score points for placing this sympathy token.
-      `,
+      text: `At the end of evening, **Spread Sympathy**. Do not score points for placing this sympathy token.`,
       canToggle: true
     },
   ];
@@ -150,13 +144,28 @@ and place the corresponding base there.
   }
 
   public evening() {
-    return [
-      `In each clearing with a base and three or more Alliance warriors,
+
+    let organizeVal = 'three';
+    if (this.difficulty === 'Easy') { organizeVal = 'four'; }
+    if (this.difficulty === 'Challenging' || this.difficulty === 'Nightmare') { organizeVal = 'two'; }
+
+    const base = [
+      `In each clearing with a base and ${organizeVal} or more Alliance warriors,
       remove all Alliance warriors there and **Spread Sympathy**.`,
 
       `Place a warrior in each clearing with a base.`,
 
       `Discard the order card.`
     ];
+
+    if (this.hasTrait('Wildfire')) {
+      base.push(`**Spread Sympathy**, but do not score victory points. _(Trait: Wildfire)_`);
+    }
+
+    if (this.difficulty === 'Nightmare') {
+      base.push(`Score **vp:1**. _(Difficulty: Nightmare)_`);
+    }
+
+    return base;
   }
 }

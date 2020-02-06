@@ -26,6 +26,7 @@ export abstract class Bot {
   public abstract name: BotName;
   public abstract setupPosition: string;
 
+  public traitHash: { [key: string]: boolean } = {};
   public setupHidden: boolean;
 
   public setupRules: string[] = [];
@@ -40,4 +41,9 @@ export abstract class Bot {
   public abstract daylight(): string[];
   public abstract birdsong(): string[];
   public abstract evening(): string[];
+
+  protected hasTrait(trait: string): boolean {
+    if (!this.traitHash) { return false; }
+    return this.traitHash[trait];
+  }
 }

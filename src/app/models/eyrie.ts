@@ -144,7 +144,7 @@ _(**Defender Ties**: Battle such a player with the most pieces here.)_
 
     if (actions.length === 0) {
       return [
-      `You should have added at least 2 bird cards to the decree.`
+        `You should have added at least 2 bird cards to the decree.`
       ];
     }
 
@@ -155,8 +155,14 @@ _(**Defender Ties**: Battle such a player with the most pieces here.)_
 
     const score = Math.max(0, this.customData.buildings.reduce((prev, cur) => prev + (cur ? 1 : 0), 0) - 1);
 
-    return [
+    const base = [
       `Score ${score} VP.`
     ];
+
+    if (this.difficulty === 'Nightmare') {
+      base.push(`Score **vp:1**. _(Difficulty: Nightmare)_`);
+    }
+
+    return base;
   }
 }

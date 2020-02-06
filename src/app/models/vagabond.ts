@@ -175,12 +175,18 @@ ${vaga.descriptions[vaga.customData.chosenVaga] || 'no class chosen'}
   }
 
   public evening() {
-    return [
+    const base = [
       `If you have any damaged items, refresh four undamaged items. If you have none, refresh six instead.`,
 
       `If you are in a forest, repair all items. If not, repair one item. Repair unexhausted items before exhausted items.`,
 
       `Discard the order card.`
     ];
+
+    if (this.difficulty === 'Nightmare') {
+      base.push(`Score **vp:1**. _(Difficulty: Nightmare)_`);
+    }
+
+    return base;
   }
 }

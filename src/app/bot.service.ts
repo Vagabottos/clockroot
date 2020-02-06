@@ -96,8 +96,19 @@ export class BotService {
     this.saveBots();
   }
 
+  private generateTraitHash(bot: Bot) {
+    bot.traitHash = bot.rules.reduce((prev, cur) => {
+      prev[cur.name] = cur.isActive;
+      return prev;
+    }, {});
+  }
+
   public toggleSetup(bot: Bot) {
     bot.setupHidden = !bot.setupHidden;
+    if (bot.setupHidden) {
+      this.generateTraitHash(bot);
+    }
+
     this.saveBots();
   }
 
@@ -150,6 +161,7 @@ export class BotService {
       botRef.setupHidden = bot.setupHidden;
       botRef.vp = bot.vp;
       botRef.items = bot.items;
+      botRef.traitHash = botRef.traitHash || {};
       botRef.customData = bot.customData || botRef.customData;
 
       for (let i = 0; i < botRef.rules.length; i++) {
@@ -157,6 +169,8 @@ export class BotService {
 
         botRef.rules[i].isActive = bot.rules[i].isActive;
       }
+
+      this.generateTraitHash(botRef);
 
       return botRef;
     });
