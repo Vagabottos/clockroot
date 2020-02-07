@@ -126,10 +126,10 @@ _(**Ties**: Recruit in such a clearing with the most enemy pieces, then fewest E
 
       actions.push(`
 Move from the ${suitText} clearing you rule of highest priority.
-Move to the adjacent clearing with the fewest enemy pieces.
+Move to the adjacent clearing with no roost.
 Leave warriors to exactly rule the origin or ${totalForSuit}, whichever is higher.
 
-_(**Destination Ties**: Move to such a clearing with no roost, then fewest enemy warriors, then lowest priority.)_
+_(**Destination Ties**: Move to such a clearing with the fewest enemy warriors, then lowest priority.)_
       `);
 
       actions.push(`
