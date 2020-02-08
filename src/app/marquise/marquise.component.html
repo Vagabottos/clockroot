@@ -27,6 +27,9 @@
       </ion-card-header>
       <ion-card-content>
         <ol>
+          <li>
+            <a (click)="botService.showPriorities()">Set up priority markers for the map.</a>
+          </li>
           <li *ngFor="let rule of bot.setupRules" [innerHTML]="rendererService.formatString(rule)"></li>
         </ol>
       </ion-card-content>

@@ -12,11 +12,12 @@ import { environment } from '../environments/environment';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FactionMenuComponent } from './faction-menu/faction-menu.component';
+import { PriorityModalComponent } from './priority-modal/priority-modal.component';
 
 @NgModule({
-  declarations: [FactionMenuComponent, AppComponent],
+  declarations: [FactionMenuComponent, PriorityModalComponent, AppComponent],
   bootstrap: [AppComponent],
-  entryComponents: [FactionMenuComponent],
+  entryComponents: [FactionMenuComponent, PriorityModalComponent],
   imports: [
     BrowserModule, IonicModule.forRoot(), AppRoutingModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })

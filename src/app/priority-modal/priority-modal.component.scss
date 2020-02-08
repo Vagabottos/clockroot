@@ -1,0 +1,24 @@
+
+ion-content {
+  --overflow: hidden;
+}
+
+.button-bar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.map-container {
+
+  height: 100%;
+  margin-top: -44px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .map {
+    height: calc(100% - 88px);
+    object-fit: scale-down;
+  }
+}

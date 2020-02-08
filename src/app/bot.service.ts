@@ -4,6 +4,8 @@ import { Bot, Difficulty, Rule, Item, BotName } from './models/bot';
 import { MarquiseBot, EyrieBot } from './models';
 import { WoodlandBot } from './models/woodland';
 import { VagaBot } from './models/vagabond';
+import { ModalController } from '@ionic/angular';
+import { PriorityModalComponent } from './priority-modal/priority-modal.component';
 
 @Injectable({
   providedIn: 'root'
@@ -75,7 +77,7 @@ export class BotService {
     Torch3: 'torch'
   };
 
-  constructor() {
+  constructor(private modalCtrl: ModalController) {
     this.loadBots();
   }
 
@@ -174,5 +176,13 @@ export class BotService {
 
       return botRef;
     });
+  }
+
+  public async showPriorities() {
+    const modal = await this.modalCtrl.create({
+      component: PriorityModalComponent
+    });
+
+    return await modal.present();
   }
 }

@@ -65,7 +65,7 @@
   font-family: "Libre Baskerville", serif;
 }
 
-ion-toolbar, ion-content, ion-router-outlet, .popover-content, .alert-wrapper {
+ion-toolbar, ion-content, ion-router-outlet, .popover-content, .alert-wrapper, .show-modal {
   --background: url("/assets/background.png") repeat;
 }
 
@@ -105,6 +105,7 @@ ion-label {
 .inline-icon {
   max-height: 16px;
   max-width: 16px;
+  min-width: 16px;
   display: inline !important;
 }
 

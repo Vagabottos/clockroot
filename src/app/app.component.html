@@ -11,12 +11,18 @@
 
       <ion-content>
         <ion-list lines="none" class="preserve-padding">
-          <ion-menu-toggle *ngFor="let bot of botService.bots" autoHide="false">
-            <ion-item color="transparent"
-                      (click)="botService.goToBot(bot.name)">
-                      <img class="inline-icon ion-margin-end" [src]="'assets/inicon/faction-' + botService.botMeta[bot.name].icon + '.png'" />
-                      {{ botService.botMeta[bot.name].fullName }}
-                      <em class="ion-margin-start" *ngIf="!bot.setupHidden">(Needs Setup)</em>
+          <ion-menu-toggle autoHide="false">
+            <ng-container *ngFor="let bot of botService.bots">
+              <ion-item color="transparent"
+                        (click)="botService.goToBot(bot.name)">
+                        <img class="inline-icon ion-margin-end" [src]="'assets/inicon/faction-' + botService.botMeta[bot.name].icon + '.png'" />
+                        {{ botService.botMeta[bot.name].fullName }}
+                        <em class="ion-margin-start" *ngIf="!bot.setupHidden">(Needs Setup)</em>
+              </ion-item>
+            </ng-container>
+            <ion-item (click)="botService.showPriorities()">
+              <div class="inline-icon ion-margin-end"></div>
+              Priority Maps
             </ion-item>
           </ion-menu-toggle>
         </ion-list>
