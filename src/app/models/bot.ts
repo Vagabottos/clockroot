@@ -42,7 +42,7 @@ export abstract class Bot {
   public abstract birdsong(): string[];
   public abstract evening(): string[];
 
-  protected hasTrait(trait: string): boolean {
+  public hasTrait(trait: string): boolean {
     if (!this.traitHash) { return false; }
     return this.traitHash[trait];
   }
