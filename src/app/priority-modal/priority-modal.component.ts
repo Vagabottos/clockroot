@@ -15,15 +15,15 @@ export class PriorityModalComponent implements OnInit {
       name: 'Fall',
       map: 'fall'
     },
-    { 
+    {
       name: 'Winter',
       map: 'winter'
     },
-    { 
+    {
       name: 'Lake',
       map: 'lake'
     },
-    { 
+    {
       name: 'Mountain',
       map: 'mountain'
     }
