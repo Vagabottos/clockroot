@@ -105,12 +105,28 @@ Whenever you remove an enemy building or token, its owner loses one victory poin
 
     let mostVal = 0;
     let mostSuit = '';
+    const mostSuits = [];
     ['fox', 'mouse', 'bunny', 'bird'].forEach(suit => {
-      if (this.customData.decree[suit] <= mostVal) { return; }
+      if (this.customData.decree[suit] < mostVal) { return; }
+      
+      // hold onto info if there is ever a tie
+      if (this.customData.decree[suit] === mostVal) {
+        mostSuits.push(suit);
+        return;
+      }
 
       mostVal = this.customData.decree[suit];
       mostSuit = suit;
+      
+      // reset if we get here
+      mostSuits = [suit];
     });
+    
+    // if we have a tie for the most, we don't have a most
+    if (mostSuits.length > 0) {
+      mostSuit = '';
+      mostVal = 0;
+    }
 
     ['fox', 'mouse', 'bunny', 'bird'].forEach(suit => {
       const totalForSuit = this.customData.decree[suit];
