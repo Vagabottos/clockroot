@@ -106,6 +106,11 @@ Gain the Guerilla Warfare ability of the Woodland Alliance. _(In battle as defen
 Remove all enemy pieces from the **card:${this.customData.currentSuit}** sympathetic clearing with the most enemy pieces,
 and place the **card:${this.customData.currentSuit}** base there.
       `);
+      
+      const sympathySpread = this.customData.sympathy.slice(0, 4).every(x => x) ? 'once' : 'twice';
+      base.push(`
+If you did not revolt, **Spread Sympathy** ${sympathySpread}.
+      `);
 
     } else {
       const sympathySpread = this.customData.sympathy.slice(0, 4).every(x => x) ? 'once' : 'twice';
