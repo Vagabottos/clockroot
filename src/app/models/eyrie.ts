@@ -105,12 +105,28 @@ Whenever you remove an enemy building or token, its owner loses one victory poin
 
     let mostVal = 0;
     let mostSuit = '';
+    let mostSuits = [];
     ['fox', 'mouse', 'bunny', 'bird'].forEach(suit => {
-      if (this.customData.decree[suit] <= mostVal) { return; }
+      if (this.customData.decree[suit] < mostVal) { return; }
+
+      // hold onto info if there is ever a tie
+      if (this.customData.decree[suit] === mostVal) {
+        mostSuits.push(suit);
+        return;
+      }
 
       mostVal = this.customData.decree[suit];
       mostSuit = suit;
+
+      // reset if we get here
+      mostSuits = [suit];
     });
+
+    // if we have a tie for the most, we don't have a most
+    if (mostSuits.length > 0) {
+      mostSuit = '';
+      mostVal = 0;
+    }
 
     ['fox', 'mouse', 'bunny', 'bird'].forEach(suit => {
       const totalForSuit = this.customData.decree[suit];
@@ -125,11 +141,10 @@ _(**Ties**: Recruit in such a clearing with the most enemy pieces, then fewest E
       `);
 
       actions.push(`
-Move from the ${suitText} clearing you rule of highest priority.
-Move to the adjacent clearing with no roost.
-Leave warriors to exactly rule the origin or ${totalForSuit}, whichever is higher.
+Move from the ${suitText} clearing you rule with the most of your warriors to an adjacent clearing.
+Leave enough warriors to exactly rule the origin clearing or ${totalForSuit}, whichever is higher.
 
-_(**Destination Ties**: Move to such a clearing with the fewest enemy warriors, then lowest priority.)_
+_(**Destination Ties**: Move to such a clearing with no roost, then fewest enemy warriors, then lowest priority.)_
       `);
 
       actions.push(`
