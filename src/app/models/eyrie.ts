@@ -123,38 +123,54 @@ Whenever you remove an enemy building or token, its owner loses one victory poin
     });
 
     // if we have a tie for the most, we don't have a most
-    if (mostSuits.length > 0) {
+    if (mostSuits.length > 1) {
       mostSuit = '';
       mostVal = 0;
     }
 
-    ['fox', 'mouse', 'bunny', 'bird'].forEach(suit => {
-      const totalForSuit = this.customData.decree[suit];
-      if (totalForSuit === 0) { return; }
+    ['recruit', 'move', 'battle'].forEach(curAction => {
+      ['fox', 'mouse', 'bunny', 'bird'].forEach(suit => {
+        const totalForSuit = this.customData.decree[suit];
+        if (totalForSuit === 0) { return; }
 
-      const suitText = suit === 'bird' ? 'any' : `**card:${suit}**`;
+        const suitText = suit === 'bird' ? 'any' : `**card:${suit}**`;
 
-      actions.push(`
+        switch (curAction) {
+          case 'recruit': {
+
+            actions.push(`
 Recruit ${totalForSuit} warrior(s) in a ${suitText} clearing with a roost.
 
 _(**Ties**: Recruit in such a clearing with the most enemy pieces, then fewest Eyrie warriors, then lowest priority.)_
-      `);
+            `);
+            break;
+          }
 
-      actions.push(`
+          case 'move': {
+
+            actions.push(`
 Move from the ${suitText} clearing you rule with the most of your warriors to an adjacent clearing.
 Leave enough warriors to exactly rule the origin clearing or ${totalForSuit}, whichever is higher.
 
-_(**Destination Ties**: Move to such a clearing with no roost, then fewest enemy warriors, then lowest priority.)_
-      `);
+_(**Destination Ties**: Move to such a clearing with no roost, then fewest enemy pieces, then lowest priority.)_
+            `);
+            break;
+          }
 
-      actions.push(`
+          case 'battle': {
+
+            actions.push(`
 Battle in a ${suitText} clearing against the player with the most buildings there.
 ${suit === mostSuit ? '**Deal an extra hit.**' : '' }
 
-_(**Clearing Ties**: Battle in such a clearing with no roost, then most defenseless buildings and tokens of the same player.)_
+_(**Clearing Ties**: Battle in such a clearing with no roost, then most defenseless buildings, then lowest priority.)_
 
-_(**Defender Ties**: Battle such a player with the most pieces here.)_
-      `);
+_(**Defender Ties**: Battle such a player with the most pieces there, then the player with the most victory points.)_
+            `);
+            break;
+          }
+        }
+      });
     });
 
     if (actions.length === 0) {
