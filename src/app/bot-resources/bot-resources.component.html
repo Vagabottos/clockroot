@@ -6,7 +6,7 @@
       <ion-item>
         <ion-range min="0" max="30" pin="true" ticks="true" snaps="true" (ionChange)="setVP($event)" [value]="bot.vp">
           <ion-label slot="start">0</ion-label>
-          <ion-label slot="end">30 (@{{ bot.vp || 0 }})</ion-label>
+          <ion-label slot="end">{{ bot.vp || 0 }}/30</ion-label>
         </ion-range>
       </ion-item>
 
