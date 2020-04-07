@@ -131,12 +131,12 @@ Whenever you remove an enemy building or token, its owner loses one victory poin
     ['recruit', 'move', 'battle'].forEach(curAction => {
       ['fox', 'mouse', 'bunny', 'bird'].forEach(suit => {
         const totalForSuit = this.customData.decree[suit];
+        if (totalForSuit === 0) { return; }
 
         const suitText = suit === 'bird' ? 'any' : `**card:${suit}**`;
 
         switch (curAction) {
           case 'recruit': {
-            if (totalForSuit === 0) { return; }
 
             actions.push(`
 Recruit ${totalForSuit} warrior(s) in a ${suitText} clearing with a roost.
