@@ -86,7 +86,7 @@ Gain the Guerilla Warfare ability of the Woodland Alliance. _(In battle as defen
   public customData = {
     currentSuit: 'bird',
 
-    sympathy: [],
+    sympathy: [false, false, false, false, false, false, false, false, false, false],
 
     buildings: {
       fox: false,
