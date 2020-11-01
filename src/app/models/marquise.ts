@@ -114,7 +114,7 @@ Taking a single hit with a building has no effect.
   public daylight() {
     let totalWarriors = 4;
     if (this.difficulty === 'Easy') { totalWarriors = 2; }
-    if (this.hasTrait('Iron Will')) { totalWarriors *= 2; }
+    if (this.hasTrait('Iron Will') && this.customData.currentSuit === 'bird') { totalWarriors *= 2; }
 
     const blitzText = this.hasTrait('Blitz')
     ? `Find the clearing you rule of the highest priority without any enemy pieces.
