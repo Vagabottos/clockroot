@@ -123,11 +123,15 @@ Taking a single hit with a building has no effect.
 
     if (this.customData.currentSuit === 'bird') {
 
+      const isChallengingPlus = this.difficulty === 'Challenging' || this.difficulty === 'Nightmare';
+
       const base2 = [
         `Battle in all clearings. _(Defender is the player with most pieces, then victory points.)_`,
 
         `Recruit ${getNumText(totalWarriors / 2)} warrior(s) in each of the two clearings you rule with lowest priority.
         If you only rule one clearing, place all ${getNumText(totalWarriors)} warriors there.`,
+
+        isChallengingPlus ? 'Place two warriors in the ordered clearing you rule of the highest priority.' : '',
 
         `Build a building of the type with the most pieces on the map in a clearing you rule with the most Marquise Warriors.
         _(On a tie between sawmills and any other building types, place a sawmill.
@@ -135,7 +139,7 @@ Taking a single hit with a building has no effect.
 
         `Move all but three of your warriors from each clearing to the adjacent clearing with the most enemy pieces.
         Then battle in each clearing you moved into.`
-      ];
+      ].filter(Boolean);
 
       if (blitzText) { base2.push(blitzText); }
 
