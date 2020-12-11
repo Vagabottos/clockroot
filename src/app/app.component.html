@@ -4,7 +4,7 @@
       <ion-header>
         <ion-toolbar>
           <ion-title>
-            Bots
+            {{ 'NavTitle' | translate }}
           </ion-title>
         </ion-toolbar>
       </ion-header>
@@ -15,22 +15,33 @@
                     href="https://ledergames.com/collections/full-catalog"
                     target="_blank"
           >
-            Get the Clockwork Expansion from Leder Games!
+            <div class="plug">
+              {{ 'LederPlug' | translate }}
+            </div>
           </ion-item>
+
           <ion-menu-toggle autoHide="false">
             <ng-container *ngFor="let bot of botService.bots">
               <ion-item color="transparent"
                         (click)="botService.goToBot(bot.name)">
                         <img class="inline-icon ion-margin-end" [src]="'assets/inicon/faction-' + botService.botMeta[bot.name].icon + '.png'" />
-                        {{ botService.botMeta[bot.name].fullName }}
-                        <em class="ion-margin-start" *ngIf="!bot.setupHidden">(Needs Setup)</em>
+                        {{ 'Factions.' + botService.botMeta[bot.name].fullName | translate }}
+                        <em class="ion-margin-start" *ngIf="!bot.setupHidden">({{ 'NeedsSetup' | translate }})</em>
               </ion-item>
             </ng-container>
             <ion-item (click)="botService.showPriorities()">
               <div class="inline-icon ion-margin-end"></div>
-              Priority Maps
+              {{ 'PriorityMaps' | translate }}
             </ion-item>
           </ion-menu-toggle>
+
+          <ion-item class="language">
+            <ion-label>Language</ion-label>
+            <ion-select placeholder="Select Language" (ionChange)="languageChange()" [(ngModel)]="language">
+              <ion-select-option value="en-US">English</ion-select-option>
+              <ion-select-option value="fr-FR">Français</ion-select-option>
+            </ion-select>
+          </ion-item>
         </ion-list>
       </ion-content>
     </ion-menu>

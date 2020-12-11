@@ -11,12 +11,14 @@ import { MarquiseComponent } from '../marquise/marquise.component';
 import { EyrieComponent } from '../eyrie/eyrie.component';
 import { WoodlandComponent } from '../woodland/woodland.component';
 import { VagabondComponent } from '../vagabond/vagabond.component';
+import { SharedModule } from '../shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
+    SharedModule,
     RouterModule.forChild([
       {
         path: '',

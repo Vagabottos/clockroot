@@ -1,9 +1,9 @@
 
 <ion-header translucent>
   <ion-toolbar>
-    <ion-title>Map Priorities</ion-title>
+    <ion-title>{{ 'Priorities.Title' | translate }}</ion-title>
     <ion-buttons slot="end">
-      <ion-button (click)="dismiss()">Close</ion-button>
+      <ion-button (click)="dismiss()">{{ 'CloseText' | translate }}</ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -13,7 +13,7 @@
   <div class="button-bar">
     <ion-button *ngFor="let button of buttonsAndImages" 
                 [disabled]="img === button.map"
-                (click)="changeMap(button.map)">{{ button.name }}</ion-button>
+                (click)="changeMap(button.map)">{{ 'Priorities.' + button.name | translate }}</ion-button>
   </div>
 
   <div class="map-container">

@@ -1,12 +1,12 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-menu-button *ngIf="botService.bots.length > 0"></ion-menu-button>
+      <ion-menu-button></ion-menu-button>
     </ion-buttons>
 
     <ion-title>
-      <span class="ion-hide-sm-down">Root: The Clockwork Companion</span>
-      <span class="ion-hide-md-up">Clockroot</span>
+      <span class="ion-hide-sm-down">{{ 'AppTitle' | translate }}</span>
+      <span class="ion-hide-md-up">{{ 'AppTitleShort' | translate }}</span>
     </ion-title>
 
     <ion-buttons slot="primary">
@@ -22,7 +22,7 @@
 
 <ion-content>
   <div class="blank-slate" *ngIf="botService.bots.length === 0">
-    Add a bot by clicking the <ion-button class="ion-margin-start" (click)="addBot($event)"><ion-icon slot="icon-only" name="add"></ion-icon></ion-button>
+    {{ 'AddBot' | translate }} <ion-button class="ion-margin-start" (click)="addBot($event)"><ion-icon slot="icon-only" name="add"></ion-icon></ion-button>
   </div>
 
   <ion-list lines="none" class="ion-no-padding">

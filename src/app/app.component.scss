@@ -1,0 +1,23 @@
+
+.language {
+
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+
+  ion-label {
+    display: none;
+  }
+
+  ion-select {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 32px;
+  }
+
+}
+
+.plug {
+  height: 56px;
+  min-height: 56px;
+  padding-top: 8px;
+}

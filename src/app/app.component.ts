@@ -1,8 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
-import { Platform } from '@ionic/angular';
-import { SplashScreen } from '@ionic-native/splash-screen/ngx';
-import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { BotService } from './bot.service';
 
 @Component({
@@ -10,20 +8,30 @@ import { BotService } from './bot.service';
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+
+  public language: string;
+  
   constructor(
-    private platform: Platform,
-    private splashScreen: SplashScreen,
-    private statusBar: StatusBar,
+    private translateService: TranslateService,
     public botService: BotService
   ) {
-    this.initializeApp();
+  }
+  
+  ngOnInit() {
+    this.language = localStorage.getItem('lang');
+    if(!this.language) this.language = 'en-US';
+
+    this.updateTranslate();
   }
 
-  initializeApp() {
-    this.platform.ready().then(() => {
-      this.statusBar.styleDefault();
-      this.splashScreen.hide();
-    });
+  public languageChange() {
+    localStorage.setItem('lang', this.language);
+
+    this.updateTranslate();
+  }
+
+  private updateTranslate() {
+    this.translateService.use(this.language);
   }
 }

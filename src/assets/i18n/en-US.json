@@ -1,0 +1,60 @@
+{
+  "AppTitle": "Root: The Clockwork Companion",
+  "AppTitleShort": "Clockroot",
+  "NavTitle": "Bots",
+  "CloseText": "Close",
+  "Language": "Language",
+  "LederPlug": "Get the Clockwork Expansion from Leder Games!",
+  "PriorityMaps": "Priority Maps",
+  "NeedsSetup": "Needs Setup",
+  "BotSetup": {
+    "Setup": "Setup",
+    "PriorityMarkers": "Set up priority markers for the map.",
+    "ChooseDifficulty": "Choose Difficulty",
+    "Difficulty": {
+      "Easy": "Easy",
+      "Normal": "Normal",
+      "Challenging": "Challenging",
+      "Nightmare": "Nightmare"
+    },
+    "ChooseVagabot": "Choose Vagabot",
+    "ChooseTraits": "Choose Traits",
+    "DifficultyText": "Difficulty",
+    "TurmoilText": "You fall into Turmoil if you cannot place a roost.",
+    "TurmoilNobilityText": "You fall into Turmoil if you cannot place a roost or warrior."
+  },
+  "AddBot": "Add a bot by clicking the",
+  "Factions": {
+    "Mechanical Marquise": "Mechanical Marquise",
+    "Electric Eyrie": "Electric Eyrie",
+    "Automated Alliance": "Automated Alliance",
+    "Vagabot": "Vagabot"
+  },
+  "FactionsShort": {
+    "Mechanical Marquise": "M. Marquise",
+    "Electric Eyrie": "E. Eyrie",
+    "Automated Alliance": "A. Alliance",
+    "Vagabot": "Vagabot"
+  },
+  "Priorities": {
+    "Title": "Map Priorities",
+    "Fall": "Fall",
+    "Winter": "Winter",
+    "Lake": "Lake",
+    "Mountain": "Mountain"
+  },
+  "Sections": {
+    "DifficultyTraits": "Difficulty & Traits",
+    "VPItems": "Victory Points & Items",
+    "DecreeRoosts": "Decree & Roosts",
+    "Buildings": "Buildings",
+    "Birdsong": "Birdsong",
+    "Daylight": "Daylight",
+    "Evening": "Evening",
+    "Turmoil": "Turmoil",
+    "BattleTrackBonus": "Battle Track Bonus",
+    "SatchelBattleTrack": "Satchel & Battle Track",
+    "SympathyBases": "Sympathy & Bases",
+    "VagabotDifficultyTrait": "Vagabot, Difficulty, Traits"
+  }
+}

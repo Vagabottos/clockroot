@@ -1,8 +1,8 @@
 <ion-toolbar color="primary">
   <ion-title>
     <span id="Woodland">
-      <span class="ion-hide-sm-down">Automated Alliance</span>
-      <span class="ion-hide-md-up">A. Alliance</span>
+      <span class="ion-hide-sm-down">{{ 'Factions.Automated Alliance' | translate }}</span>
+      <span class="ion-hide-md-up">{{ 'FactionsShort.Automated Alliance' | translate }}</span>
     </span>
   </ion-title>
 
@@ -23,12 +23,12 @@
   <ion-item *ngIf="!bot.setupHidden">
     <ion-card>
       <ion-card-header>
-        <h2>Setup ({{ bot.setupPosition }})</h2>
+        <h2>{{ 'BotSetup.Setup' | translate }} ({{ bot.setupPosition }})</h2>
       </ion-card-header>
       <ion-card-content>
         <ol>
           <li>
-            <a (click)="botService.showPriorities()">Set up priority markers for the map.</a>
+            <a (click)="botService.showPriorities()">{{ 'BotSetup.PriorityMarkers' | translate }}</a>
           </li>
           <li *ngFor="let rule of bot.setupRules" [innerHTML]="rendererService.formatString(rule)"></li>
         </ol>
@@ -39,7 +39,7 @@
   <ion-item *ngIf="!bot.setupHidden">
     <ion-card>
       <ion-card-header>
-        <h2>Choose Difficulty</h2>
+        <h2>{{ 'BotSetup.ChooseDifficulty' | translate }}</h2>
       </ion-card-header>
       <ion-card-content>
         <ion-list>
@@ -64,7 +64,7 @@
   <ion-item *ngIf="!bot.setupHidden">
     <ion-card>
       <ion-card-header>
-        <h2>Choose Traits</h2>
+        <h2>{{ 'BotSetup.ChooseTraits' | translate }}</h2>
       </ion-card-header>
       <ion-card-content>
         <ion-list>
@@ -87,13 +87,13 @@
   <ion-item *ngIf="bot.setupHidden">
     <ion-card>
       <ion-card-header>
-        <h2>Difficulty & Traits</h2>
+        <h2>{{ 'Sections.DifficultyTraits' | translate }}</h2>
       </ion-card-header>
       <ion-card-content>
         <ion-list>
           <ion-item *ngIf="bot.difficulty !== 'Normal'">
             <ion-label class="ion-text-wrap">
-              <h2>Difficulty: {{ bot.difficulty }}</h2>
+              <h2>{{ 'BotSetup.DifficultyText' | translate }}: {{ bot.difficulty }}</h2>
               <p [innerHTML]="rendererService.formatString(bot.difficultyDescriptions[bot.difficulty])"></p>
             </ion-label>
           </ion-item>
@@ -115,7 +115,7 @@
   <ion-item *ngIf="bot.setupHidden">
     <ion-card>
       <ion-card-header>
-        <h2>Sympathy & Bases</h2>
+        <h2>{{ 'Sections.SympathyBases' | translate }}</h2>
       </ion-card-header>
       <ion-card-content>
         <div class="building-row wrap">
@@ -156,7 +156,7 @@
     <ion-card>
       <ion-card-header>
         <h2 class="birdsong-has-buttons">
-          Birdsong
+          {{ 'Sections.Birdsong' | translate }}
           <ion-button class="ion-margin-start" (click)="changeSuit(suit)"
                       [class.transparent]="bot.customData.currentSuit !== suit"
                       *ngFor="let suit of ['bird', 'fox', 'bunny', 'mouse']">
@@ -178,7 +178,7 @@
   <ion-item *ngIf="bot.setupHidden">
     <ion-card>
       <ion-card-header>
-        <h2>Daylight</h2>
+        <h2>{{ 'Sections.Daylight' | translate }}</h2>
       </ion-card-header>
       <ion-card-content>
         <ol>
@@ -193,7 +193,7 @@
   <ion-item *ngIf="bot.setupHidden">
     <ion-card>
       <ion-card-header>
-        <h2>Evening</h2>
+        <h2>{{ 'Sections.Evening' | translate }}</h2>
       </ion-card-header>
       <ion-card-content>
         <ol>
