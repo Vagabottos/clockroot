@@ -22,36 +22,43 @@ export class EyrieBot extends Bot {
 
   public rules = [
     {
+      traitName: 'Poor Manual Dexterity',
       name: 'RulePoorManualDexterity',
       text: `TextPoorManualDexterity`,
       isActive: true
     },
     {
+      traitName: 'Hates Surprises',
       name: 'RuleHatesSurprises',
       text: 'TextHatesSurprises',
       isActive: true
     },
     {
+      traitName: 'Lords of the Forest',
       name: 'RuleLordsOfTheForest',
       text: 'TextLordsOfTheForest',
       isActive: true
     },
     {
+      traitName: 'Nobility',
       name: 'RuleNobility',
       text: 'TextNobility',
       canToggle: true
     },
     {
+      traitName: 'Relentless',
       name: 'RuleRelentless',
       text: 'TextRelentless',
       canToggle: true
     },
     {
+      traitName: 'Swoop',
       name: 'RuleSwoop',
       text: `TextSwoop`,
       canToggle: true
     },
     {
+      traitName: 'War Tax',
       name: 'RuleWarTax',
       text: `TextWarTax`,
       canToggle: true
@@ -70,11 +77,19 @@ export class EyrieBot extends Bot {
   };
 
   public birdsong(translate: TranslateService) {
-    return [
+    const newRoost = !this.customData.buildings.some(Boolean);
+
+    const base = [
       translate.instant(`SpecificBirdsong.Electric Eyrie.RevealOrder`),
       translate.instant(`SpecificBirdsong.Electric Eyrie.CraftOrder`),
       translate.instant(`SpecificBirdsong.Electric Eyrie.DecreeOrder`)
     ];
+
+    if(newRoost) {
+      base.push(translate.instant(`SpecificBirdsong.Electric Eyrie.NewRoost`));
+    }
+
+    return base;
   }
 
   public daylight(translate: TranslateService) {
@@ -114,7 +129,12 @@ export class EyrieBot extends Bot {
 
         switch (curAction) {
           case 'recruit': {
-            actions.push(translate.instant('SpecificDaylight.Electric Eyrie.Recruit', { totalForSuit, suitText }));
+
+            const recruitText = this.hasTrait('Nobility')
+              ? translate.instant('SpecificDaylight.Electric Eyrie.ExtraRecruit')
+              : '';
+              
+            actions.push(translate.instant('SpecificDaylight.Electric Eyrie.Recruit', { totalForSuit, suitText, recruitText }));
             break;
           }
 

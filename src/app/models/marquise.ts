@@ -34,36 +34,43 @@ export class MarquiseBot extends Bot {
 
   public rules = [
     {
+      traitName: 'Poor Manual Dexterity',
       name: 'RulePoorManualDexterity',
       text: `TextPoorManualDexterity`,
       isActive: true
     },
     {
+      traitName: 'Hates Surprises',
       name: 'RuleHatesSurprises',
       text: 'TextHatesSurprises',
       isActive: true
     },
     {
+      traitName: 'The Keep',
       name: 'RuleTheKeep',
       text: 'TextTheKeep',
       isActive: true
     },
     {
+      traitName: 'Blitz',
       name: 'RuleBlitz',
       text: 'TextBlitz',
       canToggle: true
     },
     {
+      traitName: 'Fortified',
       name: 'RuleFortified',
       text: `TextFortified`,
       canToggle: true
     },
     {
+      traitName: 'Hospitals',
       name: 'RuleHospitals',
       text: `TextHospitals`,
       canToggle: true
     },
     {
+      traitName: 'Iron Will',
       name: 'RuleIronWill',
       text: 'TextIronWill',
       canToggle: true

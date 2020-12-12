@@ -100,7 +100,7 @@ export class BotService {
 
   private generateTraitHash(bot: Bot) {
     bot.traitHash = bot.rules.reduce((prev, cur) => {
-      prev[cur.name] = cur.isActive;
+      prev[cur.traitName] = cur.isActive;
       return prev;
     }, {});
   }

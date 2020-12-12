@@ -22,41 +22,49 @@ export class VagaBot extends Bot {
 
   public rules = [
     {
+      traitName: 'Poor Manual Dexterity',
       name: 'RulePoorManualDexterity',
       text: `TextPoorManualDexterity`,
       isActive: true
     },
     {
+      traitName: 'Hates Surprises',
       name: 'RuleHatesSurprises',
       text: 'TextHatesSurprises',
       isActive: true
     },
     {
+      traitName: 'Lone Wanderer',
       name: 'RuleLoneWanderer',
       text: 'TextLoneWanderer',
       isActive: true
     },
     {
+      traitName: 'Nimble',
       name: 'RuleNimble',
       text: 'TextNimble',
       isActive: true
     },
     {
+      traitName: 'Adventurer',
       name: 'RuleAdventurer',
       text: `TextAdventurer`,
       canToggle: true
     },
     {
+      traitName: 'Berserker',
       name: 'RuleBerserker',
       text: `TextBerserker`,
       canToggle: true
     },
     {
+      traitName: 'Helper',
       name: 'RuleHelper',
       text: `TextHelper`,
       canToggle: true
     },
     {
+      traitName: 'Marksman',
       name: 'RuleMarksman',
       text: `TextMarksman`,
       canToggle: true
@@ -129,7 +137,7 @@ ${translate.instant('SpecificDaylight.Vagabot.ActionBattleTiebreaker')}
         return `
 ${translate.instant('SpecificDaylight.Vagabot.ActionSpecial')}
 
-${translate.instant('SpecificExtra.Vagabot.Desc' + vaga.customData.chosenVaga)}
+${translate.instant('SpecificExtra.Vagabot.Special' + vaga.customData.chosenVaga)}
         `;
       }
     };

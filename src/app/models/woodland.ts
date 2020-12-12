@@ -21,46 +21,55 @@ export class WoodlandBot extends Bot {
 
   public rules = [
     {
+      traitName: 'Poor Manual Dexterity',
       name: 'RulePoorManualDexterity',
       text: `TextPoorManualDexterity`,
       isActive: true
     },
     {
+      traitName: 'Automated Ambush',
       name: 'RuleAutomatedAmbush',
       text: 'TextAutomatedAmbush',
       isActive: true
     },
     {
+      traitName: 'Automated Outrage',
       name: 'RuleAutomatedOutrage',
       text: `TextAutomatedOutrage`,
       isActive: true
     },
     {
+      traitName: 'Martial Law',
       name: 'RuleMartialLaw',
       text: `TextMartialLaw`,
       isActive: true
     },
     {
+      traitName: 'Crackdown',
       name: 'RuleCrackdown',
       text: `TextCrackdown`,
       isActive: true
     },
     {
+      traitName: 'Informants',
       name: 'RuleInformants',
       text: `TextInformants`,
       canToggle: true
     },
     {
+      traitName: 'Popularity',
       name: 'RulePopularity',
       text: `TextPopularity`,
       canToggle: true
     },
     {
+      traitName: 'Veterans',
       name: 'RuleVeterans',
       text: 'TextVeterans',
       canToggle: true
     },
     {
+      traitName: 'Wildfire',
       name: 'RuleWildfire',
       text: `TextWildfire`,
       canToggle: true

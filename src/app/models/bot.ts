@@ -16,6 +16,7 @@ export type Difficulty = 'Easy' | 'Normal' | 'Challenging' | 'Nightmare';
 export interface Rule {
   name: string;
   text: string;
+  traitName: string;
   isActive?: boolean;
   canToggle?: boolean;
 }
