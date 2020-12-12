@@ -1,3 +1,4 @@
+import { TranslateService } from '@ngx-translate/core';
 import { Bot, BotName } from './bot';
 
 const numToText = {
@@ -17,79 +18,54 @@ export class MarquiseBot extends Bot {
 
   public setupPosition = 'A';
   public setupRules = [
-    `Form a supply of 25 warriors near you.`,
-
-    `Place the keep token in a random corner clearing.`,
-
-    `Place a warrior in each clearing, except the corner clearing diagonally opposite from the keep.
-    Place an extra warrior in the clearing with the keep token. _(Place 12 warriors in total.)_`,
-
-    `Place 1 sawmill, 1 workshop and 1 recruiter randomly among the clearing with the keep token and
-    those clearings adjacent with up to one building per clearing.`,
-
-    `Collect your remaining 15 buildings and place them near you.`
+    'Setup0',
+    'Setup1',
+    'Setup2',
+    'Setup3',
+    'Setup4',
   ];
 
   public difficultyDescriptions = {
-    Easy: `
-Whenever you **Recruit**, instead place only two warriors.
-    `,
-    Normal: 'Nothing is changed.',
-    Challenging: `
-Whenever you **Recruit**, also place two warriors in the ordered clearing you rule of highest priority.
-    `,
-    Nightmare: `
-Whenever you **Recruit**, also place two warriors in the ordered clearing you rule of highest priority.
-
-At the end of evening, score **vp:1**.
-    `
+    Easy: `Easy`,
+    Normal: 'Normal',
+    Challenging: `Challenging`,
+    Nightmare: `Nightmare`
   };
 
   public rules = [
     {
-      name: 'Poor Manual Dexterity',
-      text: `You have no hand of cards. You cannot discard cards.
-      If a human would take a card from you, they draw a card instead.
-      If a human would give a card to you, they discard it, and you score **vp:1**.`,
+      name: 'RulePoorManualDexterity',
+      text: `TextPoorManualDexterity`,
       isActive: true
     },
     {
-      name: 'Hates Surprises',
-      text: 'Ambush cards cannot be played against you.',
+      name: 'RuleHatesSurprises',
+      text: 'TextHatesSurprises',
       isActive: true
     },
     {
-      name: 'The Keep',
-      text: 'Only you can place pieces in the clearing with the keep token.',
+      name: 'RuleTheKeep',
+      text: 'TextTheKeep',
       isActive: true
     },
     {
-      name: 'Blitz',
-      text: `
-After you move, find the clearing you rule of the highest priority without any enemy pieces.
-
-Move all but one warrior from the clearing. Then, battle in the destination clearing.
-      `,
+      name: 'RuleBlitz',
+      text: 'TextBlitz',
       canToggle: true
     },
     {
-      name: 'Fortified',
-      text: `
-Your buildings each take two hits to remove.
-
-Taking a single hit with a building has no effect.
-      `,
+      name: 'RuleFortified',
+      text: `TextFortified`,
       canToggle: true
     },
     {
-      name: 'Hospitals',
-      text: `At the end of battle as defender, if two or more Marquise warriors were removed
-      in the battle, place two warriors in the clearing with the keep token.`,
+      name: 'RuleHospitals',
+      text: `TextHospitals`,
       canToggle: true
     },
     {
-      name: 'Iron Will',
-      text: 'Whenever you **Recruit** in Escalated Daylight, place double the warriors.',
+      name: 'RuleIronWill',
+      text: 'TextIronWill',
       canToggle: true
     }
   ];
@@ -104,21 +80,22 @@ Taking a single hit with a building has no effect.
     }
   };
 
-  public birdsong() {
+  public birdsong(translate: TranslateService) {
     return [
-      `Reveal an order card.`,
-      `Craft order card for **vp:1** if it shows an available item.`
+      translate.instant(`SpecificBirdsong.Mechanical Marquise.RevealOrder`),
+      translate.instant(`SpecificBirdsong.Mechanical Marquise.CraftOrder`)
     ];
   }
 
-  public daylight() {
+  public daylight(translate: TranslateService) {
     let totalWarriors = 4;
     if (this.difficulty === 'Easy') { totalWarriors = 2; }
     if (this.hasTrait('Iron Will') && this.customData.currentSuit === 'bird') { totalWarriors *= 2; }
 
+    const warriorsOverTwo = totalWarriors / 2;
+
     const blitzText = this.hasTrait('Blitz')
-    ? `Find the clearing you rule of the highest priority without any enemy pieces.
-      Move all but one warrior from the clearing. Then, battle in the destination clearing.`
+    ? translate.instant(`SpecificDaylight.Mechanical Marquise.Blitz`)
     : '';
 
     if (this.customData.currentSuit === 'bird') {
@@ -126,19 +103,15 @@ Taking a single hit with a building has no effect.
       const isChallengingPlus = this.difficulty === 'Challenging' || this.difficulty === 'Nightmare';
 
       const base2 = [
-        `Battle in all clearings. _(Defender is the player with most pieces, then victory points.)_`,
+        translate.instant(`SpecificDaylight.Mechanical Marquise.Bird0`),
 
-        `Recruit ${getNumText(totalWarriors / 2)} warrior(s) in each of the two clearings you rule with lowest priority.
-        If you only rule one clearing, place all ${getNumText(totalWarriors)} warriors there.`,
+        translate.instant(`SpecificDaylight.Mechanical Marquise.Bird1`, { totalWarriors, warriorsOverTwo }),
 
-        isChallengingPlus ? 'Place two warriors in the ordered clearing you rule of the highest priority.' : '',
+        isChallengingPlus ? translate.instant(`SpecificDaylight.Mechanical Marquise.BirdChallenging`) : '',
 
-        `Build a building of the type with the most pieces on the map in a clearing you rule with the most Marquise Warriors.
-        _(On a tie between sawmills and any other building types, place a sawmill.
-          On a tie between workshops and recruiters but not sawmills, place a recruiter.)_`,
+        translate.instant(`SpecificDaylight.Mechanical Marquise.Bird2`),
 
-        `Move all but three of your warriors from each clearing to the adjacent clearing with the most enemy pieces.
-        Then battle in each clearing you moved into.`
+        translate.instant(`SpecificDaylight.Mechanical Marquise.Bird3`),
       ].filter(Boolean);
 
       if (blitzText) { base2.push(blitzText); }
@@ -151,30 +124,28 @@ Taking a single hit with a building has no effect.
     if (this.customData.currentSuit === 'bunny') { building = 'workshop'; }
     if (this.customData.currentSuit === 'mouse') { building = 'recruiter'; }
 
+    const suit = this.customData.currentSuit;
+
     const base = [
-      `Battle in each **card:${this.customData.currentSuit}** clearing. _(Defender is the player with most pieces, then victory points.)_`,
+      translate.instant(`SpecificDaylight.Mechanical Marquise.Suit0`, { suit }),
 
-      `Recruit ${getNumText(totalWarriors)} warriors evenly spread across **card:${this.customData.currentSuit}** clearings you rule.
-      If there are extra warriors that cannot be placed evenly in **card:${this.customData.currentSuit}** clearings,
-      place the last warrior in the **card:${this.customData.currentSuit}** clearing with the highest priority.`,
+      translate.instant(`SpecificDaylight.Mechanical Marquise.Suit1`, { totalWarriors, suit }),
 
-      `Build a **building:${building}** in a clearing you rule with the most Marquise warriors.`,
+      translate.instant(`SpecificDaylight.Mechanical Marquise.Suit2`, { building }),
 
-      `Move all but three of your warriors from each **card:${this.customData.currentSuit}** clearing to the adjacent
-      clearing with the most enemy pieces.`
+      translate.instant(`SpecificDaylight.Mechanical Marquise.Suit3`, { suit })
     ];
 
     if (blitzText) { base.push(blitzText); }
 
     base.push(
-      `If you did not place a building this turn and have five or fewer buildings on the map, discard the order card,
-      draw a new one, and repeat Daylight.`
+      translate.instant(`SpecificDaylight.Mechanical Marquise.Repeat`)
     );
 
     return base;
   }
 
-  public evening() {
+  public evening(translate: TranslateService) {
     const buildings = this.customData.buildings;
 
     if (this.customData.currentSuit === 'bird') {
@@ -186,13 +157,13 @@ Taking a single hit with a building has no effect.
       const maxScore = Math.max(...scores, 0);
 
       const base2 = [
-        `Score ${maxScore} VP.`,
-        `Discard the order card.`
+        translate.instant('SpecificEvening.Electric Eyrie.Score', { score: maxScore }),
+        translate.instant('SpecificEvening.Electric Eyrie.Discard')
       ];
 
 
       if (this.difficulty === 'Nightmare') {
-        base2.push(`Score **vp:1**.`);
+        base2.push(translate.instant('SpecificEvening.Electric Eyrie.ScoreNightmare'));
       }
 
       return base2;
@@ -203,12 +174,12 @@ Taking a single hit with a building has no effect.
     const score = Math.max(0, buildingsOfSuit.reduce((prev, cur) => prev + (cur ? 1 : 0), 0) - 1);
 
     const base = [
-      `Score ${score} VP.`,
-      `Discard the order card.`
+      translate.instant('SpecificEvening.Electric Eyrie.Score', { score }),
+      translate.instant('SpecificEvening.Electric Eyrie.Discard')
     ];
 
     if (this.difficulty === 'Nightmare') {
-      base.push(`Score **vp:1**.`);
+      base.push(translate.instant('SpecificEvening.Electric Eyrie.ScoreNightmare'));
     }
 
     return base;

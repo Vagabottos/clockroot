@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { VagaBot } from '../models/vagabond';
 import { BotService } from '../bot.service';
 import { RendererService } from '../renderer.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-vagabond',
@@ -22,17 +23,18 @@ export class VagabondComponent implements OnInit {
       .length;
 
     switch (total) {
-      case 0: return 'Maximum rolled hits: 1';
-      case 1: return 'Maximum rolled hits: 2';
-      case 2: return 'Maximum rolled hits: 3';
-      case 3: return 'Maximum rolled hits: 3; as attacker, deal 1 extra hit.';
+      case 0: return 'BattleTrack0';
+      case 1: return 'BattleTrack1';
+      case 2: return 'BattleTrack2';
+      case 3: return 'BattleTrack3';
       default: return 'You have too many, or not enough battle track items.';
     }
   }
 
   constructor(
     public botService: BotService,
-    public rendererService: RendererService
+    public rendererService: RendererService,
+    public translateService: TranslateService
   ) { }
 
   ngOnInit() {

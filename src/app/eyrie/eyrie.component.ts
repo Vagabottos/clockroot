@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { EyrieBot } from '../models';
 import { BotService } from '../bot.service';
 import { RendererService } from '../renderer.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-eyrie',
@@ -14,7 +15,8 @@ export class EyrieComponent implements OnInit {
 
   constructor(
     public botService: BotService,
-    public rendererService: RendererService
+    public rendererService: RendererService,
+    public translateService: TranslateService
   ) { }
 
   ngOnInit() {

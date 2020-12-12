@@ -12,6 +12,7 @@ import { EyrieComponent } from '../eyrie/eyrie.component';
 import { WoodlandComponent } from '../woodland/woodland.component';
 import { VagabondComponent } from '../vagabond/vagabond.component';
 import { SharedModule } from '../shared.module';
+import { FormatPipe } from '../format.pipe';
 
 @NgModule({
   imports: [
@@ -26,6 +27,6 @@ import { SharedModule } from '../shared.module';
       }
     ])
   ],
-  declarations: [HomePage, BotResourcesComponent, MarquiseComponent, EyrieComponent, WoodlandComponent, VagabondComponent]
+  declarations: [HomePage, BotResourcesComponent, MarquiseComponent, EyrieComponent, WoodlandComponent, VagabondComponent, FormatPipe]
 })
 export class HomePageModule {}

@@ -2,10 +2,15 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { FormsModule } from '@angular/forms';
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
+
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+
+import { Observable, of } from 'rxjs';
 
 import { environment } from '../environments/environment';
 
@@ -14,19 +19,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { FactionMenuComponent } from './faction-menu/faction-menu.component';
 import { PriorityModalComponent } from './priority-modal/priority-modal.component';
 
-import { FormsModule } from '@angular/forms';
-import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
-
 import * as enUS from '../assets/i18n/en-US.json';
 import * as frFR from '../assets/i18n/fr-FR.json';
-import { Observable, of } from 'rxjs';
 
 const langs = { 
   'en-US': (enUS as any).default || enUS, 
   'fr-FR': (frFR as any).default || frFR 
 };
 
-class JSONLoader implements TranslateLoader {
+export class JSONLoader implements TranslateLoader {
   getTranslation(lang: string): Observable<any> {
     return of(langs[lang] || enUS);
   }
@@ -48,6 +49,7 @@ class JSONLoader implements TranslateLoader {
         useClass: JSONLoader
       }
     }),
+
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [

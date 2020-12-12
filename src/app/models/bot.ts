@@ -1,3 +1,4 @@
+import { TranslateService } from '@ngx-translate/core';
 
 export type BotName = 'Eyrie' | 'Marquise' | 'Woodland' | 'Vagabond';
 
@@ -38,9 +39,9 @@ export abstract class Bot {
 
   public customData: any = {};
 
-  public abstract daylight(): string[];
-  public abstract birdsong(): string[];
-  public abstract evening(): string[];
+  public abstract daylight(translate: TranslateService): string[];
+  public abstract birdsong(translate: TranslateService): string[];
+  public abstract evening(translate: TranslateService): string[];
 
   public hasTrait(trait: string): boolean {
     if (!this.traitHash) { return false; }

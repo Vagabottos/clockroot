@@ -1,3 +1,4 @@
+import { TranslateService } from '@ngx-translate/core';
 import { Bot, BotName } from './bot';
 
 export class VagaBot extends Bot {
@@ -6,92 +7,66 @@ export class VagaBot extends Bot {
 
   public setupPosition = 'D';
   public setupRules = [
-    `Place the Vagabot pawn in the forest adjacent to the most clearings. If there are multiple such forests, decide randomly among those.`,
-
-    `Shuffle the quest deck, draw 1 quest card, and place it face up near you. This quest can only be completed by the bot.`,
-
-    `Place any 1 item marked "R" beneath each ruin on the map.`,
-
-    `Take any 4 items marked "S" and place them in your Satchel. _(The Tinker starts with 3 items instead of 4 items.)_`
+    `Setup0`,
+    `Setup1`,
+    `Setup2`,
+    `Setup3`
   ];
 
   public difficultyDescriptions = {
-    Easy: `
-In evening, refresh one fewer item.
-    `,
-    Normal: 'Nothing is changed.',
-    Challenging: `
-In evening, refresh one more item.
-    `,
-    Nightmare: `
-In evening, refresh one more item.
-
-At the end of Evening, score one victory point.
-    `
+    Easy: `Easy`,
+    Normal: 'Normal',
+    Challenging: `Challenging`,
+    Nightmare: `Nightmare`
   };
 
   public rules = [
     {
-      name: 'Poor Manual Dexterity',
-      text: `You have no hand of cards. You cannot discard cards.
-      If a human would take a card from you, they draw a card instead.
-      If a human would give a card to you, they discard it, and you score **vp:1**.`,
+      name: 'RulePoorManualDexterity',
+      text: `TextPoorManualDexterity`,
       isActive: true
     },
     {
-      name: 'Hates Surprises',
-      text: 'Ambush cards cannot be played against you.',
+      name: 'RuleHatesSurprises',
+      text: 'TextHatesSurprises',
       isActive: true
     },
     {
-      name: 'Lone Wanderer',
-      text: 'Your pawn is not a warrior and cannot be removed from the map.',
+      name: 'RuleLoneWanderer',
+      text: 'TextLoneWanderer',
       isActive: true
     },
     {
-      name: 'Nimble',
-      text: 'You can move regardless of who rules your clearing.',
+      name: 'RuleNimble',
+      text: 'TextNimble',
       isActive: true
     },
     {
-      name: 'Adventurer',
-      text: `
-You can **Battle** no more than once per turn.
-
-At the end of Daylight, repeat **Quest** as many times as possible.
-      `,
+      name: 'RuleAdventurer',
+      text: `TextAdventurer`,
       canToggle: true
     },
     {
-      name: 'Berserker',
-      text: `
-Whenever you **Battle**, instead move to the nearest clearing with the most pieces and target the player with the most pieces there.
-
-In evening, repair one more item.
-      `,
+      name: 'RuleBerserker',
+      text: `TextBerserker`,
       canToggle: true
     },
     {
-      name: 'Helper',
-      text: `
-Whenever you **Aid**, score one extra victory point, and the aided player draws two cards instead of one.
-      `,
+      name: 'RuleHelper',
+      text: `TextHelper`,
       canToggle: true
     },
     {
-      name: 'Marksman',
-      text: `
-At the start of battle as attacker, deal an immediate hit _(scoring a point if you remove an enemy warrior)_.
-      `,
+      name: 'RuleMarksman',
+      text: `TextMarksman`,
       canToggle: true
     },
   ];
 
   public descriptions = {
-    Tinker: `Search the discard pile for the top card with an available item and craft it, scoring +1 VP.
-    _Start the game with one fewer item._`,
-    Thief: 'Take a random card from the enemy in your clearing with most points there, then most pieces there.',
-    Ranger: 'If you have three or more damaged items, slip into a random adjacent forest.'
+    Tinker: `SpecificExtra.Vagabot.DescTinker`,
+    Thief: 'SpecificExtra.Vagabot.DescThief',
+    Ranger: 'SpecificExtra.Vagabot.DescRanger'
   };
 
   public customData = {
@@ -112,66 +87,64 @@ At the start of battle as attacker, deal an immediate hit _(scoring a point if y
     buildings: []
   };
 
-  private actions(vaga: VagaBot) {
+  private actions(vaga: VagaBot, translate: TranslateService) {
     return {
       explore() {
-        return `Move to the nearest ruin, exhausting one item per move, then exhaust one item to take an item from that ruin.`;
+        return translate.instant('SpecificDaylight.Vagabot.ActionExplore');
       },
 
       quest(canBeModified = false) {
         return `
-Move to the nearest clearing matching the quest, then exhaust any two items to discard the quest and
-score **vp:1**. _(Ignore card text.)_ Then, replace the quest.
+${translate.instant('SpecificDaylight.Vagabot.ActionQuest')}
 
-${canBeModified && vaga.hasTrait('Adventurer') ? 'Repeat this as many times as possible.' : ''}`;
+${canBeModified && vaga.hasTrait('Adventurer') ? translate.instant('SpecificDaylight.Vagabot.ActionQuestRepeat') : ''}`;
       },
 
       aid() {
-        const aidHelpText = vaga.hasTrait('Helper') ? 'twice ' : '';
-        return `
-Target the player in your clearing with any items and the least VP among those players.
-Exhaust as many items as possible up to the number of items they have, take that many items from them, and
-score ${aidHelpText}that many VP. Then, they draw ${aidHelpText}that many cards.`;
+        const aidHelpText = vaga.hasTrait('Helper') ? '2x ' : '';
+        return translate.instant('SpecificDaylight.Vagabot.ActionQuestRepeat', { aidHelpText });
       },
 
       battle() {
-        const target = vaga.hasTrait('Berserker') ? 'pieces' : 'VP';
+        const target = vaga.hasTrait('Berserker') 
+          ? translate.instant('SpecificDaylight.Vagabot.ActionBattleTargetBerserker')
+          : translate.instant('SpecificDaylight.Vagabot.ActionBattleTarget');
 
         return `
-Move to the nearest clearing with any pieces of the enemy with the most ${target}, then exhaust one item to battle
-that player. Score **vp:1** per enemy warrior removed.
-${!vaga.hasTrait('Adventurer') ? 'Repeat this action, exhausting two items per extra battle, as many times as possible.' : ''}
+${translate.instant('SpecificDaylight.Vagabot.ActionBattle', { target })}
 
-${vaga.hasTrait('Marksman') ? 'Deal an immediate hit in each battle.' : ''}
+${!vaga.hasTrait('Adventurer') ? translate.instant('SpecificDaylight.Vagabot.ActionBattleAdventurer') : ''}
 
-_(If target defender is in multiple clearings at equal distance, move to clearing where they have most buildings and
-tokens, then fewest warriors.)_`;
+${vaga.hasTrait('Marksman') ? translate.instant('SpecificDaylight.Vagabot.ActionBattleMarksman') : ''}
+
+${translate.instant('SpecificDaylight.Vagabot.ActionBattleTiebreaker')}
+`;
       },
 
       repair() {
-        return `If you have any damaged items, exhaust one item to repair one damaged item, unexhausted before exhausted.`;
+        return translate.instant('SpecificDaylight.Vagabot.ActionRepair');
       },
 
       special() {
         return `
-Exhaust one item to do the following (skip if it would have no effect):
+${translate.instant('SpecificDaylight.Vagabot.ActionSpecial')}
 
-${vaga.descriptions[vaga.customData.chosenVaga] || 'no class chosen'}
+${translate.instant('SpecificExtra.Vagabot.Desc' + vaga.customData.chosenVaga)}
         `;
       }
     };
   }
 
-  public birdsong() {
+  public birdsong(translate: TranslateService) {
     return [
-      `Reveal an order card.`,
-      `Craft order card for **vp:1** if it shows an available item.`,
-      `If you have two or fewer undamaged items, move to a random adjacent forest, then go to Evening.`
+      translate.instant(`SpecificBirdsong.Vagabot.RevealOrder`),
+      translate.instant(`SpecificBirdsong.Vagabot.CraftOrder`),
+      translate.instant(`SpecificBirdsong.Vagabot.RestOrder`)
     ];
   }
 
-  public daylight() {
-    const actions = this.actions(this);
+  public daylight(translate: TranslateService) {
+    const actions = this.actions(this, translate);
 
     let base = [];
 
@@ -189,32 +162,30 @@ ${vaga.descriptions[vaga.customData.chosenVaga] || 'no class chosen'}
     return base;
   }
 
-  public evening() {
-    const itemRepairs = this.hasTrait('Berserker') ? 'two items' : 'one item';
+  public evening(translate: TranslateService) {
+    const itemRepairs = this.hasTrait('Berserker') ? 2 : 1;
 
-    let itemRefreshMin = 'four';
-    let itemRefreshMax = 'six';
+    let itemRefreshMin = '4';
+    let itemRefreshMax = '6';
 
     if (this.difficulty === 'Easy') {
-      itemRefreshMin = 'three';
-      itemRefreshMax = 'five';
+      itemRefreshMin = '3';
+      itemRefreshMax = '5';
     }
 
     if (this.difficulty === 'Challenging' || this.difficulty === 'Nightmare') {
-      itemRefreshMin = 'five';
-      itemRefreshMax = 'seven';
+      itemRefreshMin = '5';
+      itemRefreshMax = '7';
     }
 
     const base = [
-      `If you have any damaged items, refresh ${itemRefreshMin} undamaged items. If you have none, refresh ${itemRefreshMax} instead.`,
-
-      `If you are in a forest, repair all items. If not, repair ${itemRepairs}. Repair unexhausted items before exhausted items.`,
-
-      `Discard the order card.`
+      translate.instant('SpecificEvening.Vagabot.Refresh', { itemRefreshMin, itemRefreshMax }),
+      translate.instant('SpecificEvening.Vagabot.Forest', { itemRepairs }),
+      translate.instant('SpecificEvening.Vagabot.Discard')
     ];
 
     if (this.difficulty === 'Nightmare') {
-      base.push(`Score **vp:1**.`);
+      base.push(translate.instant('SpecificEvening.Vagabot.ScoreNightmare'));
     }
 
     return base;

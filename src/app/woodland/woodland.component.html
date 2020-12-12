@@ -30,7 +30,7 @@
           <li>
             <a (click)="botService.showPriorities()">{{ 'BotSetup.PriorityMarkers' | translate }}</a>
           </li>
-          <li *ngFor="let rule of bot.setupRules" [innerHTML]="rendererService.formatString(rule)"></li>
+          <li *ngFor="let rule of bot.setupRules" [innerHTML]="('SpecificSetup.Automated Alliance.' + rule) | translate | format"></li>
         </ol>
       </ion-card-content>
     </ion-card>
@@ -51,8 +51,8 @@
                          [checked]="bot.difficulty === diff"></ion-radio>
 
               <ion-label class="ion-text-wrap">
-                <h2>{{ diff }}</h2>
-                <p [innerHTML]="rendererService.formatString(bot.difficultyDescriptions[diff])"></p>
+                <h2>{{ 'BotSetup.Difficulty.' + diff | translate }}</h2>
+                <p [innerHTML]="('SpecificDifficulty.Automated Alliance.' + diff) | translate | format"></p>
               </ion-label>
             </ion-item>
           </ion-radio-group>
@@ -75,8 +75,8 @@
                           [checked]="rule.isActive"></ion-checkbox>
 
             <ion-label class="ion-text-wrap">
-              <h2>{{ rule.name }}</h2>
-              <p [innerHTML]="rendererService.formatString(rule.text)"></p>
+              <h2>{{ 'SpecificRules.' + rule.name | translate }}</h2>
+              <p [innerHTML]="('SpecificRules.' + rule.text) | translate | format"></p>
             </ion-label>
           </ion-item>
         </ion-list>
@@ -94,13 +94,13 @@
           <ion-item *ngIf="bot.difficulty !== 'Normal'">
             <ion-label class="ion-text-wrap">
               <h2>{{ 'BotSetup.DifficultyText' | translate }}: {{ bot.difficulty }}</h2>
-              <p [innerHTML]="rendererService.formatString(bot.difficultyDescriptions[bot.difficulty])"></p>
+              <p [innerHTML]="('SpecificDifficulty.Automated Alliance.' + bot.difficulty) | translate | format"></p>
             </ion-label>
           </ion-item>
           <ion-item *ngFor="let rule of bot.rules" [class.ion-hide]="rule.canToggle && !rule.isActive">
             <ion-label class="ion-text-wrap">
-              <h2>{{ rule.name }}</h2>
-              <p [innerHTML]="rendererService.formatString(rule.text)"></p>
+              <h2>{{ 'SpecificRules.' + rule.name | translate }}</h2>
+              <p [innerHTML]="('SpecificRules.' + rule.text) | translate | format"></p>
             </ion-label>
           </ion-item>
         </ion-list>
@@ -167,7 +167,7 @@
       </ion-card-header>
       <ion-card-content>
         <ol>
-          <li class="rule-message" *ngFor="let message of bot.birdsong()">
+          <li class="rule-message" *ngFor="let message of bot.birdsong(translateService)">
             <span [innerHTML]="rendererService.formatString(message)"></span>
           </li>
         </ol>
@@ -182,7 +182,7 @@
       </ion-card-header>
       <ion-card-content>
         <ol>
-          <li class="rule-message" *ngFor="let message of bot.daylight()">
+          <li class="rule-message" *ngFor="let message of bot.daylight(translateService)">
             <span [innerHTML]="rendererService.formatString(message)"></span>
           </li>
         </ol>
@@ -197,7 +197,7 @@
       </ion-card-header>
       <ion-card-content>
         <ol>
-          <li class="rule-message" *ngFor="let message of bot.evening()">
+          <li class="rule-message" *ngFor="let message of bot.evening(translateService)">
             <span [innerHTML]="rendererService.formatString(message)"></span>
           </li>
         </ol>

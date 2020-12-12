@@ -1,3 +1,4 @@
+import { TranslateService } from '@ngx-translate/core';
 import { Bot, BotName } from './bot';
 
 export class WoodlandBot extends Bot {
@@ -6,79 +7,62 @@ export class WoodlandBot extends Bot {
 
   public setupPosition = 'C';
   public setupRules = [
-    `Form a supply of 10 warriors near you.`,
-
-    `Collect your 3 bases and place them near you.`,
-
-    `Collect your 10 sympathy tokens and place them near you.`
+    'Setup0',
+    'Setup1',
+    'Setup2'
   ];
 
   public difficultyDescriptions = {
-    Easy: `
-You only **Organize** if a clearing has four or more Alliance warriors.
-    `,
-    Normal: 'Nothing is changed.',
-    Challenging: `
-You **Organize** if a clearing has two or more Alliance warriors.
-    `,
-    Nightmare: `
-You **Organize** if a clearing has two or more Alliance warriors.
-
-At the end of Evening, score one victory point.
-    `
+    Easy: `Easy`,
+    Normal: 'Normal',
+    Challenging: `Challenging`,
+    Nightmare: `Nightmare`
   };
 
   public rules = [
     {
-      name: 'Poor Manual Dexterity',
-      text: `You have no hand of cards. You cannot discard cards.
-      If a human would take a card from you, they draw a card instead.
-      If a human would give a card to you, they discard it, and you score **vp:1**.`,
+      name: 'RulePoorManualDexterity',
+      text: `TextPoorManualDexterity`,
       isActive: true
     },
     {
-      name: 'Automated Ambush',
-      text: 'In battle as defender with any Alliance warriors, you deal an extra hit.',
+      name: 'RuleAutomatedAmbush',
+      text: 'TextAutomatedAmbush',
       isActive: true
     },
     {
-      name: 'Automated Outrage',
-      text: `Whenever a human removes a sympathy token or moves any warriors into a sympathetic clearing,
-      they must discard a matching card. If they cannot, you score **vp:1**.`,
+      name: 'RuleAutomatedOutrage',
+      text: `TextAutomatedOutrage`,
       isActive: true
     },
     {
-      name: 'Martial Law',
-      text: `Whenever you place a sympathy token in a clearing with three or more warriors of an enemy player,
-      you score one fewer victory point _(minimum of zero)_.`,
+      name: 'RuleMartialLaw',
+      text: `TextMartialLaw`,
       isActive: true
     },
     {
-      name: 'Crackdown',
-      text: `Whenever a base is removed, remove all sympathy tokens from clearings matching the suit of the base removed.`,
+      name: 'RuleCrackdown',
+      text: `TextCrackdown`,
       isActive: true
     },
     {
-      name: 'Informants',
-      text: `Defenseless sympathy tokens benefit from Automated Ambush.`,
+      name: 'RuleInformants',
+      text: `TextInformants`,
       canToggle: true
     },
     {
-      name: 'Popularity',
-      text: `Enemies do not score victory points for removing sympathy tokens.`,
+      name: 'RulePopularity',
+      text: `TextPopularity`,
       canToggle: true
     },
     {
-      name: 'Veterans',
-      text: `
-Gain the Guerilla Warfare ability of the Woodland Alliance. _(In battle as defender, you use the higher roll
-  and the attacker uses the lower roll.)_
-      `,
+      name: 'RuleVeterans',
+      text: 'TextVeterans',
       canToggle: true
     },
     {
-      name: 'Wildfire',
-      text: `At the end of evening, **Spread Sympathy**. Do not score points for placing this sympathy token.`,
+      name: 'RuleWildfire',
+      text: `TextWildfire`,
       canToggle: true
     },
   ];
@@ -95,77 +79,64 @@ Gain the Guerilla Warfare ability of the Woodland Alliance. _(In battle as defen
     }
   };
 
-  public birdsong() {
+  public birdsong(translate: TranslateService) {
     const base = [
-      `Reveal an order card.`,
-      `Craft order card for **vp:1** if it shows an available item.`
+      translate.instant(`SpecificBirdsong.Automated Alliance.RevealOrder`),
+      translate.instant(`SpecificBirdsong.Automated Alliance.CraftOrder`)
     ];
 
     if (this.customData.currentSuit !== 'bird' && !this.customData.buildings[this.customData.currentSuit]) {
-      base.push(`
-Remove all enemy pieces from the **card:${this.customData.currentSuit}** sympathetic clearing with the most enemy pieces,
-and place the **card:${this.customData.currentSuit}** base there.
-      `);
 
-      const sympathySpread = this.customData.sympathy.slice(0, 5).every(x => x) ? 'once' : 'twice';
-      base.push(`
-If you did not revolt, **Spread Sympathy** ${sympathySpread}.
-      `);
+      const suit = this.customData.currentSuit;
+      base.push(translate.instant(`SpecificBirdsong.Automated Alliance.Revolt`, { suit }));
+
+      const sympathySpread = this.customData.sympathy.slice(0, 5).every(x => x) ? '1x' : '2x';
+      base.push(translate.instant(`SpecificBirdsong.Automated Alliance.RevoltSpread`, { sympathySpread }));
 
     } else {
-      const sympathySpread = this.customData.sympathy.slice(0, 5).every(x => x) ? 'once' : 'twice';
-      base.push(`
-**Spread Sympathy** ${sympathySpread}.
-      `);
+      const sympathySpread = this.customData.sympathy.slice(0, 5).every(x => x) ? '1x' : '2x';
+      base.push(translate.instant(`SpecificBirdsong.Automated Alliance.Spread`, { sympathySpread }));
 
     }
 
     return base;
   }
 
-  public daylight() {
+  public daylight(translate: TranslateService) {
 
-    const curSuit = this.customData.currentSuit;
+    const suit = this.customData.currentSuit;
 
     const base = [
-`Place a sympathy token in the **card:${curSuit}** clearing with the fewest enemy warriors adjacent to any sympathetic clearing.
-
-(**No Such Clearings**: Instead place a sympathy token on the clearing with the fewest enemy pieces.)
-
-(**Cannot Spread**: If you cannot place a sympathy token, score 5 VP.)`,
+      translate.instant(`SpecificDaylight.Automated Alliance.Spread`, { suit })
     ];
 
-    if (curSuit === 'bird') {
-      base.push(`
-Remove all enemy pieces from any sympathetic clearing with the most enemy pieces,
-and place the corresponding base there.
-      `);
+    if (suit === 'bird') {
+      base.push(translate.instant(`SpecificDaylight.Automated Alliance.Revolt`));
     }
 
     return base;
   }
 
-  public evening() {
+  public evening(translate: TranslateService) {
 
-    let organizeVal = 'three';
-    if (this.difficulty === 'Easy') { organizeVal = 'four'; }
-    if (this.difficulty === 'Challenging' || this.difficulty === 'Nightmare') { organizeVal = 'two'; }
+    let organizeVal = '3';
+    if (this.difficulty === 'Easy') { organizeVal = '4'; }
+    if (this.difficulty === 'Challenging' || this.difficulty === 'Nightmare') { organizeVal = '2'; }
 
     const base = [
-      `In each clearing with a base and ${organizeVal} or more Alliance warriors,
-      remove all Alliance warriors there and **Spread Sympathy**.`,
+      translate.instant(`SpecificEvening.Automated Alliance.Organize`, { organizeVal }),
 
-      `Place a warrior in each clearing with a base.`,
+      translate.instant(`SpecificEvening.Automated Alliance.WarriorPlace`),
 
-      `Discard the order card.`
+      translate.instant(`SpecificEvening.Automated Alliance.Discard`)
     ];
 
     if (this.hasTrait('Wildfire')) {
-      base.push(`**Spread Sympathy**, but do not score victory points.`);
+      base.push(translate.instant(`SpecificEvening.Automated Alliance.Wildfire`));
     }
 
     if (this.difficulty === 'Nightmare') {
-      base.push(`Score **vp:1**.`);
+      base.push(translate.instant(`SpecificEvening.Automated Alliance.NightmareScore`));
     }
 
     return base;
