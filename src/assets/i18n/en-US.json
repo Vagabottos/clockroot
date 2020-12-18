@@ -62,7 +62,7 @@
       "Setup0": "Form a supply of 20 warriors near you.",
       "Setup1": "Place 1 roost and 6 warriors in the corner clearing diagonally opposite from the clearing with the keep token. If the Marquise is not playing, place those pieces in a random corner clearing.",
       "Setup2": "Tuck your 2 Loyal Vizier cards, showing their suit, into the rightmost Decree column.",
-      "Setup3": "Collect your 7 roost buildings and place them near you."
+      "Setup3": "Collect your remaining 6 roost buildings and place them near you."
     },
     "Vagabot": {
       "Setup0": "Place the Vagabot pawn in the forest adjacent to the most clearings. If there are multiple such forests, decide randomly among those.",
