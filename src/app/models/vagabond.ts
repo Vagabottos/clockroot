@@ -110,11 +110,11 @@ ${canBeModified && vaga.hasTrait('Adventurer') ? translate.instant('SpecificDayl
 
       aid() {
         const aidHelpText = vaga.hasTrait('Helper') ? '2x ' : '';
-        return translate.instant('SpecificDaylight.Vagabot.ActionQuestRepeat', { aidHelpText });
+        return translate.instant('SpecificDaylight.Vagabot.ActionAid', { aidHelpText });
       },
 
       battle() {
-        const target = vaga.hasTrait('Berserker') 
+        const target = vaga.hasTrait('Berserker')
           ? translate.instant('SpecificDaylight.Vagabot.ActionBattleTargetBerserker')
           : translate.instant('SpecificDaylight.Vagabot.ActionBattleTarget');
 
