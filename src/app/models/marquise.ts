@@ -164,13 +164,13 @@ export class MarquiseBot extends Bot {
       const maxScore = Math.max(...scores, 0);
 
       const base2 = [
-        translate.instant('SpecificEvening.Electric Eyrie.Score', { score: maxScore }),
-        translate.instant('SpecificEvening.Electric Eyrie.Discard')
+        translate.instant('SpecificEvening.Mechanical Marquise.Score', { score: maxScore }),
+        translate.instant('SpecificEvening.Mechanical Marquise.Discard')
       ];
 
 
       if (this.difficulty === 'Nightmare') {
-        base2.push(translate.instant('SpecificEvening.Electric Eyrie.ScoreNightmare'));
+        base2.push(translate.instant('SpecificEvening.Mechanical Marquise.ScoreNightmare'));
       }
 
       return base2;
@@ -181,12 +181,12 @@ export class MarquiseBot extends Bot {
     const score = Math.max(0, buildingsOfSuit.reduce((prev, cur) => prev + (cur ? 1 : 0), 0) - 1);
 
     const base = [
-      translate.instant('SpecificEvening.Electric Eyrie.Score', { score }),
-      translate.instant('SpecificEvening.Electric Eyrie.Discard')
+      translate.instant('SpecificEvening.Mechanical Marquise.Score', { score }),
+      translate.instant('SpecificEvening.Mechanical Marquise.Discard')
     ];
 
     if (this.difficulty === 'Nightmare') {
-      base.push(translate.instant('SpecificEvening.Electric Eyrie.ScoreNightmare'));
+      base.push(translate.instant('SpecificEvening.Mechanical Marquise.ScoreNightmare'));
     }
 
     return base;
