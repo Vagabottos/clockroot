@@ -91,16 +91,16 @@
       "Nightmare": "During setup, take one bird Ambush from the deck and add it to the bird column of the Decree. At the end of Evening, score one victory point."
     },
     "Vagabot": {
-      "Easy": "You only **Organize** if a clearing has four or more Alliance warriors.",
-      "Normal": "Nothing is changed.",
-      "Challenging": "You **Organize** if a clearing has two or more Alliance warriors.",
-      "Nightmare": "You **Organize** if a clearing has two or more Alliance warriors. At the end of Evening, score one victory point."
-    },
-    "Automated Alliance": {
       "Easy": "In evening, refresh one fewer item.",
       "Normal": "Nothing is changed.",
       "Challenging": "In evening, refresh one more item.",
       "Nightmare": "In evening, refresh one more item. At the end of Evening, score one victory point."
+    },
+    "Automated Alliance": {
+      "Easy": "You only **Organize** if a clearing has four or more Alliance warriors.",
+      "Normal": "Nothing is changed.",
+      "Challenging": "You **Organize** if a clearing has two or more Alliance warriors.",
+      "Nightmare": "You **Organize** if a clearing has two or more Alliance warriors. At the end of Evening, score one victory point."
     },
     "Mechanical Marquise": {
       "Easy": "Whenever you **Recruit**, instead place only two warriors.",
