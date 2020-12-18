@@ -193,7 +193,7 @@ ${translate.instant('SpecificExtra.Vagabot.Special' + vaga.customData.chosenVaga
     ];
 
     if (this.difficulty === 'Nightmare') {
-      base.push(translate.instant('SpecificEvening.Vagabot.ScoreNightmare'));
+      base.push(translate.instant('SpecificEvening.Vagabot.NightmareScore'));
     }
 
     return base;

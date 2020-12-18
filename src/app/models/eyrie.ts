@@ -180,7 +180,7 @@ export class EyrieBot extends Bot {
     ];
 
     if (this.difficulty === 'Nightmare') {
-      base.push(translate.instant('SpecificEvening.Electric Eyrie.ScoreNightmare'));
+      base.push(translate.instant('SpecificEvening.Electric Eyrie.NightmareScore'));
     }
 
     return base;

@@ -116,7 +116,7 @@ export class WoodlandBot extends Bot {
     const suit = this.customData.currentSuit;
 
     const base = [
-      translate.instant(`SpecificDaylight.Automated Alliance.Spread`, { suit })
+      translate.instant(`SpecificDaylight.Automated Alliance.Sympathy`, { suit })
     ];
 
     if (suit === 'bird') {

@@ -170,7 +170,7 @@ export class MarquiseBot extends Bot {
 
 
       if (this.difficulty === 'Nightmare') {
-        base2.push(translate.instant('SpecificEvening.Mechanical Marquise.ScoreNightmare'));
+        base2.push(translate.instant('SpecificEvening.Mechanical Marquise.NightmareScore'));
       }
 
       return base2;
@@ -186,7 +186,7 @@ export class MarquiseBot extends Bot {
     ];
 
     if (this.difficulty === 'Nightmare') {
-      base.push(translate.instant('SpecificEvening.Mechanical Marquise.ScoreNightmare'));
+      base.push(translate.instant('SpecificEvening.Mechanical Marquise.NightmareScore'));
     }
 
     return base;
