@@ -9,7 +9,6 @@ export class EyrieBot extends Bot {
   public setupRules = [
     `Setup0`,
     `Setup1`,
-    `Setup2`,
     `Setup3`
   ];
 
@@ -70,7 +69,7 @@ export class EyrieBot extends Bot {
       fox: 0,
       mouse: 0,
       bunny: 0,
-      bird: 0
+      bird: 2
     },
 
     buildings: []
@@ -85,7 +84,7 @@ export class EyrieBot extends Bot {
       translate.instant(`SpecificBirdsong.Electric Eyrie.DecreeOrder`)
     ];
 
-    if(newRoost) {
+    if (newRoost) {
       base.push(translate.instant(`SpecificBirdsong.Electric Eyrie.NewRoost`));
     }
 
@@ -133,7 +132,7 @@ export class EyrieBot extends Bot {
             const recruitText = this.hasTrait('Nobility')
               ? translate.instant('SpecificDaylight.Electric Eyrie.ExtraRecruit')
               : '';
-              
+
             actions.push(translate.instant('SpecificDaylight.Electric Eyrie.Recruit', { totalForSuit, suitText, recruitText }));
             break;
           }
@@ -145,7 +144,7 @@ export class EyrieBot extends Bot {
 
           case 'battle': {
             let extraHit = '';
-            if(suit === mostSuit) extraHit = translate.instant('SpecificDaylight.Electric Eyrie.ExtraHit');
+            if (suit === mostSuit) { extraHit = translate.instant('SpecificDaylight.Electric Eyrie.ExtraHit'); }
             actions.push(translate.instant('SpecificDaylight.Electric Eyrie.Move', { totalForSuit, suitText, extraHit }));
             break;
           }

@@ -124,7 +124,7 @@
           </div>
 
           <div class="row-additions">
-            <ion-button [disabled]="bot.customData.decree[suit] <= 0" (click)="modifySuitCard(suit, -1)">
+            <ion-button [disabled]="suit === 'bird' ? bot.customData.decree[suit] <= 2 : bot.customData.decree[suit] <= 0" (click)="modifySuitCard(suit, -1)">
               <ion-icon name="remove"></ion-icon>
             </ion-button>
             <span class="decree-count">{{ bot.customData.decree[suit] }}</span>
