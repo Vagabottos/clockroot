@@ -1,281 +1,281 @@
 {
-  "AppTitle": "Root: The Clockwork Companion",
+  "AppTitle": "Root: Automates Clockwork",
   "AppTitleShort": "Clockroot",
-  "NavTitle": "Bots",
-  "CloseText": "Close",
-  "Language": "Language",
-  "LederPlug": "Get the Clockwork Expansion from Leder Games!",
-  "PriorityMaps": "Priority Maps",
-  "NeedsSetup": "Needs Setup",
+  "NavTitle": "Automates",
+  "CloseText": "Fermer",
+  "Language": "Langue",
+  "LederPlug": "L'extension Clockwork chez Leder Games!",
+  "PriorityMaps": "Cartes des Priorités",
+  "NeedsSetup": "Mise en Place",
   "BotSetup": {
-    "Setup": "Setup",
-    "PriorityMarkers": "Set up priority markers for the map.",
-    "ChooseDifficulty": "Choose Difficulty",
+    "Setup": "Mise en Place",
+    "PriorityMarkers": "Mettez en place les marqueurs de priorité pour le plateau.",
+    "ChooseDifficulty": "Choix de la Difficulté",
     "Difficulty": {
-      "Easy": "Easy",
+      "Easy": "Facile",
       "Normal": "Normal",
-      "Challenging": "Challenging",
-      "Nightmare": "Nightmare"
+      "Challenging": "Difficile",
+      "Nightmare": "Cauchemar"
     },
-    "ChooseVagabot": "Choose Vagabot",
-    "ChooseTraits": "Choose Traits",
-    "DifficultyText": "Difficulty",
-    "TurmoilText": "You fall into Turmoil if you cannot place a roost.",
-    "TurmoilNobilityText": "You fall into Turmoil if you cannot place a roost or warrior."
+    "ChooseVagabot": "Choix du Vagabot",
+    "ChooseTraits": "Choix des Traits",
+    "DifficultyText": "Difficulté",
+    "TurmoilText": "Vous subissez une Crise si vous ne pouvez pas placer un perchoir.",
+    "TurmoilNobilityText": "Vous subissez une Crise si vous ne pouvez pas placer un perchoir ou un guerrier."
   },
-  "AddBot": "Add a bot by clicking the",
+  "AddBot": "Ajoutez un bot en cliquant sur",
   "Factions": {
-    "Mechanical Marquise": "Mechanical Marquise",
-    "Electric Eyrie": "Electric Eyrie",
-    "Automated Alliance": "Automated Alliance",
+    "Mechanical Marquise": "Marquise Mécanique",
+    "Electric Eyrie": "Canopée Cinétique",
+    "Automated Alliance": "Alliance Automatisée",
     "Vagabot": "Vagabot"
   },
   "FactionsShort": {
-    "Mechanical Marquise": "M. Marquise",
-    "Electric Eyrie": "E. Eyrie",
-    "Automated Alliance": "A. Alliance",
+    "Mechanical Marquise": "Marquise M.",
+    "Electric Eyrie": "Canopée C.",
+    "Automated Alliance": "Alliance A.",
     "Vagabot": "Vagabot"
   },
   "Priorities": {
-    "Title": "Map Priorities",
-    "Fall": "Fall",
-    "Winter": "Winter",
-    "Lake": "Lake",
-    "Mountain": "Mountain"
+    "Title": "Cartes des Priorités",
+    "Fall": "Automne",
+    "Winter": "Hiver",
+    "Lake": "Lac",
+    "Mountain": "Montagne"
   },
   "Sections": {
-    "DifficultyTraits": "Difficulty & Traits",
-    "VPItems": "Victory Points & Items",
-    "DecreeRoosts": "Decree & Roosts",
-    "Buildings": "Buildings",
-    "Birdsong": "Birdsong",
-    "Daylight": "Daylight",
-    "Evening": "Evening",
-    "Turmoil": "Turmoil",
-    "BattleTrackBonus": "Battle Track Bonus",
-    "SatchelBattleTrack": "Satchel & Battle Track",
-    "SympathyBases": "Sympathy & Bases",
-    "VagabotDifficultyTrait": "Vagabot, Difficulty, Traits"
+    "DifficultyTraits": "Difficulté & Traits",
+    "VPItems": "Points de Victoire & Objets",
+    "DecreeRoosts": "Décret & Perchoirs",
+    "Buildings": "Bâtiments",
+    "Birdsong": "Aurore",
+    "Daylight": "Jour",
+    "Evening": "Crépuscule",
+    "Turmoil": "Crise",
+    "BattleTrackBonus": "Bonus Piste de Combat",
+    "SatchelBattleTrack": "Sacoche & Piste de Combat",
+    "SympathyBases": "Sympathie & Bases",
+    "VagabotDifficultyTrait": "Vagabot, Difficulté, Traits"
   },
   "SpecificSetup": {
     "Electric Eyrie": {
-      "Setup0": "Form a supply of 20 warriors near you.",
-      "Setup1": "Place 1 roost and 6 warriors in the corner clearing diagonally opposite from the clearing with the keep token. If the Marquise is not playing, place those pieces in a random corner clearing.",
-      "Setup2": "Tuck your 2 Loyal Vizier cards, showing their suit, into the rightmost Decree column.",
-      "Setup3": "Collect your 7 roost buildings and place them near you."
+      "Setup0": "Formez une réserve de 20 guerriers près de vous",
+      "Setup1": "Placez 6 guerriers et 1 perchoir dans la clairière diagonalement opposée à la clairière contenant le donjon. Si la Marquise ne joue pas, placez ces pièces dans une clairière dans un des coins au hasard.",
+      "Setup2": "Glissez vos 2 cartes de Vizir Fidèle face visible dans la colonne Oiseau du Décret.",
+      "Setup3": "Prenez vos 6 perchoirs restants et placez-les près de vous."
     },
     "Vagabot": {
-      "Setup0": "Place the Vagabot pawn in the forest adjacent to the most clearings. If there are multiple such forests, decide randomly among those.",
-      "Setup1": "Shuffle the quest deck, draw 1 quest card, and place it face up near you. This quest can only be completed by the bot.",
-      "Setup2": "Place any 1 item marked \"R\" beneath each ruin on the map.",
-      "Setup3": "Take any 4 items marked \"S\" and place them in your Satchel. _(The Tinker starts with 3 items instead of 4 items.)_"
+      "Setup0": "Placez le pion du Vagabond dans le bois adjacent au plus de clairières. Si plusieurs bois sont à égalité, choisissez-en un au hasard.",
+      "Setup1": "Mélangez vos cartes Quête, piochez-en une et disposez-la face visible. Cette quête ne peut être accomplie que par le bot.",
+      "Setup2": "Prenez les 4 ruines du plateau, et prenez les objets marqués d’un \"R\". Placez-en un sous chaque ruine et mélangez-les. Puis, remettez chaque pile sur un emplacement Ruine vide.",
+      "Setup3": "Prenez 4 objets marqués d’un \"D\" et placez les face visible dans votre sacoche. _(Le Bricoleur commence avec 3 objets au lieu de 4.)_"
     },
     "Automated Alliance": {
-      "Setup0": "Form a supply of 10 warriors near you.",
-      "Setup1": "Collect your 3 bases and place them near you.",
-      "Setup2": "Collect your 10 sympathy tokens and place them near you."
+      "Setup0": "Formez une réserve de 10 guerriers près de vous.",
+      "Setup1": "Prenez vos 3 bases et placez-les près de vous.",
+      "Setup2": "Prenez vos 10 jetons de Sympathie et placez-les près de vous."
     },
     "Mechanical Marquise": {
-      "Setup0": "Form a supply of 25 warriors near you.",
-      "Setup1": "Place the keep token in a random corner clearing.",
-      "Setup2": "Place a warrior in each clearing, except the corner clearing diagonally opposite from the keep. Place an extra warrior in the clearing with the keep token. _(Place 12 warriors in total.)_",
-      "Setup3": "Place 1 sawmill, 1 workshop and 1 recruiter randomly among the clearing with the keep token and those clearings adjacent with up to one building per clearing.",
-      "Setup4": "Collect your remaining 15 buildings and place them near you."
+      "Setup0": "Formez une réserve de 25 guerriers près de vous.",
+      "Setup1": "Placez le jeton du donjon dans une clairière en coin du plateau au hasard.",
+      "Setup2": "Placez 1 guerrier dans chaque clairière, excepté dans celle diagonalement opposée au donjon. Placez 1 guerrier supplémentaire dans la clairière du donjon. _(Placez 12 guerriers au total.)_",
+      "Setup3": "Placez au hasard 1 scierie, 1 atelier et 1 recruteur parmi la clairière du donjon et les clairières adjacentes. (Placez-en 3 au total. Un par clairière.)",
+      "Setup4": "Placez vos bâtiments restants (5 de chaque type) et placez-les près de vous."
     }
   },
   "SpecificDifficulty": {
     "Electric Eyrie": {
-      "Easy": "During setup, add only one Loyal Vizier to the Decree.",
-      "Normal": "Nothing is changed.",
-      "Challenging": "During setup, take one bird Ambush from the deck and add it to the bird column of the Decree.",
-      "Nightmare": "During setup, take one bird Ambush from the deck and add it to the bird column of the Decree. At the end of Evening, score one victory point."
+      "Easy": "Lors de la mise en place, n'ajoutez qu'un Vizir Fidèle au Décret.",
+      "Normal": "Mode par défaut.",
+      "Challenging": "Lors de la mise en place, prenez une Embuscade Oiseau et ajoutez-la dans la colonne Oiseau du Décret.",
+      "Nightmare": "Lors de la mise en place, prenez une Embuscade Oiseau et ajoutez-la dans la colonne Oiseau du Décret. A la fin du Crépuscule, marquez 1 point de victoire."
     },
     "Vagabot": {
-      "Easy": "You only **Organize** if a clearing has four or more Alliance warriors.",
-      "Normal": "Nothing is changed.",
-      "Challenging": "You **Organize** if a clearing has two or more Alliance warriors.",
-      "Nightmare": "You **Organize** if a clearing has two or more Alliance warriors. At the end of Evening, score one victory point."
+      "Easy": "Au Crépuscule, rafraîchissez un objet de moins.",
+      "Normal": "Mode par défaut.",
+      "Challenging": "Au Crépuscule, rafraîchissez un objet de plus.",
+      "Nightmare": "Au Crépuscule, rafraîchissez un objet de plus. A la fin du Crépuscule, marquez 1 point de victoire."
     },
     "Automated Alliance": {
-      "Easy": "In evening, refresh one fewer item.",
-      "Normal": "Nothing is changed.",
-      "Challenging": "In evening, refresh one more item.",
-      "Nightmare": "In evening, refresh one more item. At the end of Evening, score one victory point."
+      "Easy": "N'effectuez l'action **Organisation** que pour les clairières avec au moins 4 guerriers de l'Alliance.",
+      "Normal": "Mode par défaut.",
+      "Challenging": "Effectuez l'action **Organisation** pour les clairières avec au moins 2 guerriers de l'Alliance.",
+      "Nightmare": "Effectuez l'action **Organisation** pour les clairières avec au moins 2 guerriers de l'Alliance. A la fin du Crépuscule, marquez 1 point de victoire."
     },
     "Mechanical Marquise": {
-      "Easy": "Whenever you **Recruit**, instead place only two warriors.",
+      "Easy": "Lors du **Recrutement**, ne placez que 2 guerriers.",
       "Normal": "Nothing is changed.",
-      "Challenging": "Whenever you **Recruit**, also place two warriors in the ordered clearing you rule of highest priority.",
-      "Nightmare": "Whenever you **Recruit**, also place two warriors in the ordered clearing you rule of highest priority. At the end of Evening, score one victory point."
+      "Challenging": "Lors du **Recrutement**, placez également 2 guerriers dans la clairière controlée de la couleur de l'ordre de plus haute priorité.",
+      "Nightmare": "Lors du **Recrutement**, placez également 2 guerriers dans la clairière controlée de la couleur de l'ordre de plus haute priorité. A la fin du Crépuscule, marquez 1 point de victoire."
     }
   },
   "SpecificRules": {
-    "RulePoorManualDexterity": "Poor Manual Dexterity",
-    "TextPoorManualDexterity": "You have no hand of cards. You cannot discard cards. If a human would take a card from you, they draw a card instead. If a human would give a card to you, they discard it, and you score **vp:1**.",
-    "RuleHatesSurprises": "Hates Surprises",
-    "TextHatesSurprises": "Ambush cards cannot be played against you.",
-    "RuleLordsOfTheForest": "Lords of the Forest",
-    "TextLordsOfTheForest": "You rule any clearings where you are tied in presence.",
-    "RuleNobility": "Nobility",
-    "TextNobility": "You now fall into turmoil if you cannot place a roost or a warrior. Whenever you fall into turmoil, you do not lose victory points. Instead, you score one victory point per bird card in the Decree.",
-    "RuleRelentless": "Relentless",
-    "TextRelentless": "After resolving the Decree, remove all defenseless buildings and tokens in any clearing with Eyrie warriors.",
-    "RuleSwoop": "Swoop",
-    "TextSwoop": "At the end of Daylight, place two warriors in the clearing of highest priority with no Eyrie pieces.",
-    "RuleWarTax": "War Tax",
-    "TextWarTax": "Whenever you remove an enemy building or token, its owner loses one victory point.",
-    "RuleLoneWanderer": "Lone Wanderer",
-    "TextLoneWanderer": "Your pawn is not a warrior and cannot be removed from the map.",
-    "RuleNimble": "Nimble",
-    "TextNimble": "You can move regardless of who rules your clearing.",
-    "RuleAdventurer": "Adventurer",
-    "TextAdventurer": "You can **Battle** no more than once per turn.<br>At the end of Daylight, repeat **Quest** as many times as possible.",
-    "RuleBerserker": "Berserker",
-    "TextBerserker": "Whenever you **Battle**, instead move to the nearest clearing with the most pieces and target the player with the most pieces there.<br>In evening, repair one more item.",
-    "RuleHelper": "Helper",
-    "TextHelper": "Whenever you **Aid**, score one extra victory point, and the aided player draws two cards instead of one.",
-    "RuleMarksman": "Marksman",
-    "TextMarksman": "At the start of battle as attacker, deal an immediate hit _(scoring a point if you remove an enemy warrior)_.",
-    "RuleAutomatedAmbush": "Automated Ambush",
-    "TextAutomatedAmbush": "In battle as defender with any Alliance warriors, you deal an extra hit.",
-    "RuleAutomatedOutrage": "Automated Outrage",
-    "TextAutomatedOutrage": "Whenever a human removes a sympathy token or moves any warriors into a sympathetic clearing, they must discard a matching card. If they cannot, you score **vp:1**.",
-    "RuleMartialLaw": "Martial Law",
-    "TextMartialLaw": "Whenever you place a sympathy token in a clearing with three or more warriors of an enemy player, you score one fewer victory point _(minimum of zero)_.",
-    "RuleCrackdown": "Crackdown",
-    "TextCrackdown": "Whenever a base is removed, remove all sympathy tokens from clearings matching the suit of the base removed.",
-    "RuleInformants": "Informants",
-    "TextInformants": "Defenseless sympathy tokens benefit from Automated Ambush.",
-    "RulePopularity": "Popularity",
-    "TextPopularity": "Enemies do not score victory points for removing sympathy tokens.",
-    "RuleVeterans": "Veterans",
-    "TextVeterans": "Gain the Guerilla Warfare ability of the Woodland Alliance. _(In battle as defender, you use the higher roll and the attacker uses the lower roll.)_",
-    "RuleWildfire": "Wildfire",
-    "TextWildfire": "At the end of evening, **Spread Sympathy**. Do not score points for placing this sympathy token.",
-    "RuleTheKeep": "The Keep",
-    "TextTheKeep": "Only you can place pieces in the clearing with the keep token.",
+    "RulePoorManualDexterity": "Dextérité Manuelle Réduite",
+    "TextPoorManualDexterity": "Vous n'avez pas de main de cartes. Vous ne pouvez pas vous défausser. Si un joueur humain doit vous prendre 1 carte, il pioche 1 carte. S'il doit vous donner 1 carte, il défausse la carte et vous marquez **vp:1**.",
+    "RuleHatesSurprises": "Déteste les Surprises",
+    "TextHatesSurprises": "Les cartes Embuscade ne peuvent pas être jouées contre vous.",
+    "RuleLordsOfTheForest": "Seigneurs de la Forêt",
+    "TextLordsOfTheForest": "Vous contrôlez les clairières en cas d’égalité.",
+    "RuleNobility": "Noblesse",
+    "TextNobility": "Vous subissez une crise si vous ne pouvez pas placer un perchoir ou un guerrier. Lorsque vous subissez une crise, ne perdez pas de points de victoire. A la place, marquez 1 point de victoire par carte Oiseau dans le Décret.",
+    "RuleRelentless": "Impitoyable",
+    "TextRelentless": "Après la résolution du Décret, retirez tous les bâtiments et jetons sans défense des clairières où se trouve au moins 1 guerrier de la Canopée.",
+    "RuleSwoop": "Descente",
+    "TextSwoop": "A la fin du Jour, placez 2 guerriers dans la clairière avec la plus haute priorité sans aucune pièce de la Canopée.",
+    "RuleWarTax": "Taxe",
+    "TextWarTax": "Lorsque vous retirez un bâtiment ou jeton adverse, son propriétaire perd 1 point de victoire.",
+    "RuleLoneWanderer": "Voyageur Solitaire",
+    "TextLoneWanderer": "Votre pion n’est pas un guerrier et ne peut pas être retiré du plateau.",
+    "RuleNimble": "Agile",
+    "TextNimble": "Vous pouvez vous déplacer, peu importe qui contrôle les clairières.",
+    "RuleAdventurer": "Aventurier",
+    "TextAdventurer": "Vous ne pouvez pas effectuer l'action **Combat** plus d'une fois par tour.<br>A la fin du Jour, répétez l'action **Quête** autant de fois que possible.",
+    "RuleBerserker": "Fou Furieux",
+    "TextBerserker": "Lorsque vous initiez un **Combat**, déplacez-vous plutôt vers la clairière la plus proche avec le plus de pièces et ciblez le joueur avec le plus de pièces.<br>Au Crépuscule, réparez un objet de plus.",
+    "RuleHelper": "Assistant",
+    "TextHelper": "Lorsque vous effectuez une **Aide**, marquez 1 PV supplémentaire, et le joueur aidé pioche 2 cartes au lieu d'une.",
+    "RuleMarksman": "Tireur",
+    "TextMarksman": "Au début d'un combat en tant qu'attaquant, infligez immédiatement une perte. _(Marquez 1 PV si vous retirez un guerrier adverse)_.",
+    "RuleAutomatedAmbush": "Guérilla Automatisée",
+    "TextAutomatedAmbush": "En défendant en combat avec des guerriers, l’automate inflige 1 perte additionnelle.",
+    "RuleAutomatedOutrage": "Indignation Automatisée",
+    "TextAutomatedOutrage": "Si un joueur humain retire un jeton Sympathie ou se déplace dans une clairière sympathisante, il doit défausser 1 carte de la même couleur. S’il ne peut pas, l’automate marque **vp:1**.",
+    "RuleMartialLaw": "Loi Martiale",
+    "TextMartialLaw": "Lorsque vous placez un jeton Sympathie dans une clairière avec au moins 3 guerriers adverses, marquez 1 PV de moins _(minimum de 0)_.",
+    "RuleCrackdown": "Répression",
+    "TextCrackdown": "Si une base est retirée du plateau, retirez tous les jetons de Sympathie de toutes les clairières de la même couleur.",
+    "RuleInformants": "Informateurs",
+    "TextInformants": "Les jetons Sympathie sans défense bénéficient de la Guérilla Automatisée.",
+    "RulePopularity": "Popularité",
+    "TextPopularity": "Vos adversaires ne marquent pas de points de victoire en retirant des jetons Sympathie.",
+    "RuleVeterans": "Vétérans",
+    "TextVeterans": "En défendant en combat, utilisez le même dé que l'attaquant. _(Les 2 joueurs utilisent le plus grand résultat des dés.)_",
+    "RuleWildfire": "Feu de forêt",
+    "TextWildfire": "A la fin du Crépuscule, **Gagnez la Sympathie**. Ne marquez pas de points de victoire pour avoir placé ce jeton Sympathie.",
+    "RuleTheKeep": "Le Donjon",
+    "TextTheKeep": "Vous seul pouvez placer des pièces dans la clairière où se trouve le Donjon.",
     "RuleBlitz": "Blitz",
-    "TextBlitz": "After you move, find the clearing you rule of the highest priority without any enemy pieces. Move all but one warrior from the clearing. Then, battle in the destination clearing.",
-    "RuleFortified": "Fortified",
-    "TextFortified": "Your buildings each take two hits to remove. Taking a single hit with a building has no effect.",
-    "RuleHospitals": "Hospitals",
-    "TextHospitals": "At the end of battle as defender, if two or more Marquise warriors were removed in the battle, place two warriors in the clearing with the keep token.",
-    "RuleIronWill": "Iron Will",
-    "TextIronWill": "Whenever you **Recruit** in Escalated Daylight, place double the warriors."
+    "TextBlitz": "Après votre déplacement, sélectionnez la clairière controlée sans pièces adverses ayant la plus haute priorité. Déplacez tous vos guerriers, sauf 1, depuis cette clairière, puis initiez un combat dans la clairière d'arrivée.",
+    "RuleFortified": "Fortifié",
+    "TextFortified": "Vos bâtiments doivent subir 2 pertes pour être retirés. Infliger 1 seule perte à un de vos bâtiments n'a aucun effet.",
+    "RuleHospitals": "Hôpitaux",
+    "TextHospitals": "À la fin de chaque combat en tant que défenseur au cours duquel 2 guerriers ou plus furent retirés, placez 2 guerriers dans la clairière du Donjon.",
+    "RuleIronWill": "Implacable",
+    "TextIronWill": "Lors du **Recrutement** du Jour Intensifié, placez le double de guerriers."
   },
   "SpecificBirdsong": {
     "Electric Eyrie": {
-      "RevealOrder": "Reveal an order card.",
-      "CraftOrder": "Craft order card for **vp:1** if it shows an available item.",
-      "DecreeOrder": "Add the order card to the matching Decree column.",
-      "NewRoost": "Place a roost and 4 warriors in the ordered clearing of the highest priority where all those pieces can be placed. _(Intentionally not listed on board.)_"
+      "RevealOrder": "**Révélez** la carte ordre en piochant une carte.",
+      "CraftOrder": "**Fabriquez** la carte ordre pour **vp:1** s'il s'agit d'un objet disponible.",
+      "DecreeOrder": "**Ajoutez** la carte ordre à la colonne correspondante du Décret.",
+      "NewRoost": "**Placez** un perchoir et 4 guerriers dans la clairière de la couleur de l'ordre avec la plus haute priorité, où toutes ces pièces peuvent être placées."
     },
     "Vagabot": {
-      "RevealOrder": "Reveal an order card.",
-      "CraftOrder": "Craft order card for **vp:1** if it shows an available item.",
-      "RestOrder": "If you have two or fewer undamaged items, move to a random adjacent forest, then go to Evening."
+      "RevealOrder": "**Révélez** la carte ordre en piochant une carte.",
+      "CraftOrder": "**Fabriquez** la carte ordre pour **vp:1** s'il s'agit d'un objet disponible.",
+      "RestOrder": "**Se faufiler.** Si vous avez 2 objets intacts ou moins, déplacez-vous dans un bois adjacent choisi au hasard, puis passez au Crépuscule."
     },
     "Automated Alliance": {
-      "RevealOrder": "Reveal an order card.",
-      "CraftOrder": "Craft order card for **vp:1** if it shows an available item.",
-      "Revolt": "Remove all enemy pieces from the **card:{{suit}}** sympathetic clearing with the most enemy pieces, and place the **card:{{suit}}** base there.",
-      "RevoltSpread": "If you did not revolt, **Spread Sympathy** {{sympathySpread}}.",
-      "Spread": "**Spread Sympathy** {{sympathySpread}}."
+      "RevealOrder": "**Révélez** la carte ordre en piochant une carte.",
+      "CraftOrder": "**Fabriquez** la carte ordre pour **vp:1** s'il s'agit d'un objet disponible.",
+      "Revolt": "**Révolte** Retirez toutes les pièces adverses d’une clairière sympathisante et placez-y la base **card:{{suit}}**.<br>_(Priorités : Clairière avec le plus de pièces adverses, puis avec la plus haute priorité.)_",
+      "RevoltSpread": "**Support Populaire** S'il n'y a pas eu de Révolte à ce tour, **Gagner la Sympathie** {{sympathySpread}}.",
+      "Spread": "**Gagner la Sympathie** {{sympathySpread}}."
     },
     "Mechanical Marquise": {
-      "RevealOrder": "Reveal an order card.",
-      "CraftOrder": "Craft order card for **vp:1** if it shows an available item."
+      "RevealOrder": "**Révélez** la carte ordre en piochant une carte.",
+      "CraftOrder": "**Fabriquez** la carte ordre pour **vp:1** s'il s'agit d'un objet disponible."
     }
   },
   "SpecificDaylight": {
     "Electric Eyrie": {
-      "Recruit": "Recruit {{totalForSuit}} warrior(s) in a {{suitText}} clearing with a roost. {{recruitText}}<br>_(**Ties**: Recruit in such a clearing with the most enemy pieces, then fewest Eyrie warriors, then lowest priority.)_",
-      "Move": "Move from the {{suitText}} clearing you rule with the most of your warriors to an adjacent clearing. Leave enough warriors to exactly rule the origin clearing or {{totalForSuit}}, whichever is higher.<br>_(**Destination Ties**: Move to such a clearing with no roost, then fewest enemy pieces, then lowest priority.)_",
-      "Battle": "Battle in a {{suitText}} clearing against the player with the most buildings there. {{extraHit}}<br>_(**Clearing Ties**: Battle in such a clearing with no roost, then most defenseless buildings, then lowest priority.)_<br>_(**Defender Ties**: Battle such a player with the most pieces there, then the player with the most victory points.)_",
-      "ExtraDealExtraHit": "**Deal an extra hit.**",
+      "Recruit": "**Recrutement**. Placez {{totalForSuit}} guerrier(s) dans une clairière {{suitText}} avec un perchoir.<br>_(**Priorités**: Dans la clairière avec le plus de pièces adverses, puis avec le moins de guerriers de la Canopée, puis avec la plus faible priorité.)_",
+      "Move": "**Déplacement** depuis une clairière {{suitText}} controlée avec le plus de guerriers de la Canopée, vers une clairière adjacente sans perchoir. Si toutes les clairières adjacentes ont un perchoir, vers celle qui a le moins de pièces adverses. Laissez suffisamment de guerriers dans la clairère de départ pour la contrôler ({{totalForSuit}} minimum).<br>_(**(Priorités**: Vers la clairière avec le moins de pièces adverses, puis avec la plus faible priorité.)_",
+      "Battle": "**Combat**. Dans une clairière {{suitText}}, combattez le joueur avec le plus de bâtiments. {{extraHit}}<br>_(**Priorités clairière**: Dans une clairière sans perchoir, puis avec le plus de bâtiments adverses sans défense, puis avec la plus faible priorité.)_<br>_(**Priorités défenseur**: Combattez le joueur avec le plus de pièces, puis le plus de PV.)_",
+      "ExtraDealExtraHit": "**Infligez une perte additionnelle.**",
       "ExtraDecree": "You should have added at least 2 bird cards to the decree.",
       "ExtraRelentless": "Remove all defenseless tokens and buildings in any clearing with Eyrie warriors.",
-      "ExtraRecruit": "If you cannot place a warrior, you fall into turmoil.",
-      "ExtraBuild": "Place a roost in the clearing you rule of highest priority with no roost. If you cannot place a roost, you fall into turmoil.",
-      "ExtraSwoop": "Place two warriors in the clearing of highest priority with no Eyrie pieces."
+      "ExtraRecruit": "Si vous ne pouvez pas placer un guerrier, subissez une crise.",
+      "ExtraBuild": "**Construction**. Placez un perchoir dans la clairière que vous contrôlez de plus haute priorité, sans perchoir. Si vous ne le pouvez pas, subissez une crise.",
+      "ExtraSwoop": "Placez 2 guerriers dans la clairière avec la plus haute priorité sans aucune pièce de la Canopée."
     },
     "Vagabot": {
-      "ActionExplore": "Move to the nearest ruin, exhausting one item per move, then exhaust one item to take an item from that ruin.",
-      "ActionQuest": "Move to the nearest clearing matching the quest, then exhaust any two items to discard the quest and score **vp:1**. _(Ignore card text.)_ Then, replace the quest.",
-      "ActionQuestRepeat": "Repeat this as many times as possible.",
-      "ActionAid": "Target the player in your clearing with any items and the least VP among those players. Exhaust as many items as possible up to the number of items they have, take that many items from them, and score {{aidHelpText}}that many VP. Then, they draw {{aidHelpText}}that many cards.",
-      "ActionBattle": "Move to the nearest clearing with any pieces of the enemy with the most {{target}}, then exhaust one item to battle that player. Score **vp:1** per enemy warrior removed.",
-      "ActionBattleTarget": "VP",
-      "ActionBattleTargetBerserker": "pieces",
-      "ActionBattleAdventurer": "Repeat this action, exhausting two items per extra battle, as many times as possible.",
-      "ActionBattleMarksman": "Deal an immediate hit in each battle.",
-      "ActionBattleTiebreaker": "_(If target defender is in multiple clearings at equal distance, move to clearing where they have most buildings and tokens, then fewest warriors.)_",
-      "ActionRepair": "If you have any damaged items, exhaust one item to repair one damaged item, unexhausted before exhausted.",
-      "ActionSpecial": "Exhaust one item to do the following (skip if it would have no effect):"
+      "ActionExplore": "**Exploration**. Déplacez-vous vers la ruine la plus proche, en épuisant un objet à chaque déplacement, puis épuisez 1 objet pour prendre 1 objet de cette ruine.",
+      "ActionQuest": "**Quête**. Déplacez-vous vers la clairière la plus proche de la couleur de la quête, puis épuisez 2 objets pour défausser la quête et marquer **vp:1**. _(Ignorez le texte de la carte.)_ Puis, remplacez la quête.",
+      "ActionQuestRepeat": "Répétez cette action autant de fois que possible.",
+      "ActionAid": "**Aide**. Ciblez le joueur dans votre clairière ayant au moins 1 objet disponible. Epuisez autant d'objets que possible pour lui prendre ce même nombre d'objets et marquez {{aidHelpText}}autant de PV que d'objet pris. Puis, ce joueur pioche {{aidHelpText}}autant de cartes que d'objet pris.<br>_(Priorité : Ciblez le joueur avec le moins de PV)_",
+      "ActionBattle": "**Combat**. Déplacez-vous vers la clairière la plus proche contenant des pièces de l'adversaire avec le plus de {{target}}, puis épuisez 1 objet pour combatre ce joueur.  Marquez **vp:1** par guerrier adverse retiré.",
+      "ActionBattleTarget": "PV",
+      "ActionBattleTargetBerserker": "pièces",
+      "ActionBattleAdventurer": "Répétez cette action, en épuisant 2 objets par combat supplémentaire, autant de fois que possible.",
+      "ActionBattleMarksman": "Infligez immédiatement une perte avant chaque combat.",
+      "ActionBattleTiebreaker": "_(Priorité : Si le joueur ciblé est présent dans plusieurs clairières à égale distance, déplacez-vous vers la clairière où il a le plus de bâtiments et jetons, puis le moins de guerriers.)_",
+      "ActionRepair": "**Réparation**. Si vous avez au moins 1 objet endommagé, épuisez 1 objet pour réparer 1 objet endommagé. Réparez les objets face visible avant les objets épuisés.",
+      "ActionSpecial": "**Spécial**. Epuisez 1 objet pour effectuer l'action suivante (Passez cette étape si cela n'a aucun effet):"
     },
     "Automated Alliance": {
-      "Sympathy": "Place a sympathy token in the **card:{{suit}}** clearing with the fewest enemy warriors adjacent to any sympathetic clearing.<br>(**No Such Clearings**: Instead place a sympathy token on the clearing with the fewest enemy pieces.)<br>(**Cannot Spread**: If you cannot place a sympathy token, score 5 VP.)",
-      "Revolt": "Remove all enemy pieces from any sympathetic clearing with the most enemy pieces, and place the corresponding base there."
+      "Sympathy": "**Gagner la Sympathie**. Placez 1 jeton sympathie dans la clairière **card:{{suit}}** indifférente avec le moins de guerriers adverses, adjacente à une clairière sympathisante.<br>_Si aucune clairière ne respecte ces conditions, placez une Sympathie dans la clairière avec le moins de pièces adverses._<br>_Si vous ne pouvez pas placer de Sympathie, marquez 5 PV._",
+      "Revolt": "**Révolte**. Retirez toutes les pièces adverses de la clairière sympathisante avec le plus de pièces adverses et placez-y la base correspondante."
     },
     "Mechanical Marquise": {
-      "Blitz": "Find the clearing you rule of the highest priority without any enemy pieces. Move all but one warrior from the clearing. Then, battle in the destination clearing.",
-      "Bird0": "Battle in all clearings. _(Defender is the player with most pieces, then victory points.)_",
-      "Bird1": "Recruit {{warriorsOverTwo}} warrior(s) in each of the two clearings you rule with lowest priority. If you only rule one clearing, place all {{totalWarriors}} warriors there.",
-      "Bird2": "Build a building of the type with the most pieces on the map in a clearing you rule with the most Marquise Warriors.<br>_(On a tie between sawmills and any other building types, place a sawmill. On a tie between workshops and recruiters but not sawmills, place a recruiter.)_",
-      "Bird3": "Move all but three of your warriors from each clearing to the adjacent clearing with the most enemy pieces. Then battle in each clearing you moved into.",
-      "BirdChallenging": "Place two warriors in the ordered clearing you rule of the highest priority.",
-      "Suit0": "Battle in each **card:{{suit}}** clearing. _(Defender is the player with most pieces, then victory points.)_",
-      "Suit1": "Recruit {{totalWarriors}} warriors evenly spread across **card:{{suit}}** clearings you rule. If there are extra warriors that cannot be placed evenly in **card:{{suit}}** clearings, place the last warrior in the **card:{{suit}}** clearing with the highest priority.",
-      "Suit2": "Build a **building:{{building}}** in a clearing you rule with the most Marquise warriors.",
-      "Suit3": "Move all but three of your warriors from each **card:{{suit}}** clearing to the adjacent clearing with the most enemy pieces.",
-      "Repeat": "If you did not place a building this turn and have five or fewer buildings on the map, discard the order card, draw a new one, and repeat Daylight."
+      "Blitz": "Sélectionnez la clairière controlée sans pièces adverses ayant la plus haute priorité. Déplacez tous vos guerriers, sauf 1, depuis cette clairière, puis initiez un combat dans la clairière d'arrivée.",
+      "Bird0": "**Combattez** dans toutes les clairières. _(Le défenseur est le joueur avec le plus de pièces, puis le plus de PV.)_",
+      "Bird1": "**Recrutez** {{warriorsOverTwo}} guerriers dans chacune des 2 clairières controlées ayant la priorité la plus faible. Si vous ne contrôlez qu'une clairière, placez-y la totalité des {{totalWarriors}} guerriers.",
+      "Bird2": "**Construisez** un bâtiment du type le plus construit dans la clairière contrôlée avec le plus de vos guerriers.<br>_(Si égalité, les scieries, sinon les recruteurs.)_",
+      "Bird3": "**Déplacez** tous vos guerriers, sauf 3, depuis chaque clairière vers la clairière adjacente avec le plus de pièces adverses. _(Chaque guerrier ne peut être déplacé qu'une fois.)_ Puis initiez un combat dans chaque clairière d'arrivée.",
+      "BirdChallenging": "**Recrutez** 2 guerriers dans la clairière controlée ayant la plus haute priorité.",
+      "Suit0": "**Combattez** dans toutes les clairières **card:{{suit}}**. _(Le défenseur est le joueur avec le plus de pièces, puis le plus de PV.)_",
+      "Suit1": "**Recrutez** {{totalWarriors}} guerriers répartis uniformément dans les clairières **card:{{suit}}** controlées. Placez les guerriers en priorité dans les clairières **card:{{suit}}** ayant la plus haute priorité.",
+      "Suit2": "**Construisez** 1 **building:{{building}}** dans la clairière contrôlée avec le plus de vos guerriers.",
+      "Suit3": "**Déplacez** tous vos guerriers, sauf 3, depuis chaque clairière **card:{{suit}}** vers la clairière adjacente avec le plus de pièces adverses. _(Chaque guerrier ne peut être déplacé qu'une fois.)_",
+      "Repeat": "Si vous n'avez pas placé de bâtiment lors de ce tour et avez 5 batiments ou moins sur la carte, défaussez la carte ordre, piochez-en une autre et répétez le Jour."
     }
   },
   "SpecificEvening": {
     "Electric Eyrie": {
-      "Score": "Score {{score}} VP.",
-      "NightmareScore": "Score **vp:1**."
+      "Score": "**Marquez** {{score}} PV.",
+      "NightmareScore": "**Marquez** **vp:1**."
     },
     "Vagabot": {
-      "Refresh": "If you have any damaged items, refresh {{itemRefreshMin}} undamaged items. If you have none, refresh {{itemRefreshMax}} instead.",
-      "Forest": "If you are in a forest, repair all items. If not, repair {{itemRepairs}} item(s). Repair unexhausted items before exhausted items.",
-      "Discard": "Discard the order card.",
-      "NightmareScore": "Score **vp:1**."
+      "Refresh": "**Rafraîchir**. Si vous avez des objets endommagés, rafraîchissez {{itemRefreshMin}} objets intacts. Sinon, rafraîchissez {{itemRefreshMax}} objets intacts.",
+      "Forest": "Réparation. Si vous êtes dans un bois, réparez tous vos objets endommagés. Sinon, réparez {{itemRepairs}} objet(s). Réparez les objets face visible avant les objets épuisés.",
+      "Discard": "**Défaussez** la carte ordre.",
+      "NightmareScore": "**Marquez** **vp:1**."
     },
     "Automated Alliance": {
-      "Organize": "In each clearing with a base and {{organizeVal}} or more Alliance warriors, remove all Alliance warriors there and **Spread Sympathy**.",
-      "WarriorPlace": "Place a warrior in each clearing with a base.",
-      "Wildfire": "**Spread Sympathy**, but do not score victory points.",
-      "Discard": "Discard the order card.",
-      "NightmareScore": "Score **vp:1**."
+      "Organize": "**Organisation**. Dans chaque clairière avec une base et au moins {{organizeVal}} de vos guerriers, retirez tous vos guerriers pour **Gagner la Sympathie**.",
+      "WarriorPlace": "**Recrutement**. Placez 1 guerrier dans chaque clairière avec une base.",
+      "Wildfire": "**Feu de forêt**. **Gagner la Sympathie**, sans marquer de points de victoire",
+      "Discard": "**Défaussez** la carte ordre.",
+      "NightmareScore": "**Marquez** **vp:1**."
     },
     "Mechanical Marquise": {
-      "Score": "Score {{score}} VP.",
-      "Discard": "Discard the order card.",
-      "NightmareScore": "Score **vp:1**."
+      "Score": "**Marquez** {{score}} PV.",
+      "Discard": "**Défaussez** la carte ordre.",
+      "NightmareScore": "**Marquez** **vp:1**."
     }
   },
   "SpecificExtra": {
     "Electric Eyrie": {
-      "Purge": "Purge Decree, except Viziers.",
-      "Evening": "Go to Evening.",
-      "YesNobility": "Score one victory point per bird card in the Decree.",
-      "NoNobility": "Lose one victory point per bird card in the Decree."
+      "Purge": "**Purge** : Défaussez le Décret, sauf les Vizirs.",
+      "Evening": "**Repos** : Passez au Crépuscule.",
+      "YesNobility": "**Noblesse** : Marquez 1 PV par carte oiseau dans le Décret.",
+      "NoNobility": "**Humiliation** : Perdez 1 PV par carte oiseau dans le Décret."
     },
     "Vagabot": {
-      "NameTinker": "Tinker",
-      "DescTinker": "Search the discard pile for the top card with an available item and craft it, scoring +1 VP. _Start the game with one fewer item._",
-      "SpecialTinker": "Search the discard pile for the top card with an available item and craft it, scoring +1 VP.",
-      "NameThief": "Thief",
-      "DescThief": "Take a random card from the enemy in your clearing with most points there, then most pieces there.",
-      "SpecialThief": "Take a random card from the enemy in your clearing with most points there, then most pieces there.",
-      "NameRanger": "Ranger",
-      "DescRanger": "If you have three or more damaged items, slip into a random adjacent forest.",
-      "SpecialRanger": "If you have three or more damaged items, slip into a random adjacent forest.",
-      "BattleTrack0": "Maximum rolled hits: 1",
-      "BattleTrack1": "Maximum rolled hits: 2",
-      "BattleTrack2": "Maximum rolled hits: 3.",
-      "BattleTrack3": "Maximum rolled hits: 3; as attacker, deal 1 extra hit."
+      "NameTinker": "Bricoleur",
+      "DescTinker": "Prenez de la défausse la première carte avec un objet disponible et fabriquez-la, en marquant **vp:1**. _Commencez avec un objet de moins._",
+      "SpecialTinker": "Prenez de la défausse la première carte avec un objet disponible et fabriquez-la, en marquant **vp:1**..",
+      "NameThief": "Voleur",
+      "DescThief": "Prenez une carte au hasard au joueur dans votre clairière avec le plus de points, puis le plus de pièces.",
+      "SpecialThief": "Prenez une carte au hasard au joueur dans votre clairière avec le plus de points, puis le plus de pièces.",
+      "NameRanger": "Rôdeur",
+      "DescRanger": "Si vous avez au moins 3 objets endommagés, faufilez-vous dans une fôret adjacente au hasard.",
+      "SpecialRanger": "Si vous avez au moins 3 objets endommagés, faufilez-vous dans une fôret adjacente au hasard.",
+      "BattleTrack0": "Maximum de pertes infligées : 1.",
+      "BattleTrack1": "Maximum de pertes infligées : 2.",
+      "BattleTrack2": "Maximum de pertes infligées : 3.",
+      "BattleTrack3": "Maximum de pertes infligées : 3. En attaquant, infligez 1 perte additionnelle."
     }
   }
 }
