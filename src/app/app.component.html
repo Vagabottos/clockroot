@@ -23,6 +23,7 @@
           <ion-menu-toggle autoHide="false">
             <ng-container *ngFor="let bot of botService.bots">
               <ion-item color="transparent"
+                        class="bot"
                         (click)="botService.goToBot(bot.name)">
                         <img class="inline-icon ion-margin-end" [src]="'assets/inicon/faction-' + botService.botMeta[bot.name].icon + '.png'" />
                         {{ 'Factions.' + botService.botMeta[bot.name].fullName | translate }}

@@ -1,0 +1,12 @@
+
+:host {
+  --theme-color: #68b653;
+}
+
+ion-toolbar {
+  --ion-color-primary: var(--theme-color);
+}
+
+.flip-front {
+  border-color: var(--theme-color) !important;
+}

@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import { Bot, Difficulty, Rule, Item, BotName } from './models/bot';
-import { MarquiseBot, EyrieBot } from './models';
-import { WoodlandBot } from './models/woodland';
-import { VagaBot } from './models/vagabond';
+import { MarquiseBot, EyrieBot, MarquiseBotDC, EyrieBotDC, WoodlandBotDC, VagaBotDC, WoodlandBot, VagaBot } from './models';
 import { ModalController } from '@ionic/angular';
 import { PriorityModalComponent } from './priority-modal/priority-modal.component';
 
@@ -16,7 +14,11 @@ export class BotService {
     Marquise: MarquiseBot,
     Eyrie: EyrieBot,
     Woodland: WoodlandBot,
-    Vagabond: VagaBot
+    Vagabond: VagaBot,
+    MarquiseDC: MarquiseBotDC,
+    EyrieDC: EyrieBotDC,
+    WoodlandDC: WoodlandBotDC,
+    VagabondDC: VagaBotDC
   };
 
   public bots: Bot[] = [];
@@ -37,6 +39,22 @@ export class BotService {
     Vagabond: {
       icon: 'vagabond',
       fullName: 'Vagabot'
+    },
+    MarquiseDC: {
+      icon: 'marquise',
+      fullName: 'Mechanical Marquise (DC)'
+    },
+    EyrieDC: {
+      icon: 'eyrie',
+      fullName: 'Electric Eyrie (DC)'
+    },
+    WoodlandDC: {
+      icon: 'woodland',
+      fullName: 'Automated Alliance (DC)'
+    },
+    VagabondDC: {
+      icon: 'vagabond',
+      fullName: 'Vagabot (DC)'
     }
   };
 

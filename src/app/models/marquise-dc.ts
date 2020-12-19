@@ -1,9 +1,9 @@
 import { TranslateService } from '@ngx-translate/core';
 import { Bot, BotName } from './bot';
 
-export class MarquiseBot extends Bot {
+export class MarquiseBotDC extends Bot {
 
-  public name: BotName = 'Marquise';
+  public name: BotName = 'MarquiseDC';
 
   public setupPosition = 'A';
   public setupRules = [
@@ -55,13 +55,13 @@ export class MarquiseBot extends Bot {
     {
       traitName: 'Hospitals',
       name: 'RuleHospitals',
-      text: `TextHospitals`,
+      text: `TextHospitalsDC`,
       canToggle: true
     },
     {
       traitName: 'Iron Will',
       name: 'RuleIronWill',
-      text: 'TextIronWill',
+      text: 'TextIronWillDC',
       canToggle: true
     }
   ];
@@ -78,20 +78,18 @@ export class MarquiseBot extends Bot {
 
   public birdsong(translate: TranslateService) {
     return [
-      translate.instant(`SpecificBirdsong.Mechanical Marquise.RevealOrder`),
-      translate.instant(`SpecificBirdsong.Mechanical Marquise.CraftOrder`)
+      translate.instant(`SpecificBirdsong.Mechanical Marquise (DC).RevealOrder`),
+      translate.instant(`SpecificBirdsong.Mechanical Marquise (DC).CraftOrder`)
     ];
   }
 
   public daylight(translate: TranslateService) {
     let totalWarriors = 4;
-    if (this.difficulty === 'Easy') { totalWarriors = 2; }
-    if (this.hasTrait('Iron Will') && this.customData.currentSuit === 'bird') { totalWarriors *= 2; }
-
-    const warriorsOverTwo = totalWarriors / 2;
+    if (this.difficulty === 'Easy') { totalWarriors = 3; }
+    if (this.difficulty === 'Challenging' || this.difficulty === 'Nightmare') { totalWarriors = 5; }
 
     const blitzText = this.hasTrait('Blitz')
-    ? translate.instant(`SpecificDaylight.Mechanical Marquise.Blitz`)
+    ? translate.instant(`SpecificDaylight.Mechanical Marquise (DC).Blitz`)
     : '';
 
     if (this.customData.currentSuit === 'bird') {
@@ -99,15 +97,15 @@ export class MarquiseBot extends Bot {
       const isChallengingPlus = this.difficulty === 'Challenging' || this.difficulty === 'Nightmare';
 
       const base2 = [
-        translate.instant(`SpecificDaylight.Mechanical Marquise.Bird0`),
+        translate.instant(`SpecificDaylight.Mechanical Marquise (DC).Bird0`),
 
-        translate.instant(`SpecificDaylight.Mechanical Marquise.Bird1`, { totalWarriors, warriorsOverTwo }),
+        translate.instant(`SpecificDaylight.Mechanical Marquise (DC).Bird1`, { totalWarriors }),
 
         isChallengingPlus ? translate.instant(`SpecificDaylight.Mechanical Marquise.BirdChallenging`) : '',
 
-        translate.instant(`SpecificDaylight.Mechanical Marquise.Bird2`),
+        translate.instant(`SpecificDaylight.Mechanical Marquise (DC).Bird2`),
 
-        translate.instant(`SpecificDaylight.Mechanical Marquise.Bird3`),
+        translate.instant(`SpecificDaylight.Mechanical Marquise (DC).Bird3`),
       ].filter(Boolean);
 
       if (blitzText) { base2.push(blitzText); }
@@ -123,26 +121,26 @@ export class MarquiseBot extends Bot {
     const suit = this.customData.currentSuit;
 
     const base = [
-      translate.instant(`SpecificDaylight.Mechanical Marquise.Suit0`, { suit }),
+      translate.instant(`SpecificDaylight.Mechanical Marquise (DC).Suit0`, { suit }),
 
-      translate.instant(`SpecificDaylight.Mechanical Marquise.Suit1`, { totalWarriors, suit }),
+      translate.instant(`SpecificDaylight.Mechanical Marquise (DC).Suit1`, { totalWarriors, suit }),
 
-      translate.instant(`SpecificDaylight.Mechanical Marquise.Suit2`, { building }),
+      translate.instant(`SpecificDaylight.Mechanical Marquise (DC).Suit2`, { building }),
 
-      translate.instant(`SpecificDaylight.Mechanical Marquise.Suit3`, { suit })
+      translate.instant(`SpecificDaylight.Mechanical Marquise (DC).Suit3`, { suit })
     ];
 
     if (blitzText) { base.push(blitzText); }
-
-    base.push(
-      translate.instant(`SpecificDaylight.Mechanical Marquise.Repeat`)
-    );
 
     return base;
   }
 
   public evening(translate: TranslateService) {
     const buildings = this.customData.buildings;
+
+    const iwText = this.hasTrait('Iron Will')
+                 ? translate.instant(`SpecificEvening.Mechanical Marquise (DC).RepeatIronWill`)
+                 : translate.instant(`SpecificEvening.Mechanical Marquise (DC).Repeat`);
 
     if (this.customData.currentSuit === 'bird') {
 
@@ -153,13 +151,14 @@ export class MarquiseBot extends Bot {
       const maxScore = Math.max(...scores, 0);
 
       const base2 = [
-        translate.instant('SpecificEvening.Mechanical Marquise.Score', { score: maxScore }),
-        translate.instant('SpecificEvening.Mechanical Marquise.Discard')
+        iwText,
+        translate.instant('SpecificEvening.Mechanical Marquise (DC).Score', { score: maxScore }),
+        translate.instant('SpecificEvening.Mechanical Marquise (DC).Discard')
       ];
 
 
       if (this.difficulty === 'Nightmare') {
-        base2.push(translate.instant('SpecificEvening.Mechanical Marquise.NightmareScore'));
+        base2.push(translate.instant('SpecificEvening.Mechanical Marquise (DC).NightmareScore'));
       }
 
       return base2;
@@ -170,12 +169,13 @@ export class MarquiseBot extends Bot {
     const score = Math.max(0, buildingsOfSuit.reduce((prev, cur) => prev + (cur ? 1 : 0), 0) - 1);
 
     const base = [
-      translate.instant('SpecificEvening.Mechanical Marquise.Score', { score }),
-      translate.instant('SpecificEvening.Mechanical Marquise.Discard')
+      iwText,
+      translate.instant('SpecificEvening.Mechanical Marquise (DC).Score', { score }),
+      translate.instant('SpecificEvening.Mechanical Marquise (DC).Discard')
     ];
 
     if (this.difficulty === 'Nightmare') {
-      base.push(translate.instant('SpecificEvening.Mechanical Marquise.NightmareScore'));
+      base.push(translate.instant('SpecificEvening.Mechanical Marquise (DC).NightmareScore'));
     }
 
     return base;

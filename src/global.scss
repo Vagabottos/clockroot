@@ -239,3 +239,7 @@ ion-label {
 ion-button.transparent {
   opacity: 0.35;
 }
+
+.wider .popover-content {
+  --min-width: 350px;
+}

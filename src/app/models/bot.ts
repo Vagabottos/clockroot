@@ -1,6 +1,7 @@
 import { TranslateService } from '@ngx-translate/core';
 
-export type BotName = 'Eyrie' | 'Marquise' | 'Woodland' | 'Vagabond';
+export type BotName = 'Eyrie' | 'Marquise' | 'Woodland' | 'Vagabond'
+                    | 'EyrieDC' | 'MarquiseDC' | 'WoodlandDC' | 'VagabondDC';
 
 export type Item = 'Boot'  | 'Coin'  | 'Crossbow'  | 'Hammer'  | 'Sack'  | 'Sword'  | 'Tea'  | 'Torch'
                  | 'Boot2' | 'Coin2'                           | 'Sack2' | 'Sword2' | 'Tea2'

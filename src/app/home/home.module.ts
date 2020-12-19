@@ -13,6 +13,10 @@ import { WoodlandComponent } from '../woodland/woodland.component';
 import { VagabondComponent } from '../vagabond/vagabond.component';
 import { SharedModule } from '../shared.module';
 import { FormatPipe } from '../format.pipe';
+import { MarquiseDCComponent } from '../marquise-dc/marquise-dc.component';
+import { EyrieDCComponent } from '../eyrie-dc/eyrie-dc.component';
+import { WoodlandDCComponent } from '../woodland-dc/woodland-dc.component';
+import { VagabondDCComponent } from '../vagabond-dc/vagabond-dc.component';
 
 @NgModule({
   imports: [
@@ -27,6 +31,11 @@ import { FormatPipe } from '../format.pipe';
       }
     ])
   ],
-  declarations: [HomePage, BotResourcesComponent, MarquiseComponent, EyrieComponent, WoodlandComponent, VagabondComponent, FormatPipe]
+  declarations: [
+    HomePage, BotResourcesComponent,
+    MarquiseComponent, EyrieComponent, WoodlandComponent, VagabondComponent,
+    MarquiseDCComponent, EyrieDCComponent, WoodlandDCComponent, VagabondDCComponent,
+    FormatPipe
+  ]
 })
 export class HomePageModule {}

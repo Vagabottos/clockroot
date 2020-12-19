@@ -1,0 +1,20 @@
+
+:host {
+  --theme-color: #6d6e70;
+}
+
+ion-toolbar {
+  --ion-color-primary: var(--theme-color);
+}
+
+.flip-front {
+  border-color: var(--theme-color) !important;
+
+  &.damaged {
+    background-image: repeating-linear-gradient(-45deg, red, red 2px, transparent 1px, transparent 5px);
+  }
+}
+
+.battle-track {
+  text-align: center;
+}

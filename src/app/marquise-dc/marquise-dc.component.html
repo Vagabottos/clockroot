@@ -1,8 +1,8 @@
 <ion-toolbar color="primary">
   <ion-title>
-    <span id="Eyrie">
-      <span class="ion-hide-sm-down">{{ 'Factions.Electric Eyrie' | translate }}</span>
-      <span class="ion-hide-md-up">{{ 'FactionsShort.Electric Eyrie' | translate }}</span>
+    <span id="MarquiseDC">
+      <span class="ion-hide-sm-down">{{ 'Factions.Mechanical Marquise (DC)' | translate }}</span>
+      <span class="ion-hide-md-up">{{ 'FactionsShort.Mechanical Marquise (DC)' | translate }}</span>
     </span>
   </ion-title>
 
@@ -30,7 +30,7 @@
           <li>
             <a (click)="botService.showPriorities()">{{ 'BotSetup.PriorityMarkers' | translate }}</a>
           </li>
-          <li *ngFor="let rule of bot.setupRules" [innerHTML]="('SpecificSetup.Electric Eyrie.' + rule) | translate | format"></li>
+          <li *ngFor="let rule of bot.setupRules" [innerHTML]="('SpecificSetup.Mechanical Marquise (DC).' + rule) | translate | format"></li>
         </ol>
       </ion-card-content>
     </ion-card>
@@ -39,7 +39,7 @@
   <ion-item *ngIf="!bot.setupHidden">
     <ion-card>
       <ion-card-header>
-        <h2>{{ 'BotSetup.ChooseDifficulty' | translate }}</h2>
+        <h2>{{ 'BotSetup.Setup' | translate }} ({{ bot.setupPosition }})</h2>
       </ion-card-header>
       <ion-card-content>
         <ion-list>
@@ -51,8 +51,8 @@
                          [checked]="bot.difficulty === diff"></ion-radio>
 
               <ion-label class="ion-text-wrap">
-                <h2>{{ 'BotSetup.Difficulty.' + diff | translate }}</h2>
-                <p [innerHTML]="('SpecificDifficulty.Electric Eyrie.' + diff) | translate | format"></p>
+                <h2>{{ 'BotSetup.DifficultyDC.' + diff | translate }}</h2>
+                <p [innerHTML]="('SpecificDifficulty.Mechanical Marquise (DC).' + diff) | translate | format"></p>
               </ion-label>
             </ion-item>
           </ion-radio-group>
@@ -93,8 +93,8 @@
         <ion-list>
           <ion-item *ngIf="bot.difficulty !== 'Normal'">
             <ion-label class="ion-text-wrap">
-              <h2>{{ 'BotSetup.DifficultyText' | translate }}: {{ ('BotSetup.Difficulty.' + bot.difficulty) | translate }}</h2>
-              <p [innerHTML]="('SpecificDifficulty.Electric Eyrie.' + bot.difficulty) | translate | format"></p>
+              <h2>{{ 'BotSetup.DifficultyText' | translate }}: {{ bot.difficulty }}</h2>
+              <p [innerHTML]="('SpecificDifficulty.Mechanical Marquise (DC).' + bot.difficulty) | translate | format"></p>
             </ion-label>
           </ion-item>
           <ion-item *ngFor="let rule of bot.rules" [class.ion-hide]="rule.canToggle && !rule.isActive">
@@ -115,36 +115,26 @@
   <ion-item *ngIf="bot.setupHidden">
     <ion-card>
       <ion-card-header>
-        <h2>{{ 'Sections.DecreeRoosts' | translate }}</h2>
+        <h2>{{ 'Sections.Buildings' | translate }}</h2>
       </ion-card-header>
       <ion-card-content>
-        <div class="decree-row" *ngFor="let suit of ['fox', 'mouse', 'bunny', 'bird']">
-          <div class="row-icon">
-            <img [src]="'assets/inicon/card-' + suit + '.png'" />
-          </div>
+        <div *ngFor="let building of buildings">
+          <div class="building-row">
+            <div class="row-icon">
+              <img [src]="'assets/inicon/card-' + building.suit + '.png'" />
+            </div>
 
-          <div class="row-additions">
-            <ion-button [disabled]="bot.customData.decree[suit] <= 0" (click)="modifySuitCard(suit, -1)">
-              <ion-icon name="remove"></ion-icon>
-            </ion-button>
-            <span class="decree-count">{{ bot.customData.decree[suit] }}</span>
-            <ion-button (click)="modifySuitCard(suit, 1)">
-              <ion-icon name="add"></ion-icon>
-            </ion-button>
-          </div>
-        </div>
+            <div class="flip-container" *ngFor="let num of [0, 1, 2, 3, 4, 5]">
+              <div class="flip-icon">
+                <img [src]="'assets/inicon/building-' + building.building + '.png'"
+                      class="flip-back"
+                      [class.transparent]="bot.customData.buildings[building.suit][num]"
+                      (click)="toggleBuilding(building.suit, num)" />
 
-        <div class="building-row">
-          <div class="flip-container" *ngFor="let num of [0, 1, 2, 3, 4, 5, 6]">
-            <div class="flip-icon">
-              <img [src]="'assets/inicon/building-roost.png'"
-                    class="flip-back"
-                    [class.transparent]="bot.customData.buildings[num]"
-                    (click)="toggleBuilding(num)" />
-
-              <div class="flip-front" 
-                    *ngIf="bot.customData.buildings[num]"
-                    (click)="toggleBuilding(num)">+{{ num }}</div>
+                <div class="flip-front" 
+                      *ngIf="bot.customData.buildings[building.suit][num]"
+                      (click)="toggleBuilding(building.suit, num)">+{{ num }}</div>
+              </div>
             </div>
           </div>
         </div>
@@ -155,8 +145,14 @@
   <ion-item *ngIf="bot.setupHidden">
     <ion-card>
       <ion-card-header>
-        <h2>
+        <h2 class="birdsong-has-buttons">
           {{ 'Sections.Birdsong' | translate }}
+          <ion-button class="ion-margin-start" (click)="changeSuit(suit)"
+                      [class.transparent]="bot.customData.currentSuit !== suit"
+                      *ngFor="let suit of ['bird', 'fox', 'bunny', 'mouse']">
+            <img class="click-icon" slot="icon-only"
+                 [src]="'assets/inicon/card-' + suit + '.png'" />
+          </ion-button>
         </h2>
       </ion-card-header>
       <ion-card-content>
@@ -192,23 +188,6 @@
       <ion-card-content>
         <ol>
           <li class="rule-message" *ngFor="let message of bot.evening(translateService)">
-            <span [innerHTML]="rendererService.formatString(message)"></span>
-          </li>
-        </ol>
-      </ion-card-content>
-    </ion-card>
-  </ion-item>
-
-  <ion-item *ngIf="bot.setupHidden">
-    <ion-card>
-      <ion-card-header>
-        <h2>{{ 'Sections.Turmoil' | translate }}</h2>
-      </ion-card-header>
-      <ion-card-content>
-        <em *ngIf="bot.hasTrait('Nobility')">{{ 'BotSetup.TurmoilNobilityText' | translate }}</em>
-        <em *ngIf="!bot.hasTrait('Nobility')">{{ 'BotSetup.TurmoilText' | translate }}</em>
-        <ol>
-          <li class="rule-message" *ngFor="let message of bot.turmoil(translateService)">
             <span [innerHTML]="rendererService.formatString(message)"></span>
           </li>
         </ol>

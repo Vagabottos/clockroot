@@ -22,7 +22,8 @@ export class HomePage {
     const popover = await this.popoverCtrl.create({
       component: FactionMenuComponent,
       event: ev,
-      translucent: true
+      translucent: true,
+      cssClass: 'wider'
     });
 
     popover.onDidDismiss().then((res) => {

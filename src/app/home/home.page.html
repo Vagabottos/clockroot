@@ -31,6 +31,11 @@
       <app-eyrie *ngIf="bot.name === 'Eyrie'" [bot]="bot"></app-eyrie>
       <app-woodland *ngIf="bot.name === 'Woodland'" [bot]="bot"></app-woodland>
       <app-vagabond *ngIf="bot.name === 'Vagabond'" [bot]="bot"></app-vagabond>
+      
+      <app-marquise-dc *ngIf="bot.name === 'MarquiseDC'" [bot]="bot"></app-marquise-dc>
+      <app-eyrie-dc *ngIf="bot.name === 'EyrieDC'" [bot]="bot"></app-eyrie-dc>
+      <app-woodland-dc *ngIf="bot.name === 'WoodlandDC'" [bot]="bot"></app-woodland-dc>
+      <app-vagabond-dc *ngIf="bot.name === 'VagabondDC'" [bot]="bot"></app-vagabond-dc>
     </ion-item>
   </ion-list>
 </ion-content>

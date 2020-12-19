@@ -31,6 +31,29 @@ export class FactionMenuComponent implements OnInit {
     }
   ];
 
+  public dcFactions = [
+    {
+      name: 'Automated Alliance (DC)',
+      id: 'WoodlandDC',
+      icon: 'woodland'
+    },
+    {
+      name: 'Electric Eyrie (DC)',
+      id: 'EyrieDC',
+      icon: 'eyrie'
+    },
+    {
+      name: 'Mechanical Marquise (DC)',
+      id: 'MarquiseDC',
+      icon: 'marquise'
+    },
+    {
+      name: 'Vagabot (DC)',
+      id: 'VagabondDC',
+      icon: 'vagabond'
+    }
+  ];
+
   constructor(
     public popoverCtrl: PopoverController
   ) { }
