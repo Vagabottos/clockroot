@@ -346,7 +346,7 @@
       "ActionSpecial": "Exhaust one item to do the following (skip if it would have no effect):"
     },
     "Automated Alliance (DC)": {
-      "Sympathy": "Place a sympathy token into an unsympathetic adjacent clearing  adjacent to any sympathetic clearing.<br>(**Clearing Tie**: Avoid clearings with 3 or more warriors of a single player, then place in ordered clearing.)<br>(**Cannot Spread**: If you cannot place a sympathy token, score 5 VP.)",
+      "Sympathy": "Place a sympathy token into an unsympathetic adjacent clearing  adjacent to any sympathetic clearing.<br>(**Clearing Tie**: Avoid clearings with 3 or more warriors of a single player, then place in **card:{{suit}}** clearing.)<br>(**Cannot Spread**: If you cannot place a sympathy token, score 5 VP.)",
       "SympathyBird": "Place a sympathy token into an unsympathetic adjacent clearing  adjacent to any sympathetic clearing.<br>(**Clearing Tie**: Place into the lowest priority clearing.)<br>(**Cannot Spread**: If you cannot place a sympathy token, score 5 VP.)",
       "Revolt": "Remove all enemy pieces from any sympathetic clearing with the most enemy pieces, and place the corresponding base there.",
       "RevoltSpread": "If you did not revolt, **Spread Sympathy** {{sympathySpread}}."
