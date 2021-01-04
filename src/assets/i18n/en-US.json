@@ -145,14 +145,14 @@
     "Mechanical Marquise": {
       "Easy": "Whenever you **Recruit**, instead place only two warriors.",
       "Normal": "Nothing is changed.",
-      "Challenging": "Whenever you **Recruit**, also place two warriors in the ordered clearing you rule of highest priority.",
-      "Nightmare": "Whenever you **Recruit**, also place two warriors in the ordered clearing you rule of highest priority. At the end of Evening, score one victory point."
+      "Challenging": "Whenever you **Recruit**, instead place four warriors.",
+      "Nightmare": "Whenever you **Recruit**, instead place five warriors. At the end of Evening, score one victory point."
     },
     "Electric Eyrie (DC)": {
-      "Easy": "During setup, add only one Loyal Vizier to the Decree.",
+      "Easy": "Whenever you **Recruit** for bird, instead place one fewer warrior.",
       "Normal": "Nothing is changed.",
-      "Challenging": "During setup, take one bird Ambush from the deck and add it to the bird column of the Decree.",
-      "Nightmare": "During setup, take one bird Ambush from the deck and add it to the bird column of the Decree. At the end of Evening, score one victory point per two players (rounded up)."
+      "Challenging": "Whenever you **Recruit** for bird, instead place one more warrior.",
+      "Nightmare": "Whenever you **Recruit** for bird, instead place one more warrior. At the end of Evening, score one victory point per two players (rounded up)."
     },
     "Vagabot (DC)": {
       "Easy": "In evening, refresh one fewer item.",
