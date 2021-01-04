@@ -334,7 +334,7 @@
     },
     "Vagabot (DC)": {
       "ActionExplore": "Move to the nearest ruin, then exhaust one item to take an item from it.",
-      "ActionQuest": "Move to the nearest clearing matching the quest, then exhaust any two items to discard the quest and score **vp:1**. _(Ignore card text.)_ Then, replace the quest.",
+      "ActionQuest": "Move to the nearest clearing matching the quest, then exhaust any two items to discard the quest and score 2 VP. _(Ignore card text.)_ Then, replace the quest.",
       "ActionQuestRepeat": "Repeat this as many times as possible.",
       "ActionAid": "Move to the nearest clearing containing pieces of a player with any items if possible. Then, exhaust one item to take one of their items and place it in your satchel. Score **vp:1** and then they draw a card.<br>_(**Player Tie**)_: if multiple players have pieces in equal distance, select the player with the lower score.",
       "ActionBattle": "Move to the nearest clearing with any pieces of the enemy with the most {{target}}, then exhaust one item to battle that player. Score **vp:1** per enemy warrior removed.",
