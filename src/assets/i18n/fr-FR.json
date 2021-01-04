@@ -283,7 +283,7 @@
             "Recruit": "**Recrutement**. Placez {{totalForSuit}} guerrier(s) dans une clairière {{suitText}} avec un perchoir. {{recruitText}}<br>_(**Priorités**: Dans la clairière avec le plus de pièces adverses, puis avec le moins de guerriers de la Canopée, puis avec la plus faible priorité.)_",
             "Move": "**Déplacement** depuis une clairière {{suitText}} contrôlée avec le plus de guerriers de la Canopée, vers une clairière adjacente sans perchoir. Si toutes les clairières adjacentes ont un perchoir, vers celle qui a le moins de pièces adverses. Laissez suffisamment de guerriers dans la clairière de départ pour la contrôler ({{totalForSuit}} minimum).<br>_(**(Priorités**: Vers la clairière avec le moins de pièces adverses, puis avec la plus faible priorité.)_",
             "Battle": "**Combat**. Dans une clairière {{suitText}}, combattez le joueur avec le plus de bâtiments. {{extraHit}}<br>_(**Priorités clairière**: Dans une clairière sans perchoir, puis avec le plus de bâtiments adverses sans défense, puis avec la plus faible priorité.)_<br>_(**Priorités défenseur**: Combattez le joueur avec le plus de pièces, puis le plus de PV.)_",
-            "ExtraDealExtraHit": "**Infligez une perte additionnelle.**",
+            "ExtraHit": "**Infligez une perte additionnelle.**",
             "ExtraDecree": "Vous devriez avoir au moins 2 cartes Oiseau dans le Décret.",
             "ExtraRelentless": "Retirez tous les bâtiments et jetons sans défense des clairières où se trouve au moins un guerrier de la Canopée.",
             "ExtraRecruit": "Si vous ne pouvez pas placer un guerrier, subissez une crise.",
