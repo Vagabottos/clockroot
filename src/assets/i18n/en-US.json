@@ -249,6 +249,7 @@
       "RevealOrder": "Reveal an order card.",
       "CraftOrder": "Craft order card for **vp:1** if it shows an available item.",
       "Revolt": "Remove all enemy pieces from the **card:{{suit}}** sympathetic clearing with the most enemy pieces, and place the **card:{{suit}}** base there.",
+      "RevoltSpread": "If you did not revolt, **Spread Sympathy** {{sympathySpread}}.",
       "Spread": "**Spread Sympathy** {{sympathySpread}}."
     },
     "Mechanical Marquise": {
@@ -270,7 +271,6 @@
       "RevealOrder": "Reveal an order card.",
       "CraftOrder": "Craft order card for **vp:1** if it shows an available item.",
       "Revolt": "Remove all enemy pieces from the **card:{{suit}}** sympathetic clearing with the most enemy pieces, and place the **card:{{suit}}** base there.",
-      "RevoltSpread": "If you did not revolt, **Spread Sympathy** {{sympathySpread}}.",
       "Spread": "**Spread Sympathy** {{sympathySpread}}."
     },
     "Mechanical Marquise (DC)": {
@@ -306,8 +306,7 @@
     },
     "Automated Alliance": {
       "Sympathy": "Place a sympathy token in the **card:{{suit}}** clearing with the fewest enemy warriors adjacent to any sympathetic clearing.<br>(**No Such Clearings**: Instead place a sympathy token on the clearing with the fewest enemy pieces.)<br>(**Cannot Spread**: If you cannot place a sympathy token, score 5 VP.)",
-      "Revolt": "Remove all enemy pieces from any sympathetic clearing with the most enemy pieces, and place the corresponding base there.",
-      "RevoltSpread": "If you did not revolt, **Spread Sympathy** {{sympathySpread}}."
+      "Revolt": "Remove all enemy pieces from any sympathetic clearing with the most enemy pieces, and place the corresponding base there."
     },
     "Mechanical Marquise": {
       "Blitz": "Find the clearing you rule of the highest priority without any enemy pieces. Move all but one warrior from the clearing. Then, battle in the destination clearing.",
@@ -349,7 +348,8 @@
     "Automated Alliance (DC)": {
       "Sympathy": "Place a sympathy token into an unsympathetic adjacent clearing  adjacent to any sympathetic clearing.<br>(**Clearing Tie**: Avoid clearings with 3 or more warriors of a single player, then place in ordered clearing.)<br>(**Cannot Spread**: If you cannot place a sympathy token, score 5 VP.)",
       "SympathyBird": "Place a sympathy token into an unsympathetic adjacent clearing  adjacent to any sympathetic clearing.<br>(**Clearing Tie**: Place into the lowest priority clearing.)<br>(**Cannot Spread**: If you cannot place a sympathy token, score 5 VP.)",
-      "Revolt": "Remove all enemy pieces from any sympathetic clearing with the most enemy pieces, and place the corresponding base there."
+      "Revolt": "Remove all enemy pieces from any sympathetic clearing with the most enemy pieces, and place the corresponding base there.",
+      "RevoltSpread": "If you did not revolt, **Spread Sympathy** {{sympathySpread}}."
     },
     "Mechanical Marquise (DC)": {
       "Blitz": "Find the clearing you rule of the highest priority without any enemy pieces. Move all but one warrior from the clearing. Then, battle in the destination clearing.",
@@ -361,8 +361,8 @@
       "Suit0": "Battle in each **card:{{suit}}** clearing. _(Defender is the player with most pieces, then victory points.)_",
       "Suit1": "Recruit {{totalWarriors}} warriors evenly spread across **card:{{suit}}** clearings you rule. Score **vp:1** for every two warriors that could not be recruited.<br>_(**Clearing tie**: Place warriors into clearings with highest priority first.)_",
       "Suit2": "Build a **building:{{building}}** in a clearing you rule with the most Marquise warriors.",
-      "Suit3": "Move all but three of your warriors from each **card:{{suit}}** clearing to the adjacent clearing with the most enemy pieces.",
-      "Repeat": "If you did not place a building this turn and have five or fewer buildings on the map, discard the order card, draw a new one, and repeat Daylight."
+      "Suit3": "Move all but three of your warriors from each **card:{{suit}}** clearing to the adjacent clearing with the most enemy pieces. Each warrior may only move once during this action.",
+      "Repeat": "If you did not place a building this turn and would score less than 3 victory points, discard the order card, draw a new one, and repeat Daylight."
     }
   },
   "SpecificEvening": {
