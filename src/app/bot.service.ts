@@ -151,6 +151,10 @@ export class BotService {
       (bot as VagaBot).customData.satchelItems[item] = 0;
     }
 
+    if (bot.items[item] && bot.name === 'VagabondDC') {
+      (bot as VagaBotDC).customData.satchelItems[item] = 0;
+    }
+
     this.saveBots();
   }
 
