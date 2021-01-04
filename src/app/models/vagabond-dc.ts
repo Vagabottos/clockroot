@@ -72,9 +72,9 @@ export class VagaBotDC extends Bot {
   ];
 
   public descriptions = {
-    Tinker: `SpecificExtra.Vagabot.DescTinker`,
-    Thief: 'SpecificExtra.Vagabot.DescThief',
-    Ranger: 'SpecificExtra.Vagabot.DescRanger'
+    Tinker: `SpecificExtra.Vagabot (DC).DescTinker`,
+    Thief: 'SpecificExtra.Vagabot (DC).DescThief',
+    Ranger: 'SpecificExtra.Vagabot (DC).DescRanger'
   };
 
   public customData = {
