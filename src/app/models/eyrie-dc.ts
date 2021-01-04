@@ -154,7 +154,7 @@ export class EyrieBotDC extends Bot {
 
           case 'battle': {
             let extraHit = '';
-            if (suit === mostSuit) { extraHit = translate.instant('SpecificDaylight.Electric Eyrie (DC).ExtraHit'); }
+            if (mostSuits.includes(suit)) { extraHit = translate.instant('SpecificDaylight.Electric Eyrie (DC).ExtraHit'); }
             actions.push(translate.instant('SpecificDaylight.Electric Eyrie (DC).Battle', { totalForSuit, suitText, extraHit }));
             break;
           }
