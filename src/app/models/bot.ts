@@ -41,6 +41,7 @@ export abstract class Bot {
 
   public customData: any = {};
 
+  public abstract setup(): void;
   public abstract daylight(translate: TranslateService): string[];
   public abstract birdsong(translate: TranslateService): string[];
   public abstract evening(translate: TranslateService): string[];

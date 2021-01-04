@@ -127,6 +127,7 @@ export class BotService {
     bot.setupHidden = !bot.setupHidden;
     if (bot.setupHidden) {
       this.generateTraitHash(bot);
+      bot.setup();
     }
 
     this.saveBots();

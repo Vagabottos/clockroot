@@ -138,6 +138,10 @@ ${translate.instant('SpecificExtra.Vagabot (DC).Special' + vaga.customData.chose
     };
   }
 
+  public setup(): void {
+
+  }
+
   public birdsong(translate: TranslateService) {
     return [
       translate.instant(`SpecificBirdsong.Vagabot (DC).RevealOrder`),

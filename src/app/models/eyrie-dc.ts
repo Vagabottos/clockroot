@@ -75,6 +75,10 @@ export class EyrieBotDC extends Bot {
     buildings: []
   };
 
+  public setup(): void {
+    this.customData.decree.bird = this.difficulty === 'Easy' ? 1 : 2;
+  }
+
   public birdsong(translate: TranslateService) {
     const newRoost = !this.customData.buildings.some(Boolean);
 

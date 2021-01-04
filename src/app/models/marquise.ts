@@ -76,6 +76,10 @@ export class MarquiseBot extends Bot {
     }
   };
 
+  public setup(): void {
+
+  }
+
   public birdsong(translate: TranslateService) {
     return [
       translate.instant(`SpecificBirdsong.Mechanical Marquise.RevealOrder`),

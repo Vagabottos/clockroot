@@ -88,6 +88,10 @@ export class WoodlandBot extends Bot {
     }
   };
 
+  public setup(): void {
+
+  }
+
   public birdsong(translate: TranslateService) {
     const base = [
       translate.instant(`SpecificBirdsong.Automated Alliance.RevealOrder`),
