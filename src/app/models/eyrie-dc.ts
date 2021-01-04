@@ -76,7 +76,6 @@ export class EyrieBotDC extends Bot {
   };
 
   public setup(): void {
-    this.customData.decree.bird = this.difficulty === 'Easy' ? 1 : 2;
   }
 
   public birdsong(translate: TranslateService) {
@@ -134,8 +133,12 @@ export class EyrieBotDC extends Bot {
           case 'recruit': {
 
             let recruitNum = totalForSuit;
-            if (this.difficulty === 'Easy') { recruitNum -= 1; }
-            if (this.difficulty === 'Challenging' || this.difficulty === 'Nightmare') { recruitNum += 1; }
+            if (suit === 'bird' && this.difficulty !== 'Nightmare') {
+              if (this.difficulty === 'Easy') { recruitNum -= 1; }
+              if (this.difficulty === 'Challenging') { recruitNum += 1; }
+            }
+
+            if (this.difficulty === 'Nightmare') { recruitNum += 1; }
 
             const recruitText = this.hasTrait('Nobility')
               ? translate.instant('SpecificDaylight.Electric Eyrie (DC).ExtraRecruit')
