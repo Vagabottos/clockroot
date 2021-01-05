@@ -156,21 +156,20 @@
             <div class="flip-icon">
               <img [src]="'assets/inicon/token-item-' + botService.itemImages[item.key] + '.png'"
                     class="flip-back"
-                    [class.exhausted]="bot.customData.satchelItems[item.key] === 1"
-                    [class.transparent]="bot.customData.satchelItems[item.key] === 3"
+                    [class.transparent]="bot.customData.satchelItems[item.key] !== 1"
                     (click)="toggleSatchelItem(item.key)" />
 
-              <div class="flip-front" 
-                    *ngIf="bot.customData.satchelItems[item.key] === 0"
-                    (click)="toggleSatchelItem(item.key)"></div>
-
-              <div class="flip-front damaged" 
-                    *ngIf="bot.customData.satchelItems[item.key] === 2"
-                    (click)="toggleSatchelItem(item.key)"></div>
-
-              <div class="flip-front" 
-                    *ngIf="bot.customData.satchelItems[item.key] === 3"
-                    (click)="toggleSatchelItem(item.key)">B</div>
+                    <div class="flip-front" 
+                          *ngIf="bot.customData.satchelItems[item.key] === 0"
+                          (click)="toggleSatchelItem(item.key)"><div class="label">{{ 'SpecificExtra.Vagabot.SatchelExhausted' | translate }}</div></div>
+      
+                    <div class="flip-front damaged" 
+                          *ngIf="bot.customData.satchelItems[item.key] === 2"
+                          (click)="toggleSatchelItem(item.key)"><div class="label">{{ 'SpecificExtra.Vagabot.SatchelDamaged' | translate }}</div></div>
+      
+                    <div class="flip-front" 
+                          *ngIf="bot.customData.satchelItems[item.key] === 3"
+                          (click)="toggleSatchelItem(item.key)"><div class="label">{{ 'SpecificExtra.Vagabot.SatchelBattleTrack' | translate }}</div></div>
             </div>
           </div>
         </div>

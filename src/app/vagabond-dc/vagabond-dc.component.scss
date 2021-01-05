@@ -11,7 +11,12 @@ ion-toolbar {
   border-color: var(--theme-color) !important;
 
   &.damaged {
-    background-image: repeating-linear-gradient(-45deg, red, red 2px, transparent 1px, transparent 5px);
+    background-image: repeating-linear-gradient(-45deg, rgba(255, 0, 0, 0.2), rgba(255, 0, 0, 0.2) 2px, transparent 1px, transparent 5px);
+  }
+  
+  .label {
+    font-size: 12px;
+    transform: rotate(45deg);
   }
 }
 

@@ -432,7 +432,10 @@
       "BattleTrack0": "Maximum rolled hits: 1",
       "BattleTrack1": "Maximum rolled hits: 2",
       "BattleTrack2": "Maximum rolled hits: 3.",
-      "BattleTrack3": "Maximum rolled hits: 3; as attacker, deal 1 extra hit."
+      "BattleTrack3": "Maximum rolled hits: 3; as attacker, deal 1 extra hit.",
+      "SatchelExhausted": "Exhausted",
+      "SatchelDamaged": "Damaged",
+      "SatchelBattleTrack": "Battle"
     },
     "Electric Eyrie (DC)": {
       "Purge": "Purge Decree, except Viziers.",
@@ -453,7 +456,10 @@
       "BattleTrack0": "Maximum rolled hits: 1",
       "BattleTrack1": "Maximum rolled hits: 2",
       "BattleTrack2": "Maximum rolled hits: 3.",
-      "BattleTrack3": "Maximum rolled hits: 3; as attacker, deal 1 extra hit."
+      "BattleTrack3": "Maximum rolled hits: 3; as attacker, deal 1 extra hit.",
+      "SatchelExhausted": "Exhausted",
+      "SatchelDamaged": "Damaged",
+      "SatchelBattleTrack": "Battle"
     }
   }
 }

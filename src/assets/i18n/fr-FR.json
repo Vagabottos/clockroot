@@ -432,7 +432,10 @@
             "BattleTrack0": "Maximum de pertes infligées : 1.",
             "BattleTrack1": "Maximum de pertes infligées : 2.",
             "BattleTrack2": "Maximum de pertes infligées : 3.",
-            "BattleTrack3": "Maximum de pertes infligées : 3. En attaquant, infligez 1 perte additionnelle."
+            "BattleTrack3": "Maximum de pertes infligées : 3. En attaquant, infligez 1 perte additionnelle.",
+            "SatchelExhausted": "Fatigué",
+            "SatchelDamaged": "Endommagé",
+            "SatchelBattleTrack": "Bataille"
         },
         "Electric Eyrie (DC)": {
             "Purge": "**Purge** : Défaussez le Décret, sauf les Vizirs.",
@@ -453,7 +456,10 @@
             "BattleTrack0": "Maximum de pertes infligées : 1.",
             "BattleTrack1": "Maximum de pertes infligées : 2.",
             "BattleTrack2": "Maximum de pertes infligées : 3.",
-            "BattleTrack3": "Maximum de pertes infligées : 3. En attaquant, infligez 1 perte additionnelle."
+            "BattleTrack3": "Maximum de pertes infligées : 3. En attaquant, infligez 1 perte additionnelle.",
+            "SatchelExhausted": "Fatigué",
+            "SatchelDamaged": "Endommagé",
+            "SatchelBattleTrack": "Bataille"
         }
     }
 }
