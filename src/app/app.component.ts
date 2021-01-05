@@ -19,10 +19,14 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    const validLanguages = ['en-US', 'fr-FR'];
     this.language = localStorage.getItem('lang');
     if (!this.language) {
-      this.language = validLanguages.includes(navigator.language) ? navigator.language : 'en-US';
+      const baseLang = navigator.language || 'en-US';
+      if (baseLang.split('-')[0] === 'fr') {
+        this.language = 'fr-FR';
+      } else {
+        this.language = 'en-US';
+      }
     }
 
     this.updateTranslate();
