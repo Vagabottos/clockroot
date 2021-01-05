@@ -54,6 +54,12 @@ export class VagabondDCComponent implements OnInit {
     this.botService.saveBots();
   }
 
+  removeSatchelItem($event, item) {
+    $event.preventDefault();
+    $event.stopPropagation();
+    delete this.bot.customData.satchelItems[item];
+  }
+
   changeSuit(suit) {
     this.bot.customData.currentSuit = suit;
     this.botService.saveBots();

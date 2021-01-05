@@ -151,7 +151,7 @@
       <ion-card-content>
 
         <div class="building-row wrap">
-          <div class="flip-container" *ngFor="let item of bot.customData.satchelItems | keyvalue">
+          <div class="flip-container" *ngFor="let item of bot.customData.satchelItems | keyvalue" (contextmenu)="removeSatchelItem($event, item.key)">
 
             <div class="flip-icon">
               <img [src]="'assets/inicon/token-item-' + botService.itemImages[item.key] + '.png'"
