@@ -11,16 +11,19 @@ import { BotService } from './bot.service';
 export class AppComponent implements OnInit {
 
   public language: string;
-  
+
   constructor(
     private translateService: TranslateService,
     public botService: BotService
   ) {
   }
-  
+
   ngOnInit() {
+    const validLanguages = ['en-US', 'fr-FR'];
     this.language = localStorage.getItem('lang');
-    if(!this.language) this.language = 'en-US';
+    if (!this.language) {
+      this.language = validLanguages.includes(navigator.language) ? navigator.language : 'en-US';
+    }
 
     this.updateTranslate();
   }
