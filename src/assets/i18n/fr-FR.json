@@ -144,7 +144,7 @@
         },
         "Mechanical Marquise": {
             "Easy": "Lors du **Recrutement**, ne placez que 2 guerriers.",
-            "Normal": "Nothing is changed.",
+            "Normal": "Mode par défaut.",
             "Challenging": "Lors du **Recrutement**, placez également 2 guerriers dans la clairière contrôlée de la couleur de l'ordre de plus haute priorité.",
             "Nightmare": "Lors du **Recrutement**, placez également 2 guerriers dans la clairière contrôlée de la couleur de l'ordre de plus haute priorité. A la fin du Crépuscule, marquez 1 point de victoire."
         },
