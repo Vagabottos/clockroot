@@ -98,14 +98,10 @@ export class MarquiseBotDC extends Bot {
 
     if (this.customData.currentSuit === 'bird') {
 
-      const isChallengingPlus = this.difficulty === 'Challenging' || this.difficulty === 'Nightmare';
-
       const base2 = [
         translate.instant(`SpecificDaylight.Mechanical Marquise (DC).Bird0`),
 
         translate.instant(`SpecificDaylight.Mechanical Marquise (DC).Bird1`, { totalWarriors }),
-
-        isChallengingPlus ? translate.instant(`SpecificDaylight.Mechanical Marquise.BirdChallenging`) : '',
 
         translate.instant(`SpecificDaylight.Mechanical Marquise (DC).Bird2`),
 

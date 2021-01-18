@@ -119,7 +119,7 @@
       "Setup0": "Form a supply of 25 warriors near you.",
       "Setup1": "Place the keep token in a random corner clearing.",
       "Setup2": "Place a warrior in each clearing, except the corner clearing diagonally opposite from the keep. Place an extra warrior in the clearing with the keep token. _(Place 12 warriors in total.)_",
-      "Setup3": "Place 1 sawmill, 1 workshop and 1 recruiter randomly among the clearing with the keep token and those clearings adjacent with up to one building per clearing.",
+      "Setup3": "Place 1 sawmill, 1 workshop and 1 recruiter randomly among the clearings adjacent to the clearing with the keep token with up to one building per clearing.",
       "Setup4": "Collect your remaining 15 buildings and place them near you."
     }
   },
@@ -145,8 +145,8 @@
     "Mechanical Marquise": {
       "Easy": "Whenever you **Recruit**, instead place only two warriors.",
       "Normal": "Nothing is changed.",
-      "Challenging": "Whenever you **Recruit**, instead place four warriors.",
-      "Nightmare": "Whenever you **Recruit**, instead place five warriors. At the end of Evening, score one victory point."
+      "Challenging": "Whenever you **Recruit**, also place two warriors in the ordered clearing you rule of highest priority.",
+      "Nightmare": "Whenever you **Recruit**, also place two warriors in the ordered clearing you rule of highest priority. At the end of Evening, score one victory point."
     },
     "Electric Eyrie (DC)": {
       "Easy": "Whenever you **Recruit** for bird, instead place one fewer warrior.",
@@ -167,10 +167,10 @@
       "Nightmare": "You **Organize** if a clearing has two or more Alliance warriors. At the end of Evening, score one victory point per two players (rounded up)."
     },
     "Mechanical Marquise (DC)": {
-      "Easy": "Whenever you **Recruit**, instead place only two warriors.",
+      "Easy": "Whenever you **Recruit**, instead place only three warriors.",
       "Normal": "Nothing is changed.",
-      "Challenging": "Whenever you **Recruit**, also place two warriors in the ordered clearing you rule of highest priority.",
-      "Nightmare": "Whenever you **Recruit**, also place two warriors in the ordered clearing you rule of highest priority. At the end of Evening, score one victory point per two players (rounded up)."
+      "Challenging": "Whenever you **Recruit**, instead place five warriors.",
+      "Nightmare": "Whenever you **Recruit**, instead place five warriors. At the end of Evening, score one victory point per two players (rounded up)."
     }
   },
   "SpecificRules": {
@@ -355,9 +355,8 @@
       "Blitz": "Find the clearing you rule of the highest priority without any enemy pieces. Move all but one warrior from the clearing. Then, battle in the destination clearing.",
       "Bird0": "Battle in all clearings. _(Defender is the player with most pieces, then victory points.)_",
       "Bird1": "Recruit {{totalWarriors}} warrior(s) evenly among the two lowest priority clearings you rule. If you rule only one clearing, place all {{totalWarriors}} there. Score **vp:1** for every two warriors that could not be recruited.",
-      "Bird2": "Build a building of the type with the most pieces on the map in a clearing you rule with the most Marquise Warriors.<br>_(On a tie between sawmills and any other building types, place a sawmill. On a tie between workshops and recruiters but not sawmills, place a recruiter.)_",
+      "Bird2": "Build a building of the type with the most pieces on the map in a clearing you rule with the most Marquise Warriors.<br>_(On a tie between sawmills and any other building types, place a sawmill. On a tie between workshops and recruiters but not sawmills, place a workshop.)_",
       "Bird3": "Move all but three of your warriors from each clearing to the adjacent clearing with the most enemy pieces. Then battle in each clearing you moved into.",
-      "BirdChallenging": "Place two warriors in the ordered clearing you rule of the highest priority.",
       "Suit0": "Battle in each **card:{{suit}}** clearing. _(Defender is the player with most pieces, then victory points.)_",
       "Suit1": "Recruit {{totalWarriors}} warriors evenly spread across **card:{{suit}}** clearings you rule. Score **vp:1** for every two warriors that could not be recruited.<br>_(**Clearing tie**: Place warriors into clearings with highest priority first.)_",
       "Suit2": "Build a **building:{{building}}** in a clearing you rule with the most Marquise warriors.",
