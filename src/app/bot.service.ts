@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 
 import { Bot, Difficulty, Rule, Item, BotName } from './models/bot';
 import { MarquiseBot, EyrieBot, MarquiseBotDC, EyrieBotDC, WoodlandBotDC, VagaBotDC, WoodlandBot, VagaBot } from './models';
-import { ModalController } from '@ionic/angular';
+import { AlertController, ModalController } from '@ionic/angular';
 import { PriorityModalComponent } from './priority-modal/priority-modal.component';
 
 @Injectable({
@@ -95,7 +95,7 @@ export class BotService {
     Torch3: 'torch'
   };
 
-  constructor(private modalCtrl: ModalController) {
+  constructor(private modalCtrl: ModalController, private alertCtrl: AlertController) {
     this.loadBots();
   }
 
@@ -106,9 +106,26 @@ export class BotService {
     this.saveBots();
   }
 
-  public removeBot(bot: Bot) {
-    this.bots = this.bots.filter(x => x !== bot);
-    this.saveBots();
+  public  async removeBot(bot: Bot) {
+    const alert = await this.alertCtrl.create({
+      header: `Remove the ${bot.name} bot?`,
+      message: 'This will remove all rules, victory points, traits, and any other settings you have set for this bot.',
+      buttons: [
+        {
+          text: 'Cancel',
+          role: 'cancel',
+          cssClass: 'secondary'
+        }, {
+          text: 'Yes, remove!',
+          handler: () => {
+            this.bots = this.bots.filter(x => x !== bot);
+            this.saveBots();
+          }
+        }
+      ]
+    });
+
+    await alert.present();
   }
 
   public clearBots() {
