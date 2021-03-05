@@ -97,10 +97,6 @@ export class WoodlandBotDC extends Bot {
       const suit = this.customData.currentSuit;
       base.push(translate.instant(`SpecificBirdsong.Automated Alliance (DC).Revolt`, { suit }));
 
-    } else {
-      const sympathySpread = this.customData.sympathy.slice(0, 5).every(x => x) ? '1x' : '2x';
-      base.push(translate.instant(`SpecificBirdsong.Automated Alliance (DC).Spread`, { sympathySpread }));
-
     }
 
     return base;
