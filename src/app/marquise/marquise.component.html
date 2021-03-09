@@ -188,7 +188,8 @@
       <ion-card-content>
         <ol>
           <li class="rule-message" *ngFor="let message of bot.evening(translateService)">
-            <span [innerHTML]="rendererService.formatString(message)"></span>
+            <span *ngIf="message.meta.type != 'score'" [innerHTML]="rendererService.formatString(message.text)"></span>
+            <a *ngIf="message.meta.type == 'score'" [innerHTML]="rendererService.formatString(message.text)" (click)="bot.addVP(message.meta.value)"></a>
           </li>
         </ol>
       </ion-card-content>

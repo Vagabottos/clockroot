@@ -191,13 +191,15 @@ ${translate.instant('SpecificExtra.Vagabot.Special' + vaga.customData.chosenVaga
     }
 
     const base = [
-      translate.instant('SpecificEvening.Vagabot.Refresh', { itemRefreshMin, itemRefreshMax }),
-      translate.instant('SpecificEvening.Vagabot.Forest', { itemRepairs }),
-      translate.instant('SpecificEvening.Vagabot.Discard')
+      this.createMetaData('text', '', translate.instant('SpecificEvening.Vagabot.Refresh', { itemRefreshMin, itemRefreshMax })),
+      this.createMetaData('text', '', translate.instant('SpecificEvening.Vagabot.Forest', { itemRepairs })),
+      this.createMetaData('text', '', translate.instant('SpecificEvening.Vagabot.Discard'))
     ];
 
     if (this.difficulty === 'Nightmare') {
-      base.push(translate.instant('SpecificEvening.Vagabot.NightmareScore'));
+      base.push(
+        this.createMetaData('score', 1, translate.instant('SpecificEvening.Vagabot.NightmareScore'))
+      );
     }
 
     return base;

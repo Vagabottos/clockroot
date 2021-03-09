@@ -180,26 +180,34 @@ export class EyrieBot extends Bot {
     const score = Math.max(0, this.customData.buildings.reduce((prev, cur) => prev + (cur ? 1 : 0), 0) - 1);
 
     const base = [
-      translate.instant('SpecificEvening.Electric Eyrie.Score', { score })
+      this.createMetaData('score', score, translate.instant('SpecificEvening.Electric Eyrie.Score', { score }))
     ];
 
     if (this.difficulty === 'Nightmare') {
-      base.push(translate.instant('SpecificEvening.Electric Eyrie.NightmareScore'));
+      base.push(
+        this.createMetaData('score', 1, translate.instant('SpecificEvening.Electric Eyrie.NightmareScore'))
+      );
     }
 
-    return base;
+    return base
   }
 
   public turmoil(translate: TranslateService) {
     const base = [
-      translate.instant('SpecificExtra.Electric Eyrie.Purge'),
-      translate.instant('SpecificExtra.Electric Eyrie.Evening')
+      this.createMetaData('text', '', translate.instant('SpecificExtra.Electric Eyrie.Purge')),
+      this.createMetaData('text', '', translate.instant('SpecificExtra.Electric Eyrie.Evening'))
     ];
 
+    const score = this.customData.decree.bird
+
     if (this.hasTrait('Nobility')) {
-      base.unshift(translate.instant('SpecificExtra.Electric Eyrie.YesNobility'));
+      base.unshift(
+        this.createMetaData('score', score, translate.instant('SpecificExtra.Electric Eyrie.YesNobility', { score }))
+      );
     } else {
-      base.unshift(translate.instant('SpecificExtra.Electric Eyrie.NoNobility'));
+      base.unshift(
+        this.createMetaData('score', -score, translate.instant('SpecificExtra.Electric Eyrie.NoNobility', { score }))
+      );
     }
 
     return base;

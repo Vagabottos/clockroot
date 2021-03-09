@@ -415,8 +415,8 @@
         "Electric Eyrie": {
             "Purge": "**Purge** : Défaussez le Décret, sauf les Vizirs.",
             "Evening": "**Repos** : Passez au Crépuscule.",
-            "YesNobility": "**Noblesse** : Marquez 1 PV par carte oiseau dans le Décret.",
-            "NoNobility": "**Humiliation** : Perdez 1 PV par carte oiseau dans le Décret."
+            "YesNobility": "**Noblesse** : Marquez 1 PV par carte oiseau dans le Décret. ({{score}})",
+            "NoNobility": "**Humiliation** : Perdez 1 PV par carte oiseau dans le Décret. ({{score}})"
         },
         "Vagabot": {
             "NameTinker": "Bricoleur",

@@ -157,13 +157,15 @@ export class MarquiseBot extends Bot {
       const maxScore = Math.max(...scores, 0);
 
       const base2 = [
-        translate.instant('SpecificEvening.Mechanical Marquise.Score', { score: maxScore }),
-        translate.instant('SpecificEvening.Mechanical Marquise.Discard')
+        this.createMetaData('score', maxScore, translate.instant('SpecificEvening.Mechanical Marquise.Score', { score: maxScore })),
+        this.createMetaData('text', '', translate.instant('SpecificEvening.Mechanical Marquise.Discard'))
       ];
 
 
       if (this.difficulty === 'Nightmare') {
-        base2.push(translate.instant('SpecificEvening.Mechanical Marquise.NightmareScore'));
+        base2.push(
+          this.createMetaData('score', 1, translate.instant('SpecificEvening.Mechanical Marquise.NightmareScore'))
+        );
       }
 
       return base2;
@@ -174,12 +176,14 @@ export class MarquiseBot extends Bot {
     const score = Math.max(0, buildingsOfSuit.reduce((prev, cur) => prev + (cur ? 1 : 0), 0) - 1);
 
     const base = [
-      translate.instant('SpecificEvening.Mechanical Marquise.Score', { score }),
-      translate.instant('SpecificEvening.Mechanical Marquise.Discard')
+      this.createMetaData('score', score, translate.instant('SpecificEvening.Mechanical Marquise.Score', { score })),
+      this.createMetaData('text', '', translate.instant('SpecificEvening.Mechanical Marquise.Discard'))
     ];
 
     if (this.difficulty === 'Nightmare') {
-      base.push(translate.instant('SpecificEvening.Mechanical Marquise.NightmareScore'));
+      base.push(
+        this.createMetaData('score', 1, translate.instant('SpecificEvening.Mechanical Marquise.NightmareScore'))
+      );
     }
 
     return base;

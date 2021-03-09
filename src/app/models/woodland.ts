@@ -137,19 +137,19 @@ export class WoodlandBot extends Bot {
     if (this.difficulty === 'Challenging' || this.difficulty === 'Nightmare') { organizeVal = '2'; }
 
     const base = [
-      translate.instant(`SpecificEvening.Automated Alliance.Organize`, { organizeVal }),
-
-      translate.instant(`SpecificEvening.Automated Alliance.WarriorPlace`),
-
-      translate.instant(`SpecificEvening.Automated Alliance.Discard`)
+      this.createMetaData('text', '', translate.instant(`SpecificEvening.Automated Alliance.Organize`, { organizeVal })),
+      this.createMetaData('text', '', translate.instant(`SpecificEvening.Automated Alliance.WarriorPlace`)),
+      this.createMetaData('text', '', translate.instant(`SpecificEvening.Automated Alliance.Discard`))
     ];
 
     if (this.hasTrait('Wildfire')) {
-      base.push(translate.instant(`SpecificEvening.Automated Alliance.Wildfire`));
+      this.createMetaData('text', '', translate.instant(`SpecificEvening.Automated Alliance.Wildfire`));
     }
 
     if (this.difficulty === 'Nightmare') {
-      base.push(translate.instant(`SpecificEvening.Automated Alliance.NightmareScore`));
+      base.push(
+        this.createMetaData('score', 1, translate.instant(`SpecificEvening.Automated Alliance.NightmareScore`))
+      );
     }
 
     return base;
