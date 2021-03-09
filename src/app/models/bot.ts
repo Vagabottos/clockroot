@@ -1,5 +1,4 @@
 import { TranslateService } from '@ngx-translate/core';
-import { BotService } from '../bot.service';
 
 export type BotName = 'Eyrie' | 'Marquise' | 'Woodland' | 'Vagabond'
                     | 'EyrieDC' | 'MarquiseDC' | 'WoodlandDC' | 'VagabondDC';
