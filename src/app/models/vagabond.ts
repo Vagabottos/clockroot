@@ -149,9 +149,9 @@ ${translate.instant('SpecificExtra.Vagabot.Special' + vaga.customData.chosenVaga
 
   public birdsong(translate: TranslateService) {
     return [
-      translate.instant(`SpecificBirdsong.Vagabot.RevealOrder`),
-      translate.instant(`SpecificBirdsong.Vagabot.CraftOrder`),
-      translate.instant(`SpecificBirdsong.Vagabot.RestOrder`)
+      this.createMetaData('text', '', translate.instant(`SpecificBirdsong.Vagabot.RevealOrder`)),
+      this.createMetaData('score', 1, translate.instant(`SpecificBirdsong.Vagabot.CraftOrder`)),
+      this.createMetaData('text', '', translate.instant(`SpecificBirdsong.Vagabot.RestOrder`))
     ];
   }
 
@@ -161,14 +161,46 @@ ${translate.instant('SpecificExtra.Vagabot.Special' + vaga.customData.chosenVaga
     let base = [];
 
     switch (this.customData.currentSuit) {
-      case 'fox':   { base = [actions.explore(),  actions.battle(), actions.special()];                  break; }
-      case 'bunny': { base = [actions.battle(),   actions.repair(), actions.special()];                  break; }
-      case 'mouse': { base = [actions.quest(),    actions.aid(),    actions.battle(), actions.repair()]; break; }
-      default:      { base = [actions.explore(),  actions.quest(),  actions.aid(),    actions.battle()]; break; }
+      case 'fox':   { 
+                      base = [
+                              this.createMetaData('text', '', actions.explore()),  
+                              this.createMetaData('score', 1, actions.battle()),
+                              this.createMetaData('text', '', actions.special())
+                      ];                  
+                      break; 
+                    }
+      case 'bunny': { 
+                      base = [
+                              this.createMetaData('score', 1, actions.battle()),   
+                              this.createMetaData('text', '', actions.repair()), 
+                              this.createMetaData('text', '',  actions.special())
+                      ];                  
+                      break; 
+                    }
+      case 'mouse': { 
+                      base = [
+                              this.createMetaData('score', 1, actions.quest()),    
+                              this.createMetaData('text', '', actions.aid()),    
+                              this.createMetaData('score', 1, actions.battle()), 
+                              this.createMetaData('text', '', actions.repair())
+                      ]; 
+                      break; 
+                    }
+      default:      { 
+                      base = [
+                              this.createMetaData('text', '', actions.explore()),  
+                              this.createMetaData('score', 1, actions.quest()),  
+                              this.createMetaData('text', '', actions.aid()),    
+                              this.createMetaData('score', 1, actions.battle())
+                      ]; 
+                      break; 
+                    }
     }
 
     if (this.hasTrait('Adventurer')) {
-      base.push(actions.quest(true));
+      base.push(
+        this.createMetaData('score', 1, actions.quest(true))
+      );
     }
 
     return base;

@@ -415,8 +415,8 @@
     "Electric Eyrie": {
       "Purge": "Purge Decree, except Viziers.",
       "Evening": "Go to Evening.",
-      "YesNobility": "Score one victory point per bird card in the Decree. ({{score}})",
-      "NoNobility": "Lose one victory point per bird card in the Decree. ({{score}})"
+      "YesNobility": "Score one victory point per bird card in the Decree.",
+      "NoNobility": "Lose one victory point per bird card in the Decree."
     },
     "Vagabot": {
       "NameTinker": "Tinker",
@@ -460,5 +460,8 @@
       "SatchelDamaged": "Damaged",
       "SatchelBattleTrack": "Battle"
     }
+  },
+  "ToastMessages": {
+    "UpdateScore": "{{ botname }}'s score has been updated by {{ addend }}."
   }
 }

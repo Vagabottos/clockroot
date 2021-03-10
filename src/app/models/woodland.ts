@@ -94,21 +94,27 @@ export class WoodlandBot extends Bot {
 
   public birdsong(translate: TranslateService) {
     const base = [
-      translate.instant(`SpecificBirdsong.Automated Alliance.RevealOrder`),
-      translate.instant(`SpecificBirdsong.Automated Alliance.CraftOrder`)
+      this.createMetaData('text', '', translate.instant(`SpecificBirdsong.Automated Alliance.RevealOrder`)),
+      this.createMetaData('score', 1, translate.instant(`SpecificBirdsong.Automated Alliance.CraftOrder`))
     ];
 
     if (this.customData.currentSuit !== 'bird' && !this.customData.buildings[this.customData.currentSuit]) {
 
       const suit = this.customData.currentSuit;
-      base.push(translate.instant(`SpecificBirdsong.Automated Alliance.Revolt`, { suit }));
+      base.push(
+        this.createMetaData('text', '', translate.instant(`SpecificBirdsong.Automated Alliance.Revolt`, { suit }))
+      );
 
       const sympathySpread = this.customData.sympathy.slice(0, 5).every(x => x) ? '1x' : '2x';
-      base.push(translate.instant(`SpecificBirdsong.Automated Alliance.RevoltSpread`, { sympathySpread }));
+      base.push(
+        this.createMetaData('text', '', translate.instant(`SpecificBirdsong.Automated Alliance.RevoltSpread`, { sympathySpread }))
+      );
 
     } else {
       const sympathySpread = this.customData.sympathy.slice(0, 5).every(x => x) ? '1x' : '2x';
-      base.push(translate.instant(`SpecificBirdsong.Automated Alliance.Spread`, { sympathySpread }));
+      base.push(
+        this.createMetaData('text', '', translate.instant(`SpecificBirdsong.Automated Alliance.Spread`, { sympathySpread }))
+      );
 
     }
 
@@ -120,11 +126,13 @@ export class WoodlandBot extends Bot {
     const suit = this.customData.currentSuit;
 
     const base = [
-      translate.instant(`SpecificDaylight.Automated Alliance.Sympathy`, { suit })
+      this.createMetaData('score', 5, translate.instant(`SpecificDaylight.Automated Alliance.Sympathy`, { suit }))
     ];
 
     if (suit === 'bird') {
-      base.push(translate.instant(`SpecificDaylight.Automated Alliance.Revolt`));
+      base.push(
+        this.createMetaData('text', '', translate.instant(`SpecificDaylight.Automated Alliance.Revolt`))
+      );
     }
 
     return base;

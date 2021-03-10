@@ -1,0 +1,16 @@
+.para {
+    display: inline;
+    max-height: fit-content;
+    width: fit-content;
+}
+
+ion-button.para--button {
+    --color: var(--ion-color-primary);
+    --padding-start: 5px;
+    --padding-end: 5px;
+    --padding-top: 2px;
+    display: inline-block;
+    max-height: 18px;
+    vertical-align: middle;
+    margin: 0px 5px;
+}
