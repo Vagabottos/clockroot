@@ -165,7 +165,9 @@ ${translate.instant('SpecificExtra.Vagabot.Special' + vaga.customData.chosenVaga
                       base = [
                               this.createMetaData('text', '', actions.explore()),  
                               this.createMetaData('score', 1, actions.battle()),
-                              this.createMetaData('text', '', actions.special())
+                              this.customData.chosenVaga == 'Ranger' ? 
+                                this.createMetaData('text', '', actions.special()) : 
+                                this.createMetaData('score', 1, actions.special()) 
                       ];                  
                       break; 
                     }
@@ -173,14 +175,18 @@ ${translate.instant('SpecificExtra.Vagabot.Special' + vaga.customData.chosenVaga
                       base = [
                               this.createMetaData('score', 1, actions.battle()),   
                               this.createMetaData('text', '', actions.repair()), 
-                              this.createMetaData('text', '',  actions.special())
+                              this.customData.chosenVaga == 'Ranger' ? 
+                                this.createMetaData('text', '', actions.special()) : 
+                                this.createMetaData('score', 1, actions.special()) 
                       ];                  
                       break; 
                     }
       case 'mouse': { 
                       base = [
                               this.createMetaData('score', 1, actions.quest()),    
-                              this.createMetaData('text', '', actions.aid()),    
+                              this.hasTrait('Helper') ? 
+                                this.createMetaData('score', 2, actions.aid()) :
+                                this.createMetaData('score', 1, actions.aid()),    
                               this.createMetaData('score', 1, actions.battle()), 
                               this.createMetaData('text', '', actions.repair())
                       ]; 
@@ -190,7 +196,9 @@ ${translate.instant('SpecificExtra.Vagabot.Special' + vaga.customData.chosenVaga
                       base = [
                               this.createMetaData('text', '', actions.explore()),  
                               this.createMetaData('score', 1, actions.quest()),  
-                              this.createMetaData('text', '', actions.aid()),    
+                              this.hasTrait('Helper') ? 
+                                this.createMetaData('score', 2, actions.aid()) :
+                                this.createMetaData('score', 1, actions.aid()), 
                               this.createMetaData('score', 1, actions.battle())
                       ]; 
                       break; 

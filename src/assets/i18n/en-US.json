@@ -420,8 +420,8 @@
     },
     "Vagabot": {
       "NameTinker": "Tinker",
-      "DescTinker": "Search the discard pile for the top card with an available item and craft it, scoring +1 VP. _Start the game with one fewer item._",
-      "SpecialTinker": "Search the discard pile for the top card with an available item and craft it, scoring +1 VP.",
+      "DescTinker": "Search the discard pile for the top card with an available item and craft it, scoring **vp:1**. _Start the game with one fewer item._",
+      "SpecialTinker": "Search the discard pile for the top card with an available item and craft it, scoring **vp:1**.",
       "NameThief": "Thief",
       "DescThief": "Take a random card from the enemy in your clearing with most points there, then most pieces there.",
       "SpecialThief": "Take a random card from the enemy in your clearing with most points there, then most pieces there.",
