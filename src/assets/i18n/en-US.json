@@ -462,6 +462,9 @@
     }
   },
   "ToastMessages": {
-    "UpdateScore": "{{ botname }}'s score has been updated by {{ addend }}."
+    "UpdateScore": "{{ botname }}'s score has been updated by {{ addend }}.",
+    "Actions": {
+      "Undo": "Undo"
+    }
   }
 }

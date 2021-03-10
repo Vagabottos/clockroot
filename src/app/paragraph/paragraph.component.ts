@@ -37,7 +37,7 @@ export class ParagraphComponent implements OnInit {
             position: 'bottom',
             buttons: [
                 {
-                    text: 'Undo',
+                    text: this.translateService.instant('ToastMessages.Actions.Undo'),
                     handler: () => {
                         this.bot.addVP(-score);
                     }
