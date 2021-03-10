@@ -1,7 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { VagaBotDC } from '../models';
 import { BotService } from '../bot.service';
-import { RendererService } from '../renderer.service';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -33,7 +32,6 @@ export class VagabondDCComponent implements OnInit {
 
   constructor(
     public botService: BotService,
-    public rendererService: RendererService,
     public translateService: TranslateService
   ) { }
 
