@@ -1,4 +1,5 @@
 import { TranslateService } from '@ngx-translate/core';
+import { MetaData } from '../paragraph/paragraph.component';
 
 export type BotName = 'Eyrie' | 'Marquise' | 'Woodland' | 'Vagabond'
                     | 'EyrieDC' | 'MarquiseDC' | 'WoodlandDC' | 'VagabondDC';
@@ -42,12 +43,25 @@ export abstract class Bot {
   public customData: any = {};
 
   public abstract setup(): void;
-  public abstract daylight(translate: TranslateService): string[];
-  public abstract birdsong(translate: TranslateService): string[];
-  public abstract evening(translate: TranslateService): string[];
+  public abstract daylight(translate: TranslateService): MetaData[];
+  public abstract birdsong(translate: TranslateService): MetaData[];
+  public abstract evening(translate: TranslateService): MetaData[];
 
   public hasTrait(trait: string): boolean {
     if (!this.traitHash) { return false; }
     return this.traitHash[trait];
+  }
+
+  public addVP(addend: number): void {
+    this.vp = this.vp + addend;
+  }
+
+  protected createMetaData(metatype: string, metaval: any, metatext: string): MetaData {
+    let obj = {
+      text: metatext,
+      type: metatype, 
+      value: metaval
+    }
+    return obj
   }
 }

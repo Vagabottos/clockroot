@@ -149,9 +149,9 @@ ${translate.instant('SpecificExtra.Vagabot.Special' + vaga.customData.chosenVaga
 
   public birdsong(translate: TranslateService) {
     return [
-      translate.instant(`SpecificBirdsong.Vagabot.RevealOrder`),
-      translate.instant(`SpecificBirdsong.Vagabot.CraftOrder`),
-      translate.instant(`SpecificBirdsong.Vagabot.RestOrder`)
+      this.createMetaData('text', '', translate.instant(`SpecificBirdsong.Vagabot.RevealOrder`)),
+      this.createMetaData('score', 1, translate.instant(`SpecificBirdsong.Vagabot.CraftOrder`)),
+      this.createMetaData('text', '', translate.instant(`SpecificBirdsong.Vagabot.RestOrder`))
     ];
   }
 
@@ -161,14 +161,54 @@ ${translate.instant('SpecificExtra.Vagabot.Special' + vaga.customData.chosenVaga
     let base = [];
 
     switch (this.customData.currentSuit) {
-      case 'fox':   { base = [actions.explore(),  actions.battle(), actions.special()];                  break; }
-      case 'bunny': { base = [actions.battle(),   actions.repair(), actions.special()];                  break; }
-      case 'mouse': { base = [actions.quest(),    actions.aid(),    actions.battle(), actions.repair()]; break; }
-      default:      { base = [actions.explore(),  actions.quest(),  actions.aid(),    actions.battle()]; break; }
+      case 'fox':   { 
+                      base = [
+                              this.createMetaData('text', '', actions.explore()),  
+                              this.createMetaData('score', 1, actions.battle()),
+                              this.customData.chosenVaga == 'Ranger' ? 
+                                this.createMetaData('text', '', actions.special()) : 
+                                this.createMetaData('score', 1, actions.special()) 
+                      ];                  
+                      break; 
+                    }
+      case 'bunny': { 
+                      base = [
+                              this.createMetaData('score', 1, actions.battle()),   
+                              this.createMetaData('text', '', actions.repair()), 
+                              this.customData.chosenVaga == 'Ranger' ? 
+                                this.createMetaData('text', '', actions.special()) : 
+                                this.createMetaData('score', 1, actions.special()) 
+                      ];                  
+                      break; 
+                    }
+      case 'mouse': { 
+                      base = [
+                              this.createMetaData('score', 1, actions.quest()),    
+                              this.hasTrait('Helper') ? 
+                                this.createMetaData('score', 2, actions.aid()) :
+                                this.createMetaData('score', 1, actions.aid()),    
+                              this.createMetaData('score', 1, actions.battle()), 
+                              this.createMetaData('text', '', actions.repair())
+                      ]; 
+                      break; 
+                    }
+      default:      { 
+                      base = [
+                              this.createMetaData('text', '', actions.explore()),  
+                              this.createMetaData('score', 1, actions.quest()),  
+                              this.hasTrait('Helper') ? 
+                                this.createMetaData('score', 2, actions.aid()) :
+                                this.createMetaData('score', 1, actions.aid()), 
+                              this.createMetaData('score', 1, actions.battle())
+                      ]; 
+                      break; 
+                    }
     }
 
     if (this.hasTrait('Adventurer')) {
-      base.push(actions.quest(true));
+      base.push(
+        this.createMetaData('score', 1, actions.quest(true))
+      );
     }
 
     return base;
@@ -191,13 +231,15 @@ ${translate.instant('SpecificExtra.Vagabot.Special' + vaga.customData.chosenVaga
     }
 
     const base = [
-      translate.instant('SpecificEvening.Vagabot.Refresh', { itemRefreshMin, itemRefreshMax }),
-      translate.instant('SpecificEvening.Vagabot.Forest', { itemRepairs }),
-      translate.instant('SpecificEvening.Vagabot.Discard')
+      this.createMetaData('text', '', translate.instant('SpecificEvening.Vagabot.Refresh', { itemRefreshMin, itemRefreshMax })),
+      this.createMetaData('text', '', translate.instant('SpecificEvening.Vagabot.Forest', { itemRepairs })),
+      this.createMetaData('text', '', translate.instant('SpecificEvening.Vagabot.Discard'))
     ];
 
     if (this.difficulty === 'Nightmare') {
-      base.push(translate.instant('SpecificEvening.Vagabot.NightmareScore'));
+      base.push(
+        this.createMetaData('score', 1, translate.instant('SpecificEvening.Vagabot.NightmareScore'))
+      );
     }
 
     return base;

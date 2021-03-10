@@ -460,5 +460,11 @@
             "SatchelDamaged": "Endommagé",
             "SatchelBattleTrack": "Combat"
         }
+    },
+    "ToastMessages": {
+        "UpdateScore": "{{ botname }}: +{{ addend }} PV",
+        "Actions": {
+            "Undo": "Annuler"
+        }
     }
 }

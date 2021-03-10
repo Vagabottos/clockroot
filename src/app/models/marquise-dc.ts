@@ -82,8 +82,8 @@ export class MarquiseBotDC extends Bot {
 
   public birdsong(translate: TranslateService) {
     return [
-      translate.instant(`SpecificBirdsong.Mechanical Marquise (DC).RevealOrder`),
-      translate.instant(`SpecificBirdsong.Mechanical Marquise (DC).CraftOrder`)
+      this.createMetaData('text', '', translate.instant(`SpecificBirdsong.Mechanical Marquise (DC).RevealOrder`)),
+      this.createMetaData('score', 1, translate.instant(`SpecificBirdsong.Mechanical Marquise (DC).CraftOrder`))
     ];
   }
 
@@ -93,19 +93,16 @@ export class MarquiseBotDC extends Bot {
     if (this.difficulty === 'Challenging' || this.difficulty === 'Nightmare') { totalWarriors = 5; }
 
     const blitzText = this.hasTrait('Blitz')
-    ? translate.instant(`SpecificDaylight.Mechanical Marquise (DC).Blitz`)
-    : '';
+    ? this.createMetaData('text', '', translate.instant(`SpecificDaylight.Mechanical Marquise (DC).Blitz`))
+    : this.createMetaData('text', '', '');
 
     if (this.customData.currentSuit === 'bird') {
 
       const base2 = [
-        translate.instant(`SpecificDaylight.Mechanical Marquise (DC).Bird0`),
-
-        translate.instant(`SpecificDaylight.Mechanical Marquise (DC).Bird1`, { totalWarriors }),
-
-        translate.instant(`SpecificDaylight.Mechanical Marquise (DC).Bird2`),
-
-        translate.instant(`SpecificDaylight.Mechanical Marquise (DC).Bird3`),
+        this.createMetaData('text', '', translate.instant(`SpecificDaylight.Mechanical Marquise (DC).Bird0`)),
+        this.createMetaData('text', '', translate.instant(`SpecificDaylight.Mechanical Marquise (DC).Bird1`, { totalWarriors })),
+        this.createMetaData('text', '', translate.instant(`SpecificDaylight.Mechanical Marquise (DC).Bird2`)),
+        this.createMetaData('text', '', translate.instant(`SpecificDaylight.Mechanical Marquise (DC).Bird3`)),
       ].filter(Boolean);
 
       if (blitzText) { base2.push(blitzText); }
@@ -121,13 +118,10 @@ export class MarquiseBotDC extends Bot {
     const suit = this.customData.currentSuit;
 
     const base = [
-      translate.instant(`SpecificDaylight.Mechanical Marquise (DC).Suit0`, { suit }),
-
-      translate.instant(`SpecificDaylight.Mechanical Marquise (DC).Suit1`, { totalWarriors, suit }),
-
-      translate.instant(`SpecificDaylight.Mechanical Marquise (DC).Suit2`, { building }),
-
-      translate.instant(`SpecificDaylight.Mechanical Marquise (DC).Suit3`, { suit })
+      this.createMetaData('text', '', translate.instant(`SpecificDaylight.Mechanical Marquise (DC).Suit0`, { suit })),
+      this.createMetaData('text', '', translate.instant(`SpecificDaylight.Mechanical Marquise (DC).Suit1`, { totalWarriors, suit })),
+      this.createMetaData('text', '', translate.instant(`SpecificDaylight.Mechanical Marquise (DC).Suit2`, { building })),
+      this.createMetaData('text', '', translate.instant(`SpecificDaylight.Mechanical Marquise (DC).Suit3`, { suit }))
     ];
 
     if (blitzText) { base.push(blitzText); }
@@ -139,8 +133,8 @@ export class MarquiseBotDC extends Bot {
     const buildings = this.customData.buildings;
 
     const iwText = this.hasTrait('Iron Will')
-                 ? translate.instant(`SpecificEvening.Mechanical Marquise (DC).RepeatIronWill`)
-                 : translate.instant(`SpecificEvening.Mechanical Marquise (DC).Repeat`);
+                 ? this.createMetaData('text', '', translate.instant(`SpecificEvening.Mechanical Marquise (DC).RepeatIronWill`))
+                 : this.createMetaData('text', '', translate.instant(`SpecificEvening.Mechanical Marquise (DC).Repeat`));
 
     if (this.customData.currentSuit === 'bird') {
 
@@ -152,13 +146,15 @@ export class MarquiseBotDC extends Bot {
 
       const base2 = [
         iwText,
-        translate.instant('SpecificEvening.Mechanical Marquise (DC).Score', { score: maxScore }),
-        translate.instant('SpecificEvening.Mechanical Marquise (DC).Discard')
+        this.createMetaData('score', maxScore, translate.instant('SpecificEvening.Mechanical Marquise (DC).Score', { score: maxScore })),
+        this.createMetaData('text', '', translate.instant('SpecificEvening.Mechanical Marquise (DC).Discard'))
       ];
 
 
       if (this.difficulty === 'Nightmare') {
-        base2.push(translate.instant('SpecificEvening.Mechanical Marquise (DC).NightmareScore'));
+        base2.push(
+          this.createMetaData('score', 1, translate.instant('SpecificEvening.Mechanical Marquise (DC).NightmareScore'))
+        );
       }
 
       return base2;
@@ -170,12 +166,14 @@ export class MarquiseBotDC extends Bot {
 
     const base = [
       iwText,
-      translate.instant('SpecificEvening.Mechanical Marquise (DC).Score', { score }),
-      translate.instant('SpecificEvening.Mechanical Marquise (DC).Discard')
+      this.createMetaData('score', score, translate.instant('SpecificEvening.Mechanical Marquise (DC).Score', { score })),
+      this.createMetaData('text', '', translate.instant('SpecificEvening.Mechanical Marquise (DC).Discard'))
     ];
 
     if (this.difficulty === 'Nightmare') {
-      base.push(translate.instant('SpecificEvening.Mechanical Marquise (DC).NightmareScore'));
+      base.push(
+        this.createMetaData('score', 1, translate.instant('SpecificEvening.Mechanical Marquise (DC).NightmareScore'))
+      );
     }
 
     return base;

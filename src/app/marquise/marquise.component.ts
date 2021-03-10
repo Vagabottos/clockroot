@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { MarquiseBot } from '../models';
-import { RendererService } from '../renderer.service';
 import { BotService } from '../bot.service';
 import { TranslateService } from '@ngx-translate/core';
 
@@ -21,7 +20,6 @@ export class MarquiseComponent implements OnInit {
 
   constructor(
     public botService: BotService,
-    public rendererService: RendererService,
     public translateService: TranslateService
   ) { }
 

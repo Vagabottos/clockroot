@@ -27,7 +27,9 @@ export class RendererService {
       return `<strong>${text}</strong>`;
     };
 
-    // renderer.paragraph = (t) => t;
+    renderer.paragraph = (text: string) => {
+      return `<p class="paragraph">${text}</p>`
+    }
 
     return renderer;
   }

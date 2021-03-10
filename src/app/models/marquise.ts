@@ -82,8 +82,8 @@ export class MarquiseBot extends Bot {
 
   public birdsong(translate: TranslateService) {
     return [
-      translate.instant(`SpecificBirdsong.Mechanical Marquise.RevealOrder`),
-      translate.instant(`SpecificBirdsong.Mechanical Marquise.CraftOrder`)
+      this.createMetaData('text', '', translate.instant(`SpecificBirdsong.Mechanical Marquise.RevealOrder`)),
+      this.createMetaData('score', 1, translate.instant(`SpecificBirdsong.Mechanical Marquise.CraftOrder`))
     ];
   }
 
@@ -95,23 +95,19 @@ export class MarquiseBot extends Bot {
     const warriorsOverTwo = totalWarriors / 2;
 
     const blitzText = this.hasTrait('Blitz')
-    ? translate.instant(`SpecificDaylight.Mechanical Marquise.Blitz`)
-    : '';
+    ? this.createMetaData('text', '', translate.instant(`SpecificDaylight.Mechanical Marquise.Blitz`))
+    : this.createMetaData('text', '', '');
 
     if (this.customData.currentSuit === 'bird') {
 
       const isChallengingPlus = this.difficulty === 'Challenging' || this.difficulty === 'Nightmare';
 
       const base2 = [
-        translate.instant(`SpecificDaylight.Mechanical Marquise.Bird0`),
-
-        translate.instant(`SpecificDaylight.Mechanical Marquise.Bird1`, { totalWarriors, warriorsOverTwo }),
-
-        isChallengingPlus ? translate.instant(`SpecificDaylight.Mechanical Marquise.BirdChallenging`) : '',
-
-        translate.instant(`SpecificDaylight.Mechanical Marquise.Bird2`),
-
-        translate.instant(`SpecificDaylight.Mechanical Marquise.Bird3`),
+        this.createMetaData('text', '', translate.instant(`SpecificDaylight.Mechanical Marquise.Bird0`)),
+        this.createMetaData('text', '', translate.instant(`SpecificDaylight.Mechanical Marquise.Bird1`, { totalWarriors, warriorsOverTwo })),
+        isChallengingPlus ? this.createMetaData('text', '', translate.instant(`SpecificDaylight.Mechanical Marquise.BirdChallenging`)) : this.createMetaData('text', '', ''),
+        this.createMetaData('text', '', translate.instant(`SpecificDaylight.Mechanical Marquise.Bird2`)),
+        this.createMetaData('text', '', translate.instant(`SpecificDaylight.Mechanical Marquise.Bird3`)),
       ].filter(Boolean);
 
       if (blitzText) { base2.push(blitzText); }
@@ -127,19 +123,16 @@ export class MarquiseBot extends Bot {
     const suit = this.customData.currentSuit;
 
     const base = [
-      translate.instant(`SpecificDaylight.Mechanical Marquise.Suit0`, { suit }),
-
-      translate.instant(`SpecificDaylight.Mechanical Marquise.Suit1`, { totalWarriors, suit }),
-
-      translate.instant(`SpecificDaylight.Mechanical Marquise.Suit2`, { building }),
-
-      translate.instant(`SpecificDaylight.Mechanical Marquise.Suit3`, { suit })
+      this.createMetaData('text', '', translate.instant(`SpecificDaylight.Mechanical Marquise.Suit0`, { suit })),
+      this.createMetaData('text', '', translate.instant(`SpecificDaylight.Mechanical Marquise.Suit1`, { totalWarriors, suit })),
+      this.createMetaData('text', '', translate.instant(`SpecificDaylight.Mechanical Marquise.Suit2`, { building })),
+      this.createMetaData('text', '', translate.instant(`SpecificDaylight.Mechanical Marquise.Suit3`, { suit }))
     ];
 
     if (blitzText) { base.push(blitzText); }
 
     base.push(
-      translate.instant(`SpecificDaylight.Mechanical Marquise.Repeat`)
+      this.createMetaData('text', '', translate.instant(`SpecificDaylight.Mechanical Marquise.Repeat`))
     );
 
     return base;
@@ -157,13 +150,15 @@ export class MarquiseBot extends Bot {
       const maxScore = Math.max(...scores, 0);
 
       const base2 = [
-        translate.instant('SpecificEvening.Mechanical Marquise.Score', { score: maxScore }),
-        translate.instant('SpecificEvening.Mechanical Marquise.Discard')
+        this.createMetaData('score', maxScore, translate.instant('SpecificEvening.Mechanical Marquise.Score', { score: maxScore })),
+        this.createMetaData('text', '', translate.instant('SpecificEvening.Mechanical Marquise.Discard'))
       ];
 
 
       if (this.difficulty === 'Nightmare') {
-        base2.push(translate.instant('SpecificEvening.Mechanical Marquise.NightmareScore'));
+        base2.push(
+          this.createMetaData('score', 1, translate.instant('SpecificEvening.Mechanical Marquise.NightmareScore'))
+        );
       }
 
       return base2;
@@ -174,12 +169,14 @@ export class MarquiseBot extends Bot {
     const score = Math.max(0, buildingsOfSuit.reduce((prev, cur) => prev + (cur ? 1 : 0), 0) - 1);
 
     const base = [
-      translate.instant('SpecificEvening.Mechanical Marquise.Score', { score }),
-      translate.instant('SpecificEvening.Mechanical Marquise.Discard')
+      this.createMetaData('score', score, translate.instant('SpecificEvening.Mechanical Marquise.Score', { score })),
+      this.createMetaData('text', '', translate.instant('SpecificEvening.Mechanical Marquise.Discard'))
     ];
 
     if (this.difficulty === 'Nightmare') {
-      base.push(translate.instant('SpecificEvening.Mechanical Marquise.NightmareScore'));
+      base.push(
+        this.createMetaData('score', 1, translate.instant('SpecificEvening.Mechanical Marquise.NightmareScore'))
+      );
     }
 
     return base;

@@ -141,6 +141,12 @@ ion-label {
 .rule-message {
   margin-bottom: 5px;
 }
+
+p.paragraph {
+  display: inline; 
+  width: fit-content;
+}
+
 .click-icon {
   min-height: 24px;
   min-width: 24px;
@@ -242,4 +248,8 @@ ion-button.transparent {
 
 .wider .popover-content {
   --min-width: 350px;
+}
+
+ion-toast {
+  --button-color: var(--ion-color-light);
 }
