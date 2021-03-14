@@ -94,7 +94,7 @@ export class MarquiseBotDC extends Bot {
 
     const blitzText = this.hasTrait('Blitz')
     ? this.createMetaData('text', '', translate.instant(`SpecificDaylight.Mechanical Marquise (DC).Blitz`))
-    : this.createMetaData('text', '', '');
+    : '';
 
     if (this.customData.currentSuit === 'bird') {
 
