@@ -88,18 +88,16 @@ export class WoodlandBotDC extends Bot {
 
   public birdsong(translate: TranslateService) {
     const base = [
-      translate.instant(`SpecificBirdsong.Automated Alliance (DC).RevealOrder`),
-      translate.instant(`SpecificBirdsong.Automated Alliance (DC).CraftOrder`)
+      this.createMetaData('text', '', translate.instant(`SpecificBirdsong.Automated Alliance (DC).RevealOrder`)),
+      this.createMetaData('score', 1, translate.instant(`SpecificBirdsong.Automated Alliance (DC).CraftOrder`))
     ];
 
     if (this.customData.currentSuit !== 'bird' && !this.customData.buildings[this.customData.currentSuit]) {
 
       const suit = this.customData.currentSuit;
-      base.push(translate.instant(`SpecificBirdsong.Automated Alliance (DC).Revolt`, { suit }));
-
-    } else {
-      const sympathySpread = this.customData.sympathy.slice(0, 5).every(x => x) ? '1x' : '2x';
-      base.push(translate.instant(`SpecificBirdsong.Automated Alliance (DC).Spread`, { sympathySpread }));
+      base.push(
+        this.createMetaData('text', '', translate.instant(`SpecificBirdsong.Automated Alliance (DC).Revolt`, { suit }))
+      );
 
     }
 
@@ -114,14 +112,22 @@ export class WoodlandBotDC extends Bot {
     ];
 
     if (suit === 'bird') {
-      base.push(translate.instant(`SpecificDaylight.Automated Alliance (DC).SympathyBird`, { suit }));
-      base.push(translate.instant(`SpecificDaylight.Automated Alliance (DC).Revolt`));
+      base.push(
+        this.createMetaData('score', 5, translate.instant(`SpecificDaylight.Automated Alliance (DC).SympathyBird`, { suit }))
+      );
+      base.push(
+        this.createMetaData('text', '', translate.instant(`SpecificDaylight.Automated Alliance (DC).Revolt`))
+      );
     } else {
-      base.push(translate.instant(`SpecificDaylight.Automated Alliance (DC).Sympathy`, { suit }));
+      base.push(
+        this.createMetaData('score', 5, translate.instant(`SpecificDaylight.Automated Alliance (DC).Sympathy`, { suit }))
+      );
     }
 
     const sympathySpread = this.customData.sympathy.slice(0, 5).every(x => x) ? '1x' : '2x';
-    base.push(translate.instant(`SpecificDaylight.Automated Alliance (DC).RevoltSpread`, { sympathySpread }));
+    base.push(
+      this.createMetaData('text', '', translate.instant(`SpecificDaylight.Automated Alliance (DC).RevoltSpread`, { sympathySpread }))
+    );
 
     return base;
   }
@@ -133,19 +139,21 @@ export class WoodlandBotDC extends Bot {
     if (this.difficulty === 'Challenging' || this.difficulty === 'Nightmare') { organizeVal = '2'; }
 
     const base = [
-      translate.instant(`SpecificEvening.Automated Alliance (DC).Organize`, { organizeVal }),
-
-      translate.instant(`SpecificEvening.Automated Alliance (DC).WarriorPlace`),
-
-      translate.instant(`SpecificEvening.Automated Alliance (DC).Discard`)
+      this.createMetaData('text', '', translate.instant(`SpecificEvening.Automated Alliance (DC).Organize`, { organizeVal })),
+      this.createMetaData('text', '', translate.instant(`SpecificEvening.Automated Alliance (DC).WarriorPlace`)),
+      this.createMetaData('text', '', translate.instant(`SpecificEvening.Automated Alliance (DC).Discard`))
     ];
 
     if (this.hasTrait('Wildfire')) {
-      base.push(translate.instant(`SpecificEvening.Automated Alliance (DC).Wildfire`));
+      base.push(
+        this.createMetaData('text', '', translate.instant(`SpecificEvening.Automated Alliance (DC).Wildfire`))
+      );
     }
 
     if (this.difficulty === 'Nightmare') {
-      base.push(translate.instant(`SpecificEvening.Automated Alliance (DC).NightmareScore`));
+      base.push(
+        this.createMetaData('score', 1, translate.instant(`SpecificEvening.Automated Alliance (DC).NightmareScore`))
+      );
     }
 
     return base;

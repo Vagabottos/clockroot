@@ -168,7 +168,7 @@
       <ion-card-content>
         <ol>
           <li class="rule-message" *ngFor="let message of bot.birdsong(translateService)">
-            <span [innerHTML]="rendererService.formatString(message)"></span>
+            <para [bot]="bot" [metadata]="message"></para>
           </li>
         </ol>
       </ion-card-content>
@@ -183,7 +183,7 @@
       <ion-card-content>
         <ol>
           <li class="rule-message" *ngFor="let message of bot.daylight(translateService)">
-            <span [innerHTML]="rendererService.formatString(message)"></span>
+            <para [bot]="bot" [metadata]="message"></para>
           </li>
         </ol>
       </ion-card-content>
@@ -198,7 +198,7 @@
       <ion-card-content>
         <ol>
           <li class="rule-message" *ngFor="let message of bot.evening(translateService)">
-            <span [innerHTML]="rendererService.formatString(message)"></span>
+            <para [bot]="bot" [metadata]="message"></para>
           </li>
         </ol>
       </ion-card-content>

@@ -144,9 +144,9 @@ ${translate.instant('SpecificExtra.Vagabot (DC).Special' + vaga.customData.chose
 
   public birdsong(translate: TranslateService) {
     return [
-      translate.instant(`SpecificBirdsong.Vagabot (DC).RevealOrder`),
-      translate.instant(`SpecificBirdsong.Vagabot (DC).CraftOrder`),
-      translate.instant(`SpecificBirdsong.Vagabot (DC).RestOrder`)
+      this.createMetaData('text', '', translate.instant(`SpecificBirdsong.Vagabot (DC).RevealOrder`)),
+      this.createMetaData('score', 1, translate.instant(`SpecificBirdsong.Vagabot (DC).CraftOrder`)),
+      this.createMetaData('text', '', translate.instant(`SpecificBirdsong.Vagabot (DC).RestOrder`))
     ];
   }
 
@@ -156,14 +156,44 @@ ${translate.instant('SpecificExtra.Vagabot (DC).Special' + vaga.customData.chose
     let base = [];
 
     switch (this.customData.currentSuit) {
-      case 'fox':   { base = [actions.explore(),  actions.special(), actions.battle()];                  break; }
-      case 'bunny': { base = [actions.special(),  actions.aid(),     actions.battle()];                  break; }
-      case 'mouse': { base = [actions.quest(),    actions.aid(),     actions.battle()];                  break; }
-      default:      { base = [actions.explore(),  actions.quest(),   actions.battle()];                  break; }
+      case 'fox':   { 
+                      base = [
+                              this.createMetaData('text', '', actions.explore()),  
+                              this.createMetaData('text', '', actions.special()), 
+                              this.createMetaData('score', 1, actions.battle())
+                      ];                  
+                      break; 
+                    }
+      case 'bunny': { 
+                      base = [
+                              this.createMetaData('text', '', actions.special()),  
+                              this.createMetaData('text', '', actions.aid()),     
+                              this.createMetaData('score', 1, actions.battle())
+                      ];                  
+                      break; 
+                    }
+      case 'mouse': { 
+                      base = [
+                              this.createMetaData('score', 2, actions.quest()),    
+                              this.createMetaData('text', '', actions.aid()),     
+                              this.createMetaData('score', 1, actions.battle())
+                      ];                  
+                      break; 
+                    }
+      default:      { 
+                      base = [
+                              this.createMetaData('text', '', actions.explore()),  
+                              this.createMetaData('score', 2, actions.quest()),   
+                              this.createMetaData('score', 1, actions.battle())
+                      ];                  
+                      break; 
+                    }
     }
 
     if (this.hasTrait('Adventurer')) {
-      base.push(actions.quest(true));
+      base.push(
+        this.createMetaData('score', 2, actions.quest(true))
+      );
     }
 
     return base;
@@ -186,13 +216,15 @@ ${translate.instant('SpecificExtra.Vagabot (DC).Special' + vaga.customData.chose
     }
 
     const base = [
-      translate.instant('SpecificEvening.Vagabot (DC).Refresh', { itemRefreshMin, itemRefreshMax }),
-      translate.instant('SpecificEvening.Vagabot (DC).Forest', { itemRepairs }),
-      translate.instant('SpecificEvening.Vagabot (DC).Discard')
+      this.createMetaData('text', '', translate.instant('SpecificEvening.Vagabot (DC).Refresh', { itemRefreshMin, itemRefreshMax })),
+      this.createMetaData('text', '', translate.instant('SpecificEvening.Vagabot (DC).Forest', { itemRepairs })),
+      this.createMetaData('text', '', translate.instant('SpecificEvening.Vagabot (DC).Discard'))
     ];
 
     if (this.difficulty === 'Nightmare') {
-      base.push(translate.instant('SpecificEvening.Vagabot (DC).NightmareScore'));
+      base.push(
+        this.createMetaData('score', 1, translate.instant('SpecificEvening.Vagabot (DC).NightmareScore'))
+      );
     }
 
     return base;

@@ -17,6 +17,7 @@ import { MarquiseDCComponent } from '../marquise-dc/marquise-dc.component';
 import { EyrieDCComponent } from '../eyrie-dc/eyrie-dc.component';
 import { WoodlandDCComponent } from '../woodland-dc/woodland-dc.component';
 import { VagabondDCComponent } from '../vagabond-dc/vagabond-dc.component';
+import { ParagraphComponent } from '../paragraph/paragraph.component';
 
 @NgModule({
   imports: [
@@ -32,7 +33,7 @@ import { VagabondDCComponent } from '../vagabond-dc/vagabond-dc.component';
     ])
   ],
   declarations: [
-    HomePage, BotResourcesComponent,
+    HomePage, BotResourcesComponent, ParagraphComponent,
     MarquiseComponent, EyrieComponent, WoodlandComponent, VagabondComponent,
     MarquiseDCComponent, EyrieDCComponent, WoodlandDCComponent, VagabondDCComponent,
     FormatPipe

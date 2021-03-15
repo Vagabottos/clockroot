@@ -119,7 +119,7 @@
       "Setup0": "Form a supply of 25 warriors near you.",
       "Setup1": "Place the keep token in a random corner clearing.",
       "Setup2": "Place a warrior in each clearing, except the corner clearing diagonally opposite from the keep. Place an extra warrior in the clearing with the keep token. _(Place 12 warriors in total.)_",
-      "Setup3": "Place 1 sawmill, 1 workshop and 1 recruiter randomly among the clearing with the keep token and those clearings adjacent with up to one building per clearing.",
+      "Setup3": "Place 1 sawmill, 1 workshop and 1 recruiter randomly among the clearings adjacent to the clearing with the keep token with up to one building per clearing.",
       "Setup4": "Collect your remaining 15 buildings and place them near you."
     }
   },
@@ -145,8 +145,8 @@
     "Mechanical Marquise": {
       "Easy": "Whenever you **Recruit**, instead place only two warriors.",
       "Normal": "Nothing is changed.",
-      "Challenging": "Whenever you **Recruit**, instead place four warriors.",
-      "Nightmare": "Whenever you **Recruit**, instead place five warriors. At the end of Evening, score one victory point."
+      "Challenging": "Whenever you **Recruit**, also place two warriors in the ordered clearing you rule of highest priority.",
+      "Nightmare": "Whenever you **Recruit**, also place two warriors in the ordered clearing you rule of highest priority. At the end of Evening, score one victory point."
     },
     "Electric Eyrie (DC)": {
       "Easy": "Whenever you **Recruit** for bird, instead place one fewer warrior.",
@@ -167,10 +167,10 @@
       "Nightmare": "You **Organize** if a clearing has two or more Alliance warriors. At the end of Evening, score one victory point per two players (rounded up)."
     },
     "Mechanical Marquise (DC)": {
-      "Easy": "Whenever you **Recruit**, instead place only two warriors.",
+      "Easy": "Whenever you **Recruit**, instead place only three warriors.",
       "Normal": "Nothing is changed.",
-      "Challenging": "Whenever you **Recruit**, also place two warriors in the ordered clearing you rule of highest priority.",
-      "Nightmare": "Whenever you **Recruit**, also place two warriors in the ordered clearing you rule of highest priority. At the end of Evening, score one victory point per two players (rounded up)."
+      "Challenging": "Whenever you **Recruit**, instead place five warriors.",
+      "Nightmare": "Whenever you **Recruit**, instead place five warriors. At the end of Evening, score one victory point per two players (rounded up)."
     }
   },
   "SpecificRules": {
@@ -283,7 +283,7 @@
       "Recruit": "Recruit {{totalForSuit}} warrior(s) in a {{suitText}} clearing with a roost. {{recruitText}}<br>_(**Ties**: Recruit in such a clearing with the most enemy pieces, then fewest Eyrie warriors, then lowest priority.)_",
       "Move": "Move from the {{suitText}} clearing you rule with the most of your warriors to an adjacent clearing. Leave enough warriors to exactly rule the origin clearing or {{totalForSuit}}, whichever is higher.<br>_(**Destination Ties**: Move to such a clearing with no roost, then fewest enemy pieces, then lowest priority.)_",
       "Battle": "Battle in a {{suitText}} clearing against the player with the most buildings there. {{extraHit}}<br>_(**Clearing Ties**: Battle in such a clearing with no roost, then most defenseless buildings, then lowest priority.)_<br>_(**Defender Ties**: Battle such a player with the most pieces there, then the player with the most victory points.)_",
-      "ExtraDealExtraHit": "**Deal an extra hit.**",
+      "ExtraHit": "**Deal an extra hit.**",
       "ExtraDecree": "You should have added at least 2 bird cards to the decree.",
       "ExtraRelentless": "Remove all defenseless tokens and buildings in any clearing with Eyrie warriors.",
       "ExtraRecruit": "If you cannot place a warrior, you fall into turmoil.",
@@ -324,7 +324,7 @@
     "Electric Eyrie (DC)": {
       "Recruit": "Recruit {{recruitNum}} warrior(s) in a {{suitText}} clearing with a roost. {{recruitText}}<br>_(**Ties**: Recruit in such a clearing with the most enemy pieces, then fewest Eyrie warriors, then lowest priority.)_",
       "Move": "Move from the {{suitText}} clearing you rule with the most of your warriors to an adjacent clearing. Leave enough warriors to exactly rule the origin clearing or {{totalForSuit}}, whichever is higher. Do not consider clearings in which no warrior would move.<br>_(**Destination Ties**: Move to such a clearing with no roost, then fewest enemy pieces, then lowest priority.)_",
-      "Battle": "Battle in a {{suitText}} clearing against the player with the most buildings there. {{extraHit}}<br>_(**Clearing Ties**: Battle in such a clearing with no roost, then most defenseless buildings.)_<br>_(**Defender Ties**: Battle such a player with the most pieces there, then the player with the most victory points.)_",
+      "Battle": "Battle in a {{suitText}} clearing against the player with the most buildings there. {{extraHit}}<br>_(**Clearing Ties**: Battle in such a clearing with no roost, then most defenseless buildings.)_<br>_(**Defender Ties**: Battle such a player with most buildings there, then the player with then most pieces there.)_",
       "ExtraHit": "**Deal an extra hit.**",
       "ExtraDecree": "You should have added at least 2 bird cards to the decree.",
       "ExtraRelentless": "Remove all defenseless tokens and buildings in any clearing with Eyrie warriors.",
@@ -355,9 +355,8 @@
       "Blitz": "Find the clearing you rule of the highest priority without any enemy pieces. Move all but one warrior from the clearing. Then, battle in the destination clearing.",
       "Bird0": "Battle in all clearings. _(Defender is the player with most pieces, then victory points.)_",
       "Bird1": "Recruit {{totalWarriors}} warrior(s) evenly among the two lowest priority clearings you rule. If you rule only one clearing, place all {{totalWarriors}} there. Score **vp:1** for every two warriors that could not be recruited.",
-      "Bird2": "Build a building of the type with the most pieces on the map in a clearing you rule with the most Marquise Warriors.<br>_(On a tie between sawmills and any other building types, place a sawmill. On a tie between workshops and recruiters but not sawmills, place a recruiter.)_",
+      "Bird2": "Build a building of the type with the most pieces on the map in a clearing you rule with the most Marquise Warriors.<br>_(On a tie between sawmills and any other building types, place a sawmill. On a tie between workshops and recruiters but not sawmills, place a workshop.)_",
       "Bird3": "Move all but three of your warriors from each clearing to the adjacent clearing with the most enemy pieces. Then battle in each clearing you moved into.",
-      "BirdChallenging": "Place two warriors in the ordered clearing you rule of the highest priority.",
       "Suit0": "Battle in each **card:{{suit}}** clearing. _(Defender is the player with most pieces, then victory points.)_",
       "Suit1": "Recruit {{totalWarriors}} warriors evenly spread across **card:{{suit}}** clearings you rule. Score **vp:1** for every two warriors that could not be recruited.<br>_(**Clearing tie**: Place warriors into clearings with highest priority first.)_",
       "Suit2": "Build a **building:{{building}}** in a clearing you rule with the most Marquise warriors.",
@@ -421,8 +420,8 @@
     },
     "Vagabot": {
       "NameTinker": "Tinker",
-      "DescTinker": "Search the discard pile for the top card with an available item and craft it, scoring +1 VP. _Start the game with one fewer item._",
-      "SpecialTinker": "Search the discard pile for the top card with an available item and craft it, scoring +1 VP.",
+      "DescTinker": "Search the discard pile for the top card with an available item and craft it, scoring **vp:1**. _Start the game with one fewer item._",
+      "SpecialTinker": "Search the discard pile for the top card with an available item and craft it, scoring **vp:1**.",
       "NameThief": "Thief",
       "DescThief": "Take a random card from the enemy in your clearing with most points there, then most pieces there.",
       "SpecialThief": "Take a random card from the enemy in your clearing with most points there, then most pieces there.",
@@ -460,6 +459,12 @@
       "SatchelExhausted": "Exhausted",
       "SatchelDamaged": "Damaged",
       "SatchelBattleTrack": "Battle"
+    }
+  },
+  "ToastMessages": {
+    "UpdateScore": "{{ botname }}'s score has been updated by {{ addend }}.",
+    "Actions": {
+      "Undo": "Undo"
     }
   }
 }

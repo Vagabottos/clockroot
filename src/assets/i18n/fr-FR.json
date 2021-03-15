@@ -119,7 +119,7 @@
             "Setup0": "Formez une réserve de 25 guerriers près de vous.",
             "Setup1": "Placez le jeton du donjon dans une clairière en coin du plateau au hasard.",
             "Setup2": "Placez 1 guerrier dans chaque clairière, excepté dans celle diagonalement opposée au donjon. Placez 1 guerrier supplémentaire dans la clairière du donjon. _(Placez 12 guerriers au total.)_",
-            "Setup3": "Placez au hasard 1 scierie, 1 atelier et 1 recruteur parmi la clairière du donjon et les clairières adjacentes. (Placez-en 3 au total. Un par clairière.)",
+            "Setup3": "Placez au hasard 1 scierie, 1 atelier et 1 recruteur parmi les clairières adjacentes à la clairière du donjon. (Placez-en 3 au total. Un par clairière.)",
             "Setup4": "Prenez vos bâtiments restants (5 de chaque type) et placez-les près de vous."
         }
     },
@@ -144,7 +144,7 @@
         },
         "Mechanical Marquise": {
             "Easy": "Lors du **Recrutement**, ne placez que 2 guerriers.",
-            "Normal": "Nothing is changed.",
+            "Normal": "Mode par défaut.",
             "Challenging": "Lors du **Recrutement**, placez également 2 guerriers dans la clairière contrôlée de la couleur de l'ordre de plus haute priorité.",
             "Nightmare": "Lors du **Recrutement**, placez également 2 guerriers dans la clairière contrôlée de la couleur de l'ordre de plus haute priorité. A la fin du Crépuscule, marquez 1 point de victoire."
         },
@@ -167,10 +167,10 @@
             "Nightmare": "Effectuez l'action **Organisation** pour les clairières avec au moins 2 guerriers de l'Alliance. A la fin du Crépuscule, marquez 1 point de victoire par paire de joueurs humains _(arrondi supérieur)_."
         },
         "Mechanical Marquise (DC)": {
-            "Easy": "Lors du **Recrutement**, ne placez que 2 guerriers.",
+            "Easy": "Lors du **Recrutement**, ne placez que 3 guerriers.",
             "Normal": "Mode par défaut.",
-            "Challenging": "Lors du **Recrutement**, placez également 2 guerriers dans la clairière contrôlée de la couleur de l'ordre de plus haute priorité.",
-            "Nightmare": "Lors du **Recrutement**, placez également 2 guerriers dans la clairière contrôlée de la couleur de l'ordre de plus haute priorité. A la fin du Crépuscule, marquez 1 point de victoire par paire de joueurs humains _(arrondi supérieur)_."
+            "Challenging": "Lors du **Recrutement**, placez plutôt 5 guerriers.",
+            "Nightmare": "Lors du **Recrutement**, placez plutôt 5 guerriers. A la fin du Crépuscule, marquez 1 point de victoire par paire de joueurs humains _(arrondi supérieur)_."
         }
     },
     "SpecificRules": {
@@ -355,9 +355,8 @@
             "Blitz": "Sélectionnez la clairière contrôlée sans pièces adverses ayant la plus haute priorité. Déplacez tous vos guerriers, sauf 1, depuis cette clairière, puis initiez un combat dans la clairière d'arrivée.",
             "Bird0": "**Combattez** dans toutes les clairières. _(Le défenseur est le joueur avec le plus de pièces, puis le plus de PV.)_",
             "Bird1": "Recrutez  {{totalWarriors}} guerriers répartis uniformément dans les 2 clairières contrôlées ayant la priorité la plus faible. Si vous ne contrôlez qu'une clairière, placez-y la totalité des {{totalWarriors}} guerriers. Marquez **vp:1** par paire de guerriers n'ayant pas pu être placés.",
-            "Bird2": "**Construisez** un bâtiment du type le plus construit dans la clairière contrôlée avec le plus de vos guerriers.<br>_(Si égalité, les scieries, sinon les recruteurs.)_",
+            "Bird2": "**Construisez** un bâtiment du type le plus construit dans la clairière contrôlée avec le plus de vos guerriers.<br>_(Si égalité, les scieries, sinon les ateliers.)_",
             "Bird3": "**Déplacez** tous vos guerriers, sauf 3, depuis chaque clairière vers la clairière adjacente avec le plus de pièces adverses. _(Chaque guerrier ne peut être déplacé qu'une fois.)_ Puis initiez un combat dans chaque clairière d'arrivée.",
-            "BirdChallenging": "**Recrutez** 2 guerriers dans la clairière contrôlée ayant la plus haute priorité.",
             "Suit0": "**Combattez** dans toutes les clairières **card:{{suit}}**. _(Le défenseur est le joueur avec le plus de pièces, puis le plus de PV.)_",
             "Suit1": "**Recrutez** {{totalWarriors}} guerriers répartis uniformément dans les clairières **card:{{suit}}** contrôlées. Placez les guerriers en priorité dans les clairières **card:{{suit}}** ayant la plus haute priorité. Marquez **vp:1** par paire de guerriers n'ayant pas pu être placés.",
             "Suit2": "**Construisez** 1 **building:{{building}}** dans la clairière contrôlée avec le plus de vos guerriers.",
@@ -460,6 +459,12 @@
             "SatchelExhausted": "Épuisé",
             "SatchelDamaged": "Endommagé",
             "SatchelBattleTrack": "Combat"
+        }
+    },
+    "ToastMessages": {
+        "UpdateScore": "{{ botname }}: +{{ addend }} PV",
+        "Actions": {
+            "Undo": "Annuler"
         }
     }
 }
