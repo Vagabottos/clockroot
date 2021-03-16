@@ -324,7 +324,7 @@
     "Electric Eyrie (DC)": {
       "Recruit": "Recruit {{recruitNum}} warrior(s) in a {{suitText}} clearing with a roost. {{recruitText}}<br>_(**Ties**: Recruit in such a clearing with the most enemy pieces, then fewest Eyrie warriors, then lowest priority.)_",
       "Move": "Move from the {{suitText}} clearing you rule with the most of your warriors to an adjacent clearing. Leave enough warriors to exactly rule the origin clearing or {{totalForSuit}}, whichever is higher. Do not consider clearings in which no warrior would move.<br>_(**Destination Ties**: Move to such a clearing with no roost, then fewest enemy pieces, then lowest priority.)_",
-      "Battle": "Battle in a {{suitText}} clearing against the player with the most buildings there. {{extraHit}}<br>_(**Clearing Ties**: Battle in such a clearing with no roost, then most defenseless buildings.)_<br>_(**Defender Ties**: Battle such a player with most buildings there, then the player with then most pieces there.)_",
+      "Battle": "Battle in a {{suitText}} clearing. {{extraHit}}<br>_(**Clearing Ties**: Battle in such a clearing with no roost, then most defenseless buildings.)_<br>_(**Defender Ties**: Battle such a player with most buildings there, then the player with then most pieces there.)_",
       "ExtraHit": "**Deal an extra hit.**",
       "ExtraDecree": "You should have added at least 2 bird cards to the decree.",
       "ExtraRelentless": "Remove all defenseless tokens and buildings in any clearing with Eyrie warriors.",
