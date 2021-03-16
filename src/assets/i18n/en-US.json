@@ -391,7 +391,7 @@
       "NightmareScore": "Score **vp:1** for every two players (rounded up)."
     },
     "Vagabot (DC)": {
-      "Refresh": "If you have any damaged items, refresh {{itemRefreshMin}} undamaged items. If you have none, refresh {{itemRefreshMax}} instead.",
+      "Refresh": "Refresh {{itemRefreshMin}} items. If you have no damaged items, refresh {{itemRefreshMax}} instead.",
       "Forest": "If you are in a forest, repair all items. If not, repair {{itemRepairs}} item(s). Repair unexhausted items before exhausted items.",
       "Discard": "Discard the order card.",
       "NightmareScore": "Score **vp:1** for every two players (rounded up)."
