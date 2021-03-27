@@ -44,7 +44,6 @@
     "@ionic/angular-toolkit": "^2.1.1",
     "@types/node": "~8.9.4",
     "codelyzer": "^5.0.0",
-    "jasmine-core": "~3.4.0",
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
     "typescript": "~3.4.3"
