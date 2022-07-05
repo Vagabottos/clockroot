@@ -282,7 +282,7 @@
     "Electric Eyrie": {
       "Recruit": "Recluta {{totalForSuit}} guerrero(s) en un claro {{suitText}} con nido. {{recruitText}}<br>_(**Hay más de un claro elegible**: Escoge el claro de esos que tenga más piezas enemigas; luego el claro de esos que tenga menos guerreros del Nido; por último el claro de esos que tenga menor prioridad.)_",
       "Move": "Muévete desde el claro {{suitText}} que gobiernes con mas guerreros del Nido hacia un claro adyacente. Deja atrás tantos guerreros como para gobernar el claro de origen exactamente o {{totalForSuit}}, lo que sea mayor.<br>_(**Hay más de un claro de destino elegible**: Esocoge un claro sin nidos; luego el claro de esos que tenga menos piezas enemigas; por último el claro de esos que tenga menor prioridad.)_",
-      "Battle": "Batalla en un claro {{suitText}} contra el jugador con piezas en dicho claro que tenga mas edificios allí (incluso si tiene cero). {{extraHit}}<br>_(**Hay más de un claro elegible**: Escoge el claro de esos que no tenga nidos; luego el claro de esos que tenga más edificios indefensos; por último el claro de esos de menor prioridad.)_<br>_(**Hay más de un defensor elegible**: Escoge el jugador de esos que tenga mas piezas allí; luego el jugador de esos que tenga mas puntos de victoria.)_",
+      "Battle": "Batalla en un claro {{suitText}} contra el jugador con piezas en dicho claro que tenga más edificios allí (incluso si tiene cero). {{extraHit}}<br>_(**Hay más de un claro elegible**: Escoge el claro de esos que no tenga nidos; luego el claro de esos que tenga más edificios indefensos; por último el claro de esos de menor prioridad.)_<br>_(**Hay más de un defensor elegible**: Escoge el jugador de esos que tenga más piezas allí; luego el jugador de esos que tenga más puntos de victoria.)_",
       "ExtraHit": "**Da un golpe adicional.**",
       "ExtraDecree": "Deberías haber añadido al menos 2 cartas de aves al Decreto.",
       "ExtraRelentless": "Retira todas las fichas y edificios indefensos de cualquier claro con guerreros del Nido.",
@@ -291,10 +291,10 @@
       "ExtraSwoop": "Coloca dos guerreros en un claro que no contenga piezas del Nido _(si hay varios, elige el de mayor prioridad)_."
     },
     "Vagabot": {
-      "ActionExplore": "Move to the nearest ruin, exhausting one item per move, then exhaust one item to take an item from that ruin.",
-      "ActionQuest": "Move to the nearest clearing matching the quest, then exhaust any two items to discard the quest and score **vp:1**. _(Ignore card text.)_ Then, replace the quest.",
-      "ActionQuestRepeat": "Repeat this as many times as possible.",
-      "ActionAid": "Target the player in your clearing with any items and the least VP among those players. Exhaust as many items as possible up to the number of items they have, take that many items from them, and score {{aidHelpText}}that many VP. Then, they draw {{aidHelpText}}that many cards.",
+      "ActionExplore": "Muévete a la ruina mas cercana, agotando un objeto por movimiento, entonces agota un objeto para coger un objeto de esa ruina _(no obtienes puntos de victoria por explorar)_.",
+      "ActionQuest": "Muévete al claro mas cercano correspondiente a la misión, agotando un objeto por movimiento. Entonces agota dos objetos cualesquiera para descartar la misión y obtener **vp:1**. _(ignora el texto de la carta)_. A continuación, revela una nueva misión.",
+      "ActionQuestRepeat": "Repite esto tantas veces como sea posible.",
+      "ActionAid": "Elige como objetivo al jugador de tu claro que tenga algún objeto, y de entre esos, al que menos PV tenga. Agota tantos objetos como sea posible hasta el número de objetos que tenga ese jugador en su zona de fabricados, coge ese número de objetos de su tablero y obtén ese número de {{aidHelpText}} PV. Entonces ese jugador roba {{aidHelpText}} cartas.",
       "ActionBattle": "Move to the nearest clearing with any pieces of the enemy with the most {{target}}, then exhaust one item to battle that player. Score **vp:1** per enemy warrior removed.",
       "ActionBattleTarget": "VP",
       "ActionBattleTargetBerserker": "pieces",
@@ -462,7 +462,7 @@
     }
   },
   "ToastMessages": {
-    "UpdateScore": "{{ botname }}'s score has been updated by {{ addend }}.",
+    "UpdateScore": "La puntuación de {{ botname }} se ha actualizado con {{ addend }}.",
     "Actions": {
       "Undo": "Undo"
     }
