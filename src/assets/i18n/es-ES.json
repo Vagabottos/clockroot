@@ -6,11 +6,11 @@
   "Language": "Idioma",
   "LederPlug": "Consigue la expansión de Los Cachivaches de Leder Games!",
   "PriorityMaps": "Maps",
-  "NeedsSetup": "Necesita configuración",
+  "NeedsSetup": "Necesita preparación",
   "ClockworkBots": "Bots de Los Cachivaches",
   "DirectorsCut": "Director's Cut",
   "BotSetup": {
-    "Setup": "Configuración",
+    "Setup": "Preparación",
     "PriorityMarkers": "Establece los marcadores de prioridad para el mapa",
     "ChooseDifficulty": "Selecciona la dificultad",
     "Difficulty": {
@@ -137,10 +137,10 @@
       "Nightmare": "Por la Noche refresca un objeto adicional. Al final de la Noche obtén un punto de victoria."
     },
     "Automated Alliance": {
-      "Easy": "**Organizas** en los claros con base que tengan cuatro o mas guerreros de la Alianza.",
+      "Easy": "**Organizas** en los claros que tengan cuatro o mas guerreros de la Alianza.",
       "Normal": "No cambia nada.",
-      "Challenging": "**Organizas** en los claros con base que tengan dos o mas guerreros de la Alianza.",
-      "Nightmare": "**Organizas** en los claros con base que tengan dos o mas guerreros de la Alianza. Al final de la Noche obtén un punto de victoria."
+      "Challenging": "**Organizas** en los claros que tengan dos o mas guerreros de la Alianza.",
+      "Nightmare": "**Organizas** en los claros que tengan dos o mas guerreros de la Alianza. Al final de la Noche obtén un punto de victoria."
     },
     "Mechanical Marquise": {
       "Easy": "Cuando **reclutes**, en vez de lo normal, recluta sólo dos guerreros.",
@@ -149,58 +149,58 @@
       "Nightmare": "Cuando **reclutes** coloca además dos guerreros en el claro ordenado que gobiernes de mayor prioridad. Al final de la Noche obtén un punto de victoria."
     },
     "Electric Eyrie (DC)": {
-      "Easy": "Whenever you **Recruit** for bird, instead place one fewer warrior.",
+      "Easy": "Cuando **reclutes** en ave coloca un guerrero menos.",
       "Normal": "No cambia nada.",
-      "Challenging": "Whenever you **Recruit** for bird, instead place one more warrior.",
-      "Nightmare": "Whenever you **Recruit** for bird, instead place one more warrior. At the end of Evening, score one victory point per two players (rounded up)."
+      "Challenging": "Cuando **reclutes** en ave coloca un guerrero adicional.",
+      "Nightmare": "Cuando **reclutes** en ave coloca un guerrero adicional. Al final de la Noche obtén un punto de victoria por cada dos jugadores (redondeado hacia arriba)."
     },
     "Vagabot (DC)": {
-      "Easy": "In evening, refresh one fewer item.",
+      "Easy": "Por la Noche refresca un objeto menos.",
       "Normal": "No cambia nada.",
-      "Challenging": "In evening, refresh one more item.",
-      "Nightmare": "In evening, refresh one more item. At the end of Evening, score one victory point per two players (rounded up)."
+      "Challenging": "Por la Noche refresca un objeto adicional.",
+      "Nightmare": "Por la Noche refresca un objeto adicional. Al final de la Noche obtén un punto de victoria por cada dos jugadores (redondeado hacia arriba)."
     },
     "Automated Alliance (DC)": {
-      "Easy": "You only **Organize** if a clearing has four or more Alliance warriors.",
+      "Easy": "**Organizas** en los claros que tengan cuatro o mas guerreros de la Alianza.",
       "Normal": "No cambia nada.",
-      "Challenging": "You **Organize** if a clearing has two or more Alliance warriors.",
-      "Nightmare": "You **Organize** if a clearing has two or more Alliance warriors. At the end of Evening, score one victory point per two players (rounded up)."
+      "Challenging": "**Organizas** en los claros que tengan dos o mas guerreros de la Alianza.",
+      "Nightmare": "**Organizas** en los claros que tengan dos o mas guerreros de la Alianza. Al final de la Noche obtén un punto de victoria por cada dos jugadores (redondeado hacia arriba)."
     },
     "Mechanical Marquise (DC)": {
-      "Easy": "Whenever you **Recruit**, instead place only three warriors.",
+      "Easy": "Cuando **reclutes**, en vez de lo normal, recluta sólo tres guerreros.",
       "Normal": "No cambia nada.",
-      "Challenging": "Whenever you **Recruit**, instead place five warriors.",
-      "Nightmare": "Whenever you **Recruit**, instead place five warriors. At the end of Evening, score one victory point per two players (rounded up)."
+      "Challenging": "Cuando **reclutes**, en vez de lo normal, recluta cinco guerreros.",
+      "Nightmare": "Cuando **reclutes**, en vez de lo normal, recluta cinco guerreros. Al final de la Noche obtén un punto de victoria por cada dos jugadores (redondeado hacia arriba)."
     }
   },
   "SpecificRules": {
-    "RulePoorManualDexterity": "Poor Manual Dexterity",
-    "TextPoorManualDexterity": "You have no hand of cards. You cannot discard cards. If a human would take a card from you, they draw a card instead. If a human would give a card to you, they discard it, and you score **vp:1**.",
-    "RuleHatesSurprises": "Hates Surprises",
-    "TextHatesSurprises": "Ambush cards cannot be played against you.",
-    "RuleLordsOfTheForest": "Lords of the Forest",
-    "TextLordsOfTheForest": "You rule any clearings where you are tied in presence.",
-    "RuleNobility": "Nobility",
-    "TextNobility": "You now fall into turmoil if you cannot place a roost or a warrior. Whenever you fall into turmoil, you do not lose victory points. Instead, you score one victory point per bird card in the Decree.",
-    "RuleRelentless": "Relentless",
-    "TextRelentless": "After resolving the Decree, remove all defenseless buildings and tokens in any clearing with Eyrie warriors.",
-    "RuleSwoop": "Swoop",
-    "TextSwoop": "At the end of Daylight, place two warriors in the clearing of highest priority with no Eyrie pieces.",
-    "RuleWarTax": "War Tax",
-    "TextWarTax": "Whenever you remove an enemy building or token, its owner loses one victory point.",
-    "RuleLoneWanderer": "Lone Wanderer",
-    "TextLoneWanderer": "Your pawn is not a warrior and cannot be removed from the map.",
-    "RuleNimble": "Nimble",
-    "TextNimble": "You can move regardless of who rules your clearing.",
-    "RuleAdventurer": "Adventurer",
-    "TextAdventurer": "You can **Battle** no more than once per turn.<br>At the end of Daylight, repeat **Quest** as many times as possible.",
-    "RuleBerserker": "Berserker",
-    "TextBerserker": "Whenever you **Battle**, instead move to the nearest clearing with the most pieces and target the player with the most pieces there.<br>In evening, repair one more item.",
-    "RuleHelper": "Helper",
-    "TextHelper": "Whenever you **Aid**, score one extra victory point, and the aided player draws two cards instead of one.",
-    "TextHelperDC": "Whenever you **Aid**, if there are no available items, move to aid the player with the lowest score, and exhaust one item to score **vp:1**. The aided player draws one card.",
-    "RuleMarksman": "Marksman",
-    "TextMarksman": "At the start of battle as attacker, deal an immediate hit _(scoring a point if you remove an enemy warrior)_.",
+    "RulePoorManualDexterity": "Poca Destreza Manual",
+    "TextPoorManualDexterity": "No tienes mano de cartas. No puedes descartar cartas. Si un humano tuviera que robarte una carta, en vez de eso la roba del mazo. Si un humano tuviera que darte una carta, la descarta y tu obtienes **vp:1**.",
+    "RuleHatesSurprises": "Odia las Sorpresas",
+    "TextHatesSurprises": "No se pueden usar cartas de emboscada contra ti.",
+    "RuleLordsOfTheForest": "Señores del bosque",
+    "TextLordsOfTheForest": "Gobiernas cualquier número de claros en los que estés empatado en presencia.",
+    "RuleNobility": "Nobleza",
+    "TextNobility": "Ahora caes en el **caos** si no puedes colocar un nido o un guerrero. Cuando caigas en el **caos** no pierdes puntos de victoria. En vez de eso obtienes un punto de victoria por cada carta de ave que haya en el Decreto.",
+    "RuleRelentless": "Implacable",
+    "TextRelentless": "Después de resolver el Decreto retira todos los edificios y fichas indefensas enemigas de un claro cualquiera con guerreros del Nido.",
+    "RuleSwoop": "Redada",
+    "TextSwoop": "Al final del Día coloca dos guerreros en el claro de mayor prioridad que no tenga ninguna pieza del Nido.",
+    "RuleWarTax": "Impuesto Bélico",
+    "TextWarTax": "Cuando retires un edificio enemigo o una ficha enemiga, su propietario pierde un punto de victoria.",
+    "RuleLoneWanderer": "Errante y Solitario",
+    "TextLoneWanderer": "Tu peón no es un guerrero y no puede ser retirado del mapa Si un efecto enemigo indica que se retiran todas las piezas enemigas de tu claro, dañas tres objetos.",
+    "RuleNimble": "Gracil",
+    "TextNimble": "Puedes moverte sin importar quien gobierna tu claro",
+    "RuleAdventurer": "Aventurero",
+    "TextAdventurer": "Solo puedes **batallar** una vez por turno.<br>Al final del día repite la acción de **misión** tantas veces como puedas.",
+    "RuleBerserker": "Frenético",
+    "TextBerserker": "Cuando **batalles**, en vez de lo normal, muévete al claro más cercano que tenga más piezas y elige como objetivo al jugador que tenga mas piezas allí.<br>Por la Noche repara un objeto adicional.",
+    "RuleHelper": "Ayudante",
+    "TextHelper": "Cuando **ayudes** obtén un punto de victoria adicional, y el jugador al que ayudes roba dos cartas en vez de una.",
+    "TextHelperDC": "Cuando **ayudes**, si no hay objetos disponibles, muévete para ayudar al jugador con menor puntuación, agota un objeto para obtener **vp:1**. El jugador al que ayudes roba una carta.",
+    "RuleMarksman": "Tirador",
+    "TextMarksman": "Al comienzo de una batalla como atacante, da un golpe inmediatamente _(obteniendo un punto de victoria si retiras un guerrero enemigo)_.",
     "RuleAutomatedAmbush": "Automated Ambush",
     "TextAutomatedAmbush": "In battle as defender with any Alliance warriors, you deal an extra hit.",
     "RuleAutomatedOutrage": "Automated Outrage",
@@ -388,27 +388,27 @@
     },
     "Electric Eyrie (DC)": {
       "Score": "Score {{score}} VP.",
-      "NightmareScore": "Score **vp:1** for every two players (rounded up)."
+      "NightmareScore": "Score **vp:1** for every two players (redondeado hacia arriba)."
     },
     "Vagabot (DC)": {
       "Refresh": "Refresh {{itemRefreshMin}} items. If you have no damaged items, refresh {{itemRefreshMax}} instead.",
       "Forest": "If you are in a forest, repair all items. If not, repair {{itemRepairs}} item(s). Repair unexhausted items before exhausted items.",
       "Discard": "Discard the order card.",
-      "NightmareScore": "Score **vp:1** for every two players (rounded up)."
+      "NightmareScore": "Score **vp:1** for every two players (redondeado hacia arriba)."
     },
     "Automated Alliance (DC)": {
       "Organize": "In each clearing with a base and {{organizeVal}} or more Alliance warriors, remove all Alliance warriors there and **Spread Sympathy**.",
       "WarriorPlace": "Place a warrior in each clearing with a base.",
       "Wildfire": "**Spread Sympathy**, but do not score victory points.",
       "Discard": "Discard the order card.",
-      "NightmareScore": "Score **vp:1** for every two players (rounded up)."
+      "NightmareScore": "Score **vp:1** for every two players (redondeado hacia arriba)."
     },
     "Mechanical Marquise (DC)": {
       "Repeat": "If you did not place a building this turn and would score less than 3 victory points, discard the order card, draw a new one, and repeat Daylight. This may only happen once per turn.",
       "RepeatIronWill": "If you did not place a building this turn and have five or fewer buildings on the map, discard the order card, draw a new one, and repeat Daylight. This may only happen twice per turn.",
       "Score": "Score {{score}} VP.",
       "Discard": "Discard the order card.",
-      "NightmareScore": "Score **vp:1** for every two players (rounded up)."
+      "NightmareScore": "Score **vp:1** for every two players (redondeado hacia arriba)."
     }
   },
   "SpecificExtra": {
