@@ -1,0 +1,470 @@
+{
+  "AppTitle": "Root: Ayudante para los Cachivaches",
+  "AppTitleShort": "Clockroot",
+  "NavTitle": "Bots",
+  "CloseText": "Cerrar",
+  "Language": "Idioma",
+  "LederPlug": "Consigue la expansión de Los Cachivaches de Leder Games!",
+  "PriorityMaps": "Mapas de prioridad",
+  "NeedsSetup": "Necesita preparación",
+  "ClockworkBots": "Bots de Los Cachivaches",
+  "DirectorsCut": "Director's Cut",
+  "BotSetup": {
+    "Setup": "Preparación",
+    "PriorityMarkers": "Coloca los marcadores de prioridad para el mapa escogido.",
+    "ChooseDifficulty": "Selecciona la dificultad",
+    "Difficulty": {
+      "Easy": "Fácil",
+      "Normal": "Normal",
+      "Challenging": "Desafiante",
+      "Nightmare": "Pesadilla"
+    },
+    "DifficultyDC": {
+      "Easy": "Novato",
+      "Normal": "Experto",
+      "Challenging": "Maestro",
+      "Nightmare": "Modo Jefe"
+    },
+    "ChooseVagabot": "Elige al Vagabot",
+    "ChooseTraits": "Selecciona los rasgos",
+    "DifficultyText": "Dificultad",
+    "TurmoilText": "Si no puedes colocar un nido, caes en el caos",
+    "TurmoilNobilityText": "Si no puedes colocar un nido o un guerrero, caes en el caos"
+  },
+  "AddBot": "Añade un bot pulsando",
+  "Factions": {
+    "Mechanical Marquise": "El Marquesado Mecánico",
+    "Electric Eyrie": "El Nido Neumático",
+    "Automated Alliance": "La Alianza Autómata",
+    "Vagabot": "El Vagabot",
+    "Mechanical Marquise (DC)": "El Marquesado Mecánico (DC)",
+    "Electric Eyrie (DC)": "El Nido Neumático (DC)",
+    "Automated Alliance (DC)": "La Alianza Autómata (DC)",
+    "Vagabot (DC)": "El Vagabot (DC)"
+  },
+  "FactionsShort": {
+    "Mechanical Marquise": "Marquesado M.",
+    "Electric Eyrie": "Nido N.",
+    "Automated Alliance": "Alianza A.",
+    "Vagabot": "Vagabot",
+    "Mechanical Marquise (DC)": "Marquesado M. (DC)",
+    "Electric Eyrie (DC)": "Nido N. (DC)",
+    "Automated Alliance (DC)": "Alianza A. (DC)",
+    "Vagabot (DC)": "Vagabot (DC)"
+  },
+  "Priorities": {
+    "Title": "Mapas de prioridad",
+    "Fall": "Otoño",
+    "Winter": "Invierno",
+    "Lake": "Lago",
+    "Mountain": "Montaña"
+  },
+  "Sections": {
+    "DifficultyTraits": "Dificultad y Rasgos",
+    "VPItems": "Items y Puntos de Victoria",
+    "DecreeRoosts": "Nidos y Decretos",
+    "Buildings": "Edificios",
+    "Birdsong": "Alba",
+    "Daylight": "Día",
+    "Evening": "Noche",
+    "Turmoil": "Caos",
+    "BattleTrackBonus": "Bonificación del Contador de batalla",
+    "SatchelBattleTrack": "Hatillo y Contador de batalla",
+    "SympathyBases": "Simpatía y Bases",
+    "VagabotDifficultyTrait": "Vagabot, Dificultad, Rasgos"
+  },
+  "SpecificSetup": {
+    "Electric Eyrie": {
+      "Setup0": "Forma la reserva de guerreros (20) junto a ti.",
+      "Setup1": "Coloca 1 nido y 6 guerreros en el claro de la esquina diagonalmente opuesta al claro donde está la ficha de fortaleza. Si el Marquesado no juega esta partida, coloca dichas piezas en el claro de cualquier esquina al azar.",
+      "Setup2": "",
+      "Setup3": "Coge los 6 nidos restantes y colócalos junto a ti."
+    },
+    "Vagabot": {
+      "Setup0": "Coloca tu peón de Vagabot en el bosque que esté adyancente a más claros. Si hay varios de esos bosques, elige cuál al azar entre esos.",
+      "Setup1": "Baraja el mazo de misiones, roba una carta de misión y colócala bocarriba junto a ti. Esta misión sólo puede ser completada por este bot.",
+      "Setup2": "Coloca un objeto cualquiera marcado como \"R\" debajo de cada ruina del mapa.",
+      "Setup3": "Coge 4 objetos cualesquiera marcados con una \"S\" y colócalos en tu hatillo _(el Chatarrero empieza con 3 objetos en vez de con 4 objetos)_."
+    },
+    "Automated Alliance": {
+      "Setup0": "Forma la reserva de guerreros (10) cerca de ti.",
+      "Setup1": "Coge tus 3 bases y colócalas cerca de ti.",
+      "Setup2": "Coge tus 10 fichas de simpatía y colócalas cerca de ti."
+    },
+    "Mechanical Marquise": {
+      "Setup0": "Forma la reserva de guerreros (25) junto a ti.",
+      "Setup1": "Coloca la ficha de fortaleza en el claro de una esquina al azar.",
+      "Setup2": "Coloca un guerrero en cada claro excepto en el claro que está en la esquina diagonalmente opuesta al claro de la ficha de fortaleza. Coloca un guerrero adicional en el claro con la ficha de fortaleza _(coloca 12 guerreros en total)_.",
+      "Setup3": "Coloca 1 aserradero, 1 taller y 1 reclutador al azar entre los claros con la ficha de fortaleza y los claros adyacentes, con un máximo de un edificio en cada claro.",
+      "Setup4": "Coge los 15 edificios restantes y colocalos junto a ti."
+    },
+    "Electric Eyrie (DC)": {
+      "Setup0": "Forma la reserva de guerreros (20) junto a ti.",
+      "Setup1": "Coloca 1 nido y 6 guerreros en el claro de la esquina diagonalmente opuesta al claro donde está la ficha de fortaleza. Si el Marquesado no juega esta partida, coloca dichas piezas en el claro de cualquier esquina al azar.",
+      "Setup2": "",
+      "Setup3": "Coge los 6 nidos restantes y colócalos junto a ti."
+    },
+    "Vagabot (DC)": {
+      "Setup0": "Coloca tu peón de Vagabot en el bosque que esté adyancente a más claros. Si hay varios de esos bosques, elige cuál al azar entre esos.",
+      "Setup1": "Baraja el mazo de misiones, roba una carta de misión y colócala bocarriba junto a ti. Esta misión sólo puede ser completada por este bot.",
+      "Setup2": "Coloca un objeto cualquiera marcado como \"R\" debajo de cada ruina del mapa.",
+      "Setup3": "Coge 4 objetos cualesquiera marcados con una \"S\" y colócalos en tu hatillo _(el Chatarrero empieza con 3 objetos en vez de con 4 objetos)_."
+    },
+    "Automated Alliance (DC)": {
+      "Setup0": "Forma la reserva de guerreros (10) cerca de ti.",
+      "Setup1": "Coge tus 3 bases y colócalas cerca de ti.",
+      "Setup2": "Coge tus 10 fichas de simpatía y colócalas cerca de ti."
+    },
+    "Mechanical Marquise (DC)": {
+      "Setup0": "Forma la reserva de guerreros (25) junto a ti.",
+      "Setup1": "Coloca la ficha de fortaleza en el claro de una esquina al azar.",
+      "Setup2": "Coloca un guerrero en cada claro excepto en el claro que está en la esquina diagonalmente opuesta al claro de la ficha de fortaleza. Coloca un guerrero adicional en el claro con la ficha de fortaleza _(coloca 12 guerreros en total)_.",
+      "Setup3": "Coloca 1 aserradero, 1 taller y 1 reclutador al azar entre los claros con la ficha de fortaleza y los claros adyacentes, con un máximo de un edificio en cada claro.",
+      "Setup4": "Coge los 15 edificios restantes y colocalos junto a ti."
+    }
+  },
+  "SpecificDifficulty": {
+    "Electric Eyrie": {
+      "Easy": "Durante la preparación añade sólo un Visir Leal al Decreto.",
+      "Normal": "No cambia nada.",
+      "Challenging": "Durante la preparación, toma una emboscada de ave del mazo y añádela a la columna de ave del Decreto.",
+      "Nightmare": "Durante la preparación, toma una emboscada de ave del mazo y añádela a la columna de ave del Decreto. Al final de la Noche obtén un punto de victoria."
+    },
+    "Vagabot": {
+      "Easy": "Por la Noche refresca un objeto menos.",
+      "Normal": "No cambia nada.",
+      "Challenging": "Por la Noche refresca un objeto adicional.",
+      "Nightmare": "Por la Noche refresca un objeto adicional. Al final de la Noche obtén un punto de victoria."
+    },
+    "Automated Alliance": {
+      "Easy": "**Organizas** en los claros que tengan cuatro o mas guerreros de la Alianza.",
+      "Normal": "No cambia nada.",
+      "Challenging": "**Organizas** en los claros que tengan dos o mas guerreros de la Alianza.",
+      "Nightmare": "**Organizas** en los claros que tengan dos o mas guerreros de la Alianza. Al final de la Noche obtén un punto de victoria."
+    },
+    "Mechanical Marquise": {
+      "Easy": "Cuando **reclutes**, en vez de lo normal, recluta sólo dos guerreros.",
+      "Normal": "No cambia nada.",
+      "Challenging": "Cuando **reclutes** coloca además dos guerreros en el claro ordenado que gobiernes de mayor prioridad.",
+      "Nightmare": "Cuando **reclutes** coloca además dos guerreros en el claro ordenado que gobiernes de mayor prioridad. Al final de la Noche obtén un punto de victoria."
+    },
+    "Electric Eyrie (DC)": {
+      "Easy": "Cuando **reclutes** en ave coloca un guerrero menos.",
+      "Normal": "No cambia nada.",
+      "Challenging": "Cuando **reclutes** en ave coloca un guerrero adicional.",
+      "Nightmare": "Cuando **reclutes** en ave coloca un guerrero adicional. Al final de la Noche obtén un punto de victoria por cada dos jugadores (redondeado hacia arriba)."
+    },
+    "Vagabot (DC)": {
+      "Easy": "Por la Noche refresca un objeto menos.",
+      "Normal": "No cambia nada.",
+      "Challenging": "Por la Noche refresca un objeto adicional.",
+      "Nightmare": "Por la Noche refresca un objeto adicional. Al final de la Noche obtén un punto de victoria por cada dos jugadores (redondeado hacia arriba)."
+    },
+    "Automated Alliance (DC)": {
+      "Easy": "**Organizas** en los claros que tengan cuatro o mas guerreros de la Alianza.",
+      "Normal": "No cambia nada.",
+      "Challenging": "**Organizas** en los claros que tengan dos o mas guerreros de la Alianza.",
+      "Nightmare": "**Organizas** en los claros que tengan dos o mas guerreros de la Alianza. Al final de la Noche obtén un punto de victoria por cada dos jugadores (redondeado hacia arriba)."
+    },
+    "Mechanical Marquise (DC)": {
+      "Easy": "Cuando **reclutes**, en vez de lo normal, recluta sólo tres guerreros.",
+      "Normal": "No cambia nada.",
+      "Challenging": "Cuando **reclutes**, en vez de lo normal, recluta cinco guerreros.",
+      "Nightmare": "Cuando **reclutes**, en vez de lo normal, recluta cinco guerreros. Al final de la Noche obtén un punto de victoria por cada dos jugadores (redondeado hacia arriba)."
+    }
+  },
+  "SpecificRules": {
+    "RulePoorManualDexterity": "Poca Destreza Manual",
+    "TextPoorManualDexterity": "No tienes mano de cartas. No puedes descartar cartas. Si un humano tuviera que robarte una carta, en vez de eso la roba del mazo. Si un humano tuviera que darte una carta, la descarta y tu obtienes **vp:1**.",
+    "RuleHatesSurprises": "Odia las Sorpresas",
+    "TextHatesSurprises": "No se pueden usar cartas de emboscada contra ti.",
+    "RuleLordsOfTheForest": "Señores del bosque",
+    "TextLordsOfTheForest": "Gobiernas cualquier número de claros en los que estés empatado en presencia.",
+    "RuleNobility": "Nobleza",
+    "TextNobility": "Ahora caes en el **caos** si no puedes colocar un nido o un guerrero. Cuando caigas en el **caos** no pierdes puntos de victoria. En vez de eso obtienes un punto de victoria por cada carta de ave que haya en el Decreto.",
+    "RuleRelentless": "Implacable",
+    "TextRelentless": "Después de resolver el Decreto retira todos los edificios y fichas indefensas enemigas de un claro cualquiera con guerreros del Nido.",
+    "RuleSwoop": "Redada",
+    "TextSwoop": "Al final del Día coloca dos guerreros en el claro de mayor prioridad que no tenga ninguna pieza del Nido.",
+    "RuleWarTax": "Impuesto Bélico",
+    "TextWarTax": "Cuando retires un edificio enemigo o una ficha enemiga, su propietario pierde un punto de victoria.",
+    "RuleLoneWanderer": "Errante y Solitario",
+    "TextLoneWanderer": "Tu peón no es un guerrero y no puede ser retirado del mapa. Si un efecto enemigo indica que se retiran todas las piezas enemigas de tu claro, dañas tres objetos.",
+    "RuleNimble": "Gracil",
+    "TextNimble": "Puedes moverte sin importar quien gobierna tu claro",
+    "RuleAdventurer": "Aventurero",
+    "TextAdventurer": "Sólo puedes **batallar** una vez por turno.<br>Al final del día repite la acción de **misión** tantas veces como puedas.",
+    "RuleBerserker": "Frenético",
+    "TextBerserker": "Cuando **batalles**, en vez de lo normal, muévete al claro más cercano que tenga más piezas y elige como objetivo al jugador que tenga mas piezas allí.<br>Por la Noche repara un objeto adicional.",
+    "RuleHelper": "Ayudante",
+    "TextHelper": "Cuando **ayudes** obtén un punto de victoria adicional, y el jugador al que ayudes roba dos cartas en vez de una.",
+    "TextHelperDC": "Cuando **ayudes**, si no hay objetos disponibles, muévete para ayudar al jugador con menor puntuación, agota un objeto para obtener **vp:1**. El jugador al que ayudes roba una carta.",
+    "RuleMarksman": "Tirador",
+    "TextMarksman": "Al comienzo de una batalla como atacante, da un golpe inmediatamente _(obteniendo un punto de victoria si retiras un guerrero enemigo)_.",
+    "RuleAutomatedAmbush": "Emboscada Autómata",
+    "TextAutomatedAmbush": "Como defensor en batalla, si tienes al menos un guerrero de la Alianza, das un golpe adicional.",
+    "RuleAutomatedOutrage": "Indignación Autómata",
+    "TextAutomatedOutrage": "Cuando un humano retire una ficha de simpatía o mueva guerreros a un claro afín, ese jugador debe descartarse de una carta correspondiente al claro. Si no puede, obtienes **vp:1**.",
+    "RuleMartialLaw": "Ley Marcial",
+    "TextMartialLaw": "Cuando coloques una ficha de simpatía en un claro con tres o más guerreros del mismo jugador enemigo, obtén un punto de victoria menos _(con un mínimo de cero)_.",
+    "RuleCrackdown": "Medidas Severas",
+    "TextCrackdown": "Cuando se retire una base, retira todas las fichas de simpatía de los claros correspondientes a la base que se retira.",
+    "TextCrackdownDC": "Cuando se retire una base, devuelve todas las fichas de simpatía de los claros correspondientes a la base que se retira.",
+    "RuleInformants": "Informantes",
+    "TextInformants": "Como defensor en batalla en un claro con ficha de simpatía indefensa, das un golpe adicional.",
+    "RulePopularity": "Popularidad",
+    "TextPopularity": "Los enemigos no obtienen puntos de victoria por retirar fichas de simpatía",
+    "TextPopularityDC": "Los enemigos sólo pueden obtener un punto de victoria por turno por retirar fichas de simpatía.",
+    "RuleVeterans": "Veteranos",
+    "TextVeterans": "Obtén la habilidad de Guerra de Guerrillas de la Alianza del Bosque. _(como defensor en batalla, tú utilizas la tirada más alta y el atacante la tirada más baja)_.",
+    "TextVeteransDC": "Como defensor en batalla, utilizas la misma tirada del atacante. _(ambos jugadores utilizan la tirada más alta para determinar los golpes)_.",
+    "RuleWildfire": "Incendio",
+    "TextWildfire": "Al final de la Noche **extiende simpatía**. No obtienes puntos por colocar esta ficha de simpatía.",
+    "RuleTheKeep": "La Fortaleza",
+    "TextTheKeep": "Sólo tú puedes colocar piezas en el claro con la ficha fortaleza.",
+    "RuleBlitz": "Ataque Relámpago",
+    "TextBlitz": "Después de mover, indentifica el claro que gobiernes de mayor prioridad sin piezas enemigas. Mueve todos tus guerreros excepto uno desde ese claro a uno adyacente. A continuación, batalla en el claro de destino.",
+    "RuleFortified": "Fortificados",
+    "TextFortified": "Tus edificios requieren cada uno dos golpes durante la misma batalla para ser retirados. Si recibes un único golpe con un edificio, no tiene efecto alguno.",
+    "RuleHospitals": "Hospitales",
+    "TextHospitals": "Al final de la batalla como defensor, si dos o mas guerreros del Marquesado fueron retirados en la batalla, coloca dos guerreros en el claro con la ficha de fortaleza.",
+    "TextHospitalsDC": "Al final de la batalla como defensor, si dos o mas guerreros del Marquesado fueron retirados en la batalla, coloca un guerrero en el claro con la ficha de fortaleza.",
+    "RuleIronWill": "Voluntad de Hierro",
+    "TextIronWill": "Cuando **reclutes** durante el Día Potenciado, coloca el doble de guerreros.",
+    "TextIronWillDC": "**Repite el Día** puede suceder dos veces por turno en lugar de una sola vez."
+  },
+  "SpecificBirdsong": {
+    "Electric Eyrie": {
+      "RevealOrder": "Revela una carta de orden.",
+      "CraftOrder": "Fabrica la carta de orden por **vp:1** si muestra un objeto disponible.",
+      "DecreeOrder": "Añade la carta de orden a la correspondiente columna del Decreto.",
+      "NewRoost": "Coloca un nido y 4 guerreros en el claro ordenado de mayor prioridad en el cual se puedan colocar todas esas piezas. _(No aparece en el tablero intencionadamente)_."
+    },
+    "Vagabot": {
+      "RevealOrder": "Revela una carta de orden.",
+      "CraftOrder": "Fabrica la carta de orden por **vp:1** si muestra un objeto disponible.",
+      "RestOrder": "Si tienes dos o menos objetos no dañados, muévete a un bosque adyacente al azar y pasa directamente a la Noche."
+    },
+    "Automated Alliance": {
+      "RevealOrder": "Revela una carta de orden.",
+      "CraftOrder": "Fabrica la carta de orden por **vp:1** si muestra un objeto disponible.",
+      "Revolt": "Retira todas las piezas enemigas del claro **card:{{suit}}** con simpatía con mas piezas enemigas, y coloca la base **card:{{suit}}** aquí.",
+      "RevoltSpread": "Si no has hecho una revuelta en el Alba de este turno **extiende simpatía** {{sympathySpread}}.",
+      "Spread": "**Extiende simpatía** {{sympathySpread}}."
+    },
+    "Mechanical Marquise": {
+      "RevealOrder": "Revela una carta de orden.",
+      "CraftOrder": "Fabrica la carta de orden por **vp:1** si muestra un objeto disponible."
+    },
+    "Electric Eyrie (DC)": {
+      "RevealOrder": "Revela una carta de orden.",
+      "CraftOrder": "Fabrica la carta de orden por **vp:1** si muestra un objeto disponible.",
+      "DecreeOrder": "Añade la carta de orden a la correspondiente columna del Decreto.",
+      "NewRoost": "Coloca un nido y 3 guerreros en el claro ordenado de mayor prioridad en el cual se puedan colocar todas esas piezas. _(No aparece en el tablero intencionadamente)_."
+    },
+    "Vagabot (DC)": {
+      "RevealOrder": "Revela una carta de orden.",
+      "CraftOrder": "Fabrica la carta de orden por **vp:1** si muestra un objeto disponible.",
+      "RestOrder": "Si tienes dos o menos objetos no dañados, muévete a un bosque adyacente al azar y pasa directamente a la Noche.."
+    },
+    "Automated Alliance (DC)": {
+      "RevealOrder": "Revela una carta de orden.",
+      "CraftOrder": "Fabrica la carta de orden por **vp:1** si muestra un objeto disponible.",
+      "Revolt": "Retira todas las piezas enemigas del claro **card:{{suit}}** con simpatía con mas piezas enemigas, y coloca la base **card:{{suit}}** aquí.",
+      "Spread": "**Extiende simpatía** {{sympathySpread}}."
+    },
+    "Mechanical Marquise (DC)": {
+      "RevealOrder": "Revela una carta de orden.",
+      "CraftOrder": "Fabrica la carta de orden por **vp:1** si muestra un objeto disponible."
+    }
+  },
+  "SpecificDaylight": {
+    "Electric Eyrie": {
+      "Recruit": "Recluta {{totalForSuit}} guerrero(s) en un claro {{suitText}} con nido. {{recruitText}}<br>_(**Hay más de un claro elegible**: Escoge el claro de esos que tenga más piezas enemigas; luego el claro de esos que tenga menos guerreros del Nido; por último el claro de esos que tenga menor prioridad.)_",
+      "Move": "Muévete desde el claro {{suitText}} que gobiernes con mas guerreros del Nido hacia un claro adyacente. Deja atrás tantos guerreros como para gobernar el claro de origen exactamente o {{totalForSuit}}, lo que sea mayor.<br>_(**Hay más de un claro de destino elegible**: Esocoge un claro sin nidos; luego el claro de esos que tenga menos piezas enemigas; por último el claro de esos que tenga menor prioridad.)_",
+      "Battle": "Batalla en un claro {{suitText}} contra el jugador con piezas en dicho claro que tenga más edificios allí (incluso si tiene cero). {{extraHit}}<br>_(**Hay más de un claro elegible**: Escoge el claro de esos que no tenga nidos; luego el claro de esos que tenga más edificios indefensos; por último el claro de esos de menor prioridad.)_<br>_(**Hay más de un defensor elegible**: Escoge el jugador de esos que tenga más piezas allí; luego el jugador de esos que tenga más puntos de victoria.)_",
+      "ExtraHit": "**Da un golpe adicional.**",
+      "ExtraDecree": "Deberías haber añadido al menos 2 cartas de aves al Decreto.",
+      "ExtraRelentless": "Retira todas las fichas y edificios indefensos de cualquier claro con guerreros del Nido.",
+      "ExtraRecruit": "Si no puedes colocar un guerror, caes en el caos.",
+      "ExtraBuild": "Coloca un nido en un claro que gobiernes que no tenga un nido _(si hay varios, elige el de mayor prioridad)_. Si no puedes colocar un nido, caes en el caos.",
+      "ExtraSwoop": "Coloca dos guerreros en un claro que no contenga piezas del Nido _(si hay varios, elige el de mayor prioridad)_."
+    },
+    "Vagabot": {
+      "ActionExplore": "Muévete a la ruina mas cercana, agotando un objeto por movimiento, entonces agota un objeto para coger un objeto de esa ruina _(no obtienes puntos de victoria por explorar)_.",
+      "ActionQuest": "Muévete al claro mas cercano correspondiente a la misión, agotando un objeto por movimiento. Entonces agota dos objetos cualesquiera para descartar la misión y obtener **vp:1**. _(ignora el texto de la carta)_. A continuación, revela una nueva misión.",
+      "ActionQuestRepeat": "Repite esto tantas veces como sea posible.",
+      "ActionAid": "Elige como objetivo al jugador de tu claro que tenga algún objeto, y de entre esos, al que menos PV tenga. Agota tantos objetos como sea posible hasta el número de objetos que tenga ese jugador en su zona de fabricados, coge ese número de objetos de su tablero y obtén ese número de {{aidHelpText}} PV. Entonces ese jugador roba {{aidHelpText}} cartas.",
+      "ActionBattle": "Muévete al claro más cercano con alguna pieza del enemigo que tenga más {{target}}, agotando un objeto por movimiento. Entonces agota un objeto para batallar contra ese jugador. Obtén **vp:1** por cada guerrero enemigo que retires.",
+      "ActionBattleTarget": "PV",
+      "ActionBattleTargetBerserker": "piezas",
+      "ActionBattleAdventurer": "Repite esta acción, agotando dos objetos por cada batalla adicional, tantas veces como sea posible.",
+      "ActionBattleMarksman": "Da un golpe inmediatamente en cada batalla.",
+      "ActionBattleTiebreaker": "_(Si el defensor objetivo está en varios claros a igual distancia, muévete al claro en el que tenga más edificios y fichas, y de esos al que tenga menos guerreros)_.",
+      "ActionRepair": "Si tienes algún objeto dañado, agota un objeto para reparar un objeto dañado. Repara objetos no agotados antes que los agotados _(el objeto reparado no se voltea)_",
+      "ActionSpecial": "Agota un objeto para llevar a cabo la siguiente acción (sáltate esta acción si no fuera a tener ningún efecto):"
+    },
+    "Automated Alliance": {
+      "Sympathy": "Coloca una ficha de simpatía en el claro ordenado **card:{{suit}}** con el menor número de guerreros enemigos, adyacente a un claro afín cualquiera, y de esos en el de mayor prioridad.<br>(**No hay claros de esos**: Coloca la ficha de simpatía en el claro que tenga menos piezas enemigas, y de esos en el de mayor prioridad.)<br>(**No puedo extenderme**: Si no puedes colocar una ficha de simpatía, obtén 5 PV.)",
+      "Revolt": "Retira todas las piezas enemigas del claro afín ordenado con mas piezas enemigas, y coloca la base ordenada allí. En caso de empate, el de mayor prioridad."
+    },
+    "Mechanical Marquise": {
+      "Blitz": "Identifica el claro que gobiernes de mayor prioridad sin piezas enemigas. Mueve todos tus guerreros excepto uno desde ese claro a uno adyacente. A conitnuación, batalla en el claro de destino.",
+      "Bird0": "Batalla en cada claro ordenado. _(el defensor es el jugador con más piezas allí; luego de esos el que más puntos tenga.)_",
+      "Bird1": "Recluta {{warriorsOverTwo}} guerrero(s) en cada uno de los dos claros que gobiernes con la menor prioridad. Si sólo gobiernas un claro, coloca los {{totalWarriors}} guerreros allí.",
+      "Bird2": "Construye un edificio del tipo que más tengas en el mapa en el claro que gobiernes con mas guerreros del Marquesado.<br>_(En caso de empate entre aserraderos y cualquier otro tipo de edificio, coloca un aserradero. En caso de empate entre talleres y reclutadores, pero no aserraderos, coloca un reclutador.)_",
+      "Bird3": "Mueve todos menos tres de tus guerreros de cada claro al claro adyacente que tenga más piezas enemigas. Después batalla en cada claro al que te hayas movido.",
+      "BirdChallenging": "Coloca dos guerreros en el claro ordenado que gobiernes de mayor prioridad.",
+      "Suit0": "Batalla en cada claro ordenado **card:{{suit}}**. _(el defensor es el jugador con más piezas allí; luego de esos el que más puntos tenga.)_",
+      "Suit1": "Recluta {{totalWarriors}} guerreros repartidos uniformemente entre los claros ordenados **card:{{suit}}** que gobiernes. Si gobiernas tres de esos claros **card:{{suit}}**, coloca el cuarto guerrero en el claro **card:{{suit}}** que tenga mayor prioridad.",
+      "Suit2": "Construye un **building:{{building}}** en el claro que gobiernes con más guerreros del Marquesado.",
+      "Suit3": "Mueve todos menos tres de tus guerreros de cada uno de los claros ordenados **card:{{suit}}** al claro adyacente que tenga más piezas enemigas.",
+      "Repeat": "Si no has colocado un edificio en este turno y tienes cinco o menos edificios sobre el mapa, descarta la carta de orden, roba y revela una nueva carta de orden _(pero no fabriques el objeto si lo tuviera)_, y repite el Día."
+    },
+    "Electric Eyrie (DC)": {
+      "Recruit": "Recluta {{recruitNum}} guerrero(s) en un claro {{suitText}} con nido. {{recruitText}}<br>_(**Hay más de un claro elegible**: Escoge el claro de esos que tenga más piezas enemigas; luego el claro de esos que tenga menos guerreros del Nido; por último el claro de esos que tenga menor prioridad.)_",
+      "Move": "Muévete desde el claro {{suitText}} que gobiernes con mas guerreros del Nido hacia un claro adyacente. Deja atrás tantos guerreros como para gobernar el claro de origen exactamente o {{totalForSuit}}, lo que sea mayor. No consideres claros en los que ningún guerrero se movería.<br>_(**Hay más de un claro de destino elegible**: Esocoge un claro sin nidos; luego el claro de esos que tenga menos piezas enemigas; por último el claro de esos que tenga menor prioridad.)_",
+      "Battle": "Batalla en un claro {{suitText}}. {{extraHit}}<br>_(**Hay más de un claro elegible**: Escoge el claro de esos que no tenga nidos; luego el claro de esos que tenga más edificios indefensos)_<br>_(**Hay más de un defensor elegible**: Escoge el jugador de esos que tenga más edificios allí; luego el jugador de esos que tenga más piezas allí.)_",
+      "ExtraHit": "**Da un golpe adicional.**",
+      "ExtraDecree": "Deberías haber añadido al menos 2 cartas de aves al Decreto.",
+      "ExtraRelentless": "Retira todas las fichas y edificios indefensos de cualquier claro con guerreros del Nido.",
+      "ExtraRecruit": "Si no puedes colocar un guerror, caes en el caos.",
+      "ExtraBuild": "Coloca un nido en un claro que gobiernes que no tenga un nido _(si hay varios, elige el de mayor prioridad)_. Si no puedes colocar un nido, caes en el caos.",
+      "ExtraSwoop": "Coloca dos guerreros en un claro que no contenga piezas del Nido _(si hay varios, elige el de mayor prioridad)_."
+    },
+    "Vagabot (DC)": {
+      "ActionExplore": "Muévete a la ruina mas cercana, entonces agota un objeto para coger un objeto de esa ruina",
+      "ActionQuest": "Muévete al claro mas cercano correspondiente a la misión, agotando un objeto por movimiento. Entonces agota dos objetos cualesquiera para descartar la misión y obtener 2 PV. _(ignora el texto de la carta)_. A continuación, revela una nueva misión.",
+      "ActionQuestRepeat": "Repite esto tantas veces como sea posible.",
+      "ActionAid": "Mueve al claro más cercano que contenga piezas de un jugador con cualquier número de objetos si es posible. Entonces, agota un objeto para coger uno de sus objetos y ponlo en tu hatillo. Obtén **vp:1** y roba una carta.<br>_(**Hay más de un jugador elegible**)_: Si varios jugadores tienen piezas a igual distancia, escoge al jugador con una menor puntuación.",      
+      "ActionBattle": "Muévete al claro más cercano con alguna pieza del enemigo que tenga más {{target}}, agotando un objeto por movimiento. Entonces agota un objeto para batallar contra ese jugador. Obtén **vp:1** por cada guerrero enemigo que retires.",
+      "ActionBattleTarget": "PV",
+      "ActionBattleTargetBerserker": "piezas",
+      "ActionBattleAdventurer": "Repite esta acción, agotando dos objetos por cada batalla adicional, tantas veces como sea posible.",
+      "ActionBattleMarksman": "Da un golpe inmediatamente en cada batalla.",
+      "ActionBattleTiebreaker": "_(Si el defensor objetivo está en varios claros a igual distancia, muévete al claro en el que tenga más edificios y fichas, y de esos al que tenga menos guerreros)_.",
+      "ActionSpecial": "Agota un objeto para llevar a cabo la siguiente acción (sáltate esta acción si no fuera a tener ningún efecto):"
+    },
+    "Automated Alliance (DC)": {
+      "Sympathy": "Coloca una ficha de simpatía en un claro no afín adyacente a un claro afín.<br>(**Hay más claros elegibles**: Evita claros con 3 o mas guerreros de un mismo jugador, luego coloca la ficha en un claro **card:{{suit}}**.)<br>(**No puedo extenderme**: Si no puedes colocar una ficha de simpatía, obtén 5 PV.)",
+      "SympathyBird": "Coloca una ficha de simpatía en un claro no afín adyacente a un claro afín.<br>(**Hay más claros elegibles**: Coloca la ficha en el claro de menor prioridad.)<br>(**No puedo extenderme**: Si no puedes colocar una ficha de simpatía, obtén 5 PV.)",
+      "Revolt": "Retira todas las piezas enemigas del claro afín ordenado con mas piezas enemigas, y coloca la base ordenada allí.",
+      "RevoltSpread": "Si no has hecho una revuelta en el Alba de este turno **extiende simpatía** {{sympathySpread}}."
+    },
+    "Mechanical Marquise (DC)": {
+      "Blitz": "Identifica el claro que gobiernes de mayor prioridad sin piezas enemigas. Mueve todos tus guerreros excepto uno desde ese claro a uno adyacente. A conitnuación, batalla en el claro de destino.",
+      "Bird0": "Batalla en cada claro ordenado. _(el defensor es el jugador con más piezas allí; luego de esos el que más puntos tenga.)_",
+      "Bird1": "Recluta {{totalWarriors}} guerrero(s) uniformemente en cada uno de los dos claros que gobiernes con la menor prioridad. Si sólo gobiernas un claro, coloca los {{totalWarriors}} guerreros allí. Obtén **vp:1** por cada dos guerreros que no hayan podido ser reclutados.",
+      "Bird2": "Construye un edificio del tipo que más tengas en el mapa en el claro que gobiernes con mas guerreros del Marquesado.<br>_(En caso de empate entre aserraderos y cualquier otro tipo de edificio, coloca un aserradero. En caso de empate entre talleres y reclutadores, pero no aserraderos, coloca un taller.)_",
+      "Bird3": "Mueve todos menos tres de tus guerreros de cada claro al claro adyacente que tenga más piezas enemigas. Después batalla en cada claro al que te hayas movido.",
+      "Suit0": "Batalla en cada claro ordenado **card:{{suit}}**. _(el defensor es el jugador con más piezas allí; luego de esos el que más puntos tenga.)_",
+      "Suit1": "Recluta {{totalWarriors}} guerreros repartidos uniformemente entre los claros ordenados **card:{{suit}}** que gobiernes. Obtén **vp:1** por cada dos guerreros que no hayan podido ser reclutados.<br>_(**Hay más claros elegibles**: Coloca los guerreros en los claros con mayor prioridad primero.)_",
+      "Suit2": "Construye un **building:{{building}}** en el claro que gobiernes con más guerreros del Marquesado.",
+      "Suit3": "Mueve todos menos tres de tus guerreros de cada uno de los claros ordenados **card:{{suit}}** al claro adyacente que tenga más piezas enemigas. Cada guerrero solo puede moverse una vez durante esta acción."
+    }
+  },
+  "SpecificEvening": {
+    "Electric Eyrie": {
+      "Score": "Obtén {{score}} PV.",
+      "NightmareScore": "Obtén **vp:1**."
+    },
+    "Vagabot": {
+      "Refresh": "Si tienes algún objeto dañado, refresca {{itemRefreshMin}} objetos no dañados. Si no tienes ningún objeto dañado, en vez de eso refresca {{itemRefreshMax}}.",
+      "Forest": "Si estás en un bosque repara todos los objetos dañados. Si no, repara {{itemRepairs}} objeto(s) dañado(s). Repara los objetos no agotados antes que los agotados.",
+      "Discard": "Descarta la carta de orden.",
+      "NightmareScore": "Obtén **vp:1**."
+    },
+    "Automated Alliance": {
+      "Organize": "En cada claro con una base y {{organizeVal}} o más guerreros de la Alianza, retira todos los guerreros de la Alianza de allí y **extiende simpatía**.",
+      "WarriorPlace": "Coloca un guerrero en cada claro que tenga una base.",
+      "Wildfire": "**Extiende simpatía**, pero no obtienes puntos de victoria.",
+      "Discard": "Descarta la carta de orden.",
+      "NightmareScore": "Obtén **vp:1**."
+    },
+    "Mechanical Marquise": {
+      "Score": "Obtén {{score}} PV.",
+      "Discard": "Descarta la carta de orden.",
+      "NightmareScore": "Obtén **vp:1**."
+    },
+    "Electric Eyrie (DC)": {
+      "Score": "Obtén {{score}} PV.",
+      "NightmareScore": "Obtén **vp:1** por cada dos jugadores (redondeado hacia arriba)."
+    },
+    "Vagabot (DC)": {
+      "Refresh": "Refresca {{itemRefreshMin}} objetos. Si no tienes objetos dañados, en vez de eso refresca {{itemRefreshMax}}.",
+      "Forest": "Si estás en un bosque repara todos los objetos dañados. Si no, repara {{itemRepairs}} objeto(s) dañado(s). Repara los objetos no agotados antes que los agotados.",
+      "Discard": "Descarta la carta de orden.",
+      "NightmareScore": "Obtén **vp:1** por cada dos jugadores (redondeado hacia arriba)."
+    },
+    "Automated Alliance (DC)": {
+      "Organize": "En cada claro con una base y {{organizeVal}} o más guerreros de la Alianza, retira todos los guerreros de la Alianza de allí y **extiende simpatía**.",
+      "WarriorPlace": "Coloca un guerrero en cada claro que tenga una base.",
+      "Wildfire": "**Extiende simpatía**, pero no obtienes puntos de victoria.",
+      "Discard": "Descarta la carta de orden.",
+      "NightmareScore": "Obtén **vp:1** por cada dos jugadores (redondeado hacia arriba)."
+    },
+    "Mechanical Marquise (DC)": {
+      "Repeat": "Si no has colocado un edificio este turno y obtendrías menos de 3 puntos de victoria, descarta la carta de orden, roba y revela una nueva carta de orden, y repite el Día. Esto slo puede ocurrir una vez por turno.",
+      "RepeatIronWill": "Si no has colocado un edificio este turno y tienes cinco o menos edificios sobre el mapa, descarta la carta de orden, roba y revela una nueva carta de orden, y repite el Día. Esto sólo puede ocurrir ´dos veces por turno.",
+      "Score": "Obtén {{score}} PV.",
+      "Discard": "Descarta la carta de orden.",
+      "NightmareScore": "Obtén **vp:1** por cada dos jugadores (redondeado hacia arriba)."
+    }
+  },
+  "SpecificExtra": {
+    "Electric Eyrie": {
+      "Purge": "Descarta todas las cartas del Decreto, a excepción de los Visires.",
+      "Evening": "Ve a la Noche.",
+      "YesNobility": "Obtienes un punto de victoria por cada carta de ave que haya en el Decreto.",
+      "NoNobility": "Pierde un punto de victoria por cada carta de ave _(incluyendo los Visires)_ que haya en el Decreto."
+    },
+    "Vagabot": {
+      "NameTinker": "Chatarrero",
+      "DescTinker": "Busca en la pila de descartes la carta descartada más recientemente que tenga un objeto disponible y fabrícalo, obteniendo **vp:1**. _Comienza la partida con un objeto menos._",
+      "SpecialTinker": "Busca en la pila de descartes la carta descartada más recientemente que tenga un objeto disponible y fabrícalo, obteniendo **vp:1**.",
+      "NameThief": "Ladrón",
+      "DescThief": "Toma una carta al azar del enemigo en tu claro que tenga más puntos, y de esos del que más piezas tenga allí.",
+      "SpecialThief": "Toma una carta al azar del enemigo en tu claro que tenga más puntos, y de esos del que más piezas tenga allí.",
+      "NameRanger": "Montaraz",
+      "DescRanger": "Si tienes tres o más objetos dañados, infíltrate en un bosque adyacente al azar.",
+      "SpecialRanger": "Si tienes tres o más objetos dañados, infíltrate en un bosque adyacente al azar.",
+      "BattleTrack0": "Golpes máximos: 1",
+      "BattleTrack1": "Golpes máximos: 2",
+      "BattleTrack2": "Golpes máximos: 3",
+      "BattleTrack3": "Golpes máximos: 3; como atacante, das 1 golpe adicional.",
+      "SatchelExhausted": "Agotado",
+      "SatchelDamaged": "Dañado",
+      "SatchelBattleTrack": "Batalla"
+    },
+    "Electric Eyrie (DC)": {
+      "Purge": "Descarta todas las cartas del Decreto, a excepción de los Visires.",
+      "Evening": "Ve a la Noche.",
+      "YesNobility": "Obtienes un punto de victoria por cada carta de ave que haya en el Decreto.",
+      "NoNobility": "Pierde un punto de victoria por cada carta de ave _(incluyendo los Visires)_ que haya en el Decreto."
+    },
+    "Vagabot (DC)": {
+      "NameTinker": "Chatarrero",
+      "DescTinker": "Busca en la pila de descartes la carta descartada más recientemente que tenga un objeto disponible y fabrícalo, no obtienes nigún punto. _Comienza la partida con un objeto menos._",
+      "SpecialTinker": "Busca en la pila de descartes la carta descartada más recientemente que tenga un objeto disponible y fabrícalo, no obtienes nigún punto.",
+      "NameThief": "Ladrón",
+      "DescThief": "Toma una carta al azar del enemigo en tu claro que tenga más puntos, y de esos del que más piezas tenga allí.",
+      "SpecialThief": "Toma una carta al azar del enemigo en tu claro que tenga más puntos, y de esos del que más piezas tenga allí.",
+      "NameRanger": "Montaraz",
+      "DescRanger": "Si tienes algún objeto dañado, repara uno objeto dañado, no agotados antes que los agotados.",
+      "SpecialRanger": "Si tienes algún objeto dañado, repara uno objeto dañado, no agotados antes que los agotados.",
+      "BattleTrack0": "Golpes máximos: 1",
+      "BattleTrack1": "Golpes máximos: 2",
+      "BattleTrack2": "Golpes máximos: 3",
+      "BattleTrack3": "Golpes máximos: 3; como atacante, das 1 golpe adicional.",
+      "SatchelExhausted": "Agotado",
+      "SatchelDamaged": "Dañado",
+      "SatchelBattleTrack": "Batalla"
+    }
+  },
+  "ToastMessages": {
+    "UpdateScore": "La puntuación de {{ botname }} se ha actualizado con {{ addend }}.",
+    "Actions": {
+      "Undo": "Deshacer"
+    }
+  }
+}
