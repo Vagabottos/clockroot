@@ -5,13 +5,13 @@
   "CloseText": "Cerrar",
   "Language": "Idioma",
   "LederPlug": "Consigue la expansión de Los Cachivaches de Leder Games!",
-  "PriorityMaps": "Maps",
+  "PriorityMaps": "Mapas de prioridad",
   "NeedsSetup": "Necesita preparación",
   "ClockworkBots": "Bots de Los Cachivaches",
   "DirectorsCut": "Director's Cut",
   "BotSetup": {
     "Setup": "Preparación",
-    "PriorityMarkers": "Establece los marcadores de prioridad para el mapa",
+    "PriorityMarkers": "Coloca los marcadores de prioridad para el mapa escogido.",
     "ChooseDifficulty": "Selecciona la dificultad",
     "Difficulty": {
       "Easy": "Fácil",
@@ -52,8 +52,8 @@
     "Automated Alliance (DC)": "Alianza A. (DC)",
     "Vagabot (DC)": "Vagabot (DC)"
   },
-  "PrioriEmpates": {
-    "Title": "Prioridades del mapa",
+  "Priorities": {
+    "Title": "Mapas de prioridad",
     "Fall": "Otoño",
     "Winter": "Invierno",
     "Lake": "Lago",

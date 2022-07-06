@@ -21,15 +21,12 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.language = localStorage.getItem('lang');
     if (!this.language) {
-      const baseLang = navigator.language || 'en-US';
-      if (baseLang.split('-')[0] === 'fr') {
-        this.language = 'fr-FR';
-      } else{
-      if (baseLang.split('-')[0] === 'es') {
-        this.language = 'es-ES';
-      } else {
-        this.language = 'en-US';
-      }}
+      const baseLang = navigator.language || "en-US";
+      baseLang.split("-")[0] === "fr"
+        ? (this.language = "fr-FR")
+        : baseLang.split("-")[0] === "es"
+        ? (this.language = "es-ES")
+        : (this.language = "en-US");
     }
 
     this.updateTranslate();
