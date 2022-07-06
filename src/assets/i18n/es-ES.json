@@ -295,31 +295,31 @@
       "ActionQuest": "Muévete al claro mas cercano correspondiente a la misión, agotando un objeto por movimiento. Entonces agota dos objetos cualesquiera para descartar la misión y obtener **vp:1**. _(ignora el texto de la carta)_. A continuación, revela una nueva misión.",
       "ActionQuestRepeat": "Repite esto tantas veces como sea posible.",
       "ActionAid": "Elige como objetivo al jugador de tu claro que tenga algún objeto, y de entre esos, al que menos PV tenga. Agota tantos objetos como sea posible hasta el número de objetos que tenga ese jugador en su zona de fabricados, coge ese número de objetos de su tablero y obtén ese número de {{aidHelpText}} PV. Entonces ese jugador roba {{aidHelpText}} cartas.",
-      "ActionBattle": "Move to the nearest clearing with any pieces of the enemy with the most {{target}}, then exhaust one item to battle that player. Score **vp:1** per enemy warrior removed.",
-      "ActionBattleTarget": "VP",
-      "ActionBattleTargetBerserker": "pieces",
-      "ActionBattleAdventurer": "Repeat this action, exhausting two items per extra battle, as many times as possible.",
-      "ActionBattleMarksman": "Deal an immediate hit in each battle.",
-      "ActionBattleTiebreaker": "_(If target defender is in multiple clearings at equal distance, move to clearing where they have most buildings and tokens, then fewest warriors.)_",
-      "ActionRepair": "If you have any damaged items, exhaust one item to repair one damaged item, unexhausted before exhausted.",
-      "ActionSpecial": "Exhaust one item to do the following (skip if it would have no effect):"
+      "ActionBattle": "Muévete al claro más cercano con alguna pieza del enemigo que tenga más {{target}}, agotando un objeto por movimiento. Entonces agota un objeto para batallar contra ese jugador. Obtén **vp:1** por cada guerrero enemigo que retires.",
+      "ActionBattleTarget": "PV",
+      "ActionBattleTargetBerserker": "piezas",
+      "ActionBattleAdventurer": "Repite esta acción, agotando dos objetos por cada batalla adicional, tantas veces como sea posible.",
+      "ActionBattleMarksman": "Da un golpe inmediatamente en cada batalla.",
+      "ActionBattleTiebreaker": "_(Si el defensor objetivo está en varios claros a igual distancia, muévete al claro en el que tenga más edificios y fichas, y de esos al que tenga menos guerreros)_.",
+      "ActionRepair": "Si tienes algún objeto dañado, agota un objeto para reparar un objeto dañado. Repara objetos no agotados antes que los agotados _(el objeto reparado no se voltea)_",
+      "ActionSpecial": "Agota un objeto para llevar a cabo la siguiente acción (sáltate esta acción si no fuera a tener ningún efecto):"
     },
     "Automated Alliance": {
-      "Sympathy": "Place a sympathy token in the **card:{{suit}}** clearing with the fewest enemy warriors adjacent to any sympathetic clearing.<br>(**No Such Clearings**: Instead place a sympathy token on the clearing with the fewest enemy pieces.)<br>(**Cannot Spread**: If you cannot place a sympathy token, score 5 VP.)",
-      "Revolt": "Remove all enemy pieces from any sympathetic clearing with the most enemy pieces, and place the corresponding base there."
+      "Sympathy": "Coloca una ficha de simpatía en el claro ordenado **card:{{suit}}** con el menor número de guerreros enemigos, adyacente a un claro afín cualquiera, y de esos en el de mayor prioridad.<br>(**No hay claros de esos**: Coloca la ficha de simpatía en el claro que tenga menos piezas enemigas, y de esos en el de mayor prioridad.)<br>(**No puedo extenderme**: Si no puedes colocar una ficha de simpatía, obtén 5 PV.)",
+      "Revolt": "Retira todas las piezas enemigas del claro afín ordenado con mas piezas enemigas, y coloca la base ordenada allí. En caso de empate, el de mayor prioridad."
     },
     "Mechanical Marquise": {
-      "Blitz": "Find the clearing you rule of the highest priority without any enemy pieces. Move all but one warrior from the clearing. Then, battle in the destination clearing.",
-      "Bird0": "Battle in all clearings. _(Defender is the player with most pieces, then victory points.)_",
-      "Bird1": "Recruit {{warriorsOverTwo}} warrior(s) in each of the two clearings you rule with lowest priority. If you only rule one clearing, place all {{totalWarriors}} warriors there.",
-      "Bird2": "Build a building of the type with the most pieces on the map in a clearing you rule with the most Marquise Warriors.<br>_(On a tie between sawmills and any other building types, place a sawmill. On a tie between workshops and recruiters but not sawmills, place a recruiter.)_",
-      "Bird3": "Move all but three of your warriors from each clearing to the adjacent clearing with the most enemy pieces. Then battle in each clearing you moved into.",
-      "BirdChallenging": "Place two warriors in the ordered clearing you rule of the highest priority.",
-      "Suit0": "Battle in each **card:{{suit}}** clearing. _(Defender is the player with most pieces, then victory points.)_",
-      "Suit1": "Recruit {{totalWarriors}} warriors evenly spread across **card:{{suit}}** clearings you rule. If there are extra warriors that cannot be placed evenly in **card:{{suit}}** clearings, place the last warrior in the **card:{{suit}}** clearing with the highest priority.",
-      "Suit2": "Build a **building:{{building}}** in a clearing you rule with the most Marquise warriors.",
-      "Suit3": "Move all but three of your warriors from each **card:{{suit}}** clearing to the adjacent clearing with the most enemy pieces.",
-      "Repeat": "If you did not place a building this turn and have five or fewer buildings on the map, discard the order card, draw a new one, and repeat Daylight."
+      "Blitz": "Identifica el claro que gobiernes de mayor prioridad sin piezas enemigas. Mueve todos tus guerreros excepto uno desde ese claro a uno adyacente. A conitnuación, batalla en el claro de destino.",
+      "Bird0": "Batalla en cada claro ordenado. _(el defensor es el jugador con más piezas allí; luego de esos el que más puntos tenga.)_",
+      "Bird1": "Recluta {{warriorsOverTwo}} guerrero(s) en cada uno de los dos claros que gobiernes con la menor prioridad. Si sólo gobiernas un claro, coloca los {{totalWarriors}} guerreros allí.",
+      "Bird2": "Construye un edificio del tipo que más tengas en el mapa en el claro que gobiernes con mas guerreros del Marquesado.<br>_(En caso de empate entre aserraderos y cualquier otro tipo de edificio, coloca un aserradero. En caso de empate entre talleres y reclutadores, pero no aserraderos, coloca un reclutador.)_",
+      "Bird3": "Mueve todos menos tres de tus guerreros de cada claro al claro adyacente que tenga más piezas enemigas. Después batalla en cada claro al que te hayas movido.",
+      "BirdChallenging": "Coloca dos guerreros en el claro ordenado que gobiernes de mayor prioridad.",
+      "Suit0": "Batalla en cada claro ordenado **card:{{suit}}**. _(el defensor es el jugador con más piezas allí; luego de esos el que más puntos tenga.)_",
+      "Suit1": "Recluta {{totalWarriors}} guerreros repartidos uniformemente entre los claros ordenados **card:{{suit}}** que gobiernes. Si gobiernas tres de esos claros **card:{{suit}}**, coloca el cuarto guerrero en el claro **card:{{suit}}** que tenga mayor prioridad.",
+      "Suit2": "Construye un **building:{{building}}** en el claro que gobiernes con más guerreros del Marquesado.",
+      "Suit3": "Mueve todos menos tres de tus guerreros de cada uno de los claros ordenados **card:{{suit}}** al claro adyacente que tenga más piezas enemigas.",
+      "Repeat": "Si no has colocado un edificio en este turno y tienes cinco o menos edificios sobre el mapa, descarta la carta de orden, roba y revela una nueva carta de orden _(pero no fabriques el objeto si lo tuviera)_, y repite el Día."
     },
     "Electric Eyrie (DC)": {
       "Recruit": "Recruit {{recruitNum}} warrior(s) in a {{suitText}} clearing with a roost. {{recruitText}}<br>_(**Empates**: Recruit in such a clearing with the most enemy pieces, then fewest Eyrie warriors, then lowest priority.)_",
@@ -353,11 +353,11 @@
     },
     "Mechanical Marquise (DC)": {
       "Blitz": "Find the clearing you rule of the highest priority without any enemy pieces. Move all but one warrior from the clearing. Then, battle in the destination clearing.",
-      "Bird0": "Battle in all clearings. _(Defender is the player with most pieces, then victory points.)_",
+      "Bird0": "Battle in all clearings. _(el defensor es el jugador con más piezas allí; luego de esos el que más puntos tenga.)_",
       "Bird1": "Recruit {{totalWarriors}} warrior(s) evenly among the two lowest priority clearings you rule. If you rule only one clearing, place all {{totalWarriors}} there. Score **vp:1** for every two warriors that could not be recruited.",
       "Bird2": "Build a building of the type with the most pieces on the map in a clearing you rule with the most Marquise Warriors.<br>_(On a tie between sawmills and any other building types, place a sawmill. On a tie between workshops and recruiters but not sawmills, place a workshop.)_",
       "Bird3": "Move all but three of your warriors from each clearing to the adjacent clearing with the most enemy pieces. Then battle in each clearing you moved into.",
-      "Suit0": "Battle in each **card:{{suit}}** clearing. _(Defender is the player with most pieces, then victory points.)_",
+      "Suit0": "Battle in each **card:{{suit}}** clearing. _(el defensor es el jugador con más piezas allí; luego de esos el que más puntos tenga.)_",
       "Suit1": "Recruit {{totalWarriors}} warriors evenly spread across **card:{{suit}}** clearings you rule. Score **vp:1** for every two warriors that could not be recruited.<br>_(**Clearing tie**: Place warriors into clearings with highest priority first.)_",
       "Suit2": "Build a **building:{{building}}** in a clearing you rule with the most Marquise warriors.",
       "Suit3": "Move all but three of your warriors from each **card:{{suit}}** clearing to the adjacent clearing with the most enemy pieces. Each warrior may only move once during this action."
