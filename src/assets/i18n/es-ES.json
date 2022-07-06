@@ -322,149 +322,149 @@
       "Repeat": "Si no has colocado un edificio en este turno y tienes cinco o menos edificios sobre el mapa, descarta la carta de orden, roba y revela una nueva carta de orden _(pero no fabriques el objeto si lo tuviera)_, y repite el Día."
     },
     "Electric Eyrie (DC)": {
-      "Recruit": "Recruit {{recruitNum}} warrior(s) in a {{suitText}} clearing with a roost. {{recruitText}}<br>_(**Empates**: Recruit in such a clearing with the most enemy pieces, then fewest Eyrie warriors, then lowest priority.)_",
-      "Move": "Move from the {{suitText}} clearing you rule with the most of your warriors to an adjacent clearing. Leave enough warriors to exactly rule the origin clearing or {{totalForSuit}}, whichever is higher. Do not consider clearings in which no warrior would move.<br>_(**Destination Empates**: Move to such a clearing with no roost, then fewest enemy pieces, then lowest priority.)_",
-      "Battle": "Battle in a {{suitText}} clearing. {{extraHit}}<br>_(**Clearing Empates**: Battle in such a clearing with no roost, then most defenseless buildings.)_<br>_(**Defender Empates**: Battle such a player with most buildings there, then the player with then most pieces there.)_",
-      "ExtraHit": "**Deal an extra hit.**",
-      "ExtraDecree": "You should have added at least 2 bird cards to the decree.",
-      "ExtraRelentless": "Remove all defenseless tokens and buildings in any clearing with Eyrie warriors.",
-      "ExtraRecruit": "If you cannot place a warrior, you fall into turmoil.",
-      "ExtraBuild": "Place a roost in the clearing you rule of highest priority with no roost. If you cannot place a roost, you fall into turmoil.",
-      "ExtraSwoop": "Place two warriors in the clearing of highest priority with no Eyrie pieces."
+      "Recruit": "Recluta {{recruitNum}} guerrero(s) en un claro {{suitText}} con nido. {{recruitText}}<br>_(**Hay más de un claro elegible**: Escoge el claro de esos que tenga más piezas enemigas; luego el claro de esos que tenga menos guerreros del Nido; por último el claro de esos que tenga menor prioridad.)_",
+      "Move": "Muévete desde el claro {{suitText}} que gobiernes con mas guerreros del Nido hacia un claro adyacente. Deja atrás tantos guerreros como para gobernar el claro de origen exactamente o {{totalForSuit}}, lo que sea mayor. No consideres claros en los que ningún guerrero se movería.<br>_(**Hay más de un claro de destino elegible**: Esocoge un claro sin nidos; luego el claro de esos que tenga menos piezas enemigas; por último el claro de esos que tenga menor prioridad.)_",
+      "Battle": "Batalla en un claro {{suitText}}. {{extraHit}}<br>_(**Hay más de un claro elegible**: Escoge el claro de esos que no tenga nidos; luego el claro de esos que tenga más edificios indefensos)_<br>_(**Hay más de un defensor elegible**: Escoge el jugador de esos que tenga más edificios allí; luego el jugador de esos que tenga más piezas allí.)_",
+      "ExtraHit": "**Da un golpe adicional.**",
+      "ExtraDecree": "Deberías haber añadido al menos 2 cartas de aves al Decreto.",
+      "ExtraRelentless": "Retira todas las fichas y edificios indefensos de cualquier claro con guerreros del Nido.",
+      "ExtraRecruit": "Si no puedes colocar un guerror, caes en el caos.",
+      "ExtraBuild": "Coloca un nido en un claro que gobiernes que no tenga un nido _(si hay varios, elige el de mayor prioridad)_. Si no puedes colocar un nido, caes en el caos.",
+      "ExtraSwoop": "Coloca dos guerreros en un claro que no contenga piezas del Nido _(si hay varios, elige el de mayor prioridad)_."
     },
     "Vagabot (DC)": {
-      "ActionExplore": "Move to the nearest ruin, then exhaust one item to take an item from it.",
-      "ActionQuest": "Move to the nearest clearing matching the quest, then exhaust any two items to discard the quest and score 2 VP. _(Ignore card text.)_ Then, replace the quest.",
-      "ActionQuestRepeat": "Repeat this as many times as possible.",
-      "ActionAid": "Move to the nearest clearing containing pieces of a player with any items if possible. Then, exhaust one item to take one of their items and place it in your satchel. Score **vp:1** and then they draw a card.<br>_(**Player Tie**)_: if multiple players have pieces in equal distance, select the player with the lower score.",
-      "ActionBattle": "Move to the nearest clearing with any pieces of the enemy with the most {{target}}, then exhaust one item to battle that player. Score **vp:1** per enemy warrior removed.",
-      "ActionBattleTarget": "VP",
-      "ActionBattleTargetBerserker": "pieces",
-      "ActionBattleAdventurer": "Repeat this action, exhausting two items per extra battle, as many times as possible.",
-      "ActionBattleMarksman": "Deal an immediate hit in each battle.",
-      "ActionBattleTiebreaker": "_(If target defender is in multiple clearings at equal distance, move to clearing where they have most buildings and tokens, then fewest warriors.)_",
-      "ActionSpecial": "Exhaust one item to do the following (skip if it would have no effect):"
+      "ActionExplore": "Muévete a la ruina mas cercana, entonces agota un objeto para coger un objeto de esa ruina",
+      "ActionQuest": "Muévete al claro mas cercano correspondiente a la misión, agotando un objeto por movimiento. Entonces agota dos objetos cualesquiera para descartar la misión y obtener 2 PV. _(ignora el texto de la carta)_. A continuación, revela una nueva misión.",
+      "ActionQuestRepeat": "Repite esto tantas veces como sea posible.",
+      "ActionAid": "Mueve al claro más cercano que contenga piezas de un jugador con cualquier número de objetos si es posible. Entonces, agota un objeto para coger uno de sus objetos y ponlo en tu hatillo. Obtén **vp:1** y roba una carta.<br>_(**Hay más de un jugador elegible**)_: Si varios jugadores tienen piezas a igual distancia, escoge al jugador con una menor puntuación.",      
+      "ActionBattle": "Muévete al claro más cercano con alguna pieza del enemigo que tenga más {{target}}, agotando un objeto por movimiento. Entonces agota un objeto para batallar contra ese jugador. Obtén **vp:1** por cada guerrero enemigo que retires.",
+      "ActionBattleTarget": "PV",
+      "ActionBattleTargetBerserker": "piezas",
+      "ActionBattleAdventurer": "Repite esta acción, agotando dos objetos por cada batalla adicional, tantas veces como sea posible.",
+      "ActionBattleMarksman": "Da un golpe inmediatamente en cada batalla.",
+      "ActionBattleTiebreaker": "_(Si el defensor objetivo está en varios claros a igual distancia, muévete al claro en el que tenga más edificios y fichas, y de esos al que tenga menos guerreros)_.",
+      "ActionSpecial": "Agota un objeto para llevar a cabo la siguiente acción (sáltate esta acción si no fuera a tener ningún efecto):"
     },
     "Automated Alliance (DC)": {
-      "Sympathy": "Place a sympathy token into an unsympathetic adjacent clearing  adjacent to any sympathetic clearing.<br>(**Clearing Tie**: Avoid clearings with 3 or more warriors of a single player, then place in **card:{{suit}}** clearing.)<br>(**Cannot Spread**: If you cannot place a sympathy token, score 5 VP.)",
-      "SympathyBird": "Place a sympathy token into an unsympathetic adjacent clearing  adjacent to any sympathetic clearing.<br>(**Clearing Tie**: Place into the lowest priority clearing.)<br>(**Cannot Spread**: If you cannot place a sympathy token, score 5 VP.)",
-      "Revolt": "Remove all enemy pieces from any sympathetic clearing with the most enemy pieces, and place the corresponding base there.",
-      "RevoltSpread": "If you did not revolt, **Spread Sympathy** {{sympathySpread}}."
+      "Sympathy": "Coloca una ficha de simpatía en un claro no afín adyacente a un claro afín.<br>(**Hay más claros elegibles**: Evita claros con 3 o mas guerreros de un mismo jugador, luego coloca la ficha en un claro **card:{{suit}}**.)<br>(**No puedo extenderme**: Si no puedes colocar una ficha de simpatía, obtén 5 PV.)",
+      "SympathyBird": "Coloca una ficha de simpatía en un claro no afín adyacente a un claro afín.<br>(**Hay más claros elegibles**: Coloca la ficha en el claro de menor prioridad.)<br>(**No puedo extenderme**: Si no puedes colocar una ficha de simpatía, obtén 5 PV.)",
+      "Revolt": "Retira todas las piezas enemigas del claro afín ordenado con mas piezas enemigas, y coloca la base ordenada allí.",
+      "RevoltSpread": "Si no has hecho una revuelta en el Alba de este turno **extiende simpatía** {{sympathySpread}}."
     },
     "Mechanical Marquise (DC)": {
-      "Blitz": "Find the clearing you rule of the highest priority without any enemy pieces. Move all but one warrior from the clearing. Then, battle in the destination clearing.",
-      "Bird0": "Battle in all clearings. _(el defensor es el jugador con más piezas allí; luego de esos el que más puntos tenga.)_",
-      "Bird1": "Recruit {{totalWarriors}} warrior(s) evenly among the two lowest priority clearings you rule. If you rule only one clearing, place all {{totalWarriors}} there. Score **vp:1** for every two warriors that could not be recruited.",
-      "Bird2": "Build a building of the type with the most pieces on the map in a clearing you rule with the most Marquise Warriors.<br>_(On a tie between sawmills and any other building types, place a sawmill. On a tie between workshops and recruiters but not sawmills, place a workshop.)_",
-      "Bird3": "Move all but three of your warriors from each clearing to the adjacent clearing with the most enemy pieces. Then battle in each clearing you moved into.",
-      "Suit0": "Battle in each **card:{{suit}}** clearing. _(el defensor es el jugador con más piezas allí; luego de esos el que más puntos tenga.)_",
-      "Suit1": "Recruit {{totalWarriors}} warriors evenly spread across **card:{{suit}}** clearings you rule. Score **vp:1** for every two warriors that could not be recruited.<br>_(**Clearing tie**: Place warriors into clearings with highest priority first.)_",
-      "Suit2": "Build a **building:{{building}}** in a clearing you rule with the most Marquise warriors.",
-      "Suit3": "Move all but three of your warriors from each **card:{{suit}}** clearing to the adjacent clearing with the most enemy pieces. Each warrior may only move once during this action."
+      "Blitz": "Identifica el claro que gobiernes de mayor prioridad sin piezas enemigas. Mueve todos tus guerreros excepto uno desde ese claro a uno adyacente. A conitnuación, batalla en el claro de destino.",
+      "Bird0": "Batalla en cada claro ordenado. _(el defensor es el jugador con más piezas allí; luego de esos el que más puntos tenga.)_",
+      "Bird1": "Recluta {{totalWarriors}} guerrero(s) uniformemente en cada uno de los dos claros que gobiernes con la menor prioridad. Si sólo gobiernas un claro, coloca los {{totalWarriors}} guerreros allí. Obtén **vp:1** por cada dos guerreros que no hayan podido ser reclutados.",
+      "Bird2": "Construye un edificio del tipo que más tengas en el mapa en el claro que gobiernes con mas guerreros del Marquesado.<br>_(En caso de empate entre aserraderos y cualquier otro tipo de edificio, coloca un aserradero. En caso de empate entre talleres y reclutadores, pero no aserraderos, coloca un taller.)_",
+      "Bird3": "Mueve todos menos tres de tus guerreros de cada claro al claro adyacente que tenga más piezas enemigas. Después batalla en cada claro al que te hayas movido.",
+      "Suit0": "Batalla en cada claro ordenado **card:{{suit}}**. _(el defensor es el jugador con más piezas allí; luego de esos el que más puntos tenga.)_",
+      "Suit1": "Recluta {{totalWarriors}} guerreros repartidos uniformemente entre los claros ordenados **card:{{suit}}** que gobiernes. Obtén **vp:1** por cada dos guerreros que no hayan podido ser reclutados.<br>_(**Hay más claros elegibles**: Coloca los guerreros en los claros con mayor prioridad primero.)_",
+      "Suit2": "Construye un **building:{{building}}** en el claro que gobiernes con más guerreros del Marquesado.",
+      "Suit3": "Mueve todos menos tres de tus guerreros de cada uno de los claros ordenados **card:{{suit}}** al claro adyacente que tenga más piezas enemigas. Cada guerrero solo puede moverse una vez durante esta acción."
     }
   },
   "SpecificEvening": {
     "Electric Eyrie": {
-      "Score": "Score {{score}} VP.",
-      "NightmareScore": "Score **vp:1**."
+      "Score": "Obtén {{score}} PV.",
+      "NightmareScore": "Obtén **vp:1**."
     },
     "Vagabot": {
-      "Refresh": "If you have any damaged items, refresh {{itemRefreshMin}} undamaged items. If you have none, refresh {{itemRefreshMax}} instead.",
-      "Forest": "If you are in a forest, repair all items. If not, repair {{itemRepairs}} item(s). Repair unexhausted items before exhausted items.",
-      "Discard": "Discard the order card.",
-      "NightmareScore": "Score **vp:1**."
+      "Refresh": "Si tienes algún objeto dañado, refresca {{itemRefreshMin}} objetos no dañados. Si no tienes ningún objeto dañado, en vez de eso refresca {{itemRefreshMax}}.",
+      "Forest": "Si estás en un bosque repara todos los objetos dañados. Si no, repara {{itemRepairs}} objeto(s) dañado(s). Repara los objetos no agotados antes que los agotados.",
+      "Discard": "Descarta la carta de orden.",
+      "NightmareScore": "Obtén **vp:1**."
     },
     "Automated Alliance": {
-      "Organize": "In each clearing with a base and {{organizeVal}} or more Alliance warriors, remove all Alliance warriors there and **Spread Sympathy**.",
-      "WarriorPlace": "Place a warrior in each clearing with a base.",
-      "Wildfire": "**Spread Sympathy**, but do not score victory points.",
-      "Discard": "Discard the order card.",
-      "NightmareScore": "Score **vp:1**."
+      "Organize": "En cada claro con una base y {{organizeVal}} o más guerreros de la Alianza, retira todos los guerreros de la Alianza de allí y **extiende simpatía**.",
+      "WarriorPlace": "Coloca un guerrero en cada claro que tenga una base.",
+      "Wildfire": "**Extiende simpatía**, pero no obtienes puntos de victoria.",
+      "Discard": "Descarta la carta de orden.",
+      "NightmareScore": "Obtén **vp:1**."
     },
     "Mechanical Marquise": {
-      "Score": "Score {{score}} VP.",
-      "Discard": "Discard the order card.",
-      "NightmareScore": "Score **vp:1**."
+      "Score": "Obtén {{score}} PV.",
+      "Discard": "Descarta la carta de orden.",
+      "NightmareScore": "Obtén **vp:1**."
     },
     "Electric Eyrie (DC)": {
-      "Score": "Score {{score}} VP.",
-      "NightmareScore": "Score **vp:1** for every two players (redondeado hacia arriba)."
+      "Score": "Obtén {{score}} PV.",
+      "NightmareScore": "Obtén **vp:1** por cada dos jugadores (redondeado hacia arriba)."
     },
     "Vagabot (DC)": {
-      "Refresh": "Refresh {{itemRefreshMin}} items. If you have no damaged items, refresh {{itemRefreshMax}} instead.",
-      "Forest": "If you are in a forest, repair all items. If not, repair {{itemRepairs}} item(s). Repair unexhausted items before exhausted items.",
-      "Discard": "Discard the order card.",
-      "NightmareScore": "Score **vp:1** for every two players (redondeado hacia arriba)."
+      "Refresh": "Refresca {{itemRefreshMin}} objetos. Si no tienes objetos dañados, en vez de eso refresca {{itemRefreshMax}}.",
+      "Forest": "Si estás en un bosque repara todos los objetos dañados. Si no, repara {{itemRepairs}} objeto(s) dañado(s). Repara los objetos no agotados antes que los agotados.",
+      "Discard": "Descarta la carta de orden.",
+      "NightmareScore": "Obtén **vp:1** por cada dos jugadores (redondeado hacia arriba)."
     },
     "Automated Alliance (DC)": {
-      "Organize": "In each clearing with a base and {{organizeVal}} or more Alliance warriors, remove all Alliance warriors there and **Spread Sympathy**.",
-      "WarriorPlace": "Place a warrior in each clearing with a base.",
-      "Wildfire": "**Spread Sympathy**, but do not score victory points.",
-      "Discard": "Discard the order card.",
-      "NightmareScore": "Score **vp:1** for every two players (redondeado hacia arriba)."
+      "Organize": "En cada claro con una base y {{organizeVal}} o más guerreros de la Alianza, retira todos los guerreros de la Alianza de allí y **extiende simpatía**.",
+      "WarriorPlace": "Coloca un guerrero en cada claro que tenga una base.",
+      "Wildfire": "**Extiende simpatía**, pero no obtienes puntos de victoria.",
+      "Discard": "Descarta la carta de orden.",
+      "NightmareScore": "Obtén **vp:1** por cada dos jugadores (redondeado hacia arriba)."
     },
     "Mechanical Marquise (DC)": {
-      "Repeat": "If you did not place a building this turn and would score less than 3 victory points, discard the order card, draw a new one, and repeat Daylight. This may only happen once per turn.",
-      "RepeatIronWill": "If you did not place a building this turn and have five or fewer buildings on the map, discard the order card, draw a new one, and repeat Daylight. This may only happen twice per turn.",
-      "Score": "Score {{score}} VP.",
-      "Discard": "Discard the order card.",
-      "NightmareScore": "Score **vp:1** for every two players (redondeado hacia arriba)."
+      "Repeat": "Si no has colocado un edificio este turno y obtendrías menos de 3 puntos de victoria, descarta la carta de orden, roba y revela una nueva carta de orden, y repite el Día. Esto slo puede ocurrir una vez por turno.",
+      "RepeatIronWill": "Si no has colocado un edificio este turno y tienes cinco o menos edificios sobre el mapa, descarta la carta de orden, roba y revela una nueva carta de orden, y repite el Día. Esto sólo puede ocurrir ´dos veces por turno.",
+      "Score": "Obtén {{score}} PV.",
+      "Discard": "Descarta la carta de orden.",
+      "NightmareScore": "Obtén **vp:1** por cada dos jugadores (redondeado hacia arriba)."
     }
   },
   "SpecificExtra": {
     "Electric Eyrie": {
-      "Purge": "Purge Decree, except Viziers.",
-      "Evening": "Go to Evening.",
-      "YesNobility": "Score one victory point per bird card in the Decree.",
-      "NoNobility": "Lose one victory point per bird card in the Decree."
+      "Purge": "Descarta todas las cartas del Decreto, a excepción de los Visires.",
+      "Evening": "Ve a la Noche.",
+      "YesNobility": "Obtienes un punto de victoria por cada carta de ave que haya en el Decreto.",
+      "NoNobility": "Pierde un punto de victoria por cada carta de ave _(incluyendo los Visires)_ que haya en el Decreto."
     },
     "Vagabot": {
-      "NameTinker": "Tinker",
-      "DescTinker": "Search the discard pile for the top card with an available item and craft it, scoring **vp:1**. _Start the game with one fewer item._",
-      "SpecialTinker": "Search the discard pile for the top card with an available item and craft it, scoring **vp:1**.",
-      "NameThief": "Thief",
-      "DescThief": "Take a random card from the enemy in your clearing with most points there, then most pieces there.",
-      "SpecialThief": "Take a random card from the enemy in your clearing with most points there, then most pieces there.",
-      "NameRanger": "Ranger",
-      "DescRanger": "If you have three or more damaged items, slip into a random adjacent forest.",
-      "SpecialRanger": "If you have three or more damaged items, slip into a random adjacent forest.",
-      "BattleTrack0": "Maximum rolled hits: 1",
-      "BattleTrack1": "Maximum rolled hits: 2",
-      "BattleTrack2": "Maximum rolled hits: 3.",
-      "BattleTrack3": "Maximum rolled hits: 3; as attacker, deal 1 extra hit.",
-      "SatchelExhausted": "Exhausted",
-      "SatchelDamaged": "Damaged",
-      "SatchelBattleTrack": "Battle"
+      "NameTinker": "Chatarrero",
+      "DescTinker": "Busca en la pila de descartes la carta descartada más recientemente que tenga un objeto disponible y fabrícalo, obteniendo **vp:1**. _Comienza la partida con un objeto menos._",
+      "SpecialTinker": "Busca en la pila de descartes la carta descartada más recientemente que tenga un objeto disponible y fabrícalo, obteniendo **vp:1**.",
+      "NameThief": "Ladrón",
+      "DescThief": "Toma una carta al azar del enemigo en tu claro que tenga más puntos, y de esos del que más piezas tenga allí.",
+      "SpecialThief": "Toma una carta al azar del enemigo en tu claro que tenga más puntos, y de esos del que más piezas tenga allí.",
+      "NameRanger": "Montaraz",
+      "DescRanger": "Si tienes tres o más objetos dañados, infíltrate en un bosque adyacente al azar.",
+      "SpecialRanger": "Si tienes tres o más objetos dañados, infíltrate en un bosque adyacente al azar.",
+      "BattleTrack0": "Golpes máximos: 1",
+      "BattleTrack1": "Golpes máximos: 2",
+      "BattleTrack2": "Golpes máximos: 3",
+      "BattleTrack3": "Golpes máximos: 3; como atacante, das 1 golpe adicional.",
+      "SatchelExhausted": "Agotado",
+      "SatchelDamaged": "Dañado",
+      "SatchelBattleTrack": "Batalla"
     },
     "Electric Eyrie (DC)": {
-      "Purge": "Purge Decree, except Viziers.",
-      "Evening": "Go to Evening.",
-      "YesNobility": "Score one victory point per bird card in the Decree.",
-      "NoNobility": "Lose one victory point per bird card in the Decree."
+      "Purge": "Descarta todas las cartas del Decreto, a excepción de los Visires.",
+      "Evening": "Ve a la Noche.",
+      "YesNobility": "Obtienes un punto de victoria por cada carta de ave que haya en el Decreto.",
+      "NoNobility": "Pierde un punto de victoria por cada carta de ave _(incluyendo los Visires)_ que haya en el Decreto."
     },
     "Vagabot (DC)": {
-      "NameTinker": "Tinker",
-      "DescTinker": "Search the discard pile for the top card with an available item and craft it, gaining no points. _Start the game with one fewer item._",
-      "SpecialTinker": "Search the discard pile for the top card with an available item and craft it, gaining no points.",
-      "NameThief": "Thief",
-      "DescThief": "Take a random card from the enemy in your clearing with most points there, then most pieces there.",
-      "SpecialThief": "Take a random card from the enemy in your clearing with most points there, then most pieces there.",
-      "NameRanger": "Ranger",
-      "DescRanger": "If you have any damaged items, repair one damaged item, unexhausted before exhausted.",
-      "SpecialRanger": "If you have any damaged items, repair one damaged item, unexhausted before exhausted.",
-      "BattleTrack0": "Maximum rolled hits: 1",
-      "BattleTrack1": "Maximum rolled hits: 2",
-      "BattleTrack2": "Maximum rolled hits: 3.",
-      "BattleTrack3": "Maximum rolled hits: 3; as attacker, deal 1 extra hit.",
-      "SatchelExhausted": "Exhausted",
-      "SatchelDamaged": "Damaged",
-      "SatchelBattleTrack": "Battle"
+      "NameTinker": "Chatarrero",
+      "DescTinker": "Busca en la pila de descartes la carta descartada más recientemente que tenga un objeto disponible y fabrícalo, no obtienes nigún punto. _Comienza la partida con un objeto menos._",
+      "SpecialTinker": "Busca en la pila de descartes la carta descartada más recientemente que tenga un objeto disponible y fabrícalo, no obtienes nigún punto.",
+      "NameThief": "Ladrón",
+      "DescThief": "Toma una carta al azar del enemigo en tu claro que tenga más puntos, y de esos del que más piezas tenga allí.",
+      "SpecialThief": "Toma una carta al azar del enemigo en tu claro que tenga más puntos, y de esos del que más piezas tenga allí.",
+      "NameRanger": "Montaraz",
+      "DescRanger": "Si tienes algún objeto dañado, repara uno objeto dañado, no agotados antes que los agotados.",
+      "SpecialRanger": "Si tienes algún objeto dañado, repara uno objeto dañado, no agotados antes que los agotados.",
+      "BattleTrack0": "Golpes máximos: 1",
+      "BattleTrack1": "Golpes máximos: 2",
+      "BattleTrack2": "Golpes máximos: 3",
+      "BattleTrack3": "Golpes máximos: 3; como atacante, das 1 golpe adicional.",
+      "SatchelExhausted": "Agotado",
+      "SatchelDamaged": "Dañado",
+      "SatchelBattleTrack": "Batalla"
     }
   },
   "ToastMessages": {
     "UpdateScore": "La puntuación de {{ botname }} se ha actualizado con {{ addend }}.",
     "Actions": {
-      "Undo": "Undo"
+      "Undo": "Deshacer"
     }
   }
 }
