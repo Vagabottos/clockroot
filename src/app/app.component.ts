@@ -26,6 +26,8 @@ export class AppComponent implements OnInit {
         ? (this.language = "fr-FR")
         : baseLang.split("-")[0] === "es"
         ? (this.language = "es-ES")
+        : baseLang.split("-")[0] === "de"
+        ? (this.language = "de-DE")
         : (this.language = "en-US");
     }
 
