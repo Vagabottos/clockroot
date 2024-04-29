@@ -84,7 +84,7 @@
       "Setup0": "Wähle eine Charakter-Karte und lege sie auf dein Charakter-Karten-Feld. _(Es sind andere Charakter-Karten als die für den Vagabunden.)_",
       "Setup1": "Platziere deine Vagabot-Spielfigur in dem Wald, der zu den meisten Lichtungen benachbart ist. Wenn es mehrere solcher Wälder gibt, wähle davon einen zufällig aus.",
       "Setup2": "Mische den Aufgaben-Stapel, ziehe 1 Aufgaben-Karte und lege sie aufgedeckt in deine Nähe. Diese Aufgabe kann nur vom Bot erledigt werden.",
-      "Setup3": "Lege je 1 beliebigen mit \"R\" markierten Gegenstand unter jede Ruine auf dem Spielbrett."
+      "Setup3": "Lege je 1 beliebigen mit \"R\" markierten Gegenstand unter jede Ruine auf dem Spielbrett.",
       "Setup4": "Nimm 4 beliebige mit \"S\" markierte Gegenstände und lege sie in deinen Rucksack. _(Der Tüftler beginnt mit 3 Gegenständen statt mit 4 Gegenständen.)_"
     },
     "Automated Alliance": {
