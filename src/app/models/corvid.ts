@@ -8,8 +8,7 @@ export class CorvidBot extends Bot {
   public setupPosition = 'I';
   public setupRules = [
     `Setup0`,
-    `Setup1`,
-    `Setup3`
+    `Setup1`
   ];
 
   public difficultyDescriptions = {
@@ -33,33 +32,39 @@ export class CorvidBot extends Bot {
       isActive: true
     },
     {
-      traitName: 'Lords of the Forest',
-      name: 'RuleLordsOfTheForest',
-      text: 'TextLordsOfTheForest',
+      traitName: 'Embedded Agents',
+      name: 'RuleEmbeddedAgents',
+      text: 'TextEmbeddedAgents',
       isActive: true
     },
     {
-      traitName: 'Nobility',
-      name: 'RuleNobility',
-      text: 'TextNobility',
+      traitName: 'Nimble',
+      name: 'RuleNimble',
+      text: 'TextNimble',
+      isActive: true
+    },
+    {
+      traitName: 'Backup Plans',
+      name: 'RuleBackupPlans',
+      text: 'TextBackupPlans',
       canToggle: true
     },
     {
-      traitName: 'Relentless',
-      name: 'RuleRelentless',
-      text: 'TextRelentless',
+      traitName: 'Vendetta',
+      name: 'RuleVendetta',
+      text: `TextVendetta`,
       canToggle: true
     },
     {
-      traitName: 'Swoop',
-      name: 'RuleSwoop',
-      text: `TextSwoop`,
+      traitName: 'Gamble',
+      name: 'RuleGamble',
+      text: `TextGamble`,
       canToggle: true
     },
     {
-      traitName: 'War Tax',
-      name: 'RuleWarTax',
-      text: `TextWarTax`,
+      traitName: 'Mastermind',
+      name: 'RuleMastermind',
+      text: `TextMastermind`,
       canToggle: true
     },
   ];

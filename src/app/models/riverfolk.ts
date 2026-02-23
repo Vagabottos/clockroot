@@ -9,7 +9,9 @@ export class RiverfolkBot extends Bot {
   public setupRules = [
     `Setup0`,
     `Setup1`,
-    `Setup3`
+    `Setup2`,
+    `Setup3`,
+    `Setup4`
   ];
 
   public difficultyDescriptions = {
@@ -33,33 +35,33 @@ export class RiverfolkBot extends Bot {
       isActive: true
     },
     {
-      traitName: 'Lords of the Forest',
-      name: 'RuleLordsOfTheForest',
-      text: 'TextLordsOfTheForest',
+      traitName: 'Market',
+      name: 'RuleMarket',
+      text: 'TextMarket',
       isActive: true
     },
     {
-      traitName: 'Nobility',
-      name: 'RuleNobility',
-      text: 'TextNobility',
+      traitName: 'Garrison',
+      name: 'RuleGarrison',
+      text: 'TextGarrison',
       canToggle: true
     },
     {
-      traitName: 'Relentless',
-      name: 'RuleRelentless',
-      text: 'TextRelentless',
+      traitName: 'Greedy',
+      name: 'RuleGreedy',
+      text: 'TextGreedy',
       canToggle: true
     },
     {
-      traitName: 'Swoop',
-      name: 'RuleSwoop',
-      text: `TextSwoop`,
+      traitName: 'Ferocious',
+      name: 'RuleFerocious',
+      text: `TextFerocious`,
       canToggle: true
     },
     {
-      traitName: 'War Tax',
-      name: 'RuleWarTax',
-      text: `TextWarTax`,
+      traitName: 'Involved',
+      name: 'RuleInvolved',
+      text: `TextInvolved`,
       canToggle: true
     },
   ];

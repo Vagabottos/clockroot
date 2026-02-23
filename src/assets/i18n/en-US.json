@@ -172,7 +172,7 @@
       "Normal": "Nothing is changed.",
       "Challenging": "Whenever you **Recruit**, also place two warriors in the ordered clearing you rule of highest priority.",
       "Nightmare": "Whenever you **Recruit**, also place two warriors in the ordered clearing you rule of highest priority. At the end of Evening, score one victory point."
-    },
+    }, 
     "Electric Eyrie (DC)": {
       "Easy": "Whenever you **Recruit** for bird, instead place one fewer warrior.",
       "Normal": "Nothing is changed.",
@@ -196,6 +196,30 @@
       "Normal": "Nothing is changed.",
       "Challenging": "Whenever you **Recruit**, instead place five warriors.",
       "Nightmare": "Whenever you **Recruit**, instead place five warriors. At the end of Evening, score one victory point per two players (rounded up)."
+    },
+    "Cogwheel Corvids": {  
+      "Easy": "Whenever you **Recruit**, instead place only one warrior in each of two ordered clearings.",  
+      "Normal": "Whenever you **Recruit**, instead place two warriors in each of two ordered clearings.",  
+      "Challenging": "Whenever you **Recruit**, instead place three warriors in each of two ordered clearings.",  
+      "Nightmare": "Whenever you **Recruit**, instead place three warriors in each of two ordered clearings. At the end of Evening, score one victory point per two players (rounded up)."
+    },
+    "Drillbit Duchy": {  
+      "Easy": "Whenever you **Recruit**, instead recruit only one warrior, plus one per mole showing, into the burrow.",  
+      "Normal": "Whenever you **Recruit**, instead recruit two warriors, plus one per mole showing, into the burrow.",  
+      "Challenging": "Whenever you **Recruit**, instead recruit three warriors, plus one per mole showing, into the burrow.",  
+      "Nightmare": "Whenever you **Recruit**, instead recruit three warriors, plus one per mole showing, into the burrow. At the end of Evening, score one victory point per two players (rounded up)."
+    },
+    "Logical Lizards": {  
+      "Easy": "Whenever you perform **Rituals**, reveal only three cards from your Lost Souls.",  
+      "Normal": "Whenever you perform **Rituals**, reveal only four cards from your Lost Souls.",  
+      "Challenging": "Whenever you perform **Rituals**, reveal five cards from your Lost Souls.",  
+      "Nightmare": "Whenever you perform **Rituals**, reveal five cards from your Lost Souls. At the end of Evening, score one victory point per two players (rounded up)."
+    },
+    "Riverfolk Robots": {  
+      "Easy": "Whenever you **Build and Garrison**, place no warrior at the trade post.",  
+      "Normal": "Whenever you **Build and Garrison**, place one warrior at the trade post.",  
+      "Challenging": "Whenever you **Build and Garrison**, place two warriors at the trade post.",  
+      "Nightmare": "Whenever you **Build and Garrison**, place two warriors at the trade post. At the end of Evening, score one victory point per two players (rounded up)."
     }
   },
   "SpecificRules": {
@@ -256,7 +280,53 @@
     "TextHospitalsDC": "At the end of battle as defender, if two or more Marquise warriors were removed in the battle, place one warrior in the clearing with the keep token.",
     "RuleIronWill": "Iron Will",
     "TextIronWill": "Whenever you **Recruit** in Escalated Daylight, place double the warriors.",
-    "TextIronWillDC": "**Repeat Daylight** may happen twice per turn instead of only once."
+    "TextIronWillDC": "**Repeat Daylight** may happen twice per turn instead of only once.",
+
+    "RuleEmbeddedAgents": "Embedded Agents",
+    "TextEmbeddedAgents": "In battle as defender with a facedown plot token, you deal an extra hit.",
+    "RuleBackupPlans": "Backup Plans",
+    "TextBackupPlans": "Whenever a plot token is removed, place a warrior in the clearing from which the plot was removed.",
+    "RuleVendetta": "Vendetta",
+    "TextVendetta": "Whenever any plot token is flipped, it has the When Flipped effect of a Bomb plot.",
+    "RuleMastermind": "Mastermind",
+    "TextMastermind": "You now **Plot** twice per turn.",
+    "RuleGamble": "Gamble",
+    "TextGamble": "Whenever a plot would be flipped, the human with the most faction pieces in the clearing must first guess the plot type. If they're correct, the plot flips and scores, but does not resolve its When Flipped effect. Then they remove the plot (scoring a point). If they're incorrect, you score +1 Victory Point.",
+
+    "RuleCostOfErrors": "Cost of Errors",
+    "TextCostOfErrors": "Whenever any number of Duchy buildings are removed, remove the crown from the bottommost swayed minister.",
+    "RuleFoundations": "Foundations",
+    "TextFoundations": "Whenever **Cost of Errors** triggers, it now removes the crown from the bottommost swayed minister whose suit matches a clearing from which a building was removed.",
+    "RuleInvestors": "Investors",
+    "TextInvestors": "Whenever a human triggers **Cost of Errors**, they must discard a card that matches a clearing from which a Duchy building was removed. If they discard a matching card, the Duchy loses one victory point. If they cannot, the Duchy sways a minister, as in the sway action, but the minister must also match a clearing of removal",
+    "RuleInvaders": "Invaders",
+    "TextInvaders": "The clearing tie for the dig action is now 'such a clearing that has the most enemy buildings, then the fewest enemy warriors.' If you cannot build because no building slots are open, battle in each clearing instead.",
+    "RuleOverwhelm": "Overwhelm",
+    "TextOverwhelm": "You now **Dig** twice per turn, and it now requires and moves only three warriors (not four.)",
+
+    "RulePilgrims": "Pilgrims",
+    "TextPilgrims": "You rule clearings that have a garden.",
+    "RuleRobotRevenge": "Robot Revenge",
+    "TextRobotRevenge": "Whenever any Lizard warriors are removed outside your turn, place one of them in your Acolytes box.",
+    "RuleFanatics": "Fanatics",
+    "TextFanatics": "Whenever you **Convert**, battle in that clearing after converting the warrior. In this battle deal an extra hit. * **Player Tie:** Target player with most defenseless buildings, then most points.*.",
+    "RuleMartyrs": "Martyrs", 
+    "TextMartyrs": "Whenever you perform a bird ritual, also place a warrior from your supply into your Acolytes box.",
+    "RuleErratic": "Erratic",
+    "TextErratic": "At the end of your turn, draw a card and add it to your Lost Souls.",
+    "RuleSpiteful": "Spiteful",
+    "TextSpiteful": "Whenever you **Crusade** score one extra victory point if you remove any tokens.",
+
+    "RuleMarket": "Market",
+    "TextMarket": "The market is a row of face-up cards, the order of its cards cannot change.",
+    "RuleGarrison": "Garrison",
+    "TextGarrison": "As defender in battle, you are never defenseless, and your trade posts each add one to your maximum rolled hits.",
+    "RuleGreedy": "Greedy",
+    "TextGreedy": "Score +1 victory point whenever the player with the most points buys any number of your services.",
+    "RuleFerocious": "Ferocious",
+    "TextFerocious": "As attacker in battle, your maximum rolled hits is always three.",
+    "RuleInvolved": "Involved",
+    "TextInvolved": "If a human does not buy your Mercenaries service on their turn, treat your warriors as if all of that player's enemies bought Mercenaries. The Vagabond can buy Mercenaries to avoid this penalty but does not benefit from the service."
   },
   "SpecificBirdsong": {
     "Electric Eyrie": {
@@ -301,6 +371,23 @@
     "Mechanical Marquise (DC)": {
       "RevealOrder": "Reveal an order card.",
       "CraftOrder": "Craft order card for **vp:1** if it shows an available item."
+    },
+    "Cogwheel Corvids": {
+      "Reveal": "Reveal an order card.",
+      "Recruit": "Place one warrior in each clearing with a face-down plot token."
+    },
+    "Drillbit Duchy": {
+      "Reveal": "Reveal an order card.",
+      "Recruit": "Place two warriors in the burrow and one in the clearing with the keep."
+    },
+    "Logical Lizards": {
+      "Reveal": "Reveal an order card.",
+      "Conspiracy": "Spend acolytes to perform Conspiracies in the Outcast suit (**Sanctify**, **Convert**, or **Crusade**).",
+      "Adjust": "If the Outcast suit is Hated, Conspiracies cost one fewer acolyte."
+    },
+    "Riverfolk Robots": {
+      "Reveal": "Reveal an order card.",
+      "Dividends": "If your Payments box is empty, place two warriors in the highest priority river clearing."
     }
   },
   "SpecificDaylight": {
@@ -386,6 +473,26 @@
       "Suit1": "Recruit {{totalWarriors}} warriors evenly spread across **card:{{suit}}** clearings you rule. Score **vp:1** for every two warriors that could not be recruited.<br>_(**Clearing tie**: Place warriors into clearings with highest priority first.)_",
       "Suit2": "Build a **building:{{building}}** in a clearing you rule with the most Marquise warriors.",
       "Suit3": "Move all but three of your warriors from each **card:{{suit}}** clearing to the adjacent clearing with the most enemy pieces. Each warrior may only move once during this action."
+    },
+    "Cogwheel Corvids": {
+      "Flip": "Flip the plot token in the highest priority clearing. Resolve its effect.",
+      "Move": "Move warriors from the highest priority clearing to adjacent clearings with the most enemy pieces.",
+      "Plot": "Place one face-down plot token in the ordered clearing with the most Corvid warriors and no plot token."
+    },
+    "Drillbit Duchy": {
+      "Build": "Place a building matching the ordered suit in the clearing you rule with the most Duchy warriors.",
+      "Move": "Move all but two warriors from the ordered clearing to the adjacent clearing with the most enemy pieces.",
+      "Battle": "**Battle** in the clearing you moved to."
+    },
+    "Logical Lizards": {
+      "Build": "Place a garden in the ordered clearing with the most Lizard warriors.",
+      "Recruit": "**Recruit** one warrior in each clearing matching the ordered suit.",
+      "Battle": "**Battle** in the ordered clearing with the most enemy pieces."
+    },
+    "Riverfolk Robots": {
+      "Move": "Move along the river to the clearing with the most enemy pieces.",
+      "Battle": "**Battle** in your clearing with the most enemy pieces.",
+      "Build": "If you rule the clearing, remove one warrior to place a trade post matching the clearing's suit."
     }
   },
   "SpecificEvening": {
@@ -434,6 +541,25 @@
       "Score": "Score {{score}} VP.",
       "Discard": "Discard the order card.",
       "NightmareScore": "Score **vp:1** for every two players (rounded up)."
+    },
+    "Cogwheel Corvids": {
+      "Score": "Score **vp:1** for each face-up plot token on the map.",
+      "Discard": "Discard the order card."
+    },
+    "Drillbit Duchy": {
+      "Sway": "Sway the topmost available minister and resolve its effect.",
+      "Score": "Score victory points equal to the number of swayed ministers.",
+      "Discard": "Discard the order card."
+    },
+    "Logical Lizards": {
+      "Score": "Score victory points based on the number of gardens on the map matching the ordered suit.",
+      "Outcast": "Update the outcast marker to the suit most discarded this turn.",
+      "Discard": "Discard the order card."
+    },
+    "Riverfolk Robots": {
+      "Score": "Score victory points based on the number of trade posts on the map.",
+      "Payments": "Score **vp:1** for each warrior in your Payments box, then return them to their owners.",
+      "Discard": "Discard the order card."
     }
   },
   "SpecificExtra": {
@@ -484,6 +610,21 @@
       "SatchelExhausted": "Exhausted",
       "SatchelDamaged": "Damaged",
       "SatchelBattleTrack": "Battle"
+    },
+    "Cogwheel Corvids": {
+      "Exposure": "Exposure: During their turn, an enemy in a clearing with a face-down plot token may show you a card matching that clearing to guess the token's type. If correct, remove the token and the enemy scores **vp:1**. If incorrect, the enemy gives you the card."
+    },
+    "Drillbit Duchy": {
+      "PriceOfFailure": "The Price of Failure: Whenever a Duchy building is removed, the Duchy loses their highest-tier swayed Minister. They do not lose cards.",
+      "Burrow": "The Burrow: The Duchy has a Burrow on their player board. Pieces in the Burrow are not on the map and cannot be affected by other players."
+    },
+    "Logical Lizards": {
+      "Revenge": "Revenge: Whenever an enemy removes a Garden, the Lizards gain one Acolyte.",
+      "Pilgrims": "Pilgrims: The Lizards rule any clearing with a Garden, regardless of the number of pieces."
+    },
+    "Riverfolk Robots": {
+      "Services": "Purchasing Services: At the start of their Birdsong, an enemy may purchase one Riverfolk service (Hand Card, Riverboats, or Mercenaries) by placing two of their warriors into the Riverfolk's Payments box.",
+      "Export": "Export: Whenever an enemy purchases a service, the Riverfolk score **vp:1**."
     }
   },
   "ToastMessages": {

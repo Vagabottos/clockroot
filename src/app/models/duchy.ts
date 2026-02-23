@@ -9,7 +9,9 @@ export class DuchyBot extends Bot {
   public setupRules = [
     `Setup0`,
     `Setup1`,
-    `Setup3`
+    `Setup2`,
+    `Setup3`,
+    `Setup4`
   ];
 
   public difficultyDescriptions = {
@@ -29,37 +31,37 @@ export class DuchyBot extends Bot {
     {
       traitName: 'Hates Surprises',
       name: 'RuleHatesSurprises',
-      text: 'TextHatesSurprises',
+      text: `TextHatesSurprises`,
       isActive: true
     },
     {
-      traitName: 'Lords of the Forest',
-      name: 'RuleLordsOfTheForest',
-      text: 'TextLordsOfTheForest',
+      traitName: 'Cost of Errors',
+      name: 'RuleCostOfErrors',
+      text: `TextCostOfErrors`,
       isActive: true
     },
     {
-      traitName: 'Nobility',
-      name: 'RuleNobility',
-      text: 'TextNobility',
+      traitName: 'Invaders',
+      name: 'RuleInvaders',
+      text: `TextInvaders`,
       canToggle: true
     },
     {
-      traitName: 'Relentless',
-      name: 'RuleRelentless',
-      text: 'TextRelentless',
+      traitName: 'Overwhelm',
+      name: 'RuleOverwhelm',
+      text: 'TextOverwhelm',
       canToggle: true
     },
     {
-      traitName: 'Swoop',
-      name: 'RuleSwoop',
-      text: `TextSwoop`,
+      traitName: 'Foundations',
+      name: 'RuleFoundations',
+      text: 'TextFoundations',
       canToggle: true
     },
     {
-      traitName: 'War Tax',
-      name: 'RuleWarTax',
-      text: `TextWarTax`,
+      traitName: 'Investors',
+      name: 'RuleInvestors',
+      text: 'TextInvestors',
       canToggle: true
     },
   ];
