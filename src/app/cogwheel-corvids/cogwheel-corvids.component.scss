@@ -17,8 +17,8 @@ ion-toolbar {
   grid-template-columns: repeat(4, 1fr);
   gap: 2em;
   margin-top: 15px;
-  margin-left: 5em;
-  margin-right: 5em;
+  margin-left: 2.5em;
+  margin-right: 2.5em;
 }
 
 .plot-cell {
@@ -41,12 +41,12 @@ ion-toolbar {
   height: 2.5em;
   width: .5em;
   background: rgba(0, 0, 0, 0.2);
-  margin: 0 2em;
+  margin: 0 1em;
   border-radius: 1px;
 }
 
 .plot-toggle {
-  margin-right: 2em;
+  margin-right: 1em;
   transition: opacity 0.2s ease;
   object-fit: contain;
   

@@ -478,24 +478,28 @@
       "Suit3": "Move all but three of your warriors from each **card:{{suit}}** clearing to the adjacent clearing with the most enemy pieces. Each warrior may only move once during this action."
     },
     "Cogwheel Corvids": {
-      "Flip": "Flip the plot token in the highest priority clearing. Resolve its effect.",
-      "Move": "Move warriors from the highest priority clearing to adjacent clearings with the most enemy pieces.",
-      "Plot": "Place one face-down plot token in the ordered clearing with the most Corvid warriors and no plot token."
+      "Battle": "**Battle** in each of two **card:{{suit}}** clearings. (Defender Tie: Player with the most buildings and tokens there, then with the most points.)",
+      "Move": "**Move** all but two warriors from each **card:{{suit}}** clearing with a face-up plot to an adjacent clearing with no plot. (Clearing Tie: Most Corvid Warriors.) (No Such Destination: Lowest Priority Clearing.)",
+      "Plot": "In the **card:{{suit}}** clearing with the most Corvid warriors and no plot, remove one Corvid warrior there to place a random facedown plot there.",
+      "PlotThickens": "In a clearing that has no plot and three or more Corvid warriors, remove a Corvid warrior from there to place a random facedown plot there. (Clearing Tie: Most Corvid Warriors.)"
     },
     "Drillbit Duchy": {
-      "Build": "Place a building matching the ordered suit in the clearing you rule with the most Duchy warriors.",
-      "Move": "Move all but two warriors from the ordered clearing to the adjacent clearing with the most enemy pieces.",
-      "Battle": "**Battle** in the clearing you moved to."
+      "Dig": "If the Burrow has four or more warriors, place a tunnel in a **card:{{suit}}** clearing with no runnel and no Duchy buildings. Also move four warriors from the burrow to the tunnel.",
+      "Battle": "**Battle** in each **card:{{suit}}** clearing. (Defender Tie: Player with the most buildings, then the most pieces, then the most points.)",
+      "Build": "**Build** in the clearing you rule with the most Duchy warriors. Place a citadel if you have 9+ warriors in your supply. Otherwise, place a market. Score **vp:1** if you cannot place a building while one is in supply.",
+      "Ministers": "Take the actions of all your swayed ministers from top to bottom."
     },
     "Logical Lizards": {
-      "Build": "Place a garden in the ordered clearing with the most Lizard warriors.",
-      "Recruit": "**Recruit** one warrior in each clearing matching the ordered suit.",
-      "Battle": "**Battle** in the ordered clearing with the most enemy pieces."
+      "RitualsBird": "Take a Lizard warrior from the clearing with the most Lizard warriors, place it in the Acolytes box. This card is discarded and is not placed in the Lost Souls pile.",
+      "RitualsOther": "Place a warrior in a **card:{{suit}}** clearing. Then, if you rule that clearing, place a matching garden token there. (Clearing Tie: Place warrior in clearing with any open building slot, then most enemy buildings.) "
     },
     "Riverfolk Robots": {
-      "Move": "Move along the river to the clearing with the most enemy pieces.",
-      "Battle": "**Battle** in your clearing with the most enemy pieces.",
-      "Build": "If you rule the clearing, remove one warrior to place a trade post matching the clearing's suit."
+      "BuildAndGarrison": "Place a trade post and a warrior in an ordered clearing with no trade post. (Clearing Tie: Clearing with pieces of player who has the most warriors in payments.)",
+      "RecruitOther": "**Recruit** one warrior in each **card:{{suit}}** clearing. (Not Enough Warriors: Place warriors on clearings with the highest priority.)",
+      "RecruitBird": "**Recruit** one warrior in each clearing on the river. (Not Enough Warriors: Place warriors on clearings with the highest priority.)",
+      "Organize": "If you have Protectionism: Score **vp:1** and place two warriors in a clearing that has Riverfolk pieces and the most enemy pieces..",
+      "BattleShield": "Battle in each clearing. (Defender Tie: Player who has the fewest warriors in payments.)",
+      "BattleSword": "Battle in each **card:{{suit}}** clearing. (Defender Tie: Player who has the fewest warriors in payments.)"
     }
   },
   "SpecificEvening": {
@@ -546,23 +550,25 @@
       "NightmareScore": "Score **vp:1** for every two players (rounded up)."
     },
     "Cogwheel Corvids": {
-      "Score": "Score **vp:1** for each face-up plot token on the map.",
+      "Score": "Score **vp:1** per face-up extortion plot.",
       "Discard": "Discard the order card."
     },
     "Drillbit Duchy": {
-      "Sway": "Sway the topmost available minister and resolve its effect.",
-      "Score": "Score victory points equal to the number of swayed ministers.",
+      "Rally": "In each **card:{{suit}}** clearing with no Duchy buildings and two or fewer warriors, move all Duchy warriors to an adjacent clearing with a Duchy building. Then in each clearing you rule, place all but four Duchy warriors in the Burrow. (Target Clearing Tie: Fewest Duchy warriors.) (No Such Clearing: Place the warriors that would have moved in the Burrow.).",
+      "Score": "Score **vp:1** per market on the map",
+      "Sway": "Place a crown on the topmost ordered, unswayed, minister. (No Such Minister: Sway the bottommost unswayed minister.)",
       "Discard": "Discard the order card."
     },
     "Logical Lizards": {
-      "Score": "Score victory points based on the number of gardens on the map matching the ordered suit.",
-      "Outcast": "Update the outcast marker to the suit most discarded this turn.",
-      "Discard": "Discard the order card."
+      "Score": "Score **vp:1** worth the rightmost empty garden space.",
+      "DiscardLostSouls": "Discard Lost Souls.",
+      "ReturnRevealedCards": "Return revealed cards to the top of your Lost Souls, preserving their previous order.",
+      "Craft": "**Craft** the top card of the deck for **vp:1** if it shows an available item. Add it to your Lost Souls (not the discard.)"
     },
     "Riverfolk Robots": {
-      "Score": "Score victory points based on the number of trade posts on the map.",
-      "Payments": "Score **vp:1** for each warrior in your Payments box, then return them to their owners.",
-      "Discard": "Discard the order card."
+      "Score": "Score **vp:1** per warrior of the player with the most warriors in Payments, then remove those warriors from Payments.",
+      "Racketeering": "If Protectionism: From each clearing, take all but two Riverfolk warriors and place them in Payments.",
+      "Discard": "Discard the leftmost card from the Market. If ProtectionismShield: Discard the leftmost card from the Market again."
     }
   },
   "SpecificExtra": {

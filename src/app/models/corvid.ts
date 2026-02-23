@@ -95,14 +95,22 @@ export class CorvidBot extends Bot {
   }
 
   public daylight(translate: TranslateService) {
+    const suit = this.customData.currentSuit;
+
     return [
-      this.createMetaData('text', '', translate.instant(`SpecificDaylight.Cogwheel Corvids.Flip`)),
+      this.createMetaData('text', '', translate.instant(`SpecificDaylight.Cogwheel Corvids.Battle`,{ suit })),
+      this.createMetaData('text', '', translate.instant(`SpecificDaylight.Cogwheel Corvids.Move`,{ suit })),
+      this.createMetaData('text', '', translate.instant(`SpecificDaylight.Cogwheel Corvids.Plot`,{ suit })),
+      this.createMetaData('text', '', translate.instant(`SpecificDaylight.Cogwheel Corvids.PlotThickens`)),
     ]
   }
 
   public evening(translate: TranslateService) {
+    const suit = this.customData.currentSuit;
+
     return[
-      this.createMetaData('text', '', translate.instant(`SpecificEvening.Cogwheel Corvids.Score`)),
+      this.createMetaData('text', '', translate.instant(`SpecificEvening.Cogwheel Corvids.Score`,{ suit })),
+      this.createMetaData('text', '', translate.instant(`SpecificEvening.Cogwheel Corvids.Discard`))
     ];
   }
 }

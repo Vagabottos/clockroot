@@ -71,7 +71,7 @@ export class LizardBot extends Bot {
       canToggle: true
     },
   ];
-
+  // This one is gonna need a sermon on the mount with how whacky Lizards is. SpecificExtras may need to be used to address Lost Souls, Conspiracies, Acolytes... I'll probably think about this one last.
   public customData = {
     decree: {
       fox: 0,

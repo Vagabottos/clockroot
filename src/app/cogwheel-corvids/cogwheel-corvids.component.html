@@ -138,7 +138,7 @@
     <ion-card>
       <ion-card-header>
         <h2 class="birdsong-has-buttons">
-          {{ 'Sections.Birdsong' | translate }} <!-- Need to implement suit changing feature to Recruit -->
+          {{ 'Sections.Birdsong' | translate }}
           <ion-button class="ion-margin-start" (click)="changeSuit(suit)"
                       [class.transparent]="bot.customData.currentSuit !== suit"
                       *ngFor="let suit of ['bird', 'fox', 'bunny', 'mouse']">

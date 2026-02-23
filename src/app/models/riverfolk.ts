@@ -65,7 +65,7 @@ export class RiverfolkBot extends Bot {
       canToggle: true
     },
   ];
-
+  //Will need a check for protectionism to determine several key actions, will need a tracker for trade posts and services and payments? May be an annoying one but seems straight forward overall
   public customData = {
     decree: {
       fox: 0,
