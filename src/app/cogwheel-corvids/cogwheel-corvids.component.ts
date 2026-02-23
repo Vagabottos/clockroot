@@ -8,15 +8,16 @@ import { TranslateService } from '@ngx-translate/core';
   templateUrl: './cogwheel-corvids.component.html',
   styleUrls: ['./cogwheel-corvids.component.scss'],
 })
-export class CorvidComponent //implements OnInit
+export class CorvidComponent implements OnInit
 {
 
   @Input() public bot: CorvidBot;
 
-  public buildings = [
-    { suit: 'fox', building: 'sawmill' },
-    { suit: 'bunny', building: 'workshop' },
-    { suit: 'mouse', building: 'recruiter' }
+public plots = [
+    { type: 'bomb', name: 'Bomb' },
+    { type: 'snare', name: 'Snare' },
+    { type: 'extortion', name: 'Extortion' },
+    { type: 'raid', name: 'Raid' }
   ];
 
   constructor(
@@ -24,13 +25,21 @@ export class CorvidComponent //implements OnInit
     public translateService: TranslateService
   ) { }
 
+  ngOnInit() {
+    this.plots.forEach(p => {
+      this.bot.customData.plots[p.type] = this.bot.customData.plots[p.type] || [0, 0];
+    });
+  }
+
   changeSuit(suit) {
     this.bot.customData.currentSuit = suit;
     this.botService.saveBots();
   }
-  
-//  ngOnInit() {
-//    this.bot.customData.buildings = this.bot.customData.buildings || [];
-//  }
+
+  // Cycles the plot token: 0 (Supply) -> 1 (Face Down) -> 2 (Face Up) -> 0 (Supply)
+  cyclePlot(type: string, index: number) {
+    this.bot.customData.plots[type][index] = (this.bot.customData.plots[type][index] + 1) % 3;
+    this.botService.saveBots();
+  }
 
 }

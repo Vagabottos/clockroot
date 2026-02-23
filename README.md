@@ -77,6 +77,12 @@ src
 Problems I Encountered  
 -Oops I broke the display of the page  
 &emsp;Ensure that the app- name in home.page.html is the same as the one in your faction-component.ts  
+&emsp;Additionally, you may need to edit the .scss of the faction component to include the following block to force it to use the full width
+:host {  
+  display: block;  
+  width: 100%;  
+  --theme-color: #e07a37;  
+}
 
 ### Customize the Faction
 

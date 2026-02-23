@@ -71,11 +71,11 @@ export class CorvidBot extends Bot {
 
   public customData = {
     currentSuit: 'bird',
-
-    buildings: {
-      fox: [],
-      bunny: [],
-      mouse: []
+    plots: {
+      bomb: [0, 0],       // 0 = Plot in Supply, 1 = Face Down, 2 = Face Up
+      snare: [0, 0],
+      extortion: [0, 0],
+      raid: [0, 0]
     }
   };
 
@@ -86,7 +86,9 @@ export class CorvidBot extends Bot {
   public birdsong(translate: TranslateService) {
     return [
       this.createMetaData('text', '', translate.instant(`SpecificBirdsong.Cogwheel Corvids.RevealOrder`)),
-      this.createMetaData('score', 1, translate.instant(`SpecificBirdsong.Cogwheel Corvids.CraftOrder`))
+      this.createMetaData('score', 1, translate.instant(`SpecificBirdsong.Cogwheel Corvids.CraftOrder`)),
+      this.createMetaData('text', '', translate.instant(`SpecificBirdsong.Cogwheel Corvids.RecruitOrder`)),
+      this.createMetaData('text', '', translate.instant(`SpecificBirdsong.Cogwheel Corvids.Flip`))
     ];
   }
 

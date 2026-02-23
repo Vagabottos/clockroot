@@ -115,28 +115,29 @@
   <ion-item *ngIf="bot.setupHidden">
     <ion-card>
       <ion-card-header>
-        <h2>{{ 'Sections.Buildings' | translate }}</h2>
+        <h2>Plots</h2>
       </ion-card-header>
       <ion-card-content>
-        <div *ngFor="let building of buildings">
-          <div class="building-row">
-            <div class="row-icon">
-              <img [src]="'assets/inicon/card-' + building.suit + '.png'" />
-            </div>
+        <div class="building-row wrap">
+          <ng-container *ngFor="let plot of plots">
+            <div class="flip-container" *ngFor="let token of [0, 1]" (click)="cyclePlot(plot.type, token)">
+              <div class="row-icon">
+                
+                <div class="flip-front" *ngIf="bot.customData.plots[plot.type][token] === 0" style="opacity: 0.2; border: 2px dashed #999;">
+                  {{ plot.name[0] }}
+                </div>
 
-            <div class="flip-container" *ngFor="let num of [0, 1, 2, 3, 4, 5]">
-              <div class="flip-icon">
-                <img [src]="'assets/inicon/building-' + building.building + '.png'"
-                      class="flip-back"
-                      [class.transparent]="bot.customData.buildings[building.suit][num]"
-                      (click)="toggleBuilding(building.suit, num)" />
+                <div class="flip-front" *ngIf="bot.customData.plots[plot.type][token] === 1" style="background-color: #555; color: white;">
+                  ?
+                </div>
 
-                <div class="flip-front" 
-                      *ngIf="bot.customData.buildings[building.suit][num]"
-                      (click)="toggleBuilding(building.suit, num)">+{{ num }}</div>
+                <div class="flip-front" *ngIf="bot.customData.plots[plot.type][token] === 2" style="background-color: var(--theme-color); color: white; font-weight: bold;">
+                  {{ plot.name[0] }} <!-- Adding in a container with the plots as a quick reference (icon with brief description) -->
+                </div>
+
               </div>
             </div>
-          </div>
+          </ng-container>
         </div>
       </ion-card-content>
     </ion-card>
@@ -146,7 +147,7 @@
     <ion-card>
       <ion-card-header>
         <h2 class="birdsong-has-buttons">
-          {{ 'Sections.Birdsong' | translate }}
+          {{ 'Sections.Birdsong' | translate }} <!-- Need to implement suit changing feature to Recruit -->
           <ion-button class="ion-margin-start" (click)="changeSuit(suit)"
                       [class.transparent]="bot.customData.currentSuit !== suit"
                       *ngFor="let suit of ['bird', 'fox', 'bunny', 'mouse']">
