@@ -121,6 +121,31 @@
       "Setup2": "Place a warrior in each clearing, except the corner clearing diagonally opposite from the keep. Place an extra warrior in the clearing with the keep token. _(Place 12 warriors in total.)_",
       "Setup3": "Place 1 sawmill, 1 workshop and 1 recruiter randomly among the clearings adjacent to the clearing with the keep token with up to one building per clearing.",
       "Setup4": "Collect your remaining 15 buildings and place them near you."
+    },
+    "Cogwheel Corvids": {
+      "Setup0": "Form supplies of 15 warriors and 8 plot tokens face down.",
+      "Setup1": "Place 1 Warrior in the lowest priority clearing of each suit (3 total)."
+    },
+    "Drillbit Duchy": {
+      "Setup0": "Form supplies of 20 warriors, 3 tunnel tokens, and 9 crowns. ",
+      "Setup1": "Place the Burrow board near the map.",
+      "Setup2": "Place 2 warriors and 1 tunnel in a corner clearing that is not the starting corner clearing. Then place 2 warriors in each clearing adjacent to the chosen corner clearing, except the Burrow.",
+      "Setup3": "Place 3 citadels and 3 markets on your matching Building spaces.",
+      "Setup4": "Draw 2 cards and discard them. For each, place a crown on the topmost matching unswayed minister on your faction board."
+    },
+    "Logical Lizards": {
+      "Setup0": "Form a supply of 25 warriors.",
+      "Setup1": "Place 4 warriors and 1 garden of matching printed suit in a random corner clearing that is not the starting corner clearing of another bot (preferably diagonally opposite.) Then place 1 warrior in each adjacent clearing.",
+      "Setup2": "Place the outcast marker on the Sanctify space of the Conspiracy track on your faction board.",
+      "Setup3": "Place your 14 remaining gardens on the matching spaces of your Gardens tracks from right to left.",
+      "Setup4": "Draw 3 cards and place them face up in your Lost Souls in the order drawn."
+    },
+    "Riverfolk Robots": {
+      "Setup0": "Form a supply of 15 warriors..",
+      "Setup1": "Place 1 warrior in each clearing on the river.",
+      "Setup2": "Place 9 trade posts on the matching spaces of your Trade Posts tracks.",
+      "Setup3": "Place 1 warrior in your Payments box.",
+      "Setup4": "Draw 5 cards and add them to your Market."
     }
   },
   "SpecificDifficulty": {
