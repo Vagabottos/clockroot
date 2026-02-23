@@ -375,7 +375,7 @@
     "Cogwheel Corvids": {
       "RevealOrder": "Reveal an order card.",
       "CraftOrder": "Craft order card for **vp:1** if it shows an available item.",
-      "RecruitOrder": "**Recruit** two warriors in each of two ordered clearings. (Priority to clearings without plot tokens then with most Corvid warriors.)",
+      "RecruitOrder": "**Recruit** two warriors in each of two **card:{{suit}}** clearings. (Priority to clearings without plot tokens then with most Corvid warriors.)",
       "Flip": "**Flip** each plot token (no warrior required). Each time you flip a plot, score +1 victory point per face-up plot on the map, then resolve its When Flipped effect if any."
     },
     "Drillbit Duchy": {

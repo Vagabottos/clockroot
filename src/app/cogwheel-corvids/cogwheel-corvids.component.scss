@@ -1,6 +1,7 @@
-
 :host {
   --theme-color: #e07a37;
+  display: block;   /* Add this */
+  width: 100%;      /* Add this */
 }
 
 ion-toolbar {
@@ -8,11 +9,53 @@ ion-toolbar {
 }
 
 .flip-front {
-  border-color: var(--theme-color) !important;;
+  border-color: var(--theme-color) !important;
 }
 
-:host {
-  display: block;   /* Add this */
-  width: 100%;      /* Add this */
-  --theme-color: #e07a37;
+.plot-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.plot-cell {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 8px;
+  background: rgba(0, 0, 0, 0.03);
+}
+
+.plot-label {
+  width: 5em;
+  height: 5em;
+  object-fit: contain;
+}
+
+.divider {
+  height: 2.5em;
+  width: .5em;
+  background: rgba(0, 0, 0, 0.2);
+  margin: 0 2em;
+  border-radius: 1px;
+}
+
+.plot-toggle {
+  margin-right: 2em;
+  transition: opacity 0.2s ease;
+  object-fit: contain;
+  
+  &.in-supply {
+    opacity: 0.3; /* Fades the plot-back.png to indicate it's not on the board yet */
+  }
+}
+
+.plot-icon {
+  max-width: none;
+  max-height: none;
+  width: 5em;
+  height: 5em;
 }

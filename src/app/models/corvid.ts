@@ -84,10 +84,12 @@ export class CorvidBot extends Bot {
   }
 
   public birdsong(translate: TranslateService) {
+    const suit = this.customData.currentSuit;
+
     return [
       this.createMetaData('text', '', translate.instant(`SpecificBirdsong.Cogwheel Corvids.RevealOrder`)),
       this.createMetaData('score', 1, translate.instant(`SpecificBirdsong.Cogwheel Corvids.CraftOrder`)),
-      this.createMetaData('text', '', translate.instant(`SpecificBirdsong.Cogwheel Corvids.RecruitOrder`)),
+      this.createMetaData('text', '', translate.instant(`SpecificBirdsong.Cogwheel Corvids.RecruitOrder`,{ suit })),
       this.createMetaData('text', '', translate.instant(`SpecificBirdsong.Cogwheel Corvids.Flip`))
     ];
   }

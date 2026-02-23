@@ -118,26 +118,17 @@
         <h2>Plots</h2>
       </ion-card-header>
       <ion-card-content>
-        <div class="building-row wrap">
-          <ng-container *ngFor="let plot of plots">
-            <div class="flip-container" *ngFor="let token of [0, 1]" (click)="cyclePlot(plot.type, token)">
-              <div class="row-icon">
-                
-                <div class="flip-front" *ngIf="bot.customData.plots[plot.type][token] === 0" style="opacity: 0.2; border: 2px dashed #999;">
-                  {{ plot.name[0] }}
-                </div>
+        <div class="plot-grid">
+          <div class="plot-cell" *ngFor="let plot of plots">
+            <img class="plot-label" [src]="'assets/inicon/plot-' + plot.type + '.png'" />
+            
+            <div class="divider"></div>
 
-                <div class="flip-front" *ngIf="bot.customData.plots[plot.type][token] === 1" style="background-color: #555; color: white;">
-                  ?
-                </div>
-
-                <div class="flip-front" *ngIf="bot.customData.plots[plot.type][token] === 2" style="background-color: var(--theme-color); color: white; font-weight: bold;">
-                  {{ plot.name[0] }} <!-- Adding in a container with the plots as a quick reference (icon with brief description) -->
-                </div>
-
-              </div>
-            </div>
-          </ng-container>
+            <img class="plot-toggle click-icon plot-icon" *ngFor="let token of [0, 1]"
+                [src]="getPlotIcon(plot.type, token)" 
+                [class.in-supply]="bot.customData.plots[plot.type][token] === 0"
+                (click)="cyclePlot(plot.type, token)" />
+          </div>
         </div>
       </ion-card-content>
     </ion-card>

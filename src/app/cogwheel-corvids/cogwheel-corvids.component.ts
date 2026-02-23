@@ -42,4 +42,16 @@ public plots = [
     this.botService.saveBots();
   }
 
+  // Returns the correct icon path based on the token's current state
+  getPlotIcon(type: string, index: number): string {
+    const state = this.bot.customData.plots[type][index];
+    if (state === 0 || state === 1) {
+      // 0 = In Supply (Faded), 1 = Face Down on Map
+      return 'assets/inicon/plot-back.png'; 
+    } else {
+      // 2 = Face Up on Map
+      return `assets/inicon/plot-${type}.png`; 
+    }
+  }
+
 }
