@@ -15,14 +15,16 @@ ion-toolbar {
 .plot-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
+  gap: 2em;
   margin-top: 15px;
+  margin-left: 5em;
+  margin-right: 5em;
 }
 
 .plot-cell {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   padding: 8px;

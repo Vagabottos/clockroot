@@ -115,3 +115,15 @@ https://therootdatabase.com/law/logical-lizards/en/?highlight_law=1371
 &emsp;  "Setup3": ".",  
 &emsp;  "Setup4": "."  
 &emsp;}
+
+### Some of the Dev choices for customizing
+
+How do I get the inline suits to change with the order card?  
+Look in the renderer.services.ts to see the renderer.strong formatter for how the project handles inline formatting. In the JSON input **card:{{suit}}** and then ensure that your model .ts file can reference it with lines like the following:
+const suit = this.customData.currentSuit;  
+this.createMetaData('text', '', translate.instant(`SpecificBirdsong.Cogwheel Corvids.RecruitOrder`,{ suit })),
+
+### Good references for pulling data or images
+
+https://www.therootdatabase.com/clockwork/riverfolk-robots/?lang=en  
+https://www.reddit.com/r/rootgame/comments/13gy8pe/does_anyone_have_like_pngs_of_the_meeple_icons/
