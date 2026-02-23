@@ -373,21 +373,24 @@
       "CraftOrder": "Craft order card for **vp:1** if it shows an available item."
     },
     "Cogwheel Corvids": {
-      "Reveal": "Reveal an order card.",
-      "Recruit": "Place one warrior in each clearing with a face-down plot token."
+      "RevealOrder": "Reveal an order card.",
+      "CraftOrder": "Craft order card for **vp:1** if it shows an available item.",
+      "RecruitOrder": "**Recruit** two warriors in each of two ordered clearings. (Priority to clearings without plot tokens then with most Corvid warriors.)",
+      "Flip": "**Flip** each plot token (no warrior required). Each time you flip a plot, score +1 victory point per face-up plot on the map, then resolve its When Flipped effect if any."
     },
     "Drillbit Duchy": {
-      "Reveal": "Reveal an order card.",
-      "Recruit": "Place two warriors in the burrow and one in the clearing with the keep."
+      "RevealOrder": "Reveal an order card.",
+      "CraftOrder": "Craft order card for **vp:1** if it shows an available item.",
+      "RecruitOrder": "**Recruit** two warriors, plus one per mole showing, in the burrow (remember Foremole.)"
     },
     "Logical Lizards": {
-      "Reveal": "Reveal an order card.",
-      "Conspiracy": "Spend acolytes to perform Conspiracies in the Outcast suit (**Sanctify**, **Convert**, or **Crusade**).",
-      "Adjust": "If the Outcast suit is Hated, Conspiracies cost one fewer acolyte."
+      "Outcasts": "The most common suit in your Los Souls is the order. On a tie, the order is bird.",
+      "Conspiracy": "Perform Conspiracies in ordered clearings."
     },
     "Riverfolk Robots": {
-      "Reveal": "Reveal an order card.",
-      "Dividends": "If your Payments box is empty, place two warriors in the highest priority river clearing."
+      "StockMarket": "Draw two cards and add them to the Market's right side until it has five.",
+      "CraftOrder": "Craft the first card added to the Market that shows an available item for **vp:1** and then discard it.",
+      "SetOrder": "Set order to be the rightmost Market Card."
     }
   },
   "SpecificDaylight": {

@@ -10,3 +10,9 @@ ion-toolbar {
 .flip-front {
   border-color: var(--theme-color) !important;
 }
+
+:host {
+  display: block;   /* Add this */
+  width: 100%;      /* Add this */
+  --theme-color: #e07a37;
+}

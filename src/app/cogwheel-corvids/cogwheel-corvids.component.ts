@@ -8,7 +8,8 @@ import { TranslateService } from '@ngx-translate/core';
   templateUrl: './cogwheel-corvids.component.html',
   styleUrls: ['./cogwheel-corvids.component.scss'],
 })
-export class CorvidComponent implements OnInit {
+export class CorvidComponent //implements OnInit
+{
 
   @Input() public bot: CorvidBot;
 
@@ -22,9 +23,14 @@ export class CorvidComponent implements OnInit {
     public botService: BotService,
     public translateService: TranslateService
   ) { }
-  
-  ngOnInit() {
-    this.bot.customData.buildings = this.bot.customData.buildings || [];
+
+  changeSuit(suit) {
+    this.bot.customData.currentSuit = suit;
+    this.botService.saveBots();
   }
+  
+//  ngOnInit() {
+//    this.bot.customData.buildings = this.bot.customData.buildings || [];
+//  }
 
 }

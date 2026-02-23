@@ -26,7 +26,7 @@
   </div>
 
   <ion-list lines="none" class="ion-no-padding">
-    <ion-item *ngFor="let bot of botService.bots">
+    <ion-item *ngFor="let bot of botService.bots"> <!-- Possible reason the new factions are breaking the view width? -->
       <app-marquise *ngIf="bot.name === 'Marquise'" [bot]="bot"></app-marquise>
       <app-eyrie *ngIf="bot.name === 'Eyrie'" [bot]="bot"></app-eyrie>
       <app-woodland *ngIf="bot.name === 'Woodland'" [bot]="bot"></app-woodland>
