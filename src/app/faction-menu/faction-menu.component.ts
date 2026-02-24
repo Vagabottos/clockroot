@@ -55,25 +55,26 @@ export class FactionMenuComponent implements OnInit {
   ];
 
   public expansionFactions = [
+    //{
+    //  name: 'Drillbit Duchy',
+    //  id: 'Duchy',
+    //  icon: 'duchy'
+    //},    
     {
-      name: 'Drillbit Duchy',
-      id: 'Duchy',
-      icon: 'duchy'
-    },    {
       name: 'Cogwheel Corvids',
       id: 'Corvid',
       icon: 'corvid'
-    },
-        {
-      name: 'Logical Lizards',
-      id: 'Lizard',
-      icon: 'lizard'
-    },
-        {
-      name: 'Riverfolk Robots',
-      id: 'Riverfolk',
-      icon: 'riverfolk'
-    }
+    }//,
+    //    {
+    //  name: 'Logical Lizards',
+    //  id: 'Lizard',
+    //  icon: 'lizard'
+    //},
+    //    {
+    //  name: 'Riverfolk Robots',
+    //  id: 'Riverfolk',
+    //  icon: 'riverfolk'
+    //}
   ];
 
   constructor(

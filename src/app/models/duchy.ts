@@ -67,14 +67,26 @@ export class DuchyBot extends Bot {
   ];
   // !!! The Duchy in Daylight will need order specific text for dig. Include a market tracker and minister tracker?
   public customData = {
+    currentSuit: 'bird',
+
+    buildings: [false, false, false, false],
     decree: {
       fox: 0,
       mouse: 0,
-      bunny: 0,
-      bird: 2
+      bird: 0,
+    },
+    
+    minister: {
+      Captain: [0]
     },
 
-    buildings: []
+    citadel: {
+      one: [0]
+    },
+
+    market: {
+      one: [0]
+    }
   };
 
   public setup(): void {

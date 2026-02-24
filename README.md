@@ -11,9 +11,10 @@ Resources:
 
 ## Running The App
 
-Requires nodejs.
+Requires nodejs and you may need to declare an option because it's using an older version of node.
 
 * `npm i`
+* export NODE_OPTIONS=--openssl-legacy-provider
 * `npm run start`
 
 ## Building The App
@@ -127,3 +128,7 @@ this.createMetaData('text', '', translate.instant(`SpecificBirdsong.Cogwheel Cor
 
 https://www.therootdatabase.com/clockwork/riverfolk-robots/?lang=en  
 https://www.reddit.com/r/rootgame/comments/13gy8pe/does_anyone_have_like_pngs_of_the_meeple_icons/
+
+### Skipped over To-Do List
+-Address the factions being named Faction.FactionName in the menu for some reason  
+-Remake a handful of Corvid elements to be smoother such as the evening scoring  
