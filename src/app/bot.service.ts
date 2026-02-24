@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import { Bot, Difficulty, Rule, Item, BotName } from './models/bot';
-import { MarquiseBot, EyrieBot, MarquiseBotDC, EyrieBotDC, WoodlandBotDC, VagaBotDC, WoodlandBot, VagaBot } from './models';
+import { MarquiseBot, EyrieBot, MarquiseBotDC, EyrieBotDC, WoodlandBotDC, VagaBotDC, WoodlandBot, VagaBot, DuchyBot, LizardBot, CorvidBot, RiverfolkBot } from './models';
 import { AlertController, ModalController } from '@ionic/angular';
 import { PriorityModalComponent } from './priority-modal/priority-modal.component';
 
@@ -18,7 +18,11 @@ export class BotService {
     MarquiseDC: MarquiseBotDC,
     EyrieDC: EyrieBotDC,
     WoodlandDC: WoodlandBotDC,
-    VagabondDC: VagaBotDC
+    VagabondDC: VagaBotDC,
+    Duchy: DuchyBot,
+    Lizard: LizardBot,
+    Corvid: CorvidBot,
+    Riverfolk: RiverfolkBot
   };
 
   public bots: Bot[] = [];
@@ -55,6 +59,22 @@ export class BotService {
     VagabondDC: {
       icon: 'vagabond',
       fullName: 'Vagabot (DC)'
+    },
+    Duchy: {
+      icon: 'duchy',
+      fullName: 'Drillbit Duchy'
+    },
+    Lizard: {
+      icon: 'lizard',
+      fullName: 'Logical Lizards'
+    },
+    Corvid: {
+      icon: 'corvid',
+      fullName: 'Cogwheel Corvids'
+    },
+    Riverfolk: {
+      icon: 'riverfolk',
+      fullName: 'Riverfolk Robots'
     }
   };
 

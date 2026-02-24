@@ -8,7 +8,7 @@ import { PopoverController } from '@ionic/angular';
 })
 export class FactionMenuComponent implements OnInit {
 
-  public factions = [
+  public originalFactions = [
     {
       name: 'Automated Alliance',
       id: 'Woodland',
@@ -52,6 +52,29 @@ export class FactionMenuComponent implements OnInit {
       id: 'VagabondDC',
       icon: 'vagabond'
     }
+  ];
+
+  public expansionFactions = [
+    //{
+    //  name: 'Drillbit Duchy',
+    //  id: 'Duchy',
+    //  icon: 'duchy'
+    //},    
+    {
+      name: 'Cogwheel Corvids',
+      id: 'Corvid',
+      icon: 'corvid'
+    }//,
+    //    {
+    //  name: 'Logical Lizards',
+    //  id: 'Lizard',
+    //  icon: 'lizard'
+    //},
+    //    {
+    //  name: 'Riverfolk Robots',
+    //  id: 'Riverfolk',
+    //  icon: 'riverfolk'
+    //}
   ];
 
   constructor(

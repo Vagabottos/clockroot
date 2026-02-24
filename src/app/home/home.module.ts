@@ -17,6 +17,10 @@ import { MarquiseDCComponent } from '../marquise-dc/marquise-dc.component';
 import { EyrieDCComponent } from '../eyrie-dc/eyrie-dc.component';
 import { WoodlandDCComponent } from '../woodland-dc/woodland-dc.component';
 import { VagabondDCComponent } from '../vagabond-dc/vagabond-dc.component';
+import { DuchyComponent } from '../drillbit-duchy/drillbit-duchy.component';
+import { CorvidComponent } from '../cogwheel-corvids/cogwheel-corvids.component';
+import { LizardComponent } from '../logical-lizards/logical-lizards.component';
+import { RiverfolkComponent } from '../riverfolk-robots/riverfolk-robots.component';
 import { ParagraphComponent } from '../paragraph/paragraph.component';
 
 @NgModule({
@@ -36,6 +40,7 @@ import { ParagraphComponent } from '../paragraph/paragraph.component';
     HomePage, BotResourcesComponent, ParagraphComponent,
     MarquiseComponent, EyrieComponent, WoodlandComponent, VagabondComponent,
     MarquiseDCComponent, EyrieDCComponent, WoodlandDCComponent, VagabondDCComponent,
+    DuchyComponent, CorvidComponent, LizardComponent, RiverfolkComponent,
     FormatPipe
   ]
 })

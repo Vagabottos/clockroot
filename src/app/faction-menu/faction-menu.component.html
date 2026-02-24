@@ -1,13 +1,19 @@
 <ion-list class="preserve-padding">
 
-  <ion-list-header>{{ 'ClockworkBots' | translate }}</ion-list-header>
-  <ion-item (click)="close(faction.id)" *ngFor="let faction of factions">
+  <ion-list-header>{{ 'Original' | translate }}</ion-list-header>
+  <ion-item (click)="close(faction.id)" *ngFor="let faction of originalFactions">
     <ion-img class="inline-icon" [src]="'assets/inicon/faction-' + faction.icon + '.png'" slot="start"></ion-img>
     <ion-label>{{ ('Factions.' + faction.name) | translate }}</ion-label>
   </ion-item>
 
   <ion-list-header>{{ 'DirectorsCut' | translate }}</ion-list-header>
   <ion-item (click)="close(faction.id)" *ngFor="let faction of dcFactions">
+    <ion-img class="inline-icon" [src]="'assets/inicon/faction-' + faction.icon + '.png'" slot="start"></ion-img>
+    <ion-label>{{ ('Factions.' + faction.name) | translate }}</ion-label>
+  </ion-item>
+  
+  <ion-list-header>{{ 'Expansion' | translate }}</ion-list-header>
+  <ion-item (click)="close(faction.id)" *ngFor="let faction of expansionFactions">
     <ion-img class="inline-icon" [src]="'assets/inicon/faction-' + faction.icon + '.png'" slot="start"></ion-img>
     <ion-label>{{ ('Factions.' + faction.name) | translate }}</ion-label>
   </ion-item>
