@@ -25,7 +25,7 @@ This will build it in prod mode.
 
 ## Adding new Factions
 
-### Initialize the Faction
+### Initialize the Faction  
 
 *ITALICS* means you need to make a new file
 **BOLD** mean you need to edit/append within a file
@@ -74,7 +74,12 @@ src
 &emsp;&emsp;&emsp;botMeta  
 &emsp;&emsp;&emsp;&emsp;insert new faction  
 &emsp;&emsp;&emsp;
-&emsp;&emsp;&emsp;
+&emsp;assets  
+&emsp;&emsp;i18n  
+&emsp;&emsp;&emsp;en-US.json  
+&emsp;&emsp;&emsp;&emsp;&emsp;Add the factions to "FactionsShort" and "Factions" to properly display in the webapp  
+
+
 Problems I Encountered  
 -Oops I broke the display of the page  
 &emsp;Ensure that the app- name in home.page.html is the same as the one in your faction-component.ts  
