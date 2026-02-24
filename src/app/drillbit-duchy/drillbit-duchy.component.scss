@@ -16,3 +16,105 @@ ion-toolbar {
   width: 100%;      /* Add this */
   --theme-color: #e07a37;
 }
+
+.row-icon {
+  max-width: 30em;
+  max-height: 30em;
+  padding: 1em;
+  border-radius: 1em;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.03);
+
+}
+
+.row-icon img {
+  padding: 0 1em 0 1em;
+}
+
+.matrix {
+  justify-content: start;
+}
+
+.minister {
+  justify-content: end;
+}
+
+/* Main 2-Column Layout */
+.duchy-dashboard {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: flex-start;
+  margin-top: 10px;
+}
+
+/* Left Column Styling */
+.duchy-trackers {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  flex: 1; /* Takes up 50% width */
+}
+
+.row-icon {
+  display: flex;
+  justify-content: space-around; /* Distributes the 3 icons evenly */
+  align-items: center;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.03);
+}
+
+.row-icon img {
+  width: 10em; /* Set specific sizes for uniformity */
+  height: 10em;
+  object-fit: contain;
+  transition: opacity 0.2s ease;
+}
+
+/* Reduces opacity for items that are 'stowed' (false in the array) */
+.row-icon img.stowed {
+  opacity: 0.25; 
+}
+
+/* Right Column Styling */
+.duchy-ministers {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1; /* Takes up remaining 50% width */
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+  padding-left: 20px;
+}
+
+.minister-row {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.minister-row:hover {
+  background: rgba(0, 0, 0, 0.05); /* Slight highlight on hover */
+}
+
+.minister-suit-icon {
+  width: 5em;
+  height: 5em;
+  margin-right: 10px;
+}
+
+.minister-name {
+  flex: 1; /* Pushes the checkbox to the far right */
+  font-weight: bold;
+  font-size: 0.9em;
+  color: #888; /* Dim default color for unswayed */
+  transition: color 0.2s ease;
+}
+
+/* Highlights the name when swayed */
+.minister-name.swayed {
+  color: #000; 
+}

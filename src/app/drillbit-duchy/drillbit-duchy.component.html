@@ -118,16 +118,44 @@
         <h2>{{ 'Sections.Buildings' | translate }}</h2>
       </ion-card-header>
       <ion-card-content>
-        <div *ngFor="let building of buildings">
-          <div class="building-row">
-            <div class="row-icon">
-              <img [src]="'assets/inicon/card-' + building.suit + '.png'" />
+        <div class="duchy-dashboard">
+          <div class="duchy-trackers">
+        <div class="building-row matrix">
+          <div class="row-icon">
+              <img [src]="'assets/inicon/' + 'building-citadel' + '.png'" />
+              <img [src]="'assets/inicon/' + 'building-citadel' + '.png'" />
+              <img [src]="'assets/inicon/' + 'building-citadel' + '.png'" />
             </div>
-
-            <div class="flip-container" *ngFor="let num of [0, 1, 2, 3, 4, 5]">
+          </div>
+        <div class="building-row matrix">
+          <div class="row-icon">
+              <img [src]="'assets/inicon/' + 'building-market' + '.png'" />
+              <img [src]="'assets/inicon/' + 'building-market' + '.png'" />
+              <img [src]="'assets/inicon/' + 'building-market' + '.png'" />
+            </div>
+          </div>
+          <div class="building-row matrix">
+          <div class="row-icon">
+              <img [src]="'assets/inicon/' + 'token-tunnel' + '.png'" />
+              <img [src]="'assets/inicon/' + 'token-tunnel' + '.png'" />
+              <img [src]="'assets/inicon/' + 'token-tunnel' + '.png'" />
+            </div>
+          </div>
+          <div class="building-row matrix">
+          <div class="row-icon">
+              <img [src]="'assets/inicon/' + 'building-burrow' + '.png'" />
+              <span> {{ bot.customData.burrowCount }}</span>
             </div>
           </div>
         </div>
+          <div class="minister">
+            <div *ngFor="let minister of bot.customData.ministers">
+              <div class="row-icon">
+              <img [src]="'assets/inicon/card-' + minister.suit + '.png'" />
+              </div>
+            </div>
+        </div>
+    </div>
       </ion-card-content>
     </ion-card>
   </ion-item>
@@ -137,12 +165,12 @@
       <ion-card-header>
         <h2 class="birdsong-has-buttons">
           {{ 'Sections.Birdsong' | translate }}
-          <!--<ion-button class="ion-margin-start" (click)="changeSuit(suit)"
+          <ion-button class="ion-margin-start" (click)="changeSuit(suit)"
                       [class.transparent]="bot.customData.currentSuit !== suit"
                       *ngFor="let suit of ['bird', 'fox', 'bunny', 'mouse']">
             <img class="click-icon" slot="icon-only"
                  [src]="'assets/inicon/card-' + suit + '.png'" />
-          </ion-button> -->
+          </ion-button>
         </h2>
       </ion-card-header>
       <ion-card-content>
