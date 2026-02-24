@@ -22,11 +22,13 @@ import { PriorityModalComponent } from './priority-modal/priority-modal.componen
 import * as enUS from '../assets/i18n/en-US.json';
 import * as frFR from '../assets/i18n/fr-FR.json';
 import * as esES from '../assets/i18n/es-ES.json';
+import * as deDE from '../assets/i18n/de-DE.json';
 
 const langs = { 
   'en-US': (enUS as any).default || enUS, 
   'fr-FR': (frFR as any).default || frFR,
-  'es-ES': (esES as any).default || esES  
+  'es-ES': (esES as any).default || esES,
+  'de-DE': (deDE as any).default || deDE  
 };
 
 export class JSONLoader implements TranslateLoader {
