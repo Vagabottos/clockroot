@@ -82,20 +82,21 @@ export class RiverfolkBot extends Bot {
   }
 
   public daylight(translate: TranslateService) {
+    const suit = this.customData.currentSuit;
     return [
       this.createMetaData('text', '', translate.instant(`SpecificDaylight.Riverfolk Robots.BildAndGarrison`)),
-      this.createMetaData('score', 1, translate.instant(`SpecificDaylight.Riverfolk Robots.RecruitOther`)),
+      this.createMetaData('text', '', translate.instant(`SpecificDaylight.Riverfolk Robots.RecruitOther`, {suit})),
       this.createMetaData('text', '', translate.instant(`SpecificDaylight.Riverfolk Robots.RecruitBird`)),
-      this.createMetaData('text', '', translate.instant(`SpecificDaylight.Riverfolk Robots.Organize`)),
+      this.createMetaData('score', 1, translate.instant(`SpecificDaylight.Riverfolk Robots.Organize`)),
       this.createMetaData('text', '', translate.instant(`SpecificDaylight.Riverfolk Robots.BattleShield`)),
-      this.createMetaData('text', '', translate.instant(`SpecificDaylight.Riverfolk Robots.BattleSword`))
+      this.createMetaData('text', '', translate.instant(`SpecificDaylight.Riverfolk Robots.BattleSword`,{suit}))
     ];
   }
 
   public evening(translate: TranslateService) {
     return [
-      this.createMetaData('text', '', translate.instant(`SpecificEvening.Riverfolk Robots.Score`)),
-      this.createMetaData('score', 1, translate.instant(`SpecificEvening.Riverfolk Robots.Racketeering`)),
+      this.createMetaData('score', 1, translate.instant(`SpecificEvening.Riverfolk Robots.Score`)),
+      this.createMetaData('text', '', translate.instant(`SpecificEvening.Riverfolk Robots.Racketeering`)),
       this.createMetaData('text', '', translate.instant(`SpecificEvening.Riverfolk Robots.Discard`))
     ];
   }

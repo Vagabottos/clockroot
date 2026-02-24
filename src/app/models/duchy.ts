@@ -111,7 +111,7 @@ export class DuchyBot extends Bot {
   public evening(translate: TranslateService) {
     const suit = this.customData.currentSuit;
     const activeMarkets = this.customData.markets.filter(m => m === true).length;
-    let pointsMarkets = 0;
+    let pointsMarkets: number = 0;
     if (activeMarkets === 0) {
       pointsMarkets = 0;
     }

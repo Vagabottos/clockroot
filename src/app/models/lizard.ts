@@ -83,7 +83,7 @@ export class LizardBot extends Bot {
   public birdsong(translate: TranslateService) {
     return [
       this.createMetaData('text', '', translate.instant(`SpecificBirdsong.Logical Lizards.Outcasts`)),
-      this.createMetaData('score', 1, translate.instant(`SpecificBirdsong.Logical Lizards.Conspiracy`)),
+      this.createMetaData('text', '', translate.instant(`SpecificBirdsong.Logical Lizards.Conspiracy`)),
     ];
   }
 
@@ -92,16 +92,16 @@ export class LizardBot extends Bot {
 
     return [
       this.createMetaData('text', '', translate.instant(`SpecificDaylight.Logical Lizards.RitualsBird`)),
-      this.createMetaData('score', 1, translate.instant(`SpecificDaylight.Logical Lizards.RitualsOther`, {suit})),
+      this.createMetaData('text', '', translate.instant(`SpecificDaylight.Logical Lizards.RitualsOther`, {suit})),
     ];
   }
 
   public evening(translate: TranslateService) {
     return [
-        this.createMetaData('text', '', translate.instant(`SpecificEvening.Logical Lizards.Score`)),
+        this.createMetaData('score', 1, translate.instant(`SpecificEvening.Logical Lizards.Score`)),
         this.createMetaData('text', '', translate.instant(`SpecificEvening.Logical Lizards.DiscardLostSouls`)),
         this.createMetaData('text', '', translate.instant(`SpecificEvening.Logical Lizards.ReturnRevealedCards`)),
-        this.createMetaData('text', '', translate.instant(`SpecificEvening.Logical Lizards.Craft`)),
+        this.createMetaData('score', 1, translate.instant(`SpecificEvening.Logical Lizards.Craft`)),
     ]
   
   }
