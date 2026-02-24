@@ -40,7 +40,11 @@
     "Mechanical Marquise (DC)": "Mechanical Marquise (DC)",
     "Electric Eyrie (DC)": "Electric Eyrie (DC)",
     "Automated Alliance (DC)": "Automated Alliance (DC)",
-    "Vagabot (DC)": "Vagabot (DC)"
+    "Vagabot (DC)": "Vagabot (DC)",
+    "Cogwheel Corvids": "Cogwheel Corvids",
+    "Drillbit Duchy": "Drillbit Duchy",
+    "Logical Lizards": "Logical Lizards",
+    "Riverfolk Robots": "Riverfolk Robots"
   },
   "FactionsShort": {
     "Mechanical Marquise": "M. Marquise",
@@ -50,7 +54,11 @@
     "Mechanical Marquise (DC)": "M. Marquise (DC)",
     "Electric Eyrie (DC)": "E. Eyrie (DC)",
     "Automated Alliance (DC)": "A. Alliance (DC)",
-    "Vagabot (DC)": "Vagabot (DC)"
+    "Vagabot (DC)": "Vagabot (DC)",
+    "Cogwheel Corvids": "C. Corvids",
+    "Drillbit Duchy": "D. Duchy",
+    "Logical Lizards": "L. Lizards",
+    "Riverfolk Robots": "R. Robots"
   },
   "Priorities": {
     "Title": "Map Priorities",
