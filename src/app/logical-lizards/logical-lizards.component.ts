@@ -17,13 +17,25 @@ export class LizardComponent implements OnInit {
     public translateService: TranslateService
   ) { }
   
-  
+  public buildings = [
+    { suit: 'fox', building: 'garden' },
+    { suit: 'bunny', building: 'garden' },
+    { suit: 'mouse', building: 'garden' }
+  ];  
   changeSuit(suit) {
     this.bot.customData.currentSuit = suit;
     this.botService.saveBots();
   }
   ngOnInit() {
+    ['fox', 'bunny', 'mouse'].forEach(suit => {
+      this.bot.customData.buildings[suit] = this.bot.customData.buildings[suit] || [];
+    });
+  }
+  toggleBuilding(suit, index) {
+    this.bot.customData.buildings[suit] = this.bot.customData.buildings[suit] || [];
+    this.bot.customData.buildings[suit][index] = !this.bot.customData.buildings[suit][index];
 
+    this.botService.saveBots();
   }
 
 }

@@ -118,7 +118,26 @@
         <h2>{{ 'Sections.Buildings' | translate }}</h2>
       </ion-card-header>
       <ion-card-content>
-        
+        <div *ngFor="let building of buildings">
+          <div class="building-row">
+            <div class="row-icon">
+              <img [src]="'assets/inicon/card-' + building.suit + '.png'" />
+            </div>
+
+            <div class="flip-container" *ngFor="let num of [0, 1, 2, 3, 4]">
+              <div class="flip-icon">
+                <img [src]="'assets/inicon/building-' + building.building + '-' + building.suit + '.png'"
+                      class="flip-back"
+                      [class.transparent]="bot.customData.buildings[building.suit][num]"
+                      (click)="toggleBuilding(building.suit, num)" />
+
+                <div class="flip-front" 
+                      *ngIf="bot.customData.buildings[building.suit][num]"
+                      (click)="toggleBuilding(building.suit, num)">+{{ num === 1 ? 2 : num }}</div>
+              </div>
+            </div>
+          </div>
+        </div>
       </ion-card-content>
     </ion-card>
   </ion-item>

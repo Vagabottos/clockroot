@@ -75,6 +75,11 @@ export class LizardBot extends Bot {
   public customData = {
     currentSuit: 'bird',
 
+    buildings: {
+      fox: [],
+      bunny: [],
+      mouse: []
+    }    
   };
 
   public setup(): void {
