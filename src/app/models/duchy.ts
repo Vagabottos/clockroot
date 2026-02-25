@@ -76,7 +76,7 @@ export class DuchyBot extends Bot {
     ministers: [
       { id: "captain", name: "Captain", suit: "fox", order: 1,swayed: false, ability: true, text: "SpecificExtra.Drillbit Duchy.Ministers.Captain"},
       { id: "marshal", name: "Marshal", suit: "bunny", order: 2, swayed: false, ability: false, text: "SpecificExtra.Drillbit Duchy.Ministers.Marshal"},
-      { id: "foremold", name: "Foremold", suit: "mouse", order: 3, swayed: false, ability: true, text: "SpecificExtra.Drillbit Duchy.Ministers.Foremole"},
+      { id: "foremole", name: "Foremole", suit: "mouse", order: 3, swayed: false, ability: true, text: "SpecificExtra.Drillbit Duchy.Ministers.Foremole"},
       { id: "brigadier", name: "Brigadier", suit: "fox", order: 4, swayed: false, ability: false, text: "SpecificExtra.Drillbit Duchy.Ministers.Brigadier"},
       { id: "banker", name: "Banker", suit: "bunny", order: 5, swayed: false, ability: false, text: "SpecificExtra.Drillbit Duchy.Ministers.Banker"},
       { id: "mayor", name: "Mayor", suit: "mouse", order: 6, swayed: false, ability: false, text: "SpecificExtra.Drillbit Duchy.Ministers.Mayor"},
