@@ -629,19 +629,26 @@
       "SatchelBattleTrack": "Battle"
     },
     "Cogwheel Corvids": {
-      "Exposure": "Exposure: During their turn, an enemy in a clearing with a face-down plot token may show you a card matching that clearing to guess the token's type. If correct, remove the token and the enemy scores **vp:1**. If incorrect, the enemy gives you the card."
+      "extra": "extra"
     },
     "Drillbit Duchy": {
-      "PriceOfFailure": "The Price of Failure: Whenever a Duchy building is removed, the Duchy loses their highest-tier swayed Minister. They do not lose cards.",
-      "Burrow": "The Burrow: The Duchy has a Burrow on their player board. Pieces in the Burrow are not on the map and cannot be affected by other players."
+      "Ministers": {
+        "Foremole": "You have an additional revealed mole.",
+        "Captain": "As attacker in battle, deal an extra hit if the battle clearing has a tunnel.",
+        "Marshal": "Place a warrior into a clearing that has the fewest Duchy warriors and a Duchy building.",
+        "Brigadier": "Take the dig action if the Burrow has three or more warriors. For this dig action, use the Clearing Tie condition for a fox order.",
+        "Banker": "Take the Build Action.",
+        "Mayor": "Remove a Duchy warrior from the clearing you rule with the most Duchy warriors. If you do, score **vp:1**.",
+        "Earl": "Score **vp:1** per citadel on the map.",
+        "Baron": "Score **vp:1** per market on the map.",
+        "Duchess": "Score **vp:2** if all 3 tunnels are on the map."
+      }
     },
     "Logical Lizards": {
-      "Revenge": "Revenge: Whenever an enemy removes a Garden, the Lizards gain one Acolyte.",
-      "Pilgrims": "Pilgrims: The Lizards rule any clearing with a Garden, regardless of the number of pieces."
+      "extra": "extra"
     },
     "Riverfolk Robots": {
-      "Services": "Purchasing Services: At the start of their Birdsong, an enemy may purchase one Riverfolk service (Hand Card, Riverboats, or Mercenaries) by placing two of their warriors into the Riverfolk's Payments box.",
-      "Export": "Export: Whenever an enemy purchases a service, the Riverfolk score **vp:1**."
+      "extra": "extra"
     }
   },
   "ToastMessages": {

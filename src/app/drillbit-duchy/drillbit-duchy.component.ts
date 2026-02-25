@@ -27,18 +27,17 @@ export class DuchyComponent implements OnInit {
     this.botService.saveBots();
   }
   
-  // Toggles a building/tunnel on or off
+// Toggles true/false for Citadels, Markets, and Tunnels
   toggleTracker(type: 'citadels' | 'markets' | 'tunnels', index: number) {
     this.bot.customData[type][index] = !this.bot.customData[type][index];
     this.botService.saveBots();
   }
 
-  // Toggles a minister's swayed status
+  // Toggles the minister's swayed status
   toggleMinister(index: number) {
     this.bot.customData.ministers[index].swayed = !this.bot.customData.ministers[index].swayed;
     this.botService.saveBots();
   }
-
   // Changes the number of warriors in the Burrow
   updateBurrow(amount: number) {
     this.bot.customData.burrow += amount;

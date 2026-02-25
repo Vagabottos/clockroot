@@ -74,15 +74,15 @@ export class DuchyBot extends Bot {
     citadels: [false, false, false], //true: citadel on board, false: citadel stowed
     markets: [false, false, false], //true: market on board, false: market stowed
     ministers: [
-      { id: "captain", name: "Captain", suit: "fox", order: 1,swayed: false, ability: true, text: "As attacker in battle, deal an extra hit if the battle clearing has a tunnel."},
-      { id: "marshal", name: "Marshal", suit: "bunny", order: 2, swayed: false, ability: false, text: "Place a warrior into a clearing that has the fewest Duchy warriors and a Duchy building."},
-      { id: "foremold", name: "Foremold", suit: "mouse", order: 3, swayed: false, ability: true, text: "You have an additional revealed mole."},
-      { id: "brigadier", name: "Brigadier", suit: "fox", order: 4, swayed: false, ability: false, text: "Take the dig action if the Burrow has three or more warriors. For this dig action, use the Clearing Tie condition for a bird order."},
-      { id: "banker", name: "Banker", suit: "bunny", order: 5, swayed: false, ability: false, text: "Take the Build Action."},
-      { id: "mayor", name: "Mayor", suit: "mouse", order: 6, swayed: false, ability: false, text: "Remove a Duchy warrior from the clearing you rule with the most Duchy warriors. If you do, score **VP:1**."},
-      { id:"earl", name: "Earl of Stone", suit: "fox", order: 7, swayed: false, ability: false, text: "Score **VP:1** per citadel on the map."},
-      { id: "baron", name: "Baron of Dirt", suit: "bunny", order: 8, swayed: false, ability: false, text: "Score **VP:1** per market on the map."},
-      { id: "duchess", name: "Duchess of Mud", suit: "mouse", order: 9, swayed: false, ability: false, text: "Score **VP:2** if all 3 tunnels are on the map."}
+      { id: "captain", name: "Captain", suit: "fox", order: 1,swayed: false, ability: true, text: "SpecificExtra.Drillbit Duchy.Ministers.Captain"},
+      { id: "marshal", name: "Marshal", suit: "bunny", order: 2, swayed: false, ability: false, text: "SpecificExtra.Drillbit Duchy.Ministers.Marshal"},
+      { id: "foremold", name: "Foremold", suit: "mouse", order: 3, swayed: false, ability: true, text: "SpecificExtra.Drillbit Duchy.Ministers.Foremole"},
+      { id: "brigadier", name: "Brigadier", suit: "fox", order: 4, swayed: false, ability: false, text: "SpecificExtra.Drillbit Duchy.Ministers.Brigadier"},
+      { id: "banker", name: "Banker", suit: "bunny", order: 5, swayed: false, ability: false, text: "SpecificExtra.Drillbit Duchy.Ministers.Banker"},
+      { id: "mayor", name: "Mayor", suit: "mouse", order: 6, swayed: false, ability: false, text: "SpecificExtra.Drillbit Duchy.Ministers.Mayor"},
+      { id:"earl", name: "Earl of Stone", suit: "fox", order: 7, swayed: false, ability: false, text: "SpecificExtra.Drillbit Duchy.Ministers.Earl"},
+      { id: "baron", name: "Baron of Dirt", suit: "bunny", order: 8, swayed: false, ability: false, text: "SpecificExtra.Drillbit Duchy.Ministers.Baron"},
+      { id: "duchess", name: "Duchess of Mud", suit: "mouse", order: 9, swayed: false, ability: false, text: "SpecificExtra.Drillbit Duchy.Ministers.Duchess"}
     ]
   };
 
@@ -128,7 +128,7 @@ export class DuchyBot extends Bot {
 
     return [
       this.createMetaData('text', '', translate.instant(`SpecificEvening.Drillbit Duchy.Rally`, { suit })),
-      this.createMetaData('score', pointsMarkets, translate.instant(`SpecificEvening.Drillbit Duchy.Score`)),
+      this.createMetaData('score', 1, translate.instant(`SpecificEvening.Drillbit Duchy.Score`)),
       this.createMetaData('text', '', translate.instant(`SpecificEvening.Drillbit Duchy.Sway`)),
       this.createMetaData('text', '', translate.instant(`SpecificEvening.Drillbit Duchy.Discard`))
     ];

@@ -117,7 +117,62 @@
       <ion-card-header>
         <h2>{{ 'Sections.Buildings' | translate }}</h2>
       </ion-card-header>
-  
+      <ion-card-content>
+  <div class="duchy-layout">
+    
+    <div class="matrix-column">
+      
+      <div class="building-row matrix">
+        <div class="row-icon">
+          <img *ngFor="let num of [0, 1, 2]"
+               src="assets/inicon/building-citadel.png"
+               [class.transparent]="!bot.customData.citadels[num]"
+               (click)="toggleTracker('citadels', num)" />
+        </div>
+      </div>
+      
+      <div class="building-row matrix">
+        <div class="row-icon">
+          <img *ngFor="let num of [0, 1, 2]"
+               src="assets/inicon/building-market.png"
+               [class.transparent]="!bot.customData.markets[num]"
+               (click)="toggleTracker('markets', num)" />
+        </div>
+      </div>
+
+      <div class="building-row matrix">
+        <div class="row-icon">
+          <img *ngFor="let num of [0, 1, 2]"
+               src="assets/inicon/token-tunnel.png"
+               [class.transparent]="!bot.customData.tunnels[num]"
+               (click)="toggleTracker('tunnels', num)" />
+        </div>
+      </div>
+
+    </div>
+
+    <div class="minister-column">
+      <div class="minister-row" 
+           *ngFor="let minister of bot.customData.ministers; let i = index" 
+           (click)="toggleMinister(i)" 
+           [class.swayed]="minister.swayed">
+        
+        <img [src]="'assets/inicon/card-' + minister.suit + '.png'" class="minister-suit" />
+        
+        <div class="minister-info">
+          <div class="minister-name"><strong>{{ minister.name }}</strong></div>
+<div class="minister-text" [innerHTML]="minister.text | translate | format"></div>
+        </div>
+        
+        <div class="minister-toggle">
+          <ion-icon [name]="minister.swayed ? 'checkmark-circle' : 'ellipse-outline'"></ion-icon>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</ion-card-content>
     </ion-card>
   </ion-item>
 
