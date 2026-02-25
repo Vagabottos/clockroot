@@ -70,9 +70,9 @@ export class DuchyBot extends Bot {
     currentSuit: 'bird',
 
     burrow: 0, //Positive Integer to track number of moles in the burrow
-    tunnels: [false, false, false], //true: tunnel on board, false: tunnel stowed
-    citadels: [false, false, false], //true: citadel on board, false: citadel stowed
-    markets: [false, false, false], //true: market on board, false: market stowed
+    tunnels: [true, true, true], //false: tunnel on board, true: tunnel stowed
+    citadels: [true, true, true], //false: citadel on board, true: citadel stowed
+    markets: [true, true, true], //false: market on board, true: market stowed
     ministers: [
       { id: "captain", name: "Captain", suit: "fox", order: 1,swayed: false, ability: true, text: "SpecificExtra.Drillbit Duchy.Ministers.Captain"},
       { id: "marshal", name: "Marshal", suit: "bunny", order: 2, swayed: false, ability: false, text: "SpecificExtra.Drillbit Duchy.Ministers.Marshal"},
@@ -101,7 +101,7 @@ export class DuchyBot extends Bot {
     const suit = this.customData.currentSuit;
 
     const isCaptainSwayed = this.customData.ministers.find(m => m.id === "captain").swayed;
-    const hasTunnelSupply = this.customData.tunnels.filter(m => m === false).length === 0;
+    const hasTunnelSupply = this.customData.tunnels.filter(m => m === true).length === 0;
     const isBirdOrder = this.customData.currentSuit === "bird" ? "Bird" : "";
 
     return [
@@ -117,7 +117,7 @@ export class DuchyBot extends Bot {
 
   public evening(translate: TranslateService) {
     const suit = this.customData.currentSuit;
-    const activeMarkets = this.customData.markets.filter(m => m === true).length;
+    const activeMarkets = this.customData.markets.filter(m => m === false).length;
     let pointsMarkets = 0;
     if (activeMarkets === 1) {
       pointsMarkets = 1;
