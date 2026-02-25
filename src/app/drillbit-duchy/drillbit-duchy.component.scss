@@ -53,6 +53,33 @@ ion-toolbar {
   background: rgba(0, 0, 0, 0.03);
 }
 
+.burrow {
+  max-width: 20em;
+  max-height: 20em;
+  img {
+    width: 15em;
+    height: 15em;
+  }
+}
+.row-icon.burrow {
+  padding: 0em;
+}
+
+.building-row {
+  .building-count {
+    font-size: 1.5rem;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 30px;
+    text-align: center;
+  }
+
+  .row-additions {
+    display: flex;
+    align-items: center;
+    padding-left: 1em;
+  }
+}
 /* Matrix Styling */
 .building-row.matrix {
   margin: 0;

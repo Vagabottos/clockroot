@@ -149,6 +149,21 @@
         </div>
       </div>
 
+      <div class="building-row" *ngFor="let num of [0]">
+    <div class="row-icon burrow">
+      <img [src]="'assets/inicon/' + 'building-burrow.png'" />
+    </div>
+
+    <div class="row-additions">
+      <ion-button [disabled]="bot.customData.burrow <= 0" (click)="modifyBurrow(-1)">
+        <ion-icon name="remove"></ion-icon>
+      </ion-button>
+      <span class="building-count">{{ bot.customData.burrow }}</span>
+      <ion-button (click)="modifyBurrow(1)">
+        <ion-icon name="add"></ion-icon>
+      </ion-button>
+    </div>
+  </div>
     </div>
 
     <div class="minister-column">
