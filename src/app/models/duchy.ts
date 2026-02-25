@@ -101,9 +101,14 @@ export class DuchyBot extends Bot {
     const suit = this.customData.currentSuit;
 
     const isCaptainSwayed = this.customData.ministers.find(m => m.id === "captain").swayed;
+    const hasTunnelSupply = this.customData.tunnels.filter(m => m === false).length === 0;
+    const isBirdOrder = this.customData.currentSuit === "bird" ? "Bird" : "";
 
     return [
-      this.createMetaData('text', '', translate.instant(`SpecificDaylight.Drillbit Duchy.Dig`, { suit })),
+      this.createMetaData('text', '', 
+        translate.instant(`SpecificDaylight.Drillbit Duchy.Dig` + isBirdOrder, { suit }) + 
+        (hasTunnelSupply ? ' ' + translate.instant(`SpecificDaylight.Drillbit Duchy.DigNoTunnel`) : '')
+      ),
       this.createMetaData('text', '', translate.instant(`SpecificDaylight.Drillbit Duchy.` + (isCaptainSwayed ? `BattleCaptain` : `Battle`), { suit })),
       this.createMetaData('score', 1, translate.instant(`SpecificDaylight.Drillbit Duchy.Build`)),
       this.createMetaData('text', '', translate.instant(`SpecificDaylight.Drillbit Duchy.Ministers`))
