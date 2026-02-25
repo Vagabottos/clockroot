@@ -129,11 +129,21 @@ ion-toolbar {
   color: #999;
   flex-shrink: 0;
   transition: color 0.2s ease;
+  img {
+    width: 1.5em;
+    height: 1.5em;
+    display: none;
+  }  
 }
 
 .minister-row.swayed .minister-toggle {
   color: var(--theme-color);
+  img {
+    display:block;
+  }
 }
+
+
 
 /* Dark mode adjustment for minister text so it doesn't vanish */
 @media (prefers-color-scheme: dark) {
