@@ -56,15 +56,15 @@ export class FactionMenuComponent implements OnInit {
 
   public expansionFactions = [
     {
-      name: 'Drillbit Duchy',
-      id: 'Duchy',
-      icon: 'duchy'
-    },    
-    {
       name: 'Cogwheel Corvids',
       id: 'Corvid',
       icon: 'corvid'
     },
+    {
+      name: 'Drillbit Duchy',
+      id: 'Duchy',
+      icon: 'duchy'
+    },    
         {
       name: 'Logical Lizards',
       id: 'Lizard',

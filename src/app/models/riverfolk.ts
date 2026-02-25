@@ -68,6 +68,12 @@ export class RiverfolkBot extends Bot {
   //Will need a check for protectionism to determine several key actions, will need a tracker for trade posts and services and payments? May be an annoying one but seems straight forward overall
   public customData = {
     currentSuit: 'bird',
+
+    buildings: {
+      fox: [],
+      bunny: [],
+      mouse: []
+    }
   };
 
   public setup(): void {
