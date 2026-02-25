@@ -111,24 +111,24 @@ export class DuchyBot extends Bot {
   public evening(translate: TranslateService) {
     const suit = this.customData.currentSuit;
     const activeMarkets = this.customData.markets.filter(m => m === true).length;
-    let pointsMarkets: number = 0;
-    if (activeMarkets === 0) {
-      pointsMarkets = 0;
-    }
-    else if (activeMarkets === 1 || activeMarkets === 2) {
+    let pointsMarkets = 0;
+    if (activeMarkets === 1) {
       pointsMarkets = 1;
     }
-    else if (activeMarkets === 3) {
+    else if (activeMarkets === 1 || activeMarkets === 2) {
       pointsMarkets = 2;
     }
+    else if (activeMarkets === 3) {
+      pointsMarkets = 3;
+    }
     else {
-      this.customData.markets = [false, false, false];
+      //this.customData.markets = [false, false, false];
       pointsMarkets = 0;
     }
 
     return [
       this.createMetaData('text', '', translate.instant(`SpecificEvening.Drillbit Duchy.Rally`, { suit })),
-      this.createMetaData('score', 1, translate.instant(`SpecificEvening.Drillbit Duchy.Score`)),
+      this.createMetaData('score', pointsMarkets, translate.instant(`SpecificEvening.Drillbit Duchy.Score`)),
       this.createMetaData('text', '', translate.instant(`SpecificEvening.Drillbit Duchy.Sway`)),
       this.createMetaData('text', '', translate.instant(`SpecificEvening.Drillbit Duchy.Discard`))
     ];
