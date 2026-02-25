@@ -23,21 +23,24 @@ ion-toolbar {
   justify-content: space-around;
   align-items: flex-start;
   gap: 20px;
-  padding: 0 5em 0 5em;
+  padding: 1em 0.5em;
   flex-wrap: wrap; /* Allows the columns to stack vertically on small screens */
 }
 
 .matrix-column {
-  flex: auto;
+  flex: 1 1 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2em;
+  gap: 1.5em;
   padding: 1em 0 1em 0;
   border-radius: 8px;
   border: 1px solid rgba(0, 0, 0, 0.1);
   background: rgba(0, 0, 0, 0.03);
-  max-width: 25%;
+  max-width: 100%;
+  @media (min-width: 1200px) {
+    max-width: 25%;
+  }
 }
 
 .minister-column {
@@ -47,10 +50,13 @@ ion-toolbar {
   gap: 8px;
   border-left: 2px solid rgba(0, 0, 0, 0.1);
   padding-left: 1em;
-  max-width: 75%;
   border-radius: 8px;
   border: 1px solid rgba(0, 0, 0, 0.1);
   background: rgba(0, 0, 0, 0.03);
+  @media (min-width: 1200px) {
+    max-width: 75%;
+  }
+  max-width: 100%;
 }
 
 .burrow {
@@ -90,8 +96,8 @@ ion-toolbar {
 .row-icon {
   display: flex;
   flex-direction: row;
-  padding: .1em;
-  gap: 2em;
+  padding: .5em;
+  gap: 1em;
 
   img {
     width: 5em;
@@ -205,8 +211,8 @@ ion-toolbar {
 }
 
 .meeple {
-  width: 2.8em !important;
-  height: 2.8em !important;
+  width: 2em !important;
+  height: 2em !important;
   object-fit: contain;
 }
 
