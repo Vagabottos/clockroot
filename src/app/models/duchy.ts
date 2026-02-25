@@ -100,9 +100,11 @@ export class DuchyBot extends Bot {
   public daylight(translate: TranslateService) {
     const suit = this.customData.currentSuit;
 
+    const isCaptainSwayed = this.customData.ministers.find(m => m.id === "captain").swayed;
+
     return [
       this.createMetaData('text', '', translate.instant(`SpecificDaylight.Drillbit Duchy.Dig`, { suit })),
-      this.createMetaData('text', '', translate.instant(`SpecificDaylight.Drillbit Duchy.Battle`, { suit })),
+      this.createMetaData('text', '', translate.instant(`SpecificDaylight.Drillbit Duchy.` + (isCaptainSwayed ? `BattleCaptain` : `Battle`), { suit })),
       this.createMetaData('score', 1, translate.instant(`SpecificDaylight.Drillbit Duchy.Build`)),
       this.createMetaData('text', '', translate.instant(`SpecificDaylight.Drillbit Duchy.Ministers`))
     ];

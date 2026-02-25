@@ -494,6 +494,7 @@
     "Drillbit Duchy": {
       "Dig": "If the Burrow has four or more **meeple:duchy**, place a tunnel in a **card:{{suit}}** clearing with no runnel and no Duchy buildings. Also move four warriors from the burrow to the tunnel.",
       "Battle": "**Battle** in each **card:{{suit}}** clearing. (Defender Tie: Player with the most buildings, then the most pieces, then the most points.)",
+      "BattleCaptain": "**Battle** in each **card:{{suit}}** clearing. (Defender Tie: Player with the most buildings, then the most pieces, then the most points.)<br/>**Captain** is swayed, do not forget his effect in battle.",
       "Build": "**Build** in the clearing you rule with the most Duchy warriors. Place a citadel if you have 9+ warriors in your supply. Otherwise, place a market. Score **vp:1** if you cannot place a building while one is in supply.",
       "Ministers": "Take the actions of all your swayed ministers from top to bottom."
     },
