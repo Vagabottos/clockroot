@@ -67,165 +67,44 @@ export class RiverfolkBot extends Bot {
   ];
   //Will need a check for protectionism to determine several key actions, will need a tracker for trade posts and services and payments? May be an annoying one but seems straight forward overall
   public customData = {
-    decree: {
-      fox: 0,
-      mouse: 0,
-      bunny: 0,
-      bird: 2
-    },
+    currentSuit: 'bird',
 
-    buildings: []
+    buildings: {
+      fox: [],
+      bunny: [],
+      mouse: []
+    }
   };
 
   public setup(): void {
-    this.customData.decree.bird = this.difficulty === 'Easy' ? 1 : 2;
   }
 
   public birdsong(translate: TranslateService) {
-    const newRoost = !this.customData.buildings.some(Boolean);
-
-    const base = [
-      this.createMetaData('text', '', translate.instant(`SpecificBirdsong.Electric Eyrie.RevealOrder`)),
-      this.createMetaData('score', 1, translate.instant(`SpecificBirdsong.Electric Eyrie.CraftOrder`)),
-      this.createMetaData('text', '', translate.instant(`SpecificBirdsong.Electric Eyrie.DecreeOrder`))
+    return [
+      this.createMetaData('text', '', translate.instant(`SpecificBirdsong.Riverfolk Robots.StockMarket`)),
+      this.createMetaData('score', 1, translate.instant(`SpecificBirdsong.Riverfolk Robots.CraftOrder`)),
+      this.createMetaData('text', '', translate.instant(`SpecificBirdsong.Riverfolk Robots.SetOrder`))
     ];
-
-    if (newRoost) {
-      base.push(
-        this.createMetaData('text', '', translate.instant(`SpecificBirdsong.Electric Eyrie.NewRoost`))
-      );
-    }
-
-    return base;
   }
 
   public daylight(translate: TranslateService) {
-    const actions = [];
-
-    let mostVal = 0;
-    let mostSuit = '';
-    let mostSuits = [];
-    ['fox', 'mouse', 'bunny', 'bird'].forEach(suit => {
-      if (this.customData.decree[suit] < mostVal) { return; }
-
-      // hold onto info if there is ever a tie
-      if (this.customData.decree[suit] === mostVal) {
-        mostSuits.push(suit);
-        return;
-      }
-
-      mostVal = this.customData.decree[suit];
-      mostSuit = suit;
-
-      // reset if we get here
-      mostSuits = [suit];
-    });
-
-    // if we have a tie for the most, we don't have a most
-    if (mostSuits.length > 1) {
-      mostSuit = '';
-      mostVal = 0;
-    }
-
-    ['recruit', 'move', 'battle'].forEach(curAction => {
-      ['fox', 'mouse', 'bunny', 'bird'].forEach(suit => {
-        const totalForSuit = this.customData.decree[suit];
-        if (totalForSuit === 0) { return; }
-
-        const suitText = `**card:${suit}**`;
-
-        switch (curAction) {
-          case 'recruit': {
-
-            const recruitText = this.hasTrait('Nobility')
-              ? translate.instant('SpecificDaylight.Electric Eyrie.ExtraRecruit')
-              : '';
-
-            actions.push(
-              this.createMetaData('text', '', translate.instant('SpecificDaylight.Electric Eyrie.Recruit', { totalForSuit, suitText, recruitText }))
-            );
-            break;
-          }
-
-          case 'move': {
-            actions.push(
-              this.createMetaData('text', '', translate.instant('SpecificDaylight.Electric Eyrie.Move', { totalForSuit, suitText }))
-            );
-            break;
-          }
-
-          case 'battle': {
-            let extraHit = '';
-            if (suit === mostSuit) { extraHit = translate.instant('SpecificDaylight.Electric Eyrie.ExtraHit'); }
-            actions.push(
-              this.createMetaData('text', '', translate.instant('SpecificDaylight.Electric Eyrie.Battle', { totalForSuit, suitText, extraHit }))
-            );
-            break;
-          }
-        }
-      });
-    });
-
-    if (actions.length === 0) {
-      return [
-        this.createMetaData('text', '', translate.instant('SpecificDaylight.Electric Eyrie.ExtraDecree'))
-      ];
-    }
-
-    if (this.hasTrait('Relentless')) {
-      actions.push(
-        this.createMetaData('text', '', translate.instant('SpecificDaylight.Electric Eyrie.ExtraRelentless'))
-      );
-    }
-
-    actions.push(
-      this.createMetaData('text', '', translate.instant('SpecificDaylight.Electric Eyrie.ExtraBuild'))
-    );
-
-    if (this.hasTrait('Swoop')) {
-      actions.push(
-        this.createMetaData('text', '', translate.instant('SpecificDaylight.Electric Eyrie.ExtraSwoop'))
-      );
-    }
-
-    return actions;
+    const suit = this.customData.currentSuit;
+    return [
+      this.createMetaData('text', '', translate.instant(`SpecificDaylight.Riverfolk Robots.BildAndGarrison`)),
+      this.createMetaData('text', '', translate.instant(`SpecificDaylight.Riverfolk Robots.RecruitOther`, {suit})),
+      this.createMetaData('text', '', translate.instant(`SpecificDaylight.Riverfolk Robots.RecruitBird`)),
+      this.createMetaData('score', 1, translate.instant(`SpecificDaylight.Riverfolk Robots.Organize`)),
+      this.createMetaData('text', '', translate.instant(`SpecificDaylight.Riverfolk Robots.BattleShield`)),
+      this.createMetaData('text', '', translate.instant(`SpecificDaylight.Riverfolk Robots.BattleSword`,{suit}))
+    ];
   }
 
   public evening(translate: TranslateService) {
-
-    const score = Math.max(0, this.customData.buildings.reduce((prev, cur) => prev + (cur ? 1 : 0), 0) - 1);
-
-    const base = [
-      this.createMetaData('score', score, translate.instant('SpecificEvening.Electric Eyrie.Score', { score }))
+    return [
+      this.createMetaData('score', 1, translate.instant(`SpecificEvening.Riverfolk Robots.Score`)),
+      this.createMetaData('text', '', translate.instant(`SpecificEvening.Riverfolk Robots.Racketeering`)),
+      this.createMetaData('text', '', translate.instant(`SpecificEvening.Riverfolk Robots.Discard`))
     ];
-
-    if (this.difficulty === 'Nightmare') {
-      base.push(
-        this.createMetaData('score', 1, translate.instant('SpecificEvening.Electric Eyrie.NightmareScore'))
-      );
-    }
-
-    return base
   }
 
-  public turmoil(translate: TranslateService) {
-    const base = [
-      this.createMetaData('text', '', translate.instant('SpecificExtra.Electric Eyrie.Purge')),
-      this.createMetaData('text', '', translate.instant('SpecificExtra.Electric Eyrie.Evening'))
-    ];
-
-    const score = this.customData.decree.bird
-
-    if (this.hasTrait('Nobility')) {
-      base.unshift(
-        this.createMetaData('score', score, translate.instant('SpecificExtra.Electric Eyrie.YesNobility'))
-      );
-    } else {
-      base.unshift(
-        this.createMetaData('score', -score, translate.instant('SpecificExtra.Electric Eyrie.NoNobility'))
-      );
-    }
-
-    return base;
-  }
-}
+ }

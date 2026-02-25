@@ -16,3 +16,145 @@ ion-toolbar {
   width: 100%;      /* Add this */
   --theme-color: #e07a37;
 }
+
+.duchy-layout {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 0 5em 0 5em;
+  flex-wrap: wrap; /* Allows the columns to stack vertically on small screens */
+}
+
+.matrix-column {
+  flex: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2em;
+  padding: 1em 0 1em 0;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.03);
+  max-width: 25%;
+}
+
+.minister-column {
+  flex: 1 1 5em; /* Takes up the remaining space, min-width 300px */
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-left: 2px solid rgba(0, 0, 0, 0.1);
+  padding-left: 1em;
+  max-width: 75%;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.03);
+}
+
+/* Matrix Styling */
+.building-row.matrix {
+  margin: 0;
+  justify-content: flex-start;
+  width: fit-content;
+}
+
+.row-icon {
+  display: flex;
+  flex-direction: row;
+  padding: .1em;
+  gap: 2em;
+
+  img {
+    width: 6em;
+    height: 6em;
+    object-fit: contain;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+    padding: 0; /* Override the old padding */
+
+    &.transparent {
+      opacity: 0.3; /* Fades the icon if it is stowed/not on map */
+    }
+  }
+}
+
+/* Minister Rows Styling */
+.minister-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 8px 12px;
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 8px;
+  background: rgba(0,0,0,0.02);
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &.swayed {
+    background: rgba(0,0,0,0.08);
+    border-color: rgba(0,0,0,0.3);
+  }
+}
+
+.minister-suit {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  margin-right: 12px;
+  flex-shrink: 0;
+}
+
+.minister-info {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.minister-name {
+  font-size: 1rem;
+  margin-bottom: 4px;
+}
+
+.minister-text {
+  font-size: 0.85rem;
+  color: #000000;
+  line-height: 1.3;
+}
+
+.minister-toggle {
+  margin-left: 12px;
+  font-size: 1.5rem;
+  color: #999;
+  flex-shrink: 0;
+  transition: color 0.2s ease;
+  img {
+    width: 1.5em;
+    height: 1.5em;
+    display: none;
+  }  
+}
+
+.minister-row.swayed .minister-toggle {
+  color: var(--theme-color);
+  img {
+    display:block;
+  }
+}
+
+
+
+/* Dark mode adjustment for minister text so it doesn't vanish */
+@media (prefers-color-scheme: dark) {
+  .minister-text {
+    color: #262626;
+  }
+  .minister-row {
+    background: rgba(255,255,255,0.05);
+    border-color: rgba(255,255,255,0.1);
+  }
+  .minister-row.swayed {
+    background: rgba(255,255,255,0.15);
+  }
+}

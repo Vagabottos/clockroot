@@ -118,17 +118,61 @@
         <h2>{{ 'Sections.Buildings' | translate }}</h2>
       </ion-card-header>
       <ion-card-content>
-        <div *ngFor="let building of buildings">
-          <div class="building-row">
-            <div class="row-icon">
-              <img [src]="'assets/inicon/card-' + building.suit + '.png'" />
-            </div>
-
-            <div class="flip-container" *ngFor="let num of [0, 1, 2, 3, 4, 5]">
-            </div>
-          </div>
+  <div class="duchy-layout">
+    
+    <div class="matrix-column">
+      
+      <div class="building-row matrix">
+        <div class="row-icon">
+          <img *ngFor="let num of [0, 1, 2]"
+               src="assets/inicon/building-citadel.png"
+               [class.transparent]="!bot.customData.citadels[num]"
+               (click)="toggleTracker('citadels', num)" />
         </div>
-      </ion-card-content>
+      </div>
+      
+      <div class="building-row matrix">
+        <div class="row-icon">
+          <img *ngFor="let num of [0, 1, 2]"
+               src="assets/inicon/building-market.png"
+               [class.transparent]="!bot.customData.markets[num]"
+               (click)="toggleTracker('markets', num)" />
+        </div>
+      </div>
+
+      <div class="building-row matrix">
+        <div class="row-icon">
+          <img *ngFor="let num of [0, 1, 2]"
+               src="assets/inicon/token-tunnel.png"
+               [class.transparent]="!bot.customData.tunnels[num]"
+               (click)="toggleTracker('tunnels', num)" />
+        </div>
+      </div>
+
+    </div>
+
+    <div class="minister-column">
+      <div class="minister-row" 
+           *ngFor="let minister of bot.customData.ministers; let i = index" 
+           (click)="toggleMinister(i)" 
+           [class.swayed]="minister.swayed">
+        
+        <img [src]="'assets/inicon/card-' + minister.suit + '.png'" class="minister-suit" />
+        
+        <div class="minister-info">
+          <div class="minister-name"><strong>{{ minister.name }}</strong></div>
+<div class="minister-text" [innerHTML]="minister.text | translate | format"></div>
+        </div>
+        
+        <div class="minister-toggle">
+          <img [src]="'assets/inicon/token-crown' + '.png'" />
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</ion-card-content>
     </ion-card>
   </ion-item>
 
@@ -137,12 +181,12 @@
       <ion-card-header>
         <h2 class="birdsong-has-buttons">
           {{ 'Sections.Birdsong' | translate }}
-          <!--<ion-button class="ion-margin-start" (click)="changeSuit(suit)"
+          <ion-button class="ion-margin-start" (click)="changeSuit(suit)"
                       [class.transparent]="bot.customData.currentSuit !== suit"
                       *ngFor="let suit of ['bird', 'fox', 'bunny', 'mouse']">
             <img class="click-icon" slot="icon-only"
                  [src]="'assets/inicon/card-' + suit + '.png'" />
-          </ion-button> -->
+          </ion-button>
         </h2>
       </ion-card-header>
       <ion-card-content>

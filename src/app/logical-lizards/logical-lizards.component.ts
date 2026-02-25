@@ -11,20 +11,31 @@ import { TranslateService } from '@ngx-translate/core';
 export class LizardComponent implements OnInit {
 
   @Input() public bot: LizardBot;
-
-  public buildings = [
-    { suit: 'fox', building: 'sawmill' },
-    { suit: 'bunny', building: 'workshop' },
-    { suit: 'mouse', building: 'recruiter' }
-  ];
-
+  
   constructor(
     public botService: BotService,
     public translateService: TranslateService
   ) { }
   
+  public buildings = [
+    { suit: 'fox', building: 'garden' },
+    { suit: 'bunny', building: 'garden' },
+    { suit: 'mouse', building: 'garden' }
+  ];  
+  changeSuit(suit) {
+    this.bot.customData.currentSuit = suit;
+    this.botService.saveBots();
+  }
   ngOnInit() {
-    this.bot.customData.buildings = this.bot.customData.buildings || [];
+    ['fox', 'bunny', 'mouse'].forEach(suit => {
+      this.bot.customData.buildings[suit] = this.bot.customData.buildings[suit] || [];
+    });
+  }
+  toggleBuilding(suit, index) {
+    this.bot.customData.buildings[suit] = this.bot.customData.buildings[suit] || [];
+    this.bot.customData.buildings[suit][index] = !this.bot.customData.buildings[suit][index];
+
+    this.botService.saveBots();
   }
 
 }

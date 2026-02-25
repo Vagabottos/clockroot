@@ -12,19 +12,40 @@ export class DuchyComponent implements OnInit {
 
   @Input() public bot: DuchyBot;
 
-  public buildings = [
-    { suit: 'fox', building: 'sawmill' },
-    { suit: 'bunny', building: 'workshop' },
-    { suit: 'mouse', building: 'recruiter' }
-  ];
-
   constructor(
     public botService: BotService,
     public translateService: TranslateService
   ) { }
-  
   ngOnInit() {
-    this.bot.customData.buildings = this.bot.customData.buildings || [];
+    this.bot.customData.citadels = this.bot.customData.citadels || [false, false, false];
+    this.bot.customData.markets = this.bot.customData.markets || [false, false, false];
+    this.bot.customData.tunnels = this.bot.customData.tunnels || [false, false, false];
+    this.bot.customData.burrow = this.bot.customData.burrow || 0;
+  }
+  changeSuit(suit) {
+    this.bot.customData.currentSuit = suit;
+    this.botService.saveBots();
+  }
+  
+// Toggles true/false for Citadels, Markets, and Tunnels
+  toggleTracker(type: 'citadels' | 'markets' | 'tunnels', index: number) {
+    this.bot.customData[type][index] = !this.bot.customData[type][index];
+    this.botService.saveBots();
+  }
+
+  // Toggles the minister's swayed status
+  toggleMinister(index: number) {
+    this.bot.customData.ministers[index].swayed = !this.bot.customData.ministers[index].swayed;
+    this.botService.saveBots();
+  }
+  // Changes the number of warriors in the Burrow
+  updateBurrow(amount: number) {
+    this.bot.customData.burrow += amount;
+    // Prevent it from dropping below 0
+    if (this.bot.customData.burrow < 0) {
+      this.bot.customData.burrow = 0;
+    }
+    this.botService.saveBots();
   }
 
 }

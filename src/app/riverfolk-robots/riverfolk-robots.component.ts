@@ -12,19 +12,31 @@ export class RiverfolkComponent implements OnInit {
 
   @Input() public bot: RiverfolkBot;
 
-  public buildings = [
-    { suit: 'fox', building: 'sawmill' },
-    { suit: 'bunny', building: 'workshop' },
-    { suit: 'mouse', building: 'recruiter' }
-  ];
-
   constructor(
     public botService: BotService,
     public translateService: TranslateService
   ) { }
-  
+
+    public buildings = [
+    { suit: 'fox', building: 'tradingpost' },
+    { suit: 'bunny', building: 'tradingpost' },
+    { suit: 'mouse', building: 'tradingpost' }
+  ];
+
+  changeSuit(suit) {
+    this.bot.customData.currentSuit = suit;
+    this.botService.saveBots();
+  }
   ngOnInit() {
-    this.bot.customData.buildings = this.bot.customData.buildings || [];
+    ['fox', 'bunny', 'mouse'].forEach(suit => {
+      this.bot.customData.buildings[suit] = this.bot.customData.buildings[suit] || [];
+    });
+  }
+  toggleBuilding(suit, index) {
+    this.bot.customData.buildings[suit] = this.bot.customData.buildings[suit] || [];
+    this.bot.customData.buildings[suit][index] = !this.bot.customData.buildings[suit][index];
+
+    this.botService.saveBots();
   }
 
 }
