@@ -36,22 +36,53 @@ public plots = [
     this.botService.saveBots();
   }
 
-  // Cycles the plot token: 0 (Supply) -> 1 (Face Down) -> 2 (Face Up) -> 0 (Supply)
+  // Cycles the plot token: //true = face-up // false = stowed or face-down
   cyclePlot(type: string, index: number) {
-    this.bot.customData.plots[type][index] = (this.bot.customData.plots[type][index] + 1) % 3;
+    this.bot.customData.plots[type][index] = (this.bot.customData.plots[type][index] + 1) % 2;
+    const botPlot = this.bot.customData.plots;
+    const currentState = botPlot[type][index]
+    let faceUpCount = 0
+
+    for (const plot in botPlot) {
+      for (const i in botPlot[plot]) {
+        if (botPlot[plot][i]) {
+          faceUpCount++
+        }
+      }
+    }
+    
+    const notTracked = 8 - this.bot.customData.stowedPlots - faceUpCount
+
+    if (currentState) {
+      if (notTracked<=0) {
+        this.modifyPlot(notTracked-1)
+      }
+    }
+    else if (!currentState) {
+      if (notTracked>=0) {
+        this.modifyPlot(1)
+      }
+    }
+
     this.botService.saveBots();
   }
 
   // Returns the correct icon path based on the token's current state
   getPlotIcon(type: string, index: number): string {
     const state = this.bot.customData.plots[type][index];
-    if (state === 0 || state === 1) {
+    if (state === false) {
       // 0 = In Supply (Faded), 1 = Face Down on Map
       return 'assets/inicon/plot-back.png'; 
     } else {
       // 2 = Face Up on Map
       return `assets/inicon/plot-${type}.png`; 
     }
+  }
+
+  modifyPlot(diff = 1) {
+    this.bot.customData.stowedPlots = Math.max(this.bot.customData.stowedPlots+ diff, -1);
+
+    this.botService.saveBots();
   }
 
 }

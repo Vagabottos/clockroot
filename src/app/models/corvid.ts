@@ -71,11 +71,12 @@ export class CorvidBot extends Bot {
 
   public customData = {
     currentSuit: 'bird',
+    stowedPlots: 8, //Tracks number of plots currently stowed, not face-up or face-down on board
     plots: {
-      bomb: [0, 0],       // 0 = Plot in Supply, 1 = Face Down, 2 = Face Up
-      snare: [0, 0],
-      extortion: [0, 0],
-      raid: [0, 0]
+      bomb: [false, false],       
+      snare: [false, false],      //true = face-up // false = stowed or face-down
+      extortion: [false, false],
+      raid: [false, false]
     }
   };
 
