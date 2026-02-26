@@ -81,7 +81,8 @@
     "SympathyBases": "Sympathy & Bases",
     "VagabotDifficultyTrait": "Vagabot, Difficulty, Traits",
     "BotRules": "Corvid Bot Specific Rules",
-    "RulesLizard": "Lizard Rules"
+    "RulesLizard": "Lizard Rules",
+    "RulesRiver": "Riverfolk Rules"
   },
   "SpecificSetup": {
     "Electric Eyrie": {
@@ -509,7 +510,7 @@
       "BuildAndGarrison": "Place a trade post and a warrior in an ordered clearing with no trade post. (Clearing Tie: Clearing with pieces of player who has the most warriors in payments.)",
       "RecruitOther": "**Recruit** one warrior in each **card:{{suit}}** clearing. (Not Enough Warriors: Place warriors on clearings with the highest priority.)",
       "RecruitBird": "**Recruit** one warrior in each clearing on the river. (Not Enough Warriors: Place warriors on clearings with the highest priority.)",
-      "Organize": "If you have Protectionism: Score **vp:1** and place two warriors in a clearing that has Riverfolk pieces and the most enemy pieces..",
+      "Organize": "Check for Protectionism: If you have either the shield or swords Score **vp:1** and place two warriors in a clearing that has Riverfolk pieces and the most enemy pieces.",
       "BattleShield": "Battle in each clearing. (Defender Tie: Player who has the fewest warriors in payments.)",
       "BattleSword": "Battle in each **card:{{suit}}** clearing. (Defender Tie: Player who has the fewest warriors in payments.)"
     }
@@ -579,8 +580,9 @@
     },
     "Riverfolk Robots": {
       "Score": "Score **vp:1** per warrior of the player with the most warriors in Payments, then remove those warriors from Payments.",
-      "Racketeering": "If Protectionism: From each clearing, take all but two Riverfolk warriors and place them in Payments.",
-      "Discard": "Discard the leftmost card from the Market. If ProtectionismShield: Discard the leftmost card from the Market again."
+      "Racketeering": "Protectionism: From each clearing, take all but two Riverfolk warriors and place them in Payments.",
+      "Discard": "Discard the leftmost card from the Market. If ProtectionismShield: Discard the leftmost card from the Market again.",
+      "DiscardShield":"Protectionism: Discard the leftmost card from the market again."
     }
   },
   "SpecificExtra": {
@@ -664,7 +666,16 @@
       "Conspiracy": "**Conspiracies** *Determine target player first, then target clearing.*<br><br>**Convert**<br>In an ordered clearing, replace an enemy warrior with a Lizard warrior.<br>*Player Tie*: Player with the most points.<br>*Clearing Tie*: Clearing with the most enemy buildings.<br>**Crusade**<br>Battle in each **card:{{suit}}** clearing that has 2+ Lizard warriors.<br>*Defender Tie*: Player with the most points there.<br>**Sanctify**<br>In a **card:{{suit}}** clearing, replace an enemy building with a matching garden.<br>*Player Tie*: Player with the most points.<br>*Clearing Tie*: Clearing with the least enemy warriors."
     },
     "Riverfolk Robots": {
-      "extra": "extra"
+      "prot": "In Organize (Daylight/3rd) check for these conditions.",
+      "protShield": "Does Payments have no warriors?",
+      "protSword": "Does your supply have no warriors?",
+      "tradePost":"Whenever a player removes a trade post, remove half of their warriors from Payments (rounded up.)",
+      "servicesBirdsong":"At the start of Birdsong, another player may buy one service plus one per clearing with a trade post and their faction pieces.",
+      "servicesCost":"They pay for the service by placing warriors in Payments, depending on how many victory points they have. If their faction has no warriors, place Riverfolk warriors instead.",
+      "servicesVictoryPoints":"0-9 Victory Points = 2 Warriors | 10-19 Victory Points = 3 Warriors | 20+ Victory Points = 4 Warriors",
+      "serviceCard":"**Hand Card**: Take a card and add it to your hand.",
+      "serviceBoat":"**Riverboat**: Treat rivers as paths for this turn.",
+      "serviceMerc":"**Mercenaries**: For battle and rule in Daylight and Evening, you treat Riverfolk warriors as your own, except for battle against the Riverfolk. In battle, you must split hits between your faction pieces and Riverfolk warriors."
     }
   },
   "ToastMessages": {

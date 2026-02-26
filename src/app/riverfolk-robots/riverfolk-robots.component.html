@@ -138,6 +138,44 @@
             </div>
           </div>
         </div>
+        <br>
+        <h1 style="text-align: center; font-weight: 700;">Protectionism</h1>
+<div class="protectionism-column">
+  <div
+    class="protectionism-row"
+    (click)="toggleProtectionism(true)"
+    [class.swayed]="bot.customData.protectionismShield"
+  >
+    <img
+      src="assets/inicon/protectionism-shield.png"
+      class="protectionism-suit"
+    />
+    <div class="protectionism-info">
+      <span class="protectionism-name">{{"SpecificExtra.Riverfolk Robots.protShield" | translate }}</span>
+    </div>
+    <div class="protectionism-toggle">
+      <ion-icon [name]="bot.customData.protectionismShield ? 'checkmark-circle' : 'ellipse-outline'"></ion-icon>
+    </div>
+  </div>   
+
+  <div
+    class="protectionism-row"
+    (click)="toggleProtectionism(false)"
+    [class.swayed]="bot.customData.protectionismSword"
+  >
+    <img
+      src="assets/inicon/protectionism-sword.png"
+      class="protectionism-suit"
+    />
+    <div class="protectionism-info">
+      <span class="protectionism-name">{{"SpecificExtra.Riverfolk Robots.protSword" | translate }}</span>
+    </div>
+    <div class="protectionism-toggle">
+      <ion-icon [name]="bot.customData.protectionismSword ? 'checkmark-circle' : 'ellipse-outline'"></ion-icon>
+    </div>
+  </div>
+
+</div>    
       </ion-card-content>
     </ion-card>
   </ion-item>
@@ -188,6 +226,28 @@
       <ion-card-content>
         <ol>
           <li class="rule-message" *ngFor="let message of bot.evening(translateService)">
+            <para [bot]="bot" [metadata]="message"></para>
+          </li>
+        </ol>
+      </ion-card-content>
+    </ion-card>
+  </ion-item>
+
+   <ion-item *ngIf="bot.setupHidden">
+    <ion-card>
+      <ion-card-header>
+        <h2>{{ 'Sections.RulesRiver' | translate }}</h2>
+      </ion-card-header>
+      <ion-card-content>
+        <h2>Trade Posts</h2>
+        <ol>
+          <li class="rule-message" *ngFor="let message of bot.tradePost(translateService)">
+            <para [bot]="bot" [metadata]="message"></para>
+          </li>
+        </ol>
+        <h2>Services</h2>
+        <ol>
+          <li class="rule-message" *ngFor="let message of bot.services(translateService)">
             <para [bot]="bot" [metadata]="message"></para>
           </li>
         </ol>

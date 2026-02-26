@@ -39,4 +39,14 @@ export class RiverfolkComponent implements OnInit {
     this.botService.saveBots();
   }
 
+toggleProtectionism(isShield: boolean) {
+    const prot = this.bot.customData;
+    if (isShield) {
+      prot.protectionismShield = !prot.protectionismShield;
+    } else {
+      prot.protectionismSword = !prot.protectionismSword;
+    }
+    this.botService.saveBots();
+  }
+
 }
