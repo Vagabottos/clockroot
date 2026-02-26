@@ -79,7 +79,8 @@
     "BattleTrackBonus": "Battle Track Bonus",
     "SatchelBattleTrack": "Satchel & Battle Track",
     "SympathyBases": "Sympathy & Bases",
-    "VagabotDifficultyTrait": "Vagabot, Difficulty, Traits"
+    "VagabotDifficultyTrait": "Vagabot, Difficulty, Traits",
+    "BotRules": "Corvid Bot Specific Rules"
   },
   "SpecificSetup": {
     "Electric Eyrie": {
@@ -488,8 +489,8 @@
     "Cogwheel Corvids": {
       "Battle": "**Battle** in each of two **card:{{suit}}** clearings. (Defender Tie: Player with the most buildings and tokens there, then with the most points.)",
       "Move": "**Move** all but two warriors from each **card:{{suit}}** clearing with a face-up plot to an adjacent clearing with no plot. (Clearing Tie: Most Corvid Warriors.) (No Such Destination: Lowest Priority Clearing.)",
-      "Plot": "In the **card:{{suit}}** clearing with the most Corvid warriors and no plot, remove one Corvid warrior there to place a random facedown plot there.",
-      "PlotThickens": "In a clearing that has no plot and three or more Corvid warriors, remove a Corvid warrior from there to place a random facedown plot there. (Clearing Tie: Most Corvid Warriors.)"
+      "Plot": "**Plot** in the **card:{{suit}}** clearing with the most Corvid warriors and no plot, remove one Corvid warrior there to place a random facedown plot there.",
+      "PlotThickens": "**Plot Thickens**:In a clearing that has no plot and three or more Corvid warriors, remove a Corvid warrior from there to place a random facedown plot there. (Clearing Tie: Most Corvid Warriors.)"
     },
     "Drillbit Duchy": {
       "DigNoTunnel": "<br/>No tunnel in supply, take and place the tunnel from the clearing with the fewest Duchy warriors",
@@ -632,7 +633,18 @@
       "SatchelBattleTrack": "Battle"
     },
     "Cogwheel Corvids": {
-      "extra": "extra"
+      "BotInteractions": {
+        "Overview": "When playing with the Corvid's against any bots used these rules for plots:",
+        "Bomb": "When flipped, remove two pieces of each bot in its clearing, warriors first, instead of all pieces.",
+        "Snare": "Bots ignore snare tokens for the purpose of targeting clearings to place or move pieces.\nIf a bot would place in or move out of a clearing with a snare, they remove the snare instead of performing that action.\n(Vagabot will continue to move after this happens, exhausting extra items.)"
+      },
+      "Plot-Tokens": {
+        "Overview": "When using the Cogwheel Corvids, apply these rules to their plot-tokens",
+        "Bomb": "When flipped, remove all human enemy pieces in its clearing, then replace this plot with a random plot placed face-up. (The replacement doesn't trigger and cannot be a bomb.)",
+        "Snare": "While face-up, enemy pieces cannot be placed in or moved from this clearing.",
+        "Extortion": "When flipped, each player with any faction pieces in its clearing must discard one random card.",
+        "Raid": "When removed, place one warrior in each adjacent clearing."
+      }
     },
     "Drillbit Duchy": {
       "Ministers": {

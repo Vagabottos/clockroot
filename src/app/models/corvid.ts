@@ -91,7 +91,7 @@ export class CorvidBot extends Bot {
       this.createMetaData('text', '', translate.instant(`SpecificBirdsong.Cogwheel Corvids.RevealOrder`)),
       this.createMetaData('score', 1, translate.instant(`SpecificBirdsong.Cogwheel Corvids.CraftOrder`)),
       this.createMetaData('text', '', translate.instant(`SpecificBirdsong.Cogwheel Corvids.RecruitOrder`,{ suit })),
-      this.createMetaData('text', '', translate.instant(`SpecificBirdsong.Cogwheel Corvids.Flip`))
+      this.createMetaData('score', 1, translate.instant(`SpecificBirdsong.Cogwheel Corvids.Flip`))
     ];
   }
 
@@ -113,5 +113,23 @@ export class CorvidBot extends Bot {
       this.createMetaData('text', '', translate.instant(`SpecificEvening.Cogwheel Corvids.Score`,{ suit })),
       this.createMetaData('text', '', translate.instant(`SpecificEvening.Cogwheel Corvids.Discard`))
     ];
+  }
+
+  public botRules(translate: TranslateService) {
+    const suit = this.customData.currentSuit;
+
+    return[
+      this.createMetaData('text', '', translate.instant(`SpecificExtra.Cogwheel Corvids.BotInteractions.Bomb`)),
+      this.createMetaData('text', '', translate.instant(`SpecificExtra.Cogwheel Corvids.BotInteractions.Snare`))
+    ];
+  }
+
+  public plotRules(translate: TranslateService) {
+    return [
+      this.createMetaData('text', '', translate.instant(`SpecificExtra.Cogwheel Corvids.Plot-Tokens.Bomb`)),
+      this.createMetaData('text', '', translate.instant(`SpecificExtra.Cogwheel Corvids.Plot-Tokens.Snare`)),
+      this.createMetaData('text', '', translate.instant(`SpecificExtra.Cogwheel Corvids.Plot-Tokens.Extortion`)),
+      this.createMetaData('text', '', translate.instant(`SpecificExtra.Cogwheel Corvids.Plot-Tokens.Raid`))
+    ]
   }
 }
