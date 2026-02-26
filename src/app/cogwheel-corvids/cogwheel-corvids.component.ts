@@ -68,16 +68,6 @@ public plots = [
   }
 
   // Returns the correct icon path based on the token's current state
-  getPlotIcon(type: string, index: number): string {
-    const state = this.bot.customData.plots[type][index];
-    if (state === false) {
-      // 0 = In Supply (Faded), 1 = Face Down on Map
-      return `assets/inicon/plot-${type}.png`; 
-    } else {
-      // 2 = Face Up on Map
-      return `assets/inicon/plot-${type}.png`; 
-    }
-  }
 
   modifyPlot(diff = 1) {
     this.bot.customData.stowedPlots = Math.max(this.bot.customData.stowedPlots+ diff, -1);

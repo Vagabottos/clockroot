@@ -168,7 +168,7 @@
           />
               <div class="row-additions">
                 <ion-button
-                  [disabled]="bot.customData.counter <= 0"
+                  [disabled]="bot.customData.stowedPlots <= -1"
                   (click)="modifyPlot(-1)"
                 >
                   <ion-icon name="remove"></ion-icon>
