@@ -21,7 +21,16 @@ export class LizardComponent implements OnInit {
     { suit: 'fox', building: 'garden' },
     { suit: 'bunny', building: 'garden' },
     { suit: 'mouse', building: 'garden' }
+    
   ];  
+  public acolyteActions = [
+    'assets/inicon/token-convert.png',
+    'assets/inicon/token-crusade.png',
+    'assets/inicon/token-convert.png',
+    'assets/inicon/token-crusade.png',
+    'assets/inicon/token-sanctify.png'
+  ]
+
   changeSuit(suit) {
     this.bot.customData.currentSuit = suit;
     this.botService.saveBots();
@@ -36,6 +45,19 @@ export class LizardComponent implements OnInit {
     this.bot.customData.buildings[suit][index] = !this.bot.customData.buildings[suit][index];
 
     this.botService.saveBots();
+  }
+
+  modifyAcolyte(diff = 1) {
+    this.bot.customData.acolyteTracker = Math.max(this.bot.customData.acolyteTracker + diff, 0);
+
+    this.botService.saveBots();
+  }
+
+  getOverlayIndex(): number {
+    if (this.bot.customData.acolyteTracker === 0) {
+      return -1;
+    }
+    return (this.bot.customData.acolyteTracker - 1) % 5;
   }
 
 }

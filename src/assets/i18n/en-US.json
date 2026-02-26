@@ -80,7 +80,8 @@
     "SatchelBattleTrack": "Satchel & Battle Track",
     "SympathyBases": "Sympathy & Bases",
     "VagabotDifficultyTrait": "Vagabot, Difficulty, Traits",
-    "BotRules": "Corvid Bot Specific Rules"
+    "BotRules": "Corvid Bot Specific Rules",
+    "RulesLizard": "Lizard Rules"
   },
   "SpecificSetup": {
     "Electric Eyrie": {
@@ -393,8 +394,8 @@
       "RecruitOrder": "**Recruit** {{moleDifficulty}} warriors, plus one per **meeple:duchy** showing, place them into the burrow. (Currently: recruit **{{moleRecruit}}** warriors.)"
     },
     "Logical Lizards": {
-      "Outcasts": "The most common suit in your Los Souls is the order. On a tie, the order is bird.",
-      "Conspiracy": "Perform Conspiracies in ordered clearings."
+      "Outcasts": "The most common suit in your Lost Souls is the order. On a tie, the order is **card:bird**.",
+      "Conspiracy": "Perform Conspiracies in **card:{{suit}}** clearings."
     },
     "Riverfolk Robots": {
       "StockMarket": "Draw two cards and add them to the Market's right side until it has five.",
@@ -502,8 +503,7 @@
       "Ministers": "Take the actions of all your swayed ministers from top to bottom. (Your Lords presently give **{{ministerPoints}}** VP)"
     },
     "Logical Lizards": {
-      "RitualsBird": "Take a Lizard warrior from the clearing with the most Lizard warriors, place it in the Acolytes box. This card is discarded and is not placed in the Lost Souls pile.",
-      "RitualsOther": "Place a warrior in a **card:{{suit}}** clearing. Then, if you rule that clearing, place a matching garden token there. (Clearing Tie: Place warrior in clearing with any open building slot, then most enemy buildings.) "
+      "Rituals": "**Rituals**: Reveal the top four cards from your Lost Souls, one at a time, and perform a ritual for each revealed suit.<br>**card:bird** revealed: Take a Lizard warrior from the clearing with the most Lizard warriors, and place it in the Acolytes box. **Put this card in the DISCARD pile, NOT the Lost Souls pile.**<br>**Other Suit** revealed: Place a warrior in the suited clearing. Then, if you rule there, place a matching garden there. (Clearing Tie: Place warrior in clearing with any open building slots, then most enemy buildings.)"
     },
     "Riverfolk Robots": {
       "BuildAndGarrison": "Place a trade post and a warrior in an ordered clearing with no trade post. (Clearing Tie: Clearing with pieces of player who has the most warriors in payments.)",
@@ -660,7 +660,8 @@
       }
     },
     "Logical Lizards": {
-      "extra": "extra"
+      "Lost Souls" : "**Lost Souls**: Whenever a card is spent or discarded, place it in the Lost Souls pile instead.",
+      "Conspiracy": "**Conspiracies** *Determine target player first, then target clearing.*<br><br>**Convert**<br>In an ordered clearing, replace an enemy warrior with a Lizard warrior.<br>*Player Tie*: Player with the most points.<br>*Clearing Tie*: Clearing with the most enemy buildings.<br>**Crusade**<br>Battle in each **card:{{suit}}** clearing that has 2+ Lizard warriors.<br>*Defender Tie*: Player with the most points there.<br>**Sanctify**<br>In a **card:{{suit}}** clearing, replace an enemy building with a matching garden.<br>*Player Tie*: Player with the most points.<br>*Clearing Tie*: Clearing with the least enemy warriors."
     },
     "Riverfolk Robots": {
       "extra": "extra"
