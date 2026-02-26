@@ -39,12 +39,9 @@ export class DuchyComponent implements OnInit {
     this.botService.saveBots();
   }
   // Changes the number of warriors in the Burrow
-  updateBurrow(amount: number) {
-    this.bot.customData.burrow += amount;
-    // Prevent it from dropping below 0
-    if (this.bot.customData.burrow < 0) {
-      this.bot.customData.burrow = 0;
-    }
+  modifyBurrow(diff = 1) {
+    this.bot.customData.burrow = Math.max(this.bot.customData.burrow + diff, 0);
+
     this.botService.saveBots();
   }
 

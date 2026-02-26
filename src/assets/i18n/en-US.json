@@ -389,7 +389,7 @@
     "Drillbit Duchy": {
       "RevealOrder": "Reveal an order card.",
       "CraftOrder": "Craft order card for **vp:1** if it shows an available item.",
-      "RecruitOrder": "**Recruit** two warriors, plus one per mole showing, in the burrow (remember Foremole.)"
+      "RecruitOrder": "**Recruit** {{moleDifficulty}} warriors, plus one per **meeple:duchy** showing, place them into the burrow. (Currently: recruit **{{moleRecruit}}** warriors.)"
     },
     "Logical Lizards": {
       "Outcasts": "The most common suit in your Los Souls is the order. On a tie, the order is bird.",
@@ -492,10 +492,13 @@
       "PlotThickens": "In a clearing that has no plot and three or more Corvid warriors, remove a Corvid warrior from there to place a random facedown plot there. (Clearing Tie: Most Corvid Warriors.)"
     },
     "Drillbit Duchy": {
-      "Dig": "If the Burrow has four or more warriors, place a tunnel in a **card:{{suit}}** clearing with no runnel and no Duchy buildings. Also move four warriors from the burrow to the tunnel.",
+      "DigNoTunnel": "<br/>No tunnel in supply, take and place the tunnel from the clearing with the fewest Duchy warriors",
+      "DigBird": "If the Burrow has four or more warriors, place a tunnel in a **card:{{suit}}** clearing with no tunnel and no Duchy buildings. Also move four warriors from the burrow to the tunnel. (Clearing Tie **card:{{suit}}**: Such a clearing with the most enemy buildings and tokens",
+      "Dig": "If the Burrow has four or more warriors, place a tunnel in a **card:{{suit}}** clearing with no tunnel and no Duchy buildings. Also move four warriors from the burrow to the tunnel. (Clearing Tie **card:{{suit}}**: Such a clearing with the most empty building slots, then fewest enemy warriors.",
       "Battle": "**Battle** in each **card:{{suit}}** clearing. (Defender Tie: Player with the most buildings, then the most pieces, then the most points.)",
+      "BattleCaptain": "**Battle** in each **card:{{suit}}** clearing. (Defender Tie: Player with the most buildings, then the most pieces, then the most points.)<br/>**Captain** is swayed, do not forget his effect in battle.",
       "Build": "**Build** in the clearing you rule with the most Duchy warriors. Place a citadel if you have 9+ warriors in your supply. Otherwise, place a market. Score **vp:1** if you cannot place a building while one is in supply.",
-      "Ministers": "Take the actions of all your swayed ministers from top to bottom."
+      "Ministers": "Take the actions of all your swayed ministers from top to bottom. (Your Lords presently give **{{ministerPoints}}** VP)"
     },
     "Logical Lizards": {
       "RitualsBird": "Take a Lizard warrior from the clearing with the most Lizard warriors, place it in the Acolytes box. This card is discarded and is not placed in the Lost Souls pile.",
@@ -564,7 +567,7 @@
     "Drillbit Duchy": {
       "Rally": "In each **card:{{suit}}** clearing with no Duchy buildings and two or fewer warriors, move all Duchy warriors to an adjacent clearing with a Duchy building. Then in each clearing you rule, place all but four Duchy warriors in the Burrow. (Target Clearing Tie: Fewest Duchy warriors.) (No Such Clearing: Place the warriors that would have moved in the Burrow.).",
       "Score": "Score **vp:1** per market on the map",
-      "Sway": "Place a crown on the topmost ordered, unswayed, minister. (No Such Minister: Sway the bottommost unswayed minister.)",
+      "Sway": "Place a crown on the topmost unswayed **card:{{suit}}** minister. (No Such Minister: Sway the bottommost unswayed **card:bird** minister.)",
       "Discard": "Discard the order card."
     },
     "Logical Lizards": {
@@ -633,10 +636,10 @@
     },
     "Drillbit Duchy": {
       "Ministers": {
-        "Foremole": "You have an additional revealed mole.",
         "Captain": "As attacker in battle, deal an extra hit if the battle clearing has a tunnel.",
-        "Marshal": "Place a warrior into a clearing that has the fewest Duchy warriors and a Duchy building.",
-        "Brigadier": "Take the dig action if the Burrow has three or more warriors. For this dig action, use the Clearing Tie condition for a fox order.",
+        "Marshal": "Place a Duchy warrior into a clearing that has the fewest Duchy warriors and a Duchy building.",
+        "Foremole": "You have an additional revealed **meeple:duchy**.",
+        "Brigadier": "Take the dig action if the Burrow has three or more Duchy warriors. For this dig action, use the Clearing Tie condition for a fox order.",
         "Banker": "Take the Build Action.",
         "Mayor": "Remove a Duchy warrior from the clearing you rule with the most Duchy warriors. If you do, score **vp:1**.",
         "Earl": "Score **vp:1** per citadel on the map.",

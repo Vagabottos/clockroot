@@ -23,21 +23,24 @@ ion-toolbar {
   justify-content: space-around;
   align-items: flex-start;
   gap: 20px;
-  padding: 0 5em 0 5em;
+  padding: 1em 0.5em;
   flex-wrap: wrap; /* Allows the columns to stack vertically on small screens */
 }
 
 .matrix-column {
-  flex: auto;
+  flex: 1 1 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2em;
+  gap: 1.5em;
   padding: 1em 0 1em 0;
   border-radius: 8px;
   border: 1px solid rgba(0, 0, 0, 0.1);
   background: rgba(0, 0, 0, 0.03);
-  max-width: 25%;
+  max-width: 100%;
+  @media (min-width: 1200px) {
+    max-width: 25%;
+  }
 }
 
 .minister-column {
@@ -47,12 +50,42 @@ ion-toolbar {
   gap: 8px;
   border-left: 2px solid rgba(0, 0, 0, 0.1);
   padding-left: 1em;
-  max-width: 75%;
   border-radius: 8px;
   border: 1px solid rgba(0, 0, 0, 0.1);
   background: rgba(0, 0, 0, 0.03);
+  @media (min-width: 1200px) {
+    max-width: 75%;
+  }
+  max-width: 100%;
 }
 
+.burrow {
+  max-width: 15em;
+  max-height: 15em;
+  img {
+    width: 15em;
+    height: 15em;
+  }
+}
+.row-icon.burrow {
+  padding: 0em;
+}
+
+.building-row {
+  .building-count {
+    font-size: 1.5rem;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 30px;
+    text-align: center;
+  }
+
+  .row-additions {
+    display: flex;
+    align-items: center;
+    padding-left: 1em;
+  }
+}
 /* Matrix Styling */
 .building-row.matrix {
   margin: 0;
@@ -63,21 +96,27 @@ ion-toolbar {
 .row-icon {
   display: flex;
   flex-direction: row;
-  padding: .1em;
-  gap: 2em;
+  padding: .5em;
+  gap: 1em;
 
   img {
-    width: 6em;
-    height: 6em;
+    width: 5em;
+    height: 5em;
     object-fit: contain;
     cursor: pointer;
     transition: opacity 0.2s ease;
-    padding: 0; /* Override the old padding */
+    padding: .2em; /* Override the old padding */
 
     &.transparent {
       opacity: 0.3; /* Fades the icon if it is stowed/not on map */
     }
+    max-width: fit-content;
   }
+}
+
+#burrow {
+  width: 8em;
+  height: 8em;
 }
 
 /* Minister Rows Styling */
@@ -157,4 +196,29 @@ ion-toolbar {
   .minister-row.swayed {
     background: rgba(255,255,255,0.15);
   }
+}
+
+.meeple-overlay {
+  position: absolute;
+  //bottom: -.1em;
+  //right: -.1em;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: .1em;
+  pointer-events: none;
+}
+
+.meeple {
+  width: 2em !important;
+  height: 2em !important;
+  object-fit: contain;
+}
+
+.citadel-container {
+  position: relative; 
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
 }
