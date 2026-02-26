@@ -395,7 +395,7 @@
     },
     "Logical Lizards": {
       "Outcasts": "The most common suit in your Lost Souls is the order. On a tie, the order is **card:bird**.",
-      "Conspiracy": "Perform Conspiracies in **card:{{suit}}** clearings."
+      "Conspiracy": "Perform Conspiracies in **card:{{suit}}** clearings. You will perform the conspiracy shown if able, then remove an acolyte if you did perform it, and continue until you are out of acolytes or cannot conspire."
     },
     "Riverfolk Robots": {
       "StockMarket": "Draw two cards and add them to the Market's right side until it has five.",
