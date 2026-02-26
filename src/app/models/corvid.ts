@@ -110,7 +110,7 @@ export class CorvidBot extends Bot {
     const suit = this.customData.currentSuit;
 
     return[
-      this.createMetaData('text', '', translate.instant(`SpecificEvening.Cogwheel Corvids.Score`,{ suit })),
+      this.createMetaData('score', 1, translate.instant(`SpecificEvening.Cogwheel Corvids.Score`,{ suit })),
       this.createMetaData('text', '', translate.instant(`SpecificEvening.Cogwheel Corvids.Discard`))
     ];
   }
