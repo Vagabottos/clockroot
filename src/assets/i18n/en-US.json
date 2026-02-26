@@ -399,7 +399,7 @@
       "Conspiracy": "Perform Conspiracies in **card:{{suit}}** clearings. You will perform the conspiracy shown if able, then remove an acolyte if you did perform it, and continue until you are out of acolytes or cannot conspire."
     },
     "Riverfolk Robots": {
-      "StockMarket": "Draw two cards and add them to the Market's right side until it has five.",
+      "StockMarket": "Draw two cards and add them to the Market's right side. Do not draw a card if the Market would exceed 5 cards.",
       "CraftOrder": "Craft the first card added to the Market that shows an available item for **vp:1** and then discard it.",
       "SetOrder": "Set order to be the rightmost Market Card."
     }
@@ -581,8 +581,8 @@
     "Riverfolk Robots": {
       "Score": "Score **vp:1** per warrior of the player with the most warriors in Payments, then remove those warriors from Payments.",
       "Racketeering": "Protectionism: From each clearing, take all but two Riverfolk warriors and place them in Payments.",
-      "Discard": "Discard the leftmost card from the Market. If ProtectionismShield: Discard the leftmost card from the Market again.",
-      "DiscardShield":"Protectionism: Discard the leftmost card from the market again."
+      "Discard": "Discard the leftmost card from the Market.",
+      "DiscardShield":"Protectionism (Shield Only): Discard the leftmost card from the market again."
     }
   },
   "SpecificExtra": {
