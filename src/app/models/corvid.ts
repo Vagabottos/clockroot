@@ -71,11 +71,12 @@ export class CorvidBot extends Bot {
 
   public customData = {
     currentSuit: 'bird',
+    stowedPlots: 8, //Tracks number of plots currently stowed, not face-up or face-down on board
     plots: {
-      bomb: [0, 0],       // 0 = Plot in Supply, 1 = Face Down, 2 = Face Up
-      snare: [0, 0],
-      extortion: [0, 0],
-      raid: [0, 0]
+      bomb: [false, false],       
+      snare: [false, false],      //true = face-up // false = stowed or face-down
+      extortion: [false, false],
+      raid: [false, false]
     }
   };
 
@@ -85,12 +86,13 @@ export class CorvidBot extends Bot {
 
   public birdsong(translate: TranslateService) {
     const suit = this.customData.currentSuit;
+    const difficulty = (this.difficulty === "Easy" ? 1 : this.difficulty === "Normal" ? 2 : this.difficulty === "Challenging" ? 3 : 3);
 
     return [
       this.createMetaData('text', '', translate.instant(`SpecificBirdsong.Cogwheel Corvids.RevealOrder`)),
       this.createMetaData('score', 1, translate.instant(`SpecificBirdsong.Cogwheel Corvids.CraftOrder`)),
-      this.createMetaData('text', '', translate.instant(`SpecificBirdsong.Cogwheel Corvids.RecruitOrder`,{ suit })),
-      this.createMetaData('text', '', translate.instant(`SpecificBirdsong.Cogwheel Corvids.Flip`))
+      this.createMetaData('text', '', translate.instant(`SpecificBirdsong.Cogwheel Corvids.RecruitOrder`,{difficulty, suit })),
+      this.createMetaData('score', 1, translate.instant(`SpecificBirdsong.Cogwheel Corvids.Flip`))
     ];
   }
 
@@ -107,10 +109,34 @@ export class CorvidBot extends Bot {
 
   public evening(translate: TranslateService) {
     const suit = this.customData.currentSuit;
+    const eveningActions = [
+      this.createMetaData('score', 1, translate.instant(`SpecificEvening.Cogwheel Corvids.Score`,{ suit })),
+      this.createMetaData('text', '', translate.instant(`SpecificEvening.Cogwheel Corvids.Discard`))
+    ]
+    if (this.difficulty === 'Nightmare') {
+      eveningActions.push(
+        this.createMetaData('score', 1, translate.instant('SpecificEvening.Electric Eyrie (DC).NightmareScore'))
+      );
+    }
+
+    return eveningActions;
+  }
+
+  public botRules(translate: TranslateService) {
+    const suit = this.customData.currentSuit;
 
     return[
-      this.createMetaData('text', '', translate.instant(`SpecificEvening.Cogwheel Corvids.Score`,{ suit })),
-      this.createMetaData('text', '', translate.instant(`SpecificEvening.Cogwheel Corvids.Discard`))
+      this.createMetaData('text', '', translate.instant(`SpecificExtra.Cogwheel Corvids.BotInteractions.Bomb`)),
+      this.createMetaData('text', '', translate.instant(`SpecificExtra.Cogwheel Corvids.BotInteractions.Snare`))
     ];
+  }
+
+  public plotRules(translate: TranslateService) {
+    return [
+      this.createMetaData('text', '', translate.instant(`SpecificExtra.Cogwheel Corvids.Plot-Tokens.Bomb`)),
+      this.createMetaData('text', '', translate.instant(`SpecificExtra.Cogwheel Corvids.Plot-Tokens.Snare`)),
+      this.createMetaData('text', '', translate.instant(`SpecificExtra.Cogwheel Corvids.Plot-Tokens.Extortion`)),
+      this.createMetaData('text', '', translate.instant(`SpecificExtra.Cogwheel Corvids.Plot-Tokens.Raid`))
+    ]
   }
 }

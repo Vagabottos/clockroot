@@ -16,3 +16,60 @@ ion-toolbar {
   width: 100%;      /* Add this */
   --theme-color: #e07a37;
 }
+
+.acolyte {
+  max-width: 15em;
+  max-height: 15em;
+  img {
+    width: 15em;
+    height: 15em;
+  }
+}
+.row-icon.acolyte {
+  padding: 0em;
+}
+
+.building-count {
+    font-size: 1.5rem;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 30px;
+    text-align: center;
+  }
+.row-additions {
+    display: flex;
+    align-items: center;
+    padding-left: 1em;
+  }
+.acolyte-wrapper {
+  position: relative;
+  display: inline-block;
+  margin: 0 5px; /* Add spacing between action images if needed */
+}
+
+.acolyte-wrapper img {
+  display: block; /* Removes bottom spacing on images */
+}
+
+.acolyte-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+  /* Centers the background image nicely */
+  background-image: url(/assets/inicon/token-outcast-hatred.png);
+  background-size: contain; 
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 20%;
+  border: .3em solid #000000;
+  /* Prevents the overlay from blocking clicks if you ever make the images clickable */
+  pointer-events: none; 
+}
+
+.building-row {
+  display: flex;
+  align-items: center;
+}

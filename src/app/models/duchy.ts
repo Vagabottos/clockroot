@@ -126,12 +126,20 @@ export class DuchyBot extends Bot {
   public evening(translate: TranslateService) {
     const suit = this.customData.currentSuit;
     const pointsMarkets = this.customData.markets.filter(m => m === false).length;
-    
-    return [
+
+    const eveningActions = [
       this.createMetaData('text', '', translate.instant(`SpecificEvening.Drillbit Duchy.Rally`, { suit })),
       this.createMetaData('score', pointsMarkets, translate.instant(`SpecificEvening.Drillbit Duchy.Score`)),
       this.createMetaData('text', '', translate.instant(`SpecificEvening.Drillbit Duchy.Sway`, {suit})),
       this.createMetaData('text', '', translate.instant(`SpecificEvening.Drillbit Duchy.Discard`))
-    ];
+    ]
+
+    if (this.difficulty === 'Nightmare') {
+      eveningActions.push(
+        this.createMetaData('score', 1, translate.instant('SpecificEvening.Electric Eyrie (DC).NightmareScore'))
+      );
+    }
+    
+    return eveningActions;
   }
 }

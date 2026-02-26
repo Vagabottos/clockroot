@@ -138,6 +138,40 @@
             </div>
           </div>
         </div>
+          <br>
+<h1 style="text-align: center;">Acolytes</h1>
+
+<div class="building-row">
+  <div class="row-icon acolyte"></div>
+  <div class="row-additions">
+    <ion-button
+      [disabled]="bot.customData.acolyteTracker <= 0"
+      (click)="modifyAcolyte(-1)"
+    >
+      <ion-icon name="remove"></ion-icon>
+    </ion-button>
+    <span class="building-count">{{ bot.customData.acolyteTracker }}</span>
+    <ion-button (click)="modifyAcolyte(1)">
+      <ion-icon name="add"></ion-icon>
+    </ion-button>
+  </div>
+</div>
+
+<div class="flip-container">
+  <div class="building-row">
+    <div 
+      class="acolyte-wrapper" 
+      *ngFor="let img of acolyteActions; let i = index"
+    >
+      <img [src]="img" class="flip-back">
+      
+      <div 
+        class="acolyte-overlay" 
+        *ngIf="getOverlayIndex() === i"
+      ></div>
+    </div>
+  </div>
+</div>
       </ion-card-content>
     </ion-card>
   </ion-item>
@@ -195,3 +229,20 @@
     </ion-card>
   </ion-item>
 </ion-list>
+
+  <ion-item *ngIf="bot.setupHidden">
+    <ion-card>
+      <ion-card-header>
+        <h2 class="birdsong-has-buttons">
+          {{ "Sections.RulesLizard" | translate }}
+        </h2>
+      </ion-card-header>
+      <ion-card-content>
+        <ol>
+          <li class="rule-message" *ngFor="let message of bot.extra(translateService)">
+            <para [bot]="bot" [metadata]="message"></para>
+          </li>
+        </ol>
+      </ion-card-content>
+    </ion-card>
+  </ion-item>

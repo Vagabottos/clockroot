@@ -17,3 +17,114 @@ ion-toolbar {
   width: 100%;      /* Add this */
   --theme-color: #e07a37;
 }
+
+
+.minister-column {
+  flex: 1 1 5em; /* Takes up the remaining space, min-width 300px */
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-left: 2px solid rgba(0, 0, 0, 0.1);
+  padding-left: 1em;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.03);
+  @media (min-width: 1200px) {
+    max-width: 75%;
+  }
+  max-width: 100%;
+}
+
+.burrow {
+  max-width: 15em;
+  max-height: 15em;
+  img {
+    width: 15em;
+    height: 15em;
+  }
+}
+.row-icon.burrow {
+  padding: 0em;
+}
+
+.building-row {
+  .building-count {
+    font-size: 1.5rem;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 30px;
+    text-align: center;
+  }
+
+  .row-additions {
+    display: flex;
+    align-items: center;
+    padding-left: 1em;
+  }
+}
+/* Matrix Styling */
+.building-row.matrix {
+  margin: 0;
+  justify-content: flex-start;
+  width: fit-content;
+}
+
+.row-icon {
+  display: flex;
+  flex-direction: row;
+  padding: .5em;
+  gap: 1em;
+
+  img {
+    width: 5em;
+    height: 5em;
+    object-fit: contain;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+    padding: .2em; /* Override the old padding */
+
+    &.transparent {
+      opacity: 0.3; /* Fades the icon if it is stowed/not on map */
+    }
+    max-width: fit-content;
+  }
+}
+
+#burrow {
+  width: 8em;
+  height: 8em;
+}
+
+/* Minister Rows Styling */
+/* Update this from .minister-row to .protectionism-row */
+.protectionism-column {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  gap:1em;
+}
+.protectionism-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px 12px;
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 8px;
+  background: rgba(0,0,0,0.02);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: fit-content;
+  padding: 1em;
+
+  &.swayed {
+    background: rgba(0,0,0,0.04);
+    border-color: #4daaa4;
+    border-width: .5em;
+  }
+  .protectionism-suit {
+      max-width: 3em;
+  }
+  .protectionism-toggle {
+    width: 2em;
+  }
+}

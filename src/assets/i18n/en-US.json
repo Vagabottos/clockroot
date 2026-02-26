@@ -79,7 +79,10 @@
     "BattleTrackBonus": "Battle Track Bonus",
     "SatchelBattleTrack": "Satchel & Battle Track",
     "SympathyBases": "Sympathy & Bases",
-    "VagabotDifficultyTrait": "Vagabot, Difficulty, Traits"
+    "VagabotDifficultyTrait": "Vagabot, Difficulty, Traits",
+    "BotRules": "Corvid Bot Specific Rules",
+    "RulesLizard": "Lizard Rules",
+    "RulesRiver": "Riverfolk Rules"
   },
   "SpecificSetup": {
     "Electric Eyrie": {
@@ -381,9 +384,9 @@
       "CraftOrder": "Craft order card for **vp:1** if it shows an available item."
     },
     "Cogwheel Corvids": {
-      "RevealOrder": "Reveal an order card.",
-      "CraftOrder": "Craft order card for **vp:1** if it shows an available item.",
-      "RecruitOrder": "**Recruit** two warriors in each of two **card:{{suit}}** clearings. (Priority to clearings without plot tokens then with most Corvid warriors.)",
+      "RevealOrder": "**Reveal** an order card.",
+      "CraftOrder": "**Craft** order card for **vp:1** if it shows an available item.",
+      "RecruitOrder": "**Recruit** {{difficulty}} warriors in each of two **card:{{suit}}** clearings. (Priority to clearings without plot tokens then with most Corvid warriors.)<br>(If you have no warriors in supply, immediately do the Plot Thickens before placing the remaining warriors.)",
       "Flip": "**Flip** each plot token (no warrior required). Each time you flip a plot, score +1 victory point per face-up plot on the map, then resolve its When Flipped effect if any."
     },
     "Drillbit Duchy": {
@@ -392,8 +395,8 @@
       "RecruitOrder": "**Recruit** {{moleDifficulty}} warriors, plus one per **meeple:duchy** showing, place them into the burrow. (Currently: recruit **{{moleRecruit}}** warriors.)"
     },
     "Logical Lizards": {
-      "Outcasts": "The most common suit in your Los Souls is the order. On a tie, the order is bird.",
-      "Conspiracy": "Perform Conspiracies in ordered clearings."
+      "Outcasts": "The most common suit in your Lost Souls is the order. On a tie, the order is **card:bird**.",
+      "Conspiracy": "Perform Conspiracies in **card:{{suit}}** clearings. You will perform the conspiracy shown if able, then remove an acolyte if you did perform it, and continue until you are out of acolytes or cannot conspire."
     },
     "Riverfolk Robots": {
       "StockMarket": "Draw two cards and add them to the Market's right side until it has five.",
@@ -488,8 +491,8 @@
     "Cogwheel Corvids": {
       "Battle": "**Battle** in each of two **card:{{suit}}** clearings. (Defender Tie: Player with the most buildings and tokens there, then with the most points.)",
       "Move": "**Move** all but two warriors from each **card:{{suit}}** clearing with a face-up plot to an adjacent clearing with no plot. (Clearing Tie: Most Corvid Warriors.) (No Such Destination: Lowest Priority Clearing.)",
-      "Plot": "In the **card:{{suit}}** clearing with the most Corvid warriors and no plot, remove one Corvid warrior there to place a random facedown plot there.",
-      "PlotThickens": "In a clearing that has no plot and three or more Corvid warriors, remove a Corvid warrior from there to place a random facedown plot there. (Clearing Tie: Most Corvid Warriors.)"
+      "Plot": "**Plot** in the **card:{{suit}}** clearing with the most Corvid warriors and no plot, remove one Corvid warrior there to place a random facedown plot there.",
+      "PlotThickens": "**Plot Thickens**:In a clearing that has no plot and three or more Corvid warriors, remove a Corvid warrior from there to place a random facedown plot there. (Clearing Tie: Most Corvid Warriors.)"
     },
     "Drillbit Duchy": {
       "DigNoTunnel": "<br/>No tunnel in supply, take and place the tunnel from the clearing with the fewest Duchy warriors",
@@ -501,14 +504,13 @@
       "Ministers": "Take the actions of all your swayed ministers from top to bottom. (Your Lords presently give **{{ministerPoints}}** VP)"
     },
     "Logical Lizards": {
-      "RitualsBird": "Take a Lizard warrior from the clearing with the most Lizard warriors, place it in the Acolytes box. This card is discarded and is not placed in the Lost Souls pile.",
-      "RitualsOther": "Place a warrior in a **card:{{suit}}** clearing. Then, if you rule that clearing, place a matching garden token there. (Clearing Tie: Place warrior in clearing with any open building slot, then most enemy buildings.) "
+      "Rituals": "**Rituals**: Reveal the top {{difficulty}} cards from your Lost Souls, one at a time, and perform a ritual for each revealed suit.<br>**card:bird** revealed: Take a Lizard warrior from the clearing with the most Lizard warriors, and place it in the Acolytes box. **Put this card in the DISCARD pile, NOT the Lost Souls pile.**<br>**Other Suit** revealed: Place a warrior in the suited clearing. Then, if you rule there, place a matching garden there. (Clearing Tie: Place warrior in clearing with any open building slots, then most enemy buildings.)"
     },
     "Riverfolk Robots": {
-      "BuildAndGarrison": "Place a trade post and a warrior in an ordered clearing with no trade post. (Clearing Tie: Clearing with pieces of player who has the most warriors in payments.)",
+      "BuildAndGarrison": "**Build and Garrison**: Place a trade post and {{riverDifficulty}} warriors in a **card:{{suit}}** clearing with no trade post. (Clearing Tie: Clearing with pieces of player who has the most warriors in payments.)",
       "RecruitOther": "**Recruit** one warrior in each **card:{{suit}}** clearing. (Not Enough Warriors: Place warriors on clearings with the highest priority.)",
       "RecruitBird": "**Recruit** one warrior in each clearing on the river. (Not Enough Warriors: Place warriors on clearings with the highest priority.)",
-      "Organize": "If you have Protectionism: Score **vp:1** and place two warriors in a clearing that has Riverfolk pieces and the most enemy pieces..",
+      "Organize": "Check for Protectionism: If you have either the shield or swords Score **vp:1** and place two warriors in a clearing that has Riverfolk pieces and the most enemy pieces.",
       "BattleShield": "Battle in each clearing. (Defender Tie: Player who has the fewest warriors in payments.)",
       "BattleSword": "Battle in each **card:{{suit}}** clearing. (Defender Tie: Player who has the fewest warriors in payments.)"
     }
@@ -578,8 +580,9 @@
     },
     "Riverfolk Robots": {
       "Score": "Score **vp:1** per warrior of the player with the most warriors in Payments, then remove those warriors from Payments.",
-      "Racketeering": "If Protectionism: From each clearing, take all but two Riverfolk warriors and place them in Payments.",
-      "Discard": "Discard the leftmost card from the Market. If ProtectionismShield: Discard the leftmost card from the Market again."
+      "Racketeering": "Protectionism: From each clearing, take all but two Riverfolk warriors and place them in Payments.",
+      "Discard": "Discard the leftmost card from the Market. If ProtectionismShield: Discard the leftmost card from the Market again.",
+      "DiscardShield":"Protectionism: Discard the leftmost card from the market again."
     }
   },
   "SpecificExtra": {
@@ -632,7 +635,18 @@
       "SatchelBattleTrack": "Battle"
     },
     "Cogwheel Corvids": {
-      "extra": "extra"
+      "BotInteractions": {
+        "Overview": "When playing with the Corvid's against any bots used these rules for plots:",
+        "Bomb": "When flipped, remove two pieces of each bot in its clearing, warriors first, instead of all pieces.",
+        "Snare": "Bots ignore snare tokens for the purpose of targeting clearings to place or move pieces.<br>If a bot would place in or move out of a clearing with a snare, they remove the snare instead of performing that action.<br>(Vagabot will continue to move after this happens, exhausting extra items.)"
+      },
+      "Plot-Tokens": {
+        "Overview": "When using the Cogwheel Corvids, apply these rules to their plot-tokens",
+        "Bomb": "When flipped, remove all human enemy pieces in its clearing, then replace this plot with a random plot placed face-up. (The replacement doesn't trigger and cannot be a bomb.)",
+        "Snare": "While face-up, enemy pieces cannot be placed in or moved from this clearing.",
+        "Extortion": "When flipped, each player with any faction pieces in its clearing must discard one random card.",
+        "Raid": "When removed, place one warrior in each adjacent clearing."
+      }
     },
     "Drillbit Duchy": {
       "Ministers": {
@@ -648,10 +662,20 @@
       }
     },
     "Logical Lizards": {
-      "extra": "extra"
+      "Lost Souls" : "**Lost Souls**: Whenever a card is spent or discarded, place it in the Lost Souls pile instead.",
+      "Conspiracy": "**Conspiracies** *Determine target player first, then target clearing.*<br><br>**Convert**<br>In an ordered clearing, replace an enemy warrior with a Lizard warrior.<br>*Player Tie*: Player with the most points.<br>*Clearing Tie*: Clearing with the most enemy buildings.<br>**Crusade**<br>Battle in each **card:{{suit}}** clearing that has 2+ Lizard warriors.<br>*Defender Tie*: Player with the most points there.<br>**Sanctify**<br>In a **card:{{suit}}** clearing, replace an enemy building with a matching garden.<br>*Player Tie*: Player with the most points.<br>*Clearing Tie*: Clearing with the least enemy warriors."
     },
     "Riverfolk Robots": {
-      "extra": "extra"
+      "prot": "In Organize (Daylight/3rd) check for these conditions.",
+      "protShield": "Does Payments have no warriors?",
+      "protSword": "Does your supply have no warriors?",
+      "tradePost":"Whenever a player removes a trade post, remove half of their warriors from Payments (rounded up.)",
+      "servicesBirdsong":"At the start of Birdsong, another player may buy one service plus one per clearing with a trade post and their faction pieces.",
+      "servicesCost":"They pay for the service by placing warriors in Payments, depending on how many victory points they have. If their faction has no warriors, place Riverfolk warriors instead.",
+      "servicesVictoryPoints":"0-9 Victory Points = 2 Warriors | 10-19 Victory Points = 3 Warriors | 20+ Victory Points = 4 Warriors",
+      "serviceCard":"**Hand Card**: Take a card and add it to your hand.",
+      "serviceBoat":"**Riverboat**: Treat rivers as paths for this turn.",
+      "serviceMerc":"**Mercenaries**: For battle and rule in Daylight and Evening, you treat Riverfolk warriors as your own, except for battle against the Riverfolk. In battle, you must split hits between your faction pieces and Riverfolk warriors."
     }
   },
   "ToastMessages": {
