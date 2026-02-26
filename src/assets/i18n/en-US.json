@@ -386,7 +386,7 @@
     "Cogwheel Corvids": {
       "RevealOrder": "**Reveal** an order card.",
       "CraftOrder": "**Craft** order card for **vp:1** if it shows an available item.",
-      "RecruitOrder": "**Recruit** two warriors in each of two **card:{{suit}}** clearings. (Priority to clearings without plot tokens then with most Corvid warriors.)<br>(If you have no warriors in supply, immediately do the Plot Thickens before placing the remaining warriors.)",
+      "RecruitOrder": "**Recruit** {{difficulty}} warriors in each of two **card:{{suit}}** clearings. (Priority to clearings without plot tokens then with most Corvid warriors.)<br>(If you have no warriors in supply, immediately do the Plot Thickens before placing the remaining warriors.)",
       "Flip": "**Flip** each plot token (no warrior required). Each time you flip a plot, score +1 victory point per face-up plot on the map, then resolve its When Flipped effect if any."
     },
     "Drillbit Duchy": {
@@ -504,10 +504,10 @@
       "Ministers": "Take the actions of all your swayed ministers from top to bottom. (Your Lords presently give **{{ministerPoints}}** VP)"
     },
     "Logical Lizards": {
-      "Rituals": "**Rituals**: Reveal the top four cards from your Lost Souls, one at a time, and perform a ritual for each revealed suit.<br>**card:bird** revealed: Take a Lizard warrior from the clearing with the most Lizard warriors, and place it in the Acolytes box. **Put this card in the DISCARD pile, NOT the Lost Souls pile.**<br>**Other Suit** revealed: Place a warrior in the suited clearing. Then, if you rule there, place a matching garden there. (Clearing Tie: Place warrior in clearing with any open building slots, then most enemy buildings.)"
+      "Rituals": "**Rituals**: Reveal the top {{difficulty}} cards from your Lost Souls, one at a time, and perform a ritual for each revealed suit.<br>**card:bird** revealed: Take a Lizard warrior from the clearing with the most Lizard warriors, and place it in the Acolytes box. **Put this card in the DISCARD pile, NOT the Lost Souls pile.**<br>**Other Suit** revealed: Place a warrior in the suited clearing. Then, if you rule there, place a matching garden there. (Clearing Tie: Place warrior in clearing with any open building slots, then most enemy buildings.)"
     },
     "Riverfolk Robots": {
-      "BuildAndGarrison": "Place a trade post and a warrior in an ordered clearing with no trade post. (Clearing Tie: Clearing with pieces of player who has the most warriors in payments.)",
+      "BuildAndGarrison": "**Build and Garrison**: Place a trade post and {{riverDifficulty}} warriors in a **card:{{suit}}** clearing with no trade post. (Clearing Tie: Clearing with pieces of player who has the most warriors in payments.)",
       "RecruitOther": "**Recruit** one warrior in each **card:{{suit}}** clearing. (Not Enough Warriors: Place warriors on clearings with the highest priority.)",
       "RecruitBird": "**Recruit** one warrior in each clearing on the river. (Not Enough Warriors: Place warriors on clearings with the highest priority.)",
       "Organize": "Check for Protectionism: If you have either the shield or swords Score **vp:1** and place two warriors in a clearing that has Riverfolk pieces and the most enemy pieces.",

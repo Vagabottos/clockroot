@@ -84,17 +84,19 @@ export class RiverfolkBot extends Bot {
   }
 
   public birdsong(translate: TranslateService) {
+    
     return [
       this.createMetaData('text', '', translate.instant(`SpecificBirdsong.Riverfolk Robots.StockMarket`)),
       this.createMetaData('score', 1, translate.instant(`SpecificBirdsong.Riverfolk Robots.CraftOrder`)),
       this.createMetaData('text', '', translate.instant(`SpecificBirdsong.Riverfolk Robots.SetOrder`))
     ];
   }
-
+  
   public daylight(translate: TranslateService) {
     const suit = this.customData.currentSuit;
+    const riverDifficulty = (this.difficulty === "Easy" ? 0 : this.difficulty === "Normal" ? 1 : this.difficulty === "Challenging" ? 2 : 2);
     const daylightActions = [
-      this.createMetaData('text', '', translate.instant(`SpecificDaylight.Riverfolk Robots.BuildAndGarrison`)),
+      this.createMetaData('text', '', translate.instant(`SpecificDaylight.Riverfolk Robots.BuildAndGarrison`, {riverDifficulty, suit})),
       this.createMetaData('text', '', translate.instant(`SpecificDaylight.Riverfolk Robots.RecruitOther`, {suit})),
       this.createMetaData('text', '', translate.instant(`SpecificDaylight.Riverfolk Robots.RecruitBird`)),
       this.createMetaData('score', 1, translate.instant(`SpecificDaylight.Riverfolk Robots.Organize`))
@@ -115,6 +117,11 @@ export class RiverfolkBot extends Bot {
     }
     if (this.customData.protectionismShield) {
       eveningActions.push(this.createMetaData('text', '', translate.instant(`SpecificEvening.Riverfolk Robots.DiscardShield`)))
+    }
+    if (this.difficulty === 'Nightmare') {
+      eveningActions.push(
+        this.createMetaData('score', 1, translate.instant('SpecificEvening.Electric Eyrie (DC).NightmareScore'))
+      );
     }
     return eveningActions;
   }

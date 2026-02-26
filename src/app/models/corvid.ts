@@ -86,11 +86,12 @@ export class CorvidBot extends Bot {
 
   public birdsong(translate: TranslateService) {
     const suit = this.customData.currentSuit;
+    const difficulty = (this.difficulty === "Easy" ? 1 : this.difficulty === "Normal" ? 2 : this.difficulty === "Challenging" ? 3 : 3);
 
     return [
       this.createMetaData('text', '', translate.instant(`SpecificBirdsong.Cogwheel Corvids.RevealOrder`)),
       this.createMetaData('score', 1, translate.instant(`SpecificBirdsong.Cogwheel Corvids.CraftOrder`)),
-      this.createMetaData('text', '', translate.instant(`SpecificBirdsong.Cogwheel Corvids.RecruitOrder`,{ suit })),
+      this.createMetaData('text', '', translate.instant(`SpecificBirdsong.Cogwheel Corvids.RecruitOrder`,{difficulty, suit })),
       this.createMetaData('score', 1, translate.instant(`SpecificBirdsong.Cogwheel Corvids.Flip`))
     ];
   }
@@ -108,11 +109,17 @@ export class CorvidBot extends Bot {
 
   public evening(translate: TranslateService) {
     const suit = this.customData.currentSuit;
-
-    return[
+    const eveningActions = [
       this.createMetaData('score', 1, translate.instant(`SpecificEvening.Cogwheel Corvids.Score`,{ suit })),
       this.createMetaData('text', '', translate.instant(`SpecificEvening.Cogwheel Corvids.Discard`))
-    ];
+    ]
+    if (this.difficulty === 'Nightmare') {
+      eveningActions.push(
+        this.createMetaData('score', 1, translate.instant('SpecificEvening.Electric Eyrie (DC).NightmareScore'))
+      );
+    }
+
+    return eveningActions;
   }
 
   public botRules(translate: TranslateService) {

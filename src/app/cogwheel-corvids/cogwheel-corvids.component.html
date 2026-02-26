@@ -185,8 +185,8 @@
             <img
               class="plot-toggle click-icon plot-icon"
               *ngFor="let token of [0, 1]"
-              [src]="getPlotIcon(plot.type, token)"
-              [class.in-supply]="bot.customData.plots[plot.type][token] === 0"
+              [src]="'assets/inicon/plot-' + plot.type + '.png'"
+              [class.in-supply]="bot.customData.plots[plot.type][token] === false"
               (click)="cyclePlot(plot.type, token)"
             />
           </div>

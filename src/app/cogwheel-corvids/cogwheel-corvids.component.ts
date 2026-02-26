@@ -38,7 +38,7 @@ public plots = [
 
   // Cycles the plot token: //true = face-up // false = stowed or face-down
   cyclePlot(type: string, index: number) {
-    this.bot.customData.plots[type][index] = (this.bot.customData.plots[type][index] + 1) % 2;
+    this.bot.customData.plots[type][index] = (!this.bot.customData.plots[type][index]);
     const botPlot = this.bot.customData.plots;
     const currentState = botPlot[type][index]
     let faceUpCount = 0
@@ -72,7 +72,7 @@ public plots = [
     const state = this.bot.customData.plots[type][index];
     if (state === false) {
       // 0 = In Supply (Faded), 1 = Face Down on Map
-      return 'assets/inicon/plot-back.png'; 
+      return `assets/inicon/plot-${type}.png`; 
     } else {
       // 2 = Face Up on Map
       return `assets/inicon/plot-${type}.png`; 

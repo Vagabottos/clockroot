@@ -98,20 +98,28 @@ export class LizardBot extends Bot {
 
   public daylight(translate: TranslateService) {
     const suit = this.customData.currentSuit;
+    const difficulty = (this.difficulty === "Easy" ? 3 : this.difficulty === "Normal" ? 4 : this.difficulty === "Challenging" ? 5 : 5);
 
     return [
-      this.createMetaData('text', '', translate.instant(`SpecificDaylight.Logical Lizards.Rituals`, {suit})),
+      this.createMetaData('text', '', translate.instant(`SpecificDaylight.Logical Lizards.Rituals`, {suit, difficulty})),
     ];
   }
 
   public evening(translate: TranslateService) {
-
-    return [
+    const eveningActions = [
         this.createMetaData('score', 1, translate.instant(`SpecificEvening.Logical Lizards.Score`)),
         this.createMetaData('text', '', translate.instant(`SpecificEvening.Logical Lizards.DiscardLostSouls`)),
         this.createMetaData('text', '', translate.instant(`SpecificEvening.Logical Lizards.ReturnRevealedCards`)),
         this.createMetaData('score', 1, translate.instant(`SpecificEvening.Logical Lizards.Craft`)),
     ]
+
+    if (this.difficulty === 'Nightmare') {
+      eveningActions.push(
+        this.createMetaData('score', 1, translate.instant('SpecificEvening.Electric Eyrie (DC).NightmareScore'))
+      );
+    }
+
+    return eveningActions;
   
   }
 
