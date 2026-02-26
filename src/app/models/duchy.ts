@@ -90,10 +90,14 @@ export class DuchyBot extends Bot {
   }
 
   public birdsong(translate: TranslateService) {
+    const citadelUsedLength = this.customData.citadels.filter(m => m ===false).length;
+    const moleRevealed = (citadelUsedLength === 3 ? 4 : citadelUsedLength) + (this.customData.ministers.find(m => m.id === "foremole").swayed ? 1 : 0)
+    const moleDifficulty = (this.difficulty === "Easy" ? 1 : this.difficulty === "Normal" ? 2 : this.difficulty === "Challenging" ? 3 : 4);
+    const moleRecruit = moleRevealed + moleDifficulty;
     return [
       this.createMetaData('text', '', translate.instant(`SpecificBirdsong.Drillbit Duchy.RevealOrder`)),
       this.createMetaData('score', 1, translate.instant(`SpecificBirdsong.Drillbit Duchy.CraftOrder`)),
-      this.createMetaData('text', '', translate.instant(`SpecificBirdsong.Drillbit Duchy.RecruitOrder`))
+      this.createMetaData('text', '', translate.instant(`SpecificBirdsong.Drillbit Duchy.RecruitOrder`, {moleRecruit, moleDifficulty}))
     ];
   }
 
@@ -103,6 +107,10 @@ export class DuchyBot extends Bot {
     const isCaptainSwayed = this.customData.ministers.find(m => m.id === "captain").swayed;
     const hasTunnelSupply = this.customData.tunnels.filter(m => m === true).length === 0;
     const isBirdOrder = this.customData.currentSuit === "bird" ? "Bird" : "";
+    const pointsEarl =(this.customData.ministers.find(m=>m.id === "earl").swayed) ? this.customData.citadels.filter(m => m === false).length : 0
+    const pointsBaron = (this.customData.ministers.find(m=>m.id === "baron").swayed) ? this.customData.markets.filter(m => m === false).length : 0
+    const pointsDuchess = (this.customData.ministers.find(m=>m.id === "duchess").swayed && this.customData.tunnels.filter(m => m === true).length === 0) ? 2 : 0
+    const ministerPoints = pointsEarl + pointsBaron + pointsDuchess
 
     return [
       this.createMetaData('text', '', 
@@ -111,32 +119,18 @@ export class DuchyBot extends Bot {
       ),
       this.createMetaData('text', '', translate.instant(`SpecificDaylight.Drillbit Duchy.` + (isCaptainSwayed ? `BattleCaptain` : `Battle`), { suit })),
       this.createMetaData('score', 1, translate.instant(`SpecificDaylight.Drillbit Duchy.Build`)),
-      this.createMetaData('text', '', translate.instant(`SpecificDaylight.Drillbit Duchy.Ministers`))
+      this.createMetaData('score', ministerPoints, translate.instant(`SpecificDaylight.Drillbit Duchy.Ministers`, {ministerPoints}))
     ];
   }
 
   public evening(translate: TranslateService) {
     const suit = this.customData.currentSuit;
-    const activeMarkets = this.customData.markets.filter(m => m === false).length;
-    let pointsMarkets = 0;
-    if (activeMarkets === 1) {
-      pointsMarkets = 1;
-    }
-    else if (activeMarkets === 1 || activeMarkets === 2) {
-      pointsMarkets = 2;
-    }
-    else if (activeMarkets === 3) {
-      pointsMarkets = 3;
-    }
-    else {
-      //this.customData.markets = [false, false, false];
-      pointsMarkets = 0;
-    }
-
+    const pointsMarkets = this.customData.markets.filter(m => m === false).length;
+    
     return [
       this.createMetaData('text', '', translate.instant(`SpecificEvening.Drillbit Duchy.Rally`, { suit })),
       this.createMetaData('score', pointsMarkets, translate.instant(`SpecificEvening.Drillbit Duchy.Score`)),
-      this.createMetaData('text', '', translate.instant(`SpecificEvening.Drillbit Duchy.Sway`)),
+      this.createMetaData('text', '', translate.instant(`SpecificEvening.Drillbit Duchy.Sway`, {suit})),
       this.createMetaData('text', '', translate.instant(`SpecificEvening.Drillbit Duchy.Discard`))
     ];
   }
