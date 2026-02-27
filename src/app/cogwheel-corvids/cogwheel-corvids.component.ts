@@ -69,7 +69,11 @@ public plots = [
 
   // Returns the correct icon path based on the token's current state
 
-  modifyPlot(diff = 1) {
+  modifyPlot(diff = 1, event?:Event) {
+    if (event) {
+      event.preventDefault();
+      event.stopPropagation;
+    }
     this.bot.customData.stowedPlots = Math.max(this.bot.customData.stowedPlots+ diff, -1);
 
     this.botService.saveBots();
