@@ -19,10 +19,9 @@ ion-toolbar {
   margin-top: 15px;
   margin-left: 2.5em;
   margin-right: 2.5em;
-}
-.plot-storage {
-  .plot-cell {
-  
+  @media (max-width: 1200px) {
+    display: block;
+    grid-gap: 1em;
   }
 }
 
@@ -35,6 +34,36 @@ ion-toolbar {
   padding: 8px;
   background: rgba(0, 0, 0, 0.03);
   margin: 0 2em 0 2em;
+  @media (max-width: 1200px) {
+    max-width: fit-content;
+    gap: 3em;
+    margin: auto;
+    margin-bottom: 1em;
+  }
+  
+}
+
+.plot-storage {
+  @media (max-width: 1200px) {
+    width: fit-content;
+    justify-content: center;
+    margin: auto;
+  }
+  .plot-cell {
+    @media (max-width: 1200px) {
+      display: grid;
+      padding: 2em;
+      grid-template-columns: 5em 5em 5em 5em;
+      gap: .5em;
+      justify-content: center;
+      .row-additions {
+        grid-column: 1/-1;
+        justify-content: center;
+        margin-top: .5em;
+      }
+
+    }
+  }
 }
 
 .plot-label {

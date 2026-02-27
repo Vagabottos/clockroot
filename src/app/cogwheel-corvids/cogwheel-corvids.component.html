@@ -169,11 +169,13 @@
               <div class="row-additions">
                 <ion-button
                   [disabled]="bot.customData.stowedPlots <= -1"
-                  (click)="modifyPlot(-1)"
+                  (click)="modifyPlot(-1, $event)"
                 >
                   <ion-icon name="remove"></ion-icon>
                 </ion-button>
-                <ion-button (click)="modifyPlot(1)">
+                <ion-button 
+                  [disabled]="bot.customData.stowedPlots >= 7"
+                  (click)="modifyPlot(1, $event)">
                   <ion-icon name="add"></ion-icon>
                 </ion-button>
               </div>
