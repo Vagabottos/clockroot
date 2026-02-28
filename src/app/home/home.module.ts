@@ -22,6 +22,7 @@ import { CorvidComponent } from '../cogwheel-corvids/cogwheel-corvids.component'
 import { LizardComponent } from '../logical-lizards/logical-lizards.component';
 import { RiverfolkComponent } from '../riverfolk-robots/riverfolk-robots.component';
 import { LegionComponent } from '../looting-legion/looting-legion.component';
+import { TemplateComponent } from '../0_template-faction/template-faction.component';
 import { ParagraphComponent } from '../paragraph/paragraph.component';
 
 @NgModule({
