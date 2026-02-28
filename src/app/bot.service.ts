@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import { Bot, Difficulty, Rule, Item, BotName } from './models/bot';
-import { MarquiseBot, EyrieBot, MarquiseBotDC, EyrieBotDC, WoodlandBotDC, VagaBotDC, WoodlandBot, VagaBot, DuchyBot, LizardBot, CorvidBot, RiverfolkBot, TemplateBot, LegionBot } from './models';
+import { MarquiseBot, EyrieBot, MarquiseBotDC, EyrieBotDC, WoodlandBotDC, VagaBotDC, WoodlandBot, VagaBot, DuchyBot, LizardBot, CorvidBot, RiverfolkBot, LegionBot } from './models';
 import { AlertController, ModalController } from '@ionic/angular';
 import { PriorityModalComponent } from './priority-modal/priority-modal.component';
 
@@ -23,7 +23,6 @@ export class BotService {
     Lizard: LizardBot,
     Corvid: CorvidBot,
     Riverfolk: RiverfolkBot,
-    Template: TemplateBot,
     Legion: LegionBot
   };
 
@@ -77,10 +76,6 @@ export class BotService {
     Riverfolk: {
       icon: 'riverfolk',
       fullName: 'Riverfolk Robots'
-    },
-    Template: {
-      icon:'template',
-      fullName: 'Template Faction'
     },
     Legion: {
       icon: 'legion',
