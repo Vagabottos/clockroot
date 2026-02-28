@@ -1,0 +1,46 @@
+:host {
+  --theme-color: #e07a37;
+  display: block;
+  width: 100%;
+}
+
+ion-toolbar {
+  --ion-color-primary: var(--theme-color);
+}
+
+.flip-front {
+  border-color: var(--theme-color) !important;
+
+  &.damaged {
+    background-image: repeating-linear-gradient(-45deg, rgba(255, 0, 0, 0.2), rgba(255, 0, 0, 0.2) 2px, transparent 1px, transparent 5px);
+  }
+  
+  .label {
+    font-size: 12px;
+    transform: rotate(45deg);
+  }
+}
+
+.battle-track {
+  text-align: center;
+}
+
+.flip-container {
+  margin-bottom: 1em;
+}
+.hoard-container {
+  background-color: #f6f6f6;
+  background-image: radial-gradient(circle, #fff, #c9c3c3);
+  width: 5em;
+  height: 5em;
+  
+}
+
+.hoard-item {
+  object-fit: contain;
+  margin: auto;
+}
+
+.hidden {
+  display: none;
+}

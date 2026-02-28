@@ -65,7 +65,7 @@ export class DuchyBot extends Bot {
       canToggle: true
     },
   ];
-  // !!! The Duchy in Daylight will need order specific text for dig. Include a market tracker and minister tracker?
+
   public customData = {
     currentSuit: 'bird',
 

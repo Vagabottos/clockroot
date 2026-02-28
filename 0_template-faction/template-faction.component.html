@@ -1,0 +1,298 @@
+<!--
+To adapt this to whatever faction you may be using replace all instances of 'Template Faction' with your desired faction name 
+Ensure your translation is listed in the i18n .JSON or it will not populate. 
+Best practice is to go section by section in the JSON for en-US and fill out everything that will be applicable for your faction)
+
+Sections
+Factions/FactionsShort: The name of the faction used in the web app
+setupHidden: The two different sections based on when the faction is being setup and when it is being played, hiding one triggers the other
+Priority Markers: Brings up maps with their priority markers for settting up bots
+Setup: The setup and difficulty rules for the bot
+Traits: The traits and rules for the bots
+Birdsong/Daylight/Evening: The rules for each relevant section of the faction card
+
+You can add additional sections at will. Once again, just read the JSON in its entirety for a faction (ex. Cogwheel Corvids) and you can identify what you need to do on the backend for all the text
+-->
+<!--
+Add a section for post-setup(replace newSection)
+  <ion-item *ngIf="bot.setupHidden">
+    <ion-card>
+      <ion-card-header>
+        <h2>{{ "Sections.newSection" | translate }}</h2>
+      </ion-card-header>
+      <ion-card-content>
+        <ol>
+          <li
+            class="rule-message"
+            *ngFor="let message of bot.newSection(translateService)"
+          >
+            <para [bot]="bot" [metadata]="message"></para>
+          </li>
+        </ol>
+      </ion-card-content>
+    </ion-card>
+  </ion-item>
+-->
+<!--
+Add an integer counter (replace newData)
+  <div class="row-additions">
+    <ion-button
+      [disabled]="bot.customData.newData <= -1"
+      (click)="modifyPlot(-1, $event)"
+    >
+      <ion-icon name="remove"></ion-icon>
+    </ion-button>
+    <ion-button 
+      [disabled]="bot.customData.newData >= 7"
+      (click)="modifyPlot(1, $event)">
+      <ion-icon name="add"></ion-icon>
+    </ion-button>
+  </div>
+-->
+<!--
+Add a section for buildings/other tracked faction data (replace newTracker and classes)
+  <ion-item *ngIf="bot.setupHidden">
+    <ion-card>
+      <ion-card-header>
+        <h2>newTracker</h2>
+      </ion-card-header>
+      <div class="newTracker-container">
+        <div class="newTracker-cell">
+          <img
+            src="assets/inicon/token-newTracker.png"
+            class="newTracker-toggle click-icon newTracker-icon"
+            *ngFor="let newTracker of [0,1,2]"
+            [class.in-supply]="bot.customData.newTracker < newTracker"
+          />
+        </div>
+      </div>
+    </ion-card>
+  </ion-item>
+-->
+<!--
+
+-->
+
+<ion-toolbar color="primary">
+  <ion-title>
+    <span id="Template">
+      <span class="ion-hide-sm-down">{{
+        "Factions.Template Faction" | translate
+      }}</span>
+      <span class="ion-hide-md-up">{{
+        "FactionsShort.Template Faction" | translate
+      }}</span>
+    </span>
+  </ion-title>
+
+  <ion-buttons slot="end">
+    <ion-button *ngIf="!bot.setupHidden" (click)="botService.toggleSetup(bot)">
+      <ion-icon slot="icon-only" name="checkmark-circle"></ion-icon>
+    </ion-button>
+    <ion-button *ngIf="bot.setupHidden" (click)="botService.toggleSetup(bot)">
+      <ion-icon slot="icon-only" name="radio-button-off"></ion-icon>
+    </ion-button>
+    <ion-button (click)="botService.removeBot(bot)">
+      <ion-icon slot="icon-only" name="trash"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+</ion-toolbar>
+
+<ion-list lines="none" class="no-pointer">
+  <ion-item *ngIf="!bot.setupHidden">
+    <ion-card>
+      <ion-card-header>
+        <h2>{{ "BotSetup.Setup" | translate }} ({{ bot.setupPosition }})</h2>
+      </ion-card-header>
+      <ion-card-content>
+        <ol>
+          <li>
+            <a (click)="botService.showPriorities()">{{
+              "BotSetup.PriorityMarkers" | translate
+            }}</a>
+          </li>
+          <li
+            *ngFor="let rule of bot.setupRules"
+            [innerHTML]="
+              'SpecificSetup.Template Faction.' + rule | translate | format
+            "
+          ></li>
+        </ol>
+      </ion-card-content>
+    </ion-card>
+  </ion-item>
+
+  <ion-item *ngIf="!bot.setupHidden">
+    <ion-card>
+      <ion-card-header>
+        <h2>{{ "BotSetup.Setup" | translate }} ({{ bot.setupPosition }})</h2>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-list>
+          <ion-radio-group>
+            <ion-item
+              *ngFor="
+                let diff of ['Easy', 'Normal', 'Challenging', 'Nightmare']
+              "
+            >
+              <ion-radio
+                slot="start"
+                [value]="diff"
+                (click)="botService.changeDifficulty(bot, diff)"
+                [checked]="bot.difficulty === diff"
+              ></ion-radio>
+
+              <ion-label class="ion-text-wrap">
+                <h2>{{ "BotSetup.Difficulty." + diff | translate }}</h2>
+                <p
+                  [innerHTML]="
+                    'SpecificDifficulty.Template Faction.' + diff
+                      | translate
+                      | format
+                  "
+                ></p>
+              </ion-label>
+            </ion-item>
+          </ion-radio-group>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+  </ion-item>
+
+  <ion-item *ngIf="!bot.setupHidden">
+    <ion-card>
+      <ion-card-header>
+        <h2>{{ "BotSetup.ChooseTraits" | translate }}</h2>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-list>
+          <ion-item *ngFor="let rule of bot.rules">
+            <ion-checkbox
+              slot="start"
+              [disabled]="!rule.canToggle"
+              (click)="botService.toggleRule(rule)"
+              [checked]="rule.isActive"
+            ></ion-checkbox>
+
+            <ion-label class="ion-text-wrap">
+              <h2>{{ "SpecificRules." + rule.name | translate }}</h2>
+              <p
+                [innerHTML]="'SpecificRules.' + rule.text | translate | format"
+              ></p>
+            </ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+  </ion-item>
+
+  <ion-item *ngIf="bot.setupHidden">
+    <ion-card>
+      <ion-card-header>
+        <h2>{{ "Sections.DifficultyTraits" | translate }}</h2>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-list>
+          <ion-item *ngIf="bot.difficulty !== 'Normal'">
+            <ion-label class="ion-text-wrap">
+              <h2>
+                {{ "BotSetup.DifficultyText" | translate }}:
+                {{ bot.difficulty }}
+              </h2>
+              <p
+                [innerHTML]="
+                  'SpecificDifficulty.Template Faction.' + bot.difficulty
+                    | translate
+                    | format
+                "
+              ></p>
+            </ion-label>
+          </ion-item>
+          <ion-item
+            *ngFor="let rule of bot.rules"
+            [class.ion-hide]="rule.canToggle && !rule.isActive"
+          >
+            <ion-label class="ion-text-wrap">
+              <h2>{{ "SpecificRules." + rule.name | translate }}</h2>
+              <p
+                [innerHTML]="'SpecificRules.' + rule.text | translate | format"
+              ></p>
+            </ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+  </ion-item>
+
+  <ion-item *ngIf="bot.setupHidden">
+    <app-bot-resources [bot]="bot"></app-bot-resources>
+  </ion-item>
+
+  <ion-item *ngIf="bot.setupHidden">
+    <ion-card>
+      <ion-card-header>
+        <h2 class="birdsong-has-buttons">
+          {{ "Sections.Birdsong" | translate }}
+          <ion-button
+            class="ion-margin-start"
+            (click)="changeSuit(suit)"
+            [class.transparent]="bot.customData.currentSuit !== suit"
+            *ngFor="let suit of ['bird', 'fox', 'bunny', 'mouse']"
+          >
+            <img
+              class="click-icon"
+              slot="icon-only"
+              [src]="'assets/inicon/card-' + suit + '.png'"
+            />
+          </ion-button>
+        </h2>
+      </ion-card-header>
+      <ion-card-content>
+        <ol>
+          <li
+            class="rule-message"
+            *ngFor="let message of bot.birdsong(translateService)"
+          >
+            <para [bot]="bot" [metadata]="message"></para>
+          </li>
+        </ol>
+      </ion-card-content>
+    </ion-card>
+  </ion-item>
+
+  <ion-item *ngIf="bot.setupHidden">
+    <ion-card>
+      <ion-card-header>
+        <h2>{{ "Sections.Daylight" | translate }}</h2>
+      </ion-card-header>
+      <ion-card-content>
+        <ol>
+          <li
+            class="rule-message"
+            *ngFor="let message of bot.daylight(translateService)"
+          >
+            <para [bot]="bot" [metadata]="message"></para>
+          </li>
+        </ol>
+      </ion-card-content>
+    </ion-card>
+  </ion-item>
+
+  <ion-item *ngIf="bot.setupHidden">
+    <ion-card>
+      <ion-card-header>
+        <h2>{{ "Sections.Evening" | translate }}</h2>
+      </ion-card-header>
+      <ion-card-content>
+        <ol>
+          <li
+            class="rule-message"
+            *ngFor="let message of bot.evening(translateService)"
+          >
+            <para [bot]="bot" [metadata]="message"></para>
+          </li>
+        </ol>
+      </ion-card-content>
+    </ion-card>
+  </ion-item>
+</ion-list>

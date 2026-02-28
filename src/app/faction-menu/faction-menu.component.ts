@@ -54,7 +54,7 @@ export class FactionMenuComponent implements OnInit {
     }
   ];
 
-  public expansionFactions = [
+  public expansion2Factions = [
     {
       name: 'Cogwheel Corvids',
       id: 'Corvid',
@@ -76,6 +76,14 @@ export class FactionMenuComponent implements OnInit {
       icon: 'riverfolk'
     }
   ];
+
+  public expansion3Factions = [
+    {
+      name: 'Looting Legion',
+      id: 'Legion',
+      icon: 'legion'
+    }
+  ]
 
   constructor(
     public popoverCtrl: PopoverController

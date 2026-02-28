@@ -44,7 +44,8 @@
     "Cogwheel Corvids": "Cogwheel Corvids",
     "Drillbit Duchy": "Drillbit Duchy",
     "Logical Lizards": "Logical Lizards",
-    "Riverfolk Robots": "Riverfolk Robots"
+    "Riverfolk Robots": "Riverfolk Robots",
+    "Looting Legion": "Looting Legion"
   },
   "FactionsShort": {
     "Mechanical Marquise": "M. Marquise",
@@ -58,7 +59,8 @@
     "Cogwheel Corvids": "C. Corvids",
     "Drillbit Duchy": "D. Duchy",
     "Logical Lizards": "L. Lizards",
-    "Riverfolk Robots": "R. Robots"
+    "Riverfolk Robots": "R. Robots",
+    "Looting Legion": "L. Legion"
   },
   "Priorities": {
     "Title": "Map Priorities",
@@ -82,7 +84,8 @@
     "VagabotDifficultyTrait": "Vagabot, Difficulty, Traits",
     "BotRules": "Corvid Bot Specific Rules",
     "RulesLizard": "Lizard Rules",
-    "RulesRiver": "Riverfolk Rules"
+    "RulesRiver": "Riverfolk Rules",
+    "Hoard": "The Hoard"
   },
   "SpecificSetup": {
     "Electric Eyrie": {
@@ -157,6 +160,11 @@
       "Setup2": "Place 9 trade posts on the matching spaces of your Trade Posts tracks.",
       "Setup3": "Place 1 warrior in your Payments box.",
       "Setup4": "Draw 5 cards and add them to your Market."
+    },
+    "Looting Legion": {
+      "Setup0":"**Gather** pieces and form supplies of 20 warriors, 1 warlord, and 6 strongholds.",
+      "Setup1":"**Place** the four 'R' items randomly under the ruins on the map.",
+      "Setup2":"**Garrison**: Place your starting clearing with a warlord, four warriors, and one stronghold in a random corner clearing that is not the starting corner clearing of another player and, if possible, is diagonally opposite from a starting corner clearing."
     }
   },
   "SpecificDifficulty": {
@@ -231,6 +239,12 @@
       "Normal": "Whenever you **Build and Garrison**, place one warrior at the trade post.",  
       "Challenging": "Whenever you **Build and Garrison**, place two warriors at the trade post.",  
       "Nightmare": "Whenever you **Build and Garrison**, place two warriors at the trade post. At the end of Evening, score one victory point per two players (rounded up)."
+    },
+    "Looting Legion": {
+      "Easy":"Whenever you **recruit**, place one fewer warriors in your warlord's clearing.",
+      "Normal":"Whenever you **recruit**, place one extra warrior in your warlord's clearing before placing warriors at strongholds.",
+      "Challenging":"Whenever you **recruit**, place two extra warriors in your warlord's clearing before placing warriors at strongholds.",
+      "Nightmare":"Whenever you **recruit**, place two extra warriors in your warlord's clearing before placing warriors at strongholds. At the end of evening score **VP:1** per two enemy players (rounded up)."
     }
   },
   "SpecificRules": {
@@ -337,7 +351,12 @@
     "RuleFerocious": "Ferocious",
     "TextFerocious": "As attacker in battle, your maximum rolled hits is always three.",
     "RuleInvolved": "Involved",
-    "TextInvolved": "If a human does not buy your Mercenaries service on their turn, treat your warriors as if all of that player's enemies bought Mercenaries. The Vagabond can buy Mercenaries to avoid this penalty but does not benefit from the service."
+    "TextInvolved": "If a human does not buy your Mercenaries service on their turn, treat your warriors as if all of that player's enemies bought Mercenaries. The Vagabond can buy Mercenaries to avoid this penalty but does not benefit from the service.",
+
+    "RuleAutomatedLooters":"Automated Looters",
+    "TextAutomatedLooters":"In battle as attacker against a defender with an available item in a clearing you rule - take the item but deal no hits.",
+    "RuleWarlord":"The Warlord",
+    "TextWarlord":"Your warlord is a warrior that cannot be removed outside battle, moved outside your turn, or placed except with Anoint. *The Warlord's clearing always counts as the ordered clearing.*"
   },
   "SpecificBirdsong": {
     "Electric Eyrie": {
@@ -402,6 +421,12 @@
       "StockMarket": "Draw two cards and add them to the Market's right side. Do not draw a card if the Market would exceed 5 cards.",
       "CraftOrder": "Craft the first card added to the Market that shows an available item for **vp:1** and then discard it.",
       "SetOrder": "Set order to be the rightmost Market Card."
+    },
+    "Looting Legion": {
+      "Reveal":"**Reveal** the top card of the deck as the order card.",
+      "Craft":"**Craft** the order card if it shows an available item, you score no points.",
+      "Raze":"**Raze**: At each mob, remove all enemy buildings and tokens, take an item from ruin if any, and remove the ruin if it's empty.",
+      "Recruit":"**Recruit** {{hoardNum}} warriors in your warlord's clearing, then one warrior at each stronghold."
     }
   },
   "SpecificDaylight": {
@@ -513,6 +538,13 @@
       "Organize": "Check for Protectionism: If you have either the shield or swords Score **vp:1** and place two warriors in a clearing that has Riverfolk pieces and the most enemy pieces.",
       "BattleShield": "Battle in each clearing. (Defender Tie: Player who has the fewest warriors in payments.)",
       "BattleSword": "Battle in each **card:{{suit}}** clearing. (Defender Tie: Player who has the fewest warriors in payments.)"
+    },
+    "Looting Legion": {
+      "Battle":"**Battle** in each **card:{{suit}}** clearing. *Remember looters.* *Defender Tie: Target player with available items.*",
+      "Move":"**Move** all but 2 warriors from each **card:{{suit}}** clearing to the adjacent clearing with the most enemy pieces. Do not move warriors from the Warlord's clearing.",
+      "Build":"**Build** a stronghold in a **card:{{suit}}** clearing you rule.",
+      "Advance":"**Advance**: {{hoardNum}} times: Move the Warlord and all but 1 warriors in its clearing to the adjacent clearing with the most enemy pieces, then battle.*Clearing Tie: Move to the highest-numbered clearing.*",
+      "Anoint":"**Anoint** if the warlord is off the map: Place the warlord into the clearing with the most of your warriors."
     }
   },
   "SpecificEvening": {
@@ -583,6 +615,11 @@
       "Racketeering": "Protectionism: From each clearing, take all but two Riverfolk warriors and place them in Payments.",
       "Discard": "Discard the leftmost card from the Market.",
       "DiscardShield":"Protectionism (Shield Only): Discard the leftmost card from the market again."
+    },
+    "Looting Legion": {
+      "Incite":"**Incite**: Place a mob in a **card:{{suit}}** clearing adjacent to a mob. If you can't, place a mob in an ordered clearing with one of your warriors without a mob. *Clearing Tie: Clearing with ruins, then most buildings, and tokens. No Mobs Left: First remove a Mob from the clearing with the least adjacent Ruins or buildings.*",
+      "Score":"**Score**: Score **vp:1** for every 2 clearings you rule.",
+      "Discard":"**Discard** the order card."
     }
   },
   "SpecificExtra": {
@@ -676,6 +713,9 @@
       "serviceCard":"**Hand Card**: Take a card and add it to your hand.",
       "serviceBoat":"**Riverboat**: Treat rivers as paths for this turn.",
       "serviceMerc":"**Mercenaries**: For battle and rule in Daylight and Evening, you treat Riverfolk warriors as your own, except for battle against the Riverfolk. In battle, you must split hits between your faction pieces and Riverfolk warriors."
+    },
+    "Looting Legion": {
+      "Hoard":"<br>Score **vp:2** if the hoard is full and you would add another item, then remove that item from the game."
     }
   },
   "ToastMessages": {

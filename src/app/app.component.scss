@@ -25,3 +25,12 @@
 ion-item.bot {
   font-size: 0.8rem;
 }
+
+.call-to-action {
+    position:fixed;
+    bottom: 0;
+    min-width: 100%;
+    max-width: 100%;
+    left: 50%;
+    transform: translate(-50%, -10%);
+}

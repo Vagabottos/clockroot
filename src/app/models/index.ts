@@ -11,3 +11,4 @@ export * from './duchy';
 export * from './corvid';
 export * from './lizard';
 export * from './riverfolk';
+export * from './legion';
