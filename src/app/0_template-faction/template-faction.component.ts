@@ -6,8 +6,8 @@ import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-template', //Change this
-  templateUrl: './0_template-faction.component.html', //Change this
-  styleUrls: ['./0_template-faction.component.scss'], //Change this
+  templateUrl: './template-faction.component.html', //Change this
+  styleUrls: ['./template-faction.component.scss'], //Change this
 })
 export class TemplateComponent implements OnInit //Change this
 {
