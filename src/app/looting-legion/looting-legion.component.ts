@@ -36,7 +36,6 @@ export class LegionComponent implements OnInit
 
     const hoard = this.bot.customData.hoardItems;
     
-    // Only add if there are fewer than 5 items
     if (hoard.length < 5) {
       hoard.push(item);
       this.botService.saveBots();
@@ -51,7 +50,6 @@ export class LegionComponent implements OnInit
 
     const hoard = this.bot.customData.hoardItems;
     
-    // If an item exists at this slot, remove it and shift the array
     if (hoard[index]) {
       hoard.splice(index, 1);
       this.botService.saveBots();
