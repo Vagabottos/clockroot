@@ -84,7 +84,8 @@
     "VagabotDifficultyTrait": "Vagabot, Difficulty, Traits",
     "BotRules": "Corvid Bot Specific Rules",
     "RulesLizard": "Lizard Rules",
-    "RulesRiver": "Riverfolk Rules"
+    "RulesRiver": "Riverfolk Rules",
+    "Hoard": "The Hoard"
   },
   "SpecificSetup": {
     "Electric Eyrie": {
@@ -161,8 +162,9 @@
       "Setup4": "Draw 5 cards and add them to your Market."
     },
     "Looting Legion": {
-      "Gather":"**Gather** pieces and form supplies of 20 warriors, 1 warlord, and 6 strongholds.",
-      "Garrison":"**Garrison**: Place your starting clearing with a warlord, four warriors, and one stronghold in a random corner clearing that is not the starting corner clearing of another player and, if possible, is diagonally opposite from a starting corner clearing."
+      "Setup0":"**Gather** pieces and form supplies of 20 warriors, 1 warlord, and 6 strongholds.",
+      "Setup1":"**Place** the four 'R' items randomly under the ruins on the map.",
+      "Setup2":"**Garrison**: Place your starting clearing with a warlord, four warriors, and one stronghold in a random corner clearing that is not the starting corner clearing of another player and, if possible, is diagonally opposite from a starting corner clearing."
     }
   },
   "SpecificDifficulty": {
@@ -424,7 +426,7 @@
       "Reveal":"**Reveal** the top card of the deck as the order card.",
       "Craft":"**Craft** the order card if it shows an available item, you score no points.",
       "Raze":"**Raze**: At each mob, remove all enemy buildings and tokens, take an item from ruin if any, and remove the ruin if it's empty.",
-      "Recruit":"**Recruit** {{hoard}} warriors in your warlord's clearing, then one warrior at each stronghold."
+      "Recruit":"**Recruit** {{hoardNum}} warriors in your warlord's clearing, then one warrior at each stronghold."
     }
   },
   "SpecificDaylight": {
@@ -541,7 +543,7 @@
       "Battle":"**Battle** in each **card:{{suit}}** clearing. *Remember looters.* *Defender Tie: Target player with available items.*",
       "Move":"**Move** all but 2 warriors from each **card:{{suit}}** clearing to the adjacent clearing with the most enemy pieces. Do not move warriors from the Warlord's clearing.",
       "Build":"**Build** a stronghold in a **card:{{suit}}** clearing you rule.",
-      "Advance":"**Advance**: {{hoard}} times: Move the Warlord and all but 1 warriors in its clearing to the adjacent clearing with the most enemy pieces, then battle.*Clearing Tie: Move to the highest-numbered clearing.*",
+      "Advance":"**Advance**: {{hoardNum}} times: Move the Warlord and all but 1 warriors in its clearing to the adjacent clearing with the most enemy pieces, then battle.*Clearing Tie: Move to the highest-numbered clearing.*",
       "Anoint":"**Anoint** if the warlord is off the map: Place the warlord into the clearing with the most of your warriors."
     }
   },
@@ -711,6 +713,9 @@
       "serviceCard":"**Hand Card**: Take a card and add it to your hand.",
       "serviceBoat":"**Riverboat**: Treat rivers as paths for this turn.",
       "serviceMerc":"**Mercenaries**: For battle and rule in Daylight and Evening, you treat Riverfolk warriors as your own, except for battle against the Riverfolk. In battle, you must split hits between your faction pieces and Riverfolk warriors."
+    },
+    "Looting Legion": {
+      "Hoard":"<br>Score **vp:2** if the hoard is full and you would add another item, then remove that item from the game."
     }
   },
   "ToastMessages": {
