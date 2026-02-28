@@ -95,9 +95,14 @@ export class LegionBot extends Bot {
 
     const base = [
       this.createMetaData('text', '', translate.instant(`SpecificEvening.Looting Legion.Incite`, {suit})),
-      this.createMetaData('score', 1, translate.instant(`SpecificEvening.Looting Legion.Score`)),
-      this.createMetaData('text', '', translate.instant(`SpecificEvening.Looting Legion.Discard`))
+      this.createMetaData('score', 1, translate.instant(`SpecificEvening.Looting Legion.Score`))
     ];
+    if (this.difficulty === 'Nightmare') {
+      base.push(
+        this.createMetaData('score', 1, translate.instant('SpecificEvening.Electric Eyrie (DC).NightmareScore'))
+      );
+    }
+    base.push(this.createMetaData('text', '', translate.instant(`SpecificEvening.Looting Legion.Discard`)))
     return base;
   }
 
