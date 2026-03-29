@@ -20,12 +20,12 @@ import * as zhCN from '../assets/i18n/zh-CN.json';
 interface JsonModule {
   default?: unknown;
 }
-const getJsonContent = (module: unknown): unknown => {
+const getJsonContent = (module: any): Object => {
   const candidate = module as JsonModule;
   return candidate.default ?? module;
 };
 
-const langs: Record<string, unknown> = {
+export const LANGUAGES: Record<string, Object> = {
   'en-US': getJsonContent(enUS),
   'fr-FR': getJsonContent(frFR),
   'es-ES': getJsonContent(esES),
@@ -41,6 +41,6 @@ const langs: Record<string, unknown> = {
 
 export class JSONLoader implements TranslateLoader {
   getTranslation(lang: string): Observable<TranslationObject> {
-    return of((langs[lang] || enUS) as TranslationObject);
+    return of((LANGUAGES[lang] || enUS) as TranslationObject);
   }
 }

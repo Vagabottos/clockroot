@@ -56,6 +56,12 @@ SpecificEvening
 SpecificExtra
 ```
 
+#### i18n
+
+There is an included `script` that will detect missing properties in the i18n JSON files. Usage:
+
+- `npm run i18nAudit`
+
 ### Some of the Dev choices for customizing
 
 #### How do I get the inline suits to change with the order card?
