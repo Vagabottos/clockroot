@@ -12,8 +12,7 @@
     "lint": "ng lint",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "i18nAudit": "tsx scripts/i18nAudit.ts",
-    "prepare": "husky install"
+    "i18nAudit": "tsx scripts/i18nAudit.ts"
   },
   "private": true,
   "dependencies": {
@@ -51,8 +50,6 @@
     "@types/node": "^12.11.1",
     "angular-eslint": "21.3.1",
     "eslint": "^10.0.3",
-    "husky": "^9.1.7",
-    "lint-staged": "^16.4.0",
     "object-deep-compare": "^2.0.0",
     "prettier": "^3.8.1",
     "ts-node": "~7.0.0",
@@ -62,9 +59,5 @@
   },
   "overrides": {
     "undici": "^7.24.0"
-  },
-  "lint-staged": {
-    "*.js": "eslint --cache --fix",
-    "*.{js,css,md}": "prettier --write"
   }
 }
