@@ -1,5 +1,5 @@
 import { CompareValuesWithDetailedDifferences } from 'object-deep-compare';
-import {LANGUAGES} from "../src/app/translate-loader";
+import { LANGUAGES } from '../src/app/translate-loader';
 
 /**
  * Runs a comparison of the language files looking for differences in properties. Will compare each language

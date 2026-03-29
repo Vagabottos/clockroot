@@ -1,7 +1,4 @@
-import {
-  TranslateLoader,
-  TranslationObject,
-} from '@ngx-translate/core';
+import { TranslateLoader, TranslationObject } from '@ngx-translate/core';
 
 import { Observable, of } from 'rxjs';
 

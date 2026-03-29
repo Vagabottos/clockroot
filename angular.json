@@ -139,10 +139,7 @@
     }
   },
   "cli": {
-    "schematicCollections": [
-      "angular-eslint",
-      "@ionic/angular-toolkit"
-    ],
+    "schematicCollections": ["angular-eslint", "@ionic/angular-toolkit"],
     "analytics": false
   },
   "schematics": {

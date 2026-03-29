@@ -9,7 +9,11 @@ import {
   provideRouter,
   withPreloading,
 } from '@angular/router';
-import { AlertController, IonicRouteStrategy, ModalController } from '@ionic/angular';
+import {
+  AlertController,
+  IonicRouteStrategy,
+  ModalController,
+} from '@ionic/angular';
 import { provideIonicAngular } from '@ionic/angular/standalone';
 import { bootstrapApplication } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
@@ -60,5 +64,4 @@ bootstrapApplication(AppComponent, {
     ),
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
   ],
-})
-  .catch((err) => console.log(err));
+}).catch((err) => console.log(err));
