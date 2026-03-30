@@ -20,6 +20,7 @@ import { FormsModule } from '@angular/forms';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { provideServiceWorker } from '@angular/service-worker';
 import { addIcons } from 'ionicons';
+import { defineCustomElements } from '@ionic/core/loader';
 import {
   add,
   arrowForward,
@@ -32,6 +33,8 @@ import {
 } from 'ionicons/icons';
 import { AppComponent } from './app/app.component';
 import { routes } from './app/app.routes';
+
+defineCustomElements(window);
 
 addIcons({
   add,

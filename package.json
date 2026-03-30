@@ -8,6 +8,7 @@
     "ng": "ng",
     "start": "ng serve -o --port 9843",
     "build": "ng build --configuration production",
+    "preview": "serve -s www/browser",
     "test": "ng test",
     "lint": "ng lint",
     "format": "prettier --write .",
