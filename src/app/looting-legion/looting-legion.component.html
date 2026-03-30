@@ -31,7 +31,11 @@
   </ion-buttons>
 </ion-toolbar>
 
-<ion-list lines="none" class="no-pointer" [class.setup-hidden]="bot.setupHidden">
+<ion-list
+  lines="none"
+  class="no-pointer"
+  [class.setup-hidden]="bot.setupHidden"
+>
   @if (!bot.setupHidden) {
     <ng-container>
       <ion-item class="setup-bottom-container">
@@ -49,9 +53,8 @@
                   (keydown.enter)="botService.showPriorities()"
                   tabindex="0"
                   role="button"
-                >{{
-                  'BotSetup.PriorityMarkers' | translate
-                }}</a>
+                  >{{ 'BotSetup.PriorityMarkers' | translate }}</a
+                >
               </li>
               @for (rule of bot.setupRules; track rule) {
                 <li
@@ -87,10 +90,7 @@
                   track diff
                 ) {
                   <ion-item button (click)="changeDifficulty(diff)">
-                    <ion-radio
-                      slot="start"
-                      [value]="diff"
-                    ></ion-radio>
+                    <ion-radio slot="start" [value]="diff"></ion-radio>
 
                     <ion-label class="ion-text-wrap">
                       <h2>{{ 'BotSetup.Difficulty.' + diff | translate }}</h2>
@@ -129,7 +129,9 @@
                   <ion-checkbox
                     slot="start"
                     [disabled]="!rule.canToggle"
-                    (click)="botService.toggleRule(rule); $event.stopPropagation()"
+                    (click)="
+                      botService.toggleRule(rule); $event.stopPropagation()
+                    "
                     [checked]="rule.isActive"
                   ></ion-checkbox>
 
@@ -220,8 +222,8 @@
                     class="flip-icon hoard-container"
                     (click)="removeHoardItem($event, num)"
                     (keyup.enter)="removeHoardItem($event, num)"
-                  
-                        tabindex="0">
+                    tabindex="0"
+                  >
                     @if (bot.customData.hoardItems[num]) {
                       <img
                         [src]="
@@ -249,7 +251,7 @@
                       class="flip-front hoard-item"
                       (click)="addHoardItems($event, item)"
                       (keyup.enter)="addHoardItems($event, item)"
-                    tabindex="0"
+                      tabindex="0"
                     />
                   </div>
                 </div>

@@ -35,7 +35,11 @@
   </ion-buttons>
 </ion-toolbar>
 
-<ion-list lines="none" class="no-pointer" [class.setup-hidden]="bot.setupHidden">
+<ion-list
+  lines="none"
+  class="no-pointer"
+  [class.setup-hidden]="bot.setupHidden"
+>
   @if (!bot.setupHidden) {
     <ng-container>
       <ion-item class="setup-bottom-container">
@@ -53,9 +57,8 @@
                   (keydown.enter)="botService.showPriorities()"
                   tabindex="0"
                   role="button"
-                >{{
-                  'BotSetup.PriorityMarkers' | translate
-                }}</a>
+                  >{{ 'BotSetup.PriorityMarkers' | translate }}</a
+                >
               </li>
               @for (rule of bot.setupRules; track rule) {
                 <li
@@ -125,10 +128,7 @@
                   track diff
                 ) {
                   <ion-item button (click)="changeDifficulty(diff)">
-                    <ion-radio
-                      slot="start"
-                      [value]="diff"
-                    ></ion-radio>
+                    <ion-radio slot="start" [value]="diff"></ion-radio>
 
                     <ion-label class="ion-text-wrap">
                       <h2>{{ 'BotSetup.Difficulty.' + diff | translate }}</h2>
@@ -167,7 +167,9 @@
                   <ion-checkbox
                     slot="start"
                     [disabled]="!rule.canToggle"
-                    (click)="botService.toggleRule(rule); $event.stopPropagation()"
+                    (click)="
+                      botService.toggleRule(rule); $event.stopPropagation()
+                    "
                     [checked]="rule.isActive"
                   ></ion-checkbox>
 
@@ -291,7 +293,7 @@
                       "
                       (click)="toggleSatchelItem(item.key)"
                       (keyup.enter)="toggleSatchelItem(item.key)"
-                    tabindex="0"
+                      tabindex="0"
                     />
 
                     @if (bot.customData.satchelItems[item.key] === 0) {
@@ -299,8 +301,8 @@
                         class="flip-front"
                         (click)="toggleSatchelItem(item.key)"
                         (keyup.enter)="toggleSatchelItem(item.key)"
-                      
-                        tabindex="0">
+                        tabindex="0"
+                      >
                         <div class="label">
                           {{
                             'SpecificExtra.Vagabot.SatchelExhausted' | translate
@@ -314,8 +316,8 @@
                         class="flip-front damaged"
                         (click)="toggleSatchelItem(item.key)"
                         (keyup.enter)="toggleSatchelItem(item.key)"
-                      
-                        tabindex="0">
+                        tabindex="0"
+                      >
                         <div class="label">
                           {{
                             'SpecificExtra.Vagabot.SatchelDamaged' | translate
@@ -329,8 +331,8 @@
                         class="flip-front"
                         (click)="toggleSatchelItem(item.key)"
                         (keyup.enter)="toggleSatchelItem(item.key)"
-                      
-                        tabindex="0">
+                        tabindex="0"
+                      >
                         <div class="label">
                           {{
                             'SpecificExtra.Vagabot.SatchelBattleTrack'
